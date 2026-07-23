@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preload" href="./assets/fonts/GeneralSans-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/GeneralSans-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<title>Razor-AI</title>
+		<script type="module" crossorigin="" src="./js/index.js?v=1784814714132"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/index.css?v=1784814714132">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" data-fls-header-scroll="" data-fls-header-scroll-show="" class="header">
+				<div class="header__container">
+					<div class="header__logo">
+						<img src="./assets/img/header/logo-mark.svg" alt="" loading="eager" class="header__logo-icon">
+						<span class="header__logo-text">Razor AI</span>
+					</div>
+					<div class="header__menu menu">
+						<button type="button" data-fls-menu="" class="menu__icon icon-menu" aria-expanded="false" aria-controls="menu-body" aria-label="Open menu">
+							<span></span>
+						</button>
+						<div class="menu__backdrop" data-fls-menu-backdrop=""></div>
+						<nav class="menu__body" id="menu-body">
+							<ul class="menu__list">
+								<li class="menu__item menu__item--login">
+									<a href="#" class="menu__link menu__link--login">Login</a>
+								</li>
+								<li class="menu__item">
+									<a href="#hero" class="menu__link" data-fls-scrollto="#hero" data-fls-scrollto-header="">Product</a>
+								</li>
+								<li class="menu__item">
+									<a href="#advantage" class="menu__link" data-fls-scrollto="#advantage" data-fls-scrollto-header="">Solutions</a>
+								</li>
+								<li class="menu__item">
+									<a href="#templates" class="menu__link" data-fls-scrollto="#templates" data-fls-scrollto-header="">Resources</a>
+								</li>
+								<li class="menu__item">
+									<a href="#cta" class="menu__link" data-fls-scrollto="#cta" data-fls-scrollto-header="">Pricing</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header__actions">
+						<a href="#" class="header__login">Login</a>
+						<a href="#" class="button button--glow header__cta" data-fls-button="">
+							Book a demo
+							<span class="button__icon">
+								<svg aria-hidden="true" focusable="false">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-top-right"></use>
+								</svg>
+							</span>
+						</a>
+					</div>
+				</div>
+			</header>
+			<main class="page">
+				<div data-fls-index="" class="index">
+					<section class="hero" id="hero">
+						<div class="hero__container">
+							<div class="hero__card">
+								<div class="hero__content">
+									<h1 class="hero__title" data-fls-watcher="" data-fls-watcher-once="">
+										The Ultimate AI Customer
+										<span class="hero__highlight">Service Companion</span>
+										<svg class="hero__toggle-decor" aria-hidden="true" focusable="false" width="156" height="56" viewbox="0 0 156 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<g clip-path="url(#hero-toggle-decor-clip)">
+												<rect class="hero__toggle-ring" x="21.5" y="0.5" width="134" height="55" rx="27.5"></rect>
+												<path class="hero__toggle-ring-icon" d="M49 12C40.1903 12 33 19.1903 33 28C33 36.8097 40.1903 44 49 44C57.8097 44 65 36.8097 65 28C65 19.1903 57.8097 12 49 12ZM37.4696 28C37.4696 24.6964 38.8947 21.6518 41.1619 19.579C42.0688 18.7369 43.6235 18.996 44.2713 20.0972L48.2874 27.0284C48.6761 27.6761 48.6761 28.4534 48.2874 29.1012L44.2713 36.0324C43.6235 37.1984 42.0688 37.3927 41.0972 36.4858C38.8947 34.2834 37.4696 31.3037 37.4696 28ZM53.7287 35.9028L49.7126 28.9717C49.3239 28.3239 49.3239 27.5466 49.7126 26.8988L53.7287 19.9676C54.3765 18.8664 55.8664 18.6073 56.8381 19.4494C59.1053 21.5223 60.5304 24.5668 60.5304 27.8704C60.5304 31.1741 59.1053 34.2186 56.8381 36.2915C55.8664 37.3279 54.3765 37.0688 53.7287 35.9028Z"></path>
+												<rect class="hero__toggle-ring" x="9.5" y="0.5" width="123" height="55" rx="27.5"></rect>
+												<path class="hero__toggle-ring-icon" d="M37 12C28.1903 12 21 19.1903 21 28C21 36.8097 28.1903 44 37 44C45.8097 44 53 36.8097 53 28C53 19.1903 45.8097 12 37 12ZM25.4696 28C25.4696 24.6964 26.8947 21.6518 29.1619 19.579C30.0688 18.7369 31.6235 18.996 32.2713 20.0972L36.2874 27.0284C36.6761 27.6761 36.6761 28.4534 36.2874 29.1012L32.2713 36.0324C31.6235 37.1984 30.0688 37.3927 29.0972 36.4858C26.8947 34.2834 25.4696 31.3037 25.4696 28ZM41.7287 35.9028L37.7126 28.9717C37.3239 28.3239 37.3239 27.5466 37.7126 26.8988L41.7287 19.9676C42.3765 18.8664 43.8664 18.6073 44.8381 19.4494C47.1053 21.5223 48.5304 24.5668 48.5304 27.8704C48.5304 31.1741 47.1053 34.2186 44.8381 36.2915C43.8664 37.3279 42.3765 37.0688 41.7287 35.9028Z"></path>
+												<rect class="hero__toggle-core" width="106" height="56" rx="28"></rect>
+												<path class="hero__toggle-core-icon" d="M28 12C19.1903 12 12 19.1903 12 28C12 36.8097 19.1903 44 28 44C36.8097 44 44 36.8097 44 28C44 19.1903 36.8097 12 28 12ZM16.4696 28C16.4696 24.6964 17.8947 21.6518 20.1619 19.579C21.0688 18.7369 22.6235 18.996 23.2713 20.0972L27.2874 27.0284C27.6761 27.6761 27.6761 28.4534 27.2874 29.1012L23.2713 36.0324C22.6235 37.1984 21.0688 37.3927 20.0972 36.4858C17.8947 34.2834 16.4696 31.3037 16.4696 28ZM32.7287 35.9028L28.7126 28.9717C28.3239 28.3239 28.3239 27.5466 28.7126 26.8988L32.7287 19.9676C33.3765 18.8664 34.8664 18.6073 35.8381 19.4494C38.1053 21.5223 39.5304 24.5668 39.5304 27.8704C39.5304 31.1741 38.1053 34.2186 35.8381 36.2915C34.8664 37.3279 33.3765 37.0688 32.7287 35.9028Z"></path>
+											</g>
+											<defs>
+												<clipPath id="hero-toggle-decor-clip">
+													<rect width="156" height="56" fill="white"></rect>
+												</clipPath>
+											</defs>
+										</svg>
+									</h1>
+									<p class="hero__text" data-fls-watcher="" data-fls-watcher-once="">
+										Embrace AI chatbot technology in a GPT-4-supported communication tool to help your customers, empower your team, and reduce your
+						workload.
+									</p>
+									<div class="hero__guide" data-fls-watcher="" data-fls-watcher-once="">
+										<div class="hero__guide-bg" aria-hidden="true"></div>
+										<div class="hero__guide-body">
+											<p class="hero__guide-title">Guide: The Razor AI Tutorial Hand Book</p>
+											<p class="hero__guide-text">Everything you need to know about the first steps in chatbots.</p>
+										</div>
+										<a href="#" class="hero__guide-link">
+											Read Article
+											<svg class="hero__guide-link-icon" aria-hidden="true" focusable="false">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-hero-arrow-narrow-right"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+								<div class="hero__media">
+									<div class="hero__illustration" data-fls-watcher="" data-fls-watcher-once="">
+										<div class="hero__illustration-bg" aria-hidden="true" data-fls-mouse="" data-fls-mouse-cx="400" data-fls-mouse-cy="400"></div>
+										<div class="hero__badges">
+											<span class="hero__badge">
+												<svg class="hero__badge-icon" aria-hidden="true" focusable="false">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-hero-chatbot"></use>
+												</svg>
+												Chatbot
+											</span>
+											<span class="hero__badge">
+												<svg class="hero__badge-icon" aria-hidden="true" focusable="false">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-hero-cube"></use>
+												</svg>
+												Chat GPT 4
+											</span>
+										</div>
+										<button type="button" class="button button--glow hero__watch" data-fls-button="">
+											Watch Tutorial
+											<span class="button__icon">
+												<svg aria-hidden="true" focusable="false">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-hero-play"></use>
+												</svg>
+											</span>
+										</button>
+									</div>
+									<div class="hero__cards">
+										<div class="hero__stat" data-fls-watcher="" data-fls-watcher-once="">
+											<div class="hero__stat-bg" aria-hidden="true"></div>
+											<p class="hero__stat-value">
+												+
+												<span data-fls-digcounter="">500</span>
+											</p>
+											<p class="hero__stat-label">Big companies use Razor AI for their services</p>
+										</div>
+										<div class="hero__ai" data-fls-watcher="" data-fls-watcher-once="">
+											<div class="hero__ai-bg" aria-hidden="true"></div>
+											<p class="hero__ai-text">AI-driven customer service</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<div class="companies" id="companies" data-fls-watcher="" data-fls-watcher-once="">
+						<div class="companies__container">
+							<div class="companies__marquee" data-fls-marquee="" data-fls-marquee-pause="" data-fls-marquee-speed="500" data-fls-marquee-space="64" aria-hidden="true">
+								<span class="companies__logo">Nexora AI</span>
+								<span class="companies__logo">Cortexa</span>
+								<span class="companies__logo">Vertex Labs</span>
+								<span class="companies__logo">SynthMind</span>
+								<span class="companies__logo">NeuraCore</span>
+								<span class="companies__logo">Quantica AI</span>
+								<span class="companies__logo">Axion Systems</span>
+								<span class="companies__logo">DeepPulse</span>
+							</div>
+						</div>
+						<span class="visually-hidden">
+							Trusted by AI-driven companies: Nexora AI, Cortexa, Vertex Labs, SynthMind, NeuraCore, Quantica AI, Axion Systems, DeepPulse.
+						</span>
+					</div>
+					<section class="about" id="about">
+						<div class="about__container">
+							<div class="about__card">
+								<div class="about__intro">
+									<div class="about__heading">
+										<h2 class="about__title" data-fls-watcher="" data-fls-watcher-once="">
+											Deliver a high-quality
+											<span class="about__highlight">customer experience</span>
+											<svg class="about__toggle-decor" aria-hidden="true" focusable="false" width="134" height="53" viewbox="0 0 134 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<rect class="about__toggle-ring" x="0.5" y="0.5" width="133" height="51.2978" rx="25.528"></rect>
+												<path class="about__toggle-ring-icon" d="M33.1051 36.8933L10.0465 13.8346L13.8346 10.0465L36.8933 33.1024L36.8933 12.7818L42.2514 12.7818L42.2514 42.2514L12.7818 42.2514L12.7818 36.8933L33.1051 36.8933Z"></path>
+												<rect class="about__toggle-ring" x="0.5" y="0.5" width="115.265" height="51.2978" rx="25.528"></rect>
+												<path class="about__toggle-ring-icon" d="M33.1051 36.8933L10.0465 13.8346L13.8346 10.0465L36.8933 33.1024L36.8933 12.7818L42.2514 12.7818L42.2514 42.2514L12.7818 42.2514L12.7818 36.8933L33.1051 36.8933Z"></path>
+												<rect class="about__toggle-ring" x="0.5" y="0.5" width="99.5" height="51.2978" rx="25.528"></rect>
+												<path class="about__toggle-core-icon" d="M57.2062 36.8933L34.1475 13.8346L37.9357 10.0465L60.9943 33.1024L60.9943 12.7818L66.3525 12.7818L66.3525 42.2514L36.8829 42.2514L36.8829 36.8933L57.2062 36.8933Z"></path>
+											</svg>
+										</h2>
+										<p class="about__text" data-fls-watcher="" data-fls-watcher-once="">
+											Embrace AI chatbot technology in a GPT-4-supported communication tool to help your customers, empower your team, and reduce
+							your workload.
+										</p>
+									</div>
+									<div class="about__integrations" data-fls-watcher="" data-fls-watcher-once="">
+										<div class="about__integrations-bg" aria-hidden="true"></div>
+										<div class="about__integrations-icons" data-fls-mouse-wrapper="">
+											<img class="about__integrations-icon about__integrations-icon--notion" src="./assets/img/about/icons/integration-notion.svg" width="113" height="113" alt="Notion" loading="lazy" data-fls-mouse="" data-fls-mouse-cx="45" data-fls-mouse-cy="45">
+											<img class="about__integrations-icon about__integrations-icon--drive" src="./assets/img/about/icons/integration-drive.svg" width="135" height="135" alt="Google Drive" loading="lazy" data-fls-mouse="" data-fls-mouse-cx="35" data-fls-mouse-cy="35">
+											<img class="about__integrations-icon about__integrations-icon--meet" src="./assets/img/about/icons/integration-meet.svg" width="80" height="80" alt="Google Meet" loading="lazy" data-fls-mouse="" data-fls-mouse-cx="65" data-fls-mouse-cy="65">
+											<img class="about__integrations-icon about__integrations-icon--teams" src="./assets/img/about/icons/integration-teams.svg" width="96" height="96" alt="Microsoft Teams" loading="lazy" data-fls-mouse="" data-fls-mouse-cx="55" data-fls-mouse-cy="55">
+										</div>
+										<div class="about__integrations-header">
+											<h3 class="about__integrations-title">Automate your workflow with our integrations</h3>
+											<p class="about__integrations-text">
+												Connect Razor AI with your customer service, sales, marketing, and recruitment tools using our user-friendly API, webhooks, or
+								Zapier integration.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="about__stack">
+									<div class="about__stack-col">
+										<div class="about__chat" data-fls-watcher="" data-fls-watcher-once="">
+											<div class="about__chat-illustration">
+												<div class="about__chat-turn about__chat-turn--user">
+													<div class="about__chat-person">
+														<img class="about__chat-avatar" src="./assets/img/about/icons/avatar-user.svg" width="32" height="32" alt="" loading="lazy">
+														<span class="about__chat-name">James Kokolomel</span>
+													</div>
+													<p class="about__chat-message about__chat-message--user">I&rsquo;ve forgotten my password</p>
+												</div>
+												<div class="about__chat-turn about__chat-turn--bot">
+													<div class="about__chat-person">
+														<img class="about__chat-avatar" src="./assets/img/about/icons/avatar-robot.svg" width="32" height="32" alt="" loading="lazy">
+														<span class="about__chat-name">Razor Robot</span>
+													</div>
+													<p class="about__chat-message about__chat-message--bot">
+														No worries, we&rsquo;ve all been in a melancholy situation like that. To reset your password, go to the login page and
+										click on Forgot Password? Then, enter the email address and follow it.
+													</p>
+												</div>
+											</div>
+											<h3 class="about__chat-title">Boost conversations 96% with AI</h3>
+											<p class="about__chat-text">Our AI-powered chatbots and automation tools are here to help.</p>
+										</div>
+										<div class="about__centralize" data-fls-watcher="" data-fls-watcher-once="">
+											<div class="about__centralize-header">
+												<h3 class="about__centralize-title">Centralize Your Communication</h3>
+												<p class="about__centralize-text">Easily respond to chats from all of your channels in one overview.</p>
+											</div>
+											<div class="about__centralize-icons" data-fls-mouse-wrapper="">
+												<img class="about__centralize-icon about__centralize-icon--whatsapp" src="./assets/img/about/icons/whatsapp.svg" width="58" height="58" alt="WhatsApp" loading="lazy" data-fls-mouse="" data-fls-mouse-cx="10" data-fls-mouse-cy="10">
+												<img class="about__centralize-icon about__centralize-icon--instagram" src="./assets/img/about/icons/instagram.svg" width="51" height="51" alt="Instagram" loading="lazy" data-fls-mouse="" data-fls-mouse-cx="13" data-fls-mouse-cy="13">
+												<img class="about__centralize-icon about__centralize-icon--messenger" src="./assets/img/about/icons/messenger.svg" width="55" height="55" alt="Messenger" loading="lazy" data-fls-mouse="" data-fls-mouse-cx="11" data-fls-mouse-cy="11">
+												<img class="about__centralize-icon about__centralize-icon--twitter" src="./assets/img/about/icons/twitter.svg" width="48" height="48" alt="Twitter" loading="lazy" data-fls-mouse="" data-fls-mouse-cx="14" data-fls-mouse-cy="14">
+												<img class="about__centralize-icon about__centralize-icon--brand" src="./assets/img/about/icons/brand-badge.svg" width="69" height="69" alt="" loading="lazy" data-fls-mouse="" data-fls-mouse-cx="8" data-fls-mouse-cy="8">
+											</div>
+										</div>
+									</div>
+									<div class="about__stack-col">
+										<div class="about__livechat" data-fls-watcher="" data-fls-watcher-once="">
+											<h3 class="about__livechat-title">Always accessible with our live chat.</h3>
+											<p class="about__livechat-text">Enhance Communication with Real-Time Live Chat.</p>
+											<div class="about__livechat-previews">
+												<div class="about__livechat-preview">
+													<img class="about__livechat-avatar" src="./assets/img/about/icons/avatar-user.svg" width="32" height="32" alt="" loading="lazy">
+													<div class="about__livechat-bars">
+														<span class="about__livechat-bar about__livechat-bar--name"></span>
+														<span class="about__livechat-bar about__livechat-bar--text"></span>
+													</div>
+												</div>
+												<div class="about__livechat-preview">
+													<img class="about__livechat-avatar" src="./assets/img/about/icons/avatar-tan.svg" width="32" height="32" alt="" loading="lazy">
+													<div class="about__livechat-bars">
+														<span class="about__livechat-bar about__livechat-bar--name"></span>
+														<span class="about__livechat-bar about__livechat-bar--text"></span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="about__insights" data-fls-watcher="" data-fls-watcher-once="">
+											<picture>
+												<img class="about__insights-chart" width="222" height="193" alt="12.5% increase in conversations per employee" loading="lazy" src="./assets/img/about/decor/insights-chart.webp">
+											</picture>
+											<div class="about__insights-content">
+												<h3 class="about__insights-title">Gain valuable insights from your audience</h3>
+												<p class="about__insights-text">Statistics provide valuable insights into how customers interact with Razor AI.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="advantage" id="advantage">
+						<div class="advantage__container">
+							<div class="advantage__card">
+								<h2 class="advantage__title" data-fls-watcher="" data-fls-watcher-once="">
+									<span class="advantage__highlight">Redefining</span>
+									Conversations and
+									<span class="advantage__highlight">Enhancing</span>
+									User experience
+									<span class="advantage__peek" aria-hidden="true">
+										<span class="advantage__peek-ring">
+											<span class="advantage__peek-core">
+												<svg class="advantage__peek-icon">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-advantage-eye"></use>
+												</svg>
+												<svg class="advantage__peek-arrow">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-advantage-arrow-right"></use>
+												</svg>
+											</span>
+										</span>
+									</span>
+								</h2>
+								<div class="advantage__intro" data-fls-watcher="" data-fls-watcher-once="">
+									<p class="advantage__text">
+										Throughout your customer's entire buying journey, Razor AI allow you to delight them at every step of the way, from their first
+						visit to the final purchase.
+									</p>
+									<a href="#" class="button advantage__cta" data-fls-button="">
+										Get Started
+										<span class="button__icon">
+											<svg aria-hidden="true" focusable="false">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-top-right"></use>
+											</svg>
+										</span>
+									</a>
+								</div>
+								<div class="advantage__accordions" data-fls-watcher="" data-fls-watcher-once="">
+									<div class="advantage__accordion advantage__accordion--active">
+										<h3 class="advantage__accordion-title">Engage</h3>
+										<p class="advantage__accordion-text">
+											Reach out to visitors proactively using personalized chatbot greetings. Turn website visits into sales opportunities.
+										</p>
+									</div>
+									<div class="advantage__accordion">
+										<h3 class="advantage__accordion-title">Nurture</h3>
+										<p class="advantage__accordion-text">Lead customers to a sale through recommended purchases and tailored offerings.</p>
+									</div>
+									<div class="advantage__accordion">
+										<h3 class="advantage__accordion-title">Qualify</h3>
+										<p class="advantage__accordion-text">
+											Generate and qualify prospects automatically. Transfer high-intent leads to your sales reps in real time to shorten the sales
+							cycle.
+										</p>
+									</div>
+								</div>
+								<div class="advantage__illustration" data-fls-watcher="" data-fls-watcher-once="">
+									<div class="advantage__widget">
+										<div class="advantage__widget-head">
+											<div class="advantage__widget-profile">
+												<span class="advantage__widget-avatar">
+													<img src="./assets/img/header/logo-mark.svg" width="24" height="24" alt="" loading="lazy">
+												</span>
+												<div class="advantage__widget-profile-text">
+													<p class="advantage__widget-name">Razor Robot</p>
+													<p class="advantage__widget-status">Online</p>
+												</div>
+											</div>
+											<svg class="advantage__widget-menu" aria-hidden="true" focusable="false">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-advantage-dots-vertical"></use>
+											</svg>
+										</div>
+										<div class="advantage__widget-body">
+											<div class="advantage__widget-turn">
+												<span class="advantage__widget-avatar advantage__widget-avatar--sm">
+													<img src="./assets/img/header/logo-mark.svg" width="16" height="16" alt="" loading="lazy">
+												</span>
+												<p class="advantage__widget-turn-name">Razor Robot</p>
+											</div>
+											<p class="advantage__widget-message">
+												No worries, we&rsquo;ve all been in a melancholy situation like that. To reset your password, go to the login page and click
+								on Forgot Password? Then, enter the email address and follow it.
+											</p>
+										</div>
+										<div class="advantage__widget-tabs">
+											<span class="advantage__widget-tab">Solutions</span>
+											<span class="advantage__widget-tab">Services</span>
+											<span class="advantage__widget-tab">Book a Call</span>
+											<span class="advantage__widget-tab">Complain</span>
+										</div>
+										<div class="advantage__widget-input">
+											<svg class="advantage__widget-input-icon" aria-hidden="true" focusable="false">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-advantage-emoji-smile"></use>
+											</svg>
+											<label class="visually-hidden" for="advantage-widget-message">Type here</label>
+											<input type="text" id="advantage-widget-message" name="advantage-widget-message" class="advantage__widget-input-placeholder" placeholder="Type here">
+											<svg class="advantage__widget-input-icon advantage__widget-input-icon--attach" aria-hidden="true" focusable="false">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-advantage-attach"></use>
+											</svg>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="templates" id="templates">
+						<div class="templates__container">
+							<div class="templates__intro">
+								<h2 class="templates__title" data-fls-watcher="" data-fls-watcher-once="">
+									Use
+									<span class="templates__highlight">templates</span>
+									to get started your project
+								</h2>
+								<div class="templates__tags-group" data-fls-watcher="" data-fls-watcher-once="">
+									<ul class="templates__tags">
+										<li class="templates__tag">E- Commerce</li>
+										<li class="templates__tag">Education</li>
+										<li class="templates__tag">Health Care</li>
+									</ul>
+									<ul class="templates__tags">
+										<li class="templates__tag">Financial</li>
+										<li class="templates__tag">HR</li>
+										<li class="templates__tag">Tourism</li>
+									</ul>
+								</div>
+							</div>
+							<div class="templates__cards" role="region" aria-label="Chatbot templates by industry" tabindex="0" data-fls-watcher="" data-fls-watcher-once="">
+								<article class="templates__card">
+									<div class="templates__card-media">
+										<div class="templates__card-image-wrap">
+											<img class="templates__card-image" src="./assets/img/templates/photos/chatbot-hr.svg" width="296" height="300" alt="" loading="lazy">
+										</div>
+										<div class="templates__card-chat">
+											<div class="templates__card-bubble templates__card-bubble--grey">
+												<p class="templates__card-bubble-text">Great Happy yo help find the right plan for you 🎯.</p>
+												<p class="templates__card-bubble-text">What are you lookin to do with Rotar AI</p>
+											</div>
+											<div class="templates__card-bubble templates__card-bubble--accent">
+												<p class="templates__card-bubble-text">Get more customer on my website page</p>
+											</div>
+										</div>
+									</div>
+									<div class="templates__card-body">
+										<h3 class="templates__card-title">Chatbot for Marketing</h3>
+										<p class="templates__card-text">Provide recommendations and process transactions in a chat.</p>
+									</div>
+									<a href="#" class="button templates__card-cta" data-fls-button="">
+										Try template for free
+										<span class="button__icon">
+											<svg aria-hidden="true" focusable="false">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-top-right"></use>
+											</svg>
+										</span>
+									</a>
+								</article>
+								<article class="templates__card">
+									<div class="templates__card-media">
+										<div class="templates__card-image-wrap">
+											<img class="templates__card-image" src="./assets/img/templates/photos/chatbot-hr.svg" width="296" height="300" alt="" loading="lazy">
+										</div>
+										<div class="templates__card-chat">
+											<div class="templates__card-bubble templates__card-bubble--grey">
+												<p class="templates__card-bubble-text">
+													You have qualified for the next round of interview, Alvarez! Please let me know your availability 🌟
+												</p>
+											</div>
+											<div class="templates__card-bubble templates__card-bubble--accent">
+												<p class="templates__card-bubble-text">Any time between 2 to 5 PM tomorrow</p>
+											</div>
+										</div>
+									</div>
+									<div class="templates__card-body">
+										<h3 class="templates__card-title">Chatbot for HR</h3>
+										<p class="templates__card-text">Find talent and interact with candidates in an innovative way</p>
+									</div>
+									<a href="#" class="button templates__card-cta" data-fls-button="">
+										Try template for free
+										<span class="button__icon">
+											<svg aria-hidden="true" focusable="false">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-top-right"></use>
+											</svg>
+										</span>
+									</a>
+								</article>
+								<article class="templates__card">
+									<div class="templates__card-media">
+										<div class="templates__card-image-wrap">
+											<img class="templates__card-image" src="./assets/img/templates/photos/chatbot-hr.svg" width="296" height="300" alt="" loading="lazy">
+										</div>
+										<div class="templates__card-chat">
+											<div class="templates__card-bubble templates__card-bubble--grey">
+												<p class="templates__card-bubble-text">Welcome aboard! I'm here to guide you through your first week 👋</p>
+											</div>
+											<div class="templates__card-bubble templates__card-bubble--accent">
+												<p class="templates__card-bubble-text">Where do I find the employee handbook?</p>
+											</div>
+										</div>
+									</div>
+									<div class="templates__card-body">
+										<h3 class="templates__card-title">Chatbot for Onboarding</h3>
+										<p class="templates__card-text">optimise your onboarding process and give your employee satisfaction</p>
+									</div>
+									<a href="#" class="button templates__card-cta" data-fls-button="">
+										Try template for free
+										<span class="button__icon">
+											<svg aria-hidden="true" focusable="false">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-top-right"></use>
+											</svg>
+										</span>
+									</a>
+								</article>
+							</div>
+						</div>
+					</section>
+					<section class="testimonials" id="testimonials">
+						<div class="testimonials__container">
+							<div class="testimonials__card">
+								<div class="testimonials__card-bg" aria-hidden="true"></div>
+								<div class="testimonials__header">
+									<h2 class="testimonials__title" data-fls-watcher="" data-fls-watcher-once="">What top-tier companies tell about our product</h2>
+									<p class="testimonials__subtitle" data-fls-watcher="" data-fls-watcher-once="">
+										Join the growing number of businesses and companies that have experienced the transformative impact of our chatbot services.
+									</p>
+								</div>
+								<div class="testimonials__row">
+									<div class="testimonials__photo" data-fls-watcher="" data-fls-watcher-once="">
+										<img class="testimonials__photo-image" src="./assets/img/testimonials/photos/placeholder.svg" width="559" height="533" alt="" loading="lazy">
+										<div class="testimonials__photo-overlay" aria-hidden="true"></div>
+										<div class="testimonials__photo-info">
+											<p class="testimonials__photo-name">Mbida Messi</p>
+											<p class="testimonials__photo-role">Founder ERC Music Market Store</p>
+										</div>
+									</div>
+									<div class="testimonials__slider swiper" data-fls-testimonials-slider="" data-fls-watcher="" data-fls-watcher-once="">
+										<div class="testimonials__slider-wrapper swiper-wrapper">
+											<div class="testimonials__slide swiper-slide">
+												<div class="testimonials__bubble">
+													<div class="testimonials__bubble-bg" aria-hidden="true"></div>
+													<span class="testimonials__badge">
+														<img class="testimonials__badge-icon" src="./assets/img/testimonials/icons/quote-badge.svg" width="24" height="24" alt="" loading="lazy">
+														Client Testimonial
+													</span>
+													<blockquote class="testimonials__quote">
+														I was amazed by the level of assistance I received from the AI Chatbot provided by RAZOR AI. It quickly understood my
+										questions and provided accurate and helpful responses.
+													</blockquote>
+												</div>
+											</div>
+											<div class="testimonials__slide swiper-slide">
+												<div class="testimonials__bubble">
+													<div class="testimonials__bubble-bg" aria-hidden="true"></div>
+													<span class="testimonials__badge">
+														<img class="testimonials__badge-icon" src="./assets/img/testimonials/icons/quote-badge.svg" width="24" height="24" alt="" loading="lazy">
+														Client Testimonial
+													</span>
+													<blockquote class="testimonials__quote">
+														Razor AI cut our average response time in half within the first week. Our support team finally has room to breathe.
+													</blockquote>
+												</div>
+											</div>
+											<div class="testimonials__slide swiper-slide">
+												<div class="testimonials__bubble">
+													<div class="testimonials__bubble-bg" aria-hidden="true"></div>
+													<span class="testimonials__badge">
+														<img class="testimonials__badge-icon" src="./assets/img/testimonials/icons/quote-badge.svg" width="24" height="24" alt="" loading="lazy">
+														Client Testimonial
+													</span>
+													<blockquote class="testimonials__quote">
+														The setup was effortless and the chatbot sounds exactly like our brand voice. Customers can't tell they're not talking
+										to a human.
+													</blockquote>
+												</div>
+											</div>
+											<div class="testimonials__slide swiper-slide">
+												<div class="testimonials__bubble">
+													<div class="testimonials__bubble-bg" aria-hidden="true"></div>
+													<span class="testimonials__badge">
+														<img class="testimonials__badge-icon" src="./assets/img/testimonials/icons/quote-badge.svg" width="24" height="24" alt="" loading="lazy">
+														Client Testimonial
+													</span>
+													<blockquote class="testimonials__quote">
+														We integrated Razor AI across three different products and it just works everywhere. Support tickets dropped by 40% in
+										the first month, and the team keeps finding new ways to put it to use.
+													</blockquote>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="testimonials__footer" data-fls-watcher="" data-fls-watcher-once="">
+										<div class="testimonials__counter" role="status" aria-live="polite"></div>
+										<a href="#" class="button testimonials__cta" data-fls-button="">
+											See more testimoni
+											<span class="button__icon">
+												<svg aria-hidden="true" focusable="false">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-top-right"></use>
+												</svg>
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="cta" id="cta">
+						<div class="cta__container">
+							<div class="cta__card">
+								<div class="cta__card-bg" aria-hidden="true"></div>
+								<h2 class="cta__title" data-fls-watcher="" data-fls-watcher-once="">Take control of your productivity with a GPT-4 chatbot now</h2>
+								<div class="cta__row" data-fls-watcher="" data-fls-watcher-once="">
+									<p class="cta__text">
+										Transform your Customer Service with Rotar&rsquo;s AI and GPT-4 Powered Chatbot Solution. Try it free now.
+									</p>
+									<div class="cta__actions">
+										<a href="#" class="button cta__demo" data-fls-button="">
+											Book a Demo
+											<span class="button__icon">
+												<svg aria-hidden="true" focusable="false">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-top-right"></use>
+												</svg>
+											</span>
+										</a>
+										<a href="#" class="button cta__contact" data-fls-button="">
+											Contact Us
+											<span class="button__icon">
+												<svg aria-hidden="true" focusable="false">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-cta-phone"></use>
+												</svg>
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container">
+					<div class="footer__top">
+						<nav class="footer__nav" aria-label="Footer">
+							<div class="footer__column">
+								<h3 class="footer__title">Company</h3>
+								<ul class="footer__list">
+									<li>
+										<a class="footer__link" href="#">About Rotar AI</a>
+									</li>
+									<li>
+										<a class="footer__link" href="#">Pricing</a>
+									</li>
+									<li>
+										<a class="footer__link" href="#">Demo</a>
+									</li>
+								</ul>
+							</div>
+							<div class="footer__column">
+								<h3 class="footer__title">Recources</h3>
+								<ul class="footer__list">
+									<li>
+										<a class="footer__link" href="#">Blog</a>
+									</li>
+									<li>
+										<a class="footer__link" href="#">Events</a>
+									</li>
+									<li>
+										<a class="footer__link" href="#">Tool Library</a>
+									</li>
+								</ul>
+							</div>
+							<div class="footer__column">
+								<h3 class="footer__title">Legal</h3>
+								<ul class="footer__list">
+									<li>
+										<a class="footer__link" href="#">Terms of Use</a>
+									</li>
+									<li>
+										<a class="footer__link" href="#">Privacy Policy</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+						<div class="footer__brand">
+							<p class="footer__brand-title">RAZOR AI</p>
+							<p class="footer__text">
+								We are at the forefront of AI chatbot development, revolutionizing the way businesses engage with their customers.
+							</p>
+						</div>
+					</div>
+					<div class="footer__bottom">
+						<nav class="footer__socials" aria-label="Social media">
+							<ul class="footer__socials-list">
+								<li>
+									<a class="footer__social" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+								</li>
+								<li>
+									<a class="footer__social" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+								</li>
+								<li>
+									<a class="footer__social" href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+								</li>
+								<li>
+									<a class="footer__social" href="#" target="_blank" rel="noopener noreferrer">Github</a>
+								</li>
+							</ul>
+						</nav>
+						<small class="footer__copyright">
+							<svg class="footer__badge" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-footer-badge"></use>
+							</svg>
+							Rotar AI. All Rights Reserved
+						</small>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
