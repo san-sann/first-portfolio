@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Get top stories, trending tech and sports news, curated for you on Aster News.">
+		<title>Aster News — Top Stories for You</title>
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1785226843745"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1785226843745">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1785226843745">
+		<link rel="modulepreload" crossorigin="" href="./js/newscard.min.js?v=1785226843745">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1785226843745">
+		<link rel="stylesheet" crossorigin="" href="./css/newscard.min.css?v=1785226843745">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1785226843745">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="wrapper__shell">
+				<header data-fls-header="" class="header">
+					<div class="header__logo">
+						<picture>
+							<img class="header__logo-img" alt="" loading="eager" src="./assets/img/header/logo.webp">
+						</picture>
+						<span class="header__logo-text">Aster News</span>
+					</div>
+					<div class="header__menu menu">
+						<button type="button" data-fls-menu="" class="menu__icon icon-menu" aria-expanded="false" aria-label="Open menu">
+							<span></span>
+						</button>
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="index.html" class="menu__link menu__link--active" aria-current="page">
+										<svg class="menu__link-icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-home"></use>
+										</svg>
+										<span class="menu__text">Top Stories</span>
+									</a>
+								</li>
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">
+										<svg class="menu__link-icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-globe"></use>
+										</svg>
+										<span class="menu__text">Around the World</span>
+									</a>
+								</li>
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">
+										<svg class="menu__link-icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-briefcase"></use>
+										</svg>
+										<span class="menu__text">Business</span>
+									</a>
+								</li>
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">
+										<svg class="menu__link-icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-activity"></use>
+										</svg>
+										<span class="menu__text">Health</span>
+									</a>
+								</li>
+								<li class="menu__divider" role="separator"></li>
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">
+										<svg class="menu__link-icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-shield"></use>
+										</svg>
+										<span class="menu__text">Covid 19</span>
+									</a>
+								</li>
+								<li class="menu__divider" role="separator"></li>
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">
+										<svg class="menu__link-icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-play-circle"></use>
+										</svg>
+										<span class="menu__text">Entertainment</span>
+									</a>
+								</li>
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">
+										<svg class="menu__link-icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-award"></use>
+										</svg>
+										<span class="menu__text">Sports</span>
+									</a>
+								</li>
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">
+										<svg class="menu__link-icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-message-circle"></use>
+										</svg>
+										<span class="menu__text">Discussion</span>
+									</a>
+								</li>
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">
+										<svg class="menu__link-icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-bell"></use>
+										</svg>
+										<span class="menu__text">Notification</span>
+									</a>
+								</li>
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">
+										<svg class="menu__link-icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-settings"></use>
+										</svg>
+										<span class="menu__text">News Feed Settings</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header__premium">
+						<div class="header__premium-top">
+							<svg class="header__premium-icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-gift"></use>
+							</svg>
+							<p class="header__premium-title">Subscribe to Premium</p>
+						</div>
+						<div class="header__premium-bottom">
+							<p class="header__premium-price">
+								<span class="header__premium-price-value">$8</span>
+								<span class="header__premium-price-unit">/m</span>
+							</p>
+							<button type="button" class="header__premium-button button" data-fls-button="">Upgrade</button>
+						</div>
+					</div>
+				</header>
+				<main class="page">
+					<div data-fls-toolbar="" class="toolbar">
+						<form class="toolbar__search" role="search" data-fls-form="dev">
+							<label for="toolbar-search-input" class="visually-hidden">Search for news</label>
+							<input id="toolbar-search-input" class="toolbar__search-input" type="search" name="form[search]" placeholder="Search for news..">
+							<button type="submit" class="toolbar__search-button" aria-label="Search" aria-expanded="false" aria-controls="toolbar-search-input" data-fls-toolbar-search-toggle="">
+								<svg class="toolbar__search-icon" aria-hidden="true" focusable="false">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+								</svg>
+							</button>
+						</form>
+						<a href="index.html" class="toolbar__covid">
+							<span class="toolbar__covid-text">
+								Latest news on
+								<strong class="toolbar__covid-accent">Covid-19</strong>
+							</span>
+							<svg class="toolbar__covid-icon" aria-hidden="true" focusable="false">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+							</svg>
+						</a>
+						<div class="toolbar__profile">
+							<button type="button" class="toolbar__profile-trigger" aria-expanded="false" aria-controls="toolbar-profile-menu" data-fls-toolbar-profile="">
+								<svg class="toolbar__profile-icon" aria-hidden="true" focusable="false">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-user"></use>
+								</svg>
+								<span class="toolbar__profile-name">My Profile</span>
+								<svg class="toolbar__profile-chevron" aria-hidden="true" focusable="false">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-down"></use>
+								</svg>
+							</button>
+							<ul class="toolbar__profile-menu" id="toolbar-profile-menu" hidden>
+								<li>
+									<a href="index.html" class="toolbar__profile-link">View Profile</a>
+								</li>
+								<li>
+									<a href="index.html" class="toolbar__profile-link">Read Later</a>
+								</li>
+								<li>
+									<a href="index.html" class="toolbar__profile-link">Account Settings</a>
+								</li>
+								<li>
+									<button type="button" class="toolbar__profile-link toolbar__profile-link--logout" data-fls-toolbar-signout="">Sign Out</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div data-fls-index="" class="index">
+						<div class="index__main">
+							<h1 class="visually-hidden">Top Stories for you — Aster News</h1>
+							<section class="top-stories" id="top-stories">
+								<div class="top-stories__head">
+									<h2 class="top-stories__title">Top Stories for you</h2>
+									<nav class="top-stories__filters" aria-label="Filter stories by topic">
+										<button type="button" class="top-stories__filter --active" aria-pressed="true">All</button>
+										<button type="button" class="top-stories__filter" aria-pressed="false">Android</button>
+										<button type="button" class="top-stories__filter" aria-pressed="false">Cricket</button>
+										<button type="button" class="top-stories__filter" aria-pressed="false">iPhone</button>
+										<button type="button" class="top-stories__filter" aria-pressed="false">Google</button>
+										<button type="button" class="top-stories__filter" aria-pressed="false">Nano Technology</button>
+										<button type="button" class="top-stories__filter" aria-pressed="false">Mental Health</button>
+										<div class="top-stories__filter-more">
+											<button type="button" class="top-stories__filter-more-trigger" aria-expanded="false" aria-controls="top-stories-more-filters" aria-label="More topics" data-fls-topstories-more="">
+												<svg class="top-stories__filter-more-icon" aria-hidden="true" focusable="false">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-more-horizontal"></use>
+												</svg>
+											</button>
+											<div class="top-stories__filter-dropdown" id="top-stories-more-filters" hidden>
+												<button type="button" class="top-stories__filter" aria-pressed="false">Business</button>
+												<button type="button" class="top-stories__filter" aria-pressed="false">Health</button>
+												<button type="button" class="top-stories__filter" aria-pressed="false">Entertainment</button>
+												<button type="button" class="top-stories__filter" aria-pressed="false">Sports</button>
+											</div>
+										</div>
+									</nav>
+								</div>
+								<div class="top-stories__list">
+									<article data-fls-newscard="" class="newscard newscard--featured">
+										<a href="article.html" class="newscard__link">
+											<div class="newscard__body">
+												<h3 class="newscard__title">Samsung Galaxy F22 launched in India: Price, features, other details</h3>
+												<p class="newscard__text">
+													Samsung Galaxy F22 has been launched in India. The new smartphone has been priced in the mid-range segment. The new smartphone is powered by a MediaTek chipset and features a high refresh rate AMOLED display.
+												</p>
+											</div>
+											<div class="newscard__image-wrap">
+												<picture>
+													<source media="(max-width: 600px)" srcset="./assets/img/top-stories/top-stories-photos-1-600.webp" type="image/webp">
+													<img class="newscard__image" alt="Samsung Galaxy F22 shown from the front and back on a green background" loading="lazy" src="./assets/img/top-stories/top-stories-photos-1.webp">
+												</picture>
+											</div>
+										</a>
+										<div class="newscard__meta">
+											<p class="newscard__info">
+												<span class="newscard__source">The Mint</span>
+												<span class="newscard__dot" aria-hidden="true"></span>
+												<span class="newscard__time">15 mins ago</span>
+											</p>
+											<div class="newscard__actions">
+												<button type="button" class="newscard__action newscard__action--share" data-fls-newscard-share="" aria-label="Share this story">
+													<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-share"></use>
+													</svg>
+													<span class="newscard__action-label">Share</span>
+												</button>
+												<button type="button" class="newscard__action newscard__action--save" data-fls-newscard-save="" aria-pressed="false">
+													<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-pocket"></use>
+													</svg>
+													<span class="newscard__action-label">Read Later</span>
+												</button>
+											</div>
+										</div>
+									</article>
+									<article data-fls-newscard="" class="newscard newscard--standard">
+										<a href="article.html" class="newscard__link">
+											<div class="newscard__body">
+												<h3 class="newscard__title">Battlegrounds Mobile India iOS release date</h3>
+												<p class="newscard__text">The reason behind their disappointment is that iPhone users have been..</p>
+											</div>
+											<div class="newscard__image-wrap">
+												<picture>
+													<img class="newscard__image" alt="Battlegrounds Mobile India promotional artwork with a soldier character" loading="lazy" src="./assets/img/top-stories/top-stories-photos-2.webp">
+												</picture>
+											</div>
+										</a>
+										<div class="newscard__meta">
+											<p class="newscard__info">
+												<span class="newscard__source">Sport Biz</span>
+												<span class="newscard__dot" aria-hidden="true"></span>
+												<span class="newscard__time">42 mins ago</span>
+											</p>
+											<div class="newscard__actions">
+												<button type="button" class="newscard__action newscard__action--share" data-fls-newscard-share="" aria-label="Share this story">
+													<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-share"></use>
+													</svg>
+													<span class="newscard__action-label">Share</span>
+												</button>
+												<button type="button" class="newscard__action newscard__action--save" data-fls-newscard-save="" aria-pressed="false">
+													<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-pocket"></use>
+													</svg>
+													<span class="newscard__action-label">Read Later</span>
+												</button>
+											</div>
+										</div>
+									</article>
+									<article data-fls-newscard="" class="newscard newscard--standard">
+										<a href="article.html" class="newscard__link">
+											<div class="newscard__body">
+												<h3 class="newscard__title">Instagram working on ‘Exclusive Stories’ for subscribers</h3>
+												<p class="newscard__text">Instagram could be jumping on the paid subscription..</p>
+											</div>
+											<div class="newscard__image-wrap">
+												<picture>
+													<img class="newscard__image" alt="Instagram app logo displayed on a smartphone screen" loading="lazy" src="./assets/img/top-stories/top-stories-photos-3.webp">
+												</picture>
+											</div>
+										</a>
+										<div class="newscard__meta">
+											<p class="newscard__info">
+												<span class="newscard__source">The Mint</span>
+												<span class="newscard__dot" aria-hidden="true"></span>
+												<span class="newscard__time">52 mins ago</span>
+											</p>
+											<div class="newscard__actions">
+												<button type="button" class="newscard__action newscard__action--share" data-fls-newscard-share="" aria-label="Share this story">
+													<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-share"></use>
+													</svg>
+													<span class="newscard__action-label">Share</span>
+												</button>
+												<button type="button" class="newscard__action newscard__action--save" data-fls-newscard-save="" aria-pressed="false">
+													<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-pocket"></use>
+													</svg>
+													<span class="newscard__action-label">Read Later</span>
+												</button>
+											</div>
+										</div>
+									</article>
+									<article data-fls-newscard="" class="newscard newscard--standard">
+										<a href="article.html" class="newscard__link">
+											<div class="newscard__body">
+												<h3 class="newscard__title">
+													Petrol, diesel prices -  July 6: Fuel prices unchanged after touching record high
+												</h3>
+												<p class="newscard__text">
+													The price of petrol remained unchanged on July 6 after reaching a new record high on the previous day, according to a price notification by state-owned..
+												</p>
+											</div>
+										</a>
+										<div class="newscard__meta">
+											<p class="newscard__info">
+												<span class="newscard__source">Radar 52</span>
+												<span class="newscard__dot" aria-hidden="true"></span>
+												<span class="newscard__time">1 hour ago</span>
+											</p>
+											<div class="newscard__actions">
+												<button type="button" class="newscard__action newscard__action--share" data-fls-newscard-share="" aria-label="Share this story">
+													<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-share"></use>
+													</svg>
+													<span class="newscard__action-label">Share</span>
+												</button>
+												<button type="button" class="newscard__action newscard__action--save" data-fls-newscard-save="" aria-pressed="false">
+													<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-pocket"></use>
+													</svg>
+													<span class="newscard__action-label">Read Later</span>
+												</button>
+											</div>
+										</div>
+									</article>
+									<article data-fls-newscard="" class="newscard newscard--standard">
+										<a href="article.html" class="newscard__link">
+											<div class="newscard__body">
+												<h3 class="newscard__title">Android smartphone users alert! Remove these 9 apps now</h3>
+												<p class="newscard__text">Stealer trojans were spread as harmless software..</p>
+											</div>
+											<div class="newscard__image-wrap">
+												<picture>
+													<img class="newscard__image" alt="Person typing on a laptop keyboard" loading="lazy" src="./assets/img/top-stories/top-stories-photos-4.webp">
+												</picture>
+											</div>
+										</a>
+										<div class="newscard__meta">
+											<p class="newscard__info">
+												<span class="newscard__source">Live Mint</span>
+												<span class="newscard__dot" aria-hidden="true"></span>
+												<span class="newscard__time">2 hours ago</span>
+											</p>
+											<div class="newscard__actions">
+												<button type="button" class="newscard__action newscard__action--share" data-fls-newscard-share="" aria-label="Share this story">
+													<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-share"></use>
+													</svg>
+													<span class="newscard__action-label">Share</span>
+												</button>
+												<button type="button" class="newscard__action newscard__action--save" data-fls-newscard-save="" aria-pressed="false">
+													<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-pocket"></use>
+													</svg>
+													<span class="newscard__action-label">Read Later</span>
+												</button>
+											</div>
+										</div>
+									</article>
+									<article data-fls-newscard="" class="newscard newscard--standard">
+										<a href="article.html" class="newscard__link">
+											<div class="newscard__body">
+												<h3 class="newscard__title">How to install Windows 11 on almost any unsupported PC</h3>
+												<p class="newscard__text">Microsoft is allowing some unsupported computers..</p>
+											</div>
+											<div class="newscard__image-wrap">
+												<picture>
+													<img class="newscard__image" alt="Windows 11 logo on a blue abstract background" loading="lazy" src="./assets/img/top-stories/top-stories-photos-5.webp">
+												</picture>
+											</div>
+										</a>
+										<div class="newscard__meta">
+											<p class="newscard__info">
+												<span class="newscard__source">Tech Mint</span>
+												<span class="newscard__dot" aria-hidden="true"></span>
+												<span class="newscard__time">3 hours ago</span>
+											</p>
+											<div class="newscard__actions">
+												<button type="button" class="newscard__action newscard__action--share" data-fls-newscard-share="" aria-label="Share this story">
+													<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-share"></use>
+													</svg>
+													<span class="newscard__action-label">Share</span>
+												</button>
+												<button type="button" class="newscard__action newscard__action--save" data-fls-newscard-save="" aria-pressed="false">
+													<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-pocket"></use>
+													</svg>
+													<span class="newscard__action-label">Read Later</span>
+												</button>
+											</div>
+										</div>
+									</article>
+									<article data-fls-newscard="" class="newscard newscard--standard">
+										<a href="article.html" class="newscard__link">
+											<div class="newscard__body">
+												<h3 class="newscard__title">This charging feature from Android phones may come to iPhone 13</h3>
+												<p class="newscard__text">You will always find a set of people who will say that..</p>
+											</div>
+											<div class="newscard__image-wrap">
+												<picture>
+													<img class="newscard__image" alt="iPhones on display charging at an Apple Store table" loading="lazy" src="./assets/img/top-stories/top-stories-photos-6.webp">
+												</picture>
+											</div>
+										</a>
+										<div class="newscard__meta">
+											<p class="newscard__info">
+												<span class="newscard__source">Live Mint</span>
+												<span class="newscard__dot" aria-hidden="true"></span>
+												<span class="newscard__time">5 hours ago</span>
+											</p>
+											<div class="newscard__actions">
+												<button type="button" class="newscard__action newscard__action--share" data-fls-newscard-share="" aria-label="Share this story">
+													<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-share"></use>
+													</svg>
+													<span class="newscard__action-label">Share</span>
+												</button>
+												<button type="button" class="newscard__action newscard__action--save" data-fls-newscard-save="" aria-pressed="false">
+													<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-pocket"></use>
+													</svg>
+													<span class="newscard__action-label">Read Later</span>
+												</button>
+											</div>
+										</div>
+									</article>
+								</div>
+							</section>
+							<section class="creators" id="creators">
+								<div class="creators__head">
+									<svg class="creators__icon" aria-hidden="true" focusable="false">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-feather"></use>
+									</svg>
+									<h2 class="creators__title">Creators you should follow</h2>
+									<div class="creators__nav">
+										<button type="button" class="creators__arrow creators__arrow--prev" aria-label="Previous creator">
+											<svg class="creators__arrow-icon" aria-hidden="true" focusable="false">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</button>
+										<button type="button" class="creators__arrow creators__arrow--next" aria-label="Next creator">
+											<svg class="creators__arrow-icon" aria-hidden="true" focusable="false">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+								<div class="creators__slider swiper" data-fls-creators-slider="">
+									<ul class="creators__wrapper swiper-wrapper">
+										<li class="swiper-slide creators__card">
+											<picture>
+												<img class="creators__avatar" alt="" loading="lazy" src="./assets/img/creators/avatars/creators-avatar-1.webp">
+											</picture>
+											<p class="creators__name">Shan Teylor</p>
+											<p class="creators__source">Tech Mint</p>
+											<button type="button" class="creators__follow button" data-fls-button="">Follow</button>
+										</li>
+										<li class="swiper-slide creators__card">
+											<picture>
+												<img class="creators__avatar" alt="" loading="lazy" src="./assets/img/creators/avatars/creators-avatar-2.webp">
+											</picture>
+											<p class="creators__name">Mary Angela</p>
+											<p class="creators__source">Live Mint</p>
+											<button type="button" class="creators__follow button" data-fls-button="">Follow</button>
+										</li>
+										<li class="swiper-slide creators__card">
+											<picture>
+												<img class="creators__avatar" alt="" loading="lazy" src="./assets/img/creators/avatars/creators-avatar-3.webp">
+											</picture>
+											<p class="creators__name">Kyon Cho Chi</p>
+											<p class="creators__source">Bizz Daily</p>
+											<button type="button" class="creators__follow button" data-fls-button="">Follow</button>
+										</li>
+										<li class="swiper-slide creators__card">
+											<picture>
+												<img class="creators__avatar" alt="" loading="lazy" src="./assets/img/creators/avatars/creators-avatar-4.webp">
+											</picture>
+											<p class="creators__name">Paul Livingstone</p>
+											<p class="creators__source">Sport Biz</p>
+											<button type="button" class="creators__follow button" data-fls-button="">Follow</button>
+										</li>
+										<li class="swiper-slide creators__card">
+											<picture>
+												<img class="creators__avatar" alt="" loading="lazy" src="./assets/img/creators/avatars/creators-avatar-5.webp">
+											</picture>
+											<p class="creators__name">Sara Jay</p>
+											<p class="creators__source">Radar 52</p>
+											<button type="button" class="creators__follow button" data-fls-button="">Follow</button>
+										</li>
+										<li class="swiper-slide creators__card">
+											<picture>
+												<img class="creators__avatar" alt="" loading="lazy" src="./assets/img/creators/avatars/creators-avatar-1.webp">
+											</picture>
+											<p class="creators__name">Marcus Cruz</p>
+											<p class="creators__source">The Mint</p>
+											<button type="button" class="creators__follow button" data-fls-button="">Follow</button>
+										</li>
+										<li class="swiper-slide creators__card">
+											<picture>
+												<img class="creators__avatar" alt="" loading="lazy" src="./assets/img/creators/avatars/creators-avatar-2.webp">
+											</picture>
+											<p class="creators__name">Elena Webb</p>
+											<p class="creators__source">Tech Mint</p>
+											<button type="button" class="creators__follow button" data-fls-button="">Follow</button>
+										</li>
+										<li class="swiper-slide creators__card">
+											<picture>
+												<img class="creators__avatar" alt="" loading="lazy" src="./assets/img/creators/avatars/creators-avatar-3.webp">
+											</picture>
+											<p class="creators__name">Priya Nair</p>
+											<p class="creators__source">Bizz Daily</p>
+											<button type="button" class="creators__follow button" data-fls-button="">Follow</button>
+										</li>
+										<li class="swiper-slide creators__card">
+											<picture>
+												<img class="creators__avatar" alt="" loading="lazy" src="./assets/img/creators/avatars/creators-avatar-4.webp">
+											</picture>
+											<p class="creators__name">Tom Baker</p>
+											<p class="creators__source">Cric Mint</p>
+											<button type="button" class="creators__follow button" data-fls-button="">Follow</button>
+										</li>
+										<li class="swiper-slide creators__card">
+											<picture>
+												<img class="creators__avatar" alt="" loading="lazy" src="./assets/img/creators/avatars/creators-avatar-5.webp">
+											</picture>
+											<p class="creators__name">Nadia Voss</p>
+											<p class="creators__source">Live Mint</p>
+											<button type="button" class="creators__follow button" data-fls-button="">Follow</button>
+										</li>
+									</ul>
+								</div>
+								<div class="creators__news" data-fls-showmore="items">
+									<div class="creators__list" data-fls-showmore-content="4">
+										<article data-fls-newscard="" class="newscard newscard--standard">
+											<a href="article.html" class="newscard__link">
+												<div class="newscard__body">
+													<h3 class="newscard__title">INDvENG Tests to be played in front of crowd</h3>
+													<p class="newscard__text">
+														The 5-Test series between India &amp; England is set to be played in front of packed..
+													</p>
+												</div>
+												<div class="newscard__image-wrap">
+													<picture>
+														<img class="newscard__image" alt="Cricket player celebrating during a match" loading="lazy" src="./assets/img/creators/cards/creators-card-image-1.webp">
+													</picture>
+												</div>
+											</a>
+											<div class="newscard__meta">
+												<p class="newscard__info">
+													<span class="newscard__source">Sport Biz</span>
+													<span class="newscard__dot" aria-hidden="true"></span>
+													<span class="newscard__time">7 hours ago</span>
+												</p>
+												<div class="newscard__actions">
+													<button type="button" class="newscard__action newscard__action--share" data-fls-newscard-share="" aria-label="Share this story">
+														<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-share"></use>
+														</svg>
+														<span class="newscard__action-label">Share</span>
+													</button>
+													<button type="button" class="newscard__action newscard__action--save" data-fls-newscard-save="" aria-pressed="false">
+														<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-pocket"></use>
+														</svg>
+														<span class="newscard__action-label">Read Later</span>
+													</button>
+												</div>
+											</div>
+										</article>
+										<article data-fls-newscard="" class="newscard newscard--standard">
+											<a href="article.html" class="newscard__link">
+												<div class="newscard__body">
+													<h3 class="newscard__title">Biden’s cold response to Afghanistan’s collapse to have far consequences</h3>
+													<p class="newscard__text">
+														When US President Joe Biden chose in April to withdraw all American forces from Afghanistan by September, we were among those who judged..
+													</p>
+												</div>
+											</a>
+											<div class="newscard__meta">
+												<p class="newscard__info">
+													<span class="newscard__source">Radar 52</span>
+													<span class="newscard__dot" aria-hidden="true"></span>
+													<span class="newscard__time">8 hours ago</span>
+												</p>
+												<div class="newscard__actions">
+													<button type="button" class="newscard__action newscard__action--share" data-fls-newscard-share="" aria-label="Share this story">
+														<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-share"></use>
+														</svg>
+														<span class="newscard__action-label">Share</span>
+													</button>
+													<button type="button" class="newscard__action newscard__action--save" data-fls-newscard-save="" aria-pressed="false">
+														<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-pocket"></use>
+														</svg>
+														<span class="newscard__action-label">Read Later</span>
+													</button>
+												</div>
+											</div>
+										</article>
+										<article data-fls-newscard="" class="newscard newscard--standard">
+											<a href="article.html" class="newscard__link">
+												<div class="newscard__body">
+													<h3 class="newscard__title">The 10 Coolest Wearable Tech Gadgets Of 2021 (So Far)</h3>
+													<p class="newscard__text">Driven by demand for connected earbuds and a..</p>
+												</div>
+												<div class="newscard__image-wrap">
+													<picture>
+														<img class="newscard__image" alt="Smartwatch on a person’s wrist showing a fitness app" loading="lazy" src="./assets/img/creators/cards/creators-card-image-2.webp">
+													</picture>
+												</div>
+											</a>
+											<div class="newscard__meta">
+												<p class="newscard__info">
+													<span class="newscard__source">The Mint</span>
+													<span class="newscard__dot" aria-hidden="true"></span>
+													<span class="newscard__time">7 hours ago</span>
+												</p>
+												<div class="newscard__actions">
+													<button type="button" class="newscard__action newscard__action--share" data-fls-newscard-share="" aria-label="Share this story">
+														<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-share"></use>
+														</svg>
+														<span class="newscard__action-label">Share</span>
+													</button>
+													<button type="button" class="newscard__action newscard__action--save" data-fls-newscard-save="" aria-pressed="false">
+														<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-pocket"></use>
+														</svg>
+														<span class="newscard__action-label">Read Later</span>
+													</button>
+												</div>
+											</div>
+										</article>
+										<article data-fls-newscard="" class="newscard newscard--standard">
+											<a href="article.html" class="newscard__link">
+												<div class="newscard__body">
+													<h3 class="newscard__title">Hardik Pandya ‘is bowling and it is a very good sign’ - Suryakumar</h3>
+													<p class="newscard__text">I think that the team management and Hardik..</p>
+												</div>
+												<div class="newscard__image-wrap">
+													<picture>
+														<img class="newscard__image" alt="Cricketer in a blue India jersey bowling during a match" loading="lazy" src="./assets/img/creators/cards/creators-card-image-3.webp">
+													</picture>
+												</div>
+											</a>
+											<div class="newscard__meta">
+												<p class="newscard__info">
+													<span class="newscard__source">Cric Mint</span>
+													<span class="newscard__dot" aria-hidden="true"></span>
+													<span class="newscard__time">9 hours ago</span>
+												</p>
+												<div class="newscard__actions">
+													<button type="button" class="newscard__action newscard__action--share" data-fls-newscard-share="" aria-label="Share this story">
+														<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-share"></use>
+														</svg>
+														<span class="newscard__action-label">Share</span>
+													</button>
+													<button type="button" class="newscard__action newscard__action--save" data-fls-newscard-save="" aria-pressed="false">
+														<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-pocket"></use>
+														</svg>
+														<span class="newscard__action-label">Read Later</span>
+													</button>
+												</div>
+											</div>
+										</article>
+										<article data-fls-newscard="" class="newscard newscard--standard">
+											<a href="article.html" class="newscard__link">
+												<div class="newscard__body">
+													<h3 class="newscard__title">Battlegrounds Mobile India now supports 90fps on more devices</h3>
+													<p class="newscard__text">
+														The battle royale title has expanded high refresh-rate support to a wider range of budget Android phones..
+													</p>
+												</div>
+												<div class="newscard__image-wrap">
+													<picture>
+														<img class="newscard__image" alt="Battlegrounds Mobile India promotional artwork with a soldier character" loading="lazy" src="./assets/img/top-stories/top-stories-photos-2.webp">
+													</picture>
+												</div>
+											</a>
+											<div class="newscard__meta">
+												<p class="newscard__info">
+													<span class="newscard__source">Tech Mint</span>
+													<span class="newscard__dot" aria-hidden="true"></span>
+													<span class="newscard__time">10 hours ago</span>
+												</p>
+												<div class="newscard__actions">
+													<button type="button" class="newscard__action newscard__action--share" data-fls-newscard-share="" aria-label="Share this story">
+														<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-share"></use>
+														</svg>
+														<span class="newscard__action-label">Share</span>
+													</button>
+													<button type="button" class="newscard__action newscard__action--save" data-fls-newscard-save="" aria-pressed="false">
+														<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-pocket"></use>
+														</svg>
+														<span class="newscard__action-label">Read Later</span>
+													</button>
+												</div>
+											</div>
+										</article>
+										<article data-fls-newscard="" class="newscard newscard--standard">
+											<a href="article.html" class="newscard__link">
+												<div class="newscard__body">
+													<h3 class="newscard__title">5G rollout in India: what it means for your next phone upgrade</h3>
+													<p class="newscard__text">
+														Telecom operators are racing to light up 5G towers across major cities, but handset compatibility remains the real bottleneck..
+													</p>
+												</div>
+											</a>
+											<div class="newscard__meta">
+												<p class="newscard__info">
+													<span class="newscard__source">Live Mint</span>
+													<span class="newscard__dot" aria-hidden="true"></span>
+													<span class="newscard__time">11 hours ago</span>
+												</p>
+												<div class="newscard__actions">
+													<button type="button" class="newscard__action newscard__action--share" data-fls-newscard-share="" aria-label="Share this story">
+														<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-share"></use>
+														</svg>
+														<span class="newscard__action-label">Share</span>
+													</button>
+													<button type="button" class="newscard__action newscard__action--save" data-fls-newscard-save="" aria-pressed="false">
+														<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-pocket"></use>
+														</svg>
+														<span class="newscard__action-label">Read Later</span>
+													</button>
+												</div>
+											</div>
+										</article>
+										<article data-fls-newscard="" class="newscard newscard--standard">
+											<a href="article.html" class="newscard__link">
+												<div class="newscard__body">
+													<h3 class="newscard__title">Remote work tools that quietly became essential this year</h3>
+													<p class="newscard__text">
+														From async video updates to lightweight project trackers, the tools teams lean on have shifted since 2020..
+													</p>
+												</div>
+												<div class="newscard__image-wrap">
+													<picture>
+														<img class="newscard__image" alt="Person typing on a laptop keyboard" loading="lazy" src="./assets/img/top-stories/top-stories-photos-4.webp">
+													</picture>
+												</div>
+											</a>
+											<div class="newscard__meta">
+												<p class="newscard__info">
+													<span class="newscard__source">Bizz Daily</span>
+													<span class="newscard__dot" aria-hidden="true"></span>
+													<span class="newscard__time">12 hours ago</span>
+												</p>
+												<div class="newscard__actions">
+													<button type="button" class="newscard__action newscard__action--share" data-fls-newscard-share="" aria-label="Share this story">
+														<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-share"></use>
+														</svg>
+														<span class="newscard__action-label">Share</span>
+													</button>
+													<button type="button" class="newscard__action newscard__action--save" data-fls-newscard-save="" aria-pressed="false">
+														<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-pocket"></use>
+														</svg>
+														<span class="newscard__action-label">Read Later</span>
+													</button>
+												</div>
+											</div>
+										</article>
+										<article data-fls-newscard="" class="newscard newscard--standard">
+											<a href="article.html" class="newscard__link">
+												<div class="newscard__body">
+													<h3 class="newscard__title">Battery health features you should turn on right now</h3>
+													<p class="newscard__text">
+														A handful of buried settings can add months to your phone’s usable battery life before it needs replacing..
+													</p>
+												</div>
+												<div class="newscard__image-wrap">
+													<picture>
+														<img class="newscard__image" alt="iPhones on display charging at an Apple Store table" loading="lazy" src="./assets/img/top-stories/top-stories-photos-6.webp">
+													</picture>
+												</div>
+											</a>
+											<div class="newscard__meta">
+												<p class="newscard__info">
+													<span class="newscard__source">The Mint</span>
+													<span class="newscard__dot" aria-hidden="true"></span>
+													<span class="newscard__time">13 hours ago</span>
+												</p>
+												<div class="newscard__actions">
+													<button type="button" class="newscard__action newscard__action--share" data-fls-newscard-share="" aria-label="Share this story">
+														<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-share"></use>
+														</svg>
+														<span class="newscard__action-label">Share</span>
+													</button>
+													<button type="button" class="newscard__action newscard__action--save" data-fls-newscard-save="" aria-pressed="false">
+														<svg class="newscard__action-icon" aria-hidden="true" focusable="false">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-pocket"></use>
+														</svg>
+														<span class="newscard__action-label">Read Later</span>
+													</button>
+												</div>
+											</div>
+										</article>
+									</div>
+									<button hidden type="button" class="creators__more" data-fls-showmore-button="">
+										<span>Show More</span>
+										<span>Show Less</span>
+									</button>
+								</div>
+							</section>
+						</div>
+						<aside data-fls-widgets="" class="widgets">
+							<div class="widgets__body">
+								<div class="widgets__weather" data-fls-tabs="">
+									<div class="widgets__weather-head">
+										<h2 class="widgets__weather-city">Coimbatore, Tamil Nadu</h2>
+										<button type="button" class="widgets__weather-locate" aria-label="Detect my location">
+											<svg class="widgets__weather-locate-icon" aria-hidden="true" focusable="false">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-crosshair"></use>
+											</svg>
+										</button>
+									</div>
+									<div class="widgets__weather-divider" aria-hidden="true"></div>
+									<div class="widgets__weather-body">
+										<div class="widgets__weather-info">
+											<p class="widgets__weather-condition">Sunny</p>
+											<div class="widgets__weather-temp" data-fls-tabs-body="">
+												<p class="widgets__weather-value">
+													31
+													<span class="widgets__weather-deg">&deg;</span>
+													c
+												</p>
+												<p class="widgets__weather-value">
+													87.8
+													<span class="widgets__weather-deg">&deg;</span>
+													f
+												</p>
+											</div>
+										</div>
+										<svg class="widgets__weather-icon" aria-hidden="true" focusable="false">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-sun"></use>
+										</svg>
+									</div>
+									<nav class="widgets__weather-units" data-fls-tabs-titles="" aria-label="Temperature unit">
+										<button type="button" class="widgets__weather-unit --tab-active">Celsius</button>
+										<button type="button" class="widgets__weather-unit">Fahrenheit</button>
+									</nav>
+								</div>
+								<div class="widgets__story">
+									<div class="widgets__story-head">
+										<svg class="widgets__story-icon" aria-hidden="true" focusable="false">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-feather"></use>
+										</svg>
+										<h2 class="widgets__story-title">Become a Story Writer</h2>
+									</div>
+									<div class="widgets__story-body">
+										<p class="widgets__story-text">Contribute stories and start earning.</p>
+										<a href="#contact" class="widgets__story-link button" data-fls-button="">Know More</a>
+									</div>
+								</div>
+								<div class="widgets__bytes">
+									<div class="widgets__bytes-head">
+										<svg class="widgets__bytes-icon" aria-hidden="true" focusable="false">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-file-text"></use>
+										</svg>
+										<h2 class="widgets__bytes-title">Quick Bytes</h2>
+										<div class="widgets__bytes-nav">
+											<button type="button" class="widgets__bytes-arrow widgets__bytes-arrow--prev" aria-label="Previous quick byte">
+												<svg class="widgets__bytes-arrow-icon" aria-hidden="true" focusable="false">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-right"></use>
+												</svg>
+											</button>
+											<button type="button" class="widgets__bytes-arrow widgets__bytes-arrow--next" aria-label="Next quick byte">
+												<svg class="widgets__bytes-arrow-icon" aria-hidden="true" focusable="false">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-right"></use>
+												</svg>
+											</button>
+										</div>
+									</div>
+									<div class="widgets__bytes-divider" aria-hidden="true"></div>
+									<div class="widgets__bytes-slider swiper" data-fls-slider="">
+										<div class="widgets__bytes-wrapper swiper-wrapper">
+											<div class="swiper-slide widgets__bytes-slide">
+												<p>
+													The price of petrol remained unchanged on July 6 after reaching a new record high on the previous day, according to a price
+							notification by state-owned fuel retailers. The diesel price remained stable for the second consecutive day.
+												</p>
+												<p>
+													The increase on July 5, 35th in two months, took the petrol price in Delhi closer to Rs 100 per litre-mark. The petrol price
+							in the national capital soared to Rs 99.9 a litre and diesel was priced at Rs 89.4 per litre, according to Bharat Petroleum's
+							price listing.
+												</p>
+											</div>
+											<div class="swiper-slide widgets__bytes-slide">
+												<p>
+													Placeholder quick byte — swap this text for the next trending business headline summary once it's ready.
+												</p>
+												<p>
+													The increase on July 5, 35th in two months, took the petrol price in Delhi closer to Rs 100 per litre-mark.
+												</p>
+											</div>
+											<div class="swiper-slide widgets__bytes-slide">
+												<p>
+													Placeholder quick byte — swap this text for the next trending health headline summary once it's ready.
+												</p>
+											</div>
+											<div class="swiper-slide widgets__bytes-slide">
+												<p>
+													The petrol price in the national capital soared to Rs 99.9 a litre and diesel was priced at Rs 89.4 per litre, according to
+							Bharat Petroleum's price listing.
+												</p>
+												<p>
+													Placeholder quick byte — swap this text for the next trending sports headline summary once it's ready.
+												</p>
+											</div>
+											<div class="swiper-slide widgets__bytes-slide">
+												<p>
+													Placeholder quick byte — swap this text for the next trending entertainment headline summary once it's ready.
+												</p>
+												<p>
+													The increase on July 5, 35th in two months, took the petrol price in Delhi closer to Rs 100 per litre-mark. The petrol price in the national capital soared to Rs 99.9 a litre and diesel was priced at Rs 89.4 per litre, according to Bharat Petroleum's price listing.
+												</p>
+											</div>
+											<div class="swiper-slide widgets__bytes-slide">
+												<p>
+													The increase on July 5, 35th in two months, took the petrol price in Delhi closer to Rs 100 per litre-mark.
+												</p>
+											</div>
+										</div>
+										<div class="widgets__bytes-pagination swiper-pagination"></div>
+									</div>
+								</div>
+								<div class="widgets__newsletter">
+									<h2 class="widgets__newsletter-title">Subscribe to our newsletter</h2>
+									<form class="widgets__newsletter-form" data-fls-form="dev">
+										<label for="widgets-newsletter-email" class="visually-hidden">Email address</label>
+										<input id="widgets-newsletter-email" class="widgets__newsletter-input input" type="email" name="form[email]" required autocomplete="email" placeholder="Enter Email" data-fls-form-errtext="Enter a valid email address">
+										<button type="submit" class="widgets__newsletter-button button" data-fls-button="">Subscribe</button>
+									</form>
+								</div>
+							</div>
+						</aside>
+					</div>
+				</main>
+			</div>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__row">
+					<p class="footer__copyright">© Aster News, 2025</p>
+					<nav class="footer__links" aria-label="Legal">
+						<a href="privacy-policy.html" class="footer__link">Privacy Policy</a>
+						<a href="terms-of-service.html" class="footer__link">Terms of Service</a>
+					</nav>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
