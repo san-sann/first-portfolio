@@ -1,0 +1,1243 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script>
+      history.scrollRestoration = "manual";
+		</script>
+		<script>
+    // Демо-наповнення кошика при першому візиті: інакше відвідувач ніколи не
+    // побачить зверстану Cart Page (реальний магазин стартує порожнім, і
+    // cart.html одразу веде на emptycart.html). Підключено в head синхронно,
+    // до розмітки й модулів — щоб guard у cart.html бачив уже наповнений стан,
+    // а лічильник у шапці збігався на всіх сторінках.
+    // Прапорець ставиться назавжди, тож видалення всіх товарів веде на
+    // emptycart.html і повторного наповнення не буде — обидва стани досяжні.
+    // Шляхи до фото відносні, без аліасу @img: заміна аліасів працює лише для
+    // атрибутів розмітки та .js-файлів, не для тіла інлайн-скрипта.
+    // ВАЖЛИВО: жодних кутових дужок у цих коментарях — posthtml читає їх як
+    // теги і мовчки обрізає скрипт на проді (у dev при цьому все працює).
+    try {
+      if (!localStorage.getItem('euphoria-cart-seeded')) {
+        localStorage.setItem('euphoria-cart-seeded', '1')
+        if (!localStorage.getItem('euphoria-cart')) {
+          localStorage.setItem(
+            'euphoria-cart',
+            JSON.stringify([{
+                id: 'blue-flower-print-crop-top',
+                title: 'Blue Flower Print Crop Top',
+                price: 29,
+                shipping: 0,
+                qty: 1,
+                size: 'M',
+                color: 'Yellow',
+                image: 'assets/img/cart/products/photos/photo-1.jpg',
+                alt: 'Blue flower print crop top on a model',
+              },
+              {
+                id: 'levender-hoodie',
+                title: 'Levender Hoodie',
+                price: 119,
+                shipping: 0,
+                qty: 1,
+                size: 'XXL',
+                color: 'Levender',
+                image: 'assets/img/cart/products/photos/photo-2.jpg',
+                alt: 'Lavender hoodie on a model',
+              },
+              {
+                id: 'black-sweatshirt',
+                title: 'Black Sweatshirt',
+                price: 123,
+                shipping: 0,
+                qty: 1,
+                size: 'XXL',
+                color: 'Black',
+                image: 'assets/img/cart/products/photos/photo-3.jpg',
+                alt: 'Black sweatshirt on a model',
+              },
+            ])
+          )
+        }
+      }
+    } catch (e) {}
+	</script>
+		<script>
+  // Демо-наповнення wishlist при першому візиті — той самий принцип, що
+  // cart-state.html: реальний магазин стартує порожнім (wishlist.html одразу
+  // веде на emptywishlist.html), але щоб відвідувач побачив зверстану
+  // Wishlist Page без ручного додавання сердець, сідимо 2 реальні товари з
+  // products-new.json (ті самі id, що на index/catalog — серце на їхніх
+  // картках одразу покаже активний стан).
+  // Прапорець ставиться назавжди: видалення всіх товарів веде на
+  // emptywishlist.html і повторного наповнення не буде.
+  // Шляхи до фото відносні, без аліасу @img (та сама причина, що в
+  // cart-state.html — заміна аліасів не працює для тіла інлайн-скрипта).
+  // Фото — колишні wishlist/photos/photo-1.jpg,-2.jpg (лишились
+  // невикористаними після переходу wishlist.html на JS-рендер реального
+  // стану), НЕ lime/women (ті активно референсяться в products-*.json —
+  // build (Sharp) конвертує реферований jpg у webp і прибирає оригінал за
+  // цим самим шляхом, тож захардкоджений літерал у скрипті ламається на
+  // проді; невикористані файли build копіює як є, без конвертації).
+  try {
+    if (!localStorage.getItem('euphoria-wishlist-seeded')) {
+      localStorage.setItem('euphoria-wishlist-seeded', '1')
+      if (!localStorage.getItem('euphoria-wishlist')) {
+        localStorage.setItem(
+          'euphoria-wishlist',
+          JSON.stringify([{
+              id: 'black-sweatshirt-jhanvi',
+              title: 'Black Sweatshirt with ....',
+              price: 123,
+              brand: 'Jhanvi’s Brand',
+              image: 'assets/img/wishlist/photos/photo-1.jpg',
+              alt: 'Black Sweatshirt with ....',
+            },
+            {
+              id: 'white-graphic-crop-top-woden',
+              title: 'White Graphic Crop Top',
+              price: 29,
+              brand: 'woden’s Brand',
+              image: 'assets/img/wishlist/photos/photo-2.jpg',
+              alt: 'White Graphic Crop Top',
+            },
+          ])
+        )
+      }
+    }
+  } catch (e) {}
+</script>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preload" href="./assets/fonts/CoreSansC-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<title>Euphoria</title>
+		<script type="module" crossorigin="" src="./js/catalog.min.js?v=1786191466774"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1786191466774">
+		<link rel="modulepreload" crossorigin="" href="./js/footer.min.js?v=1786191466774">
+		<link rel="modulepreload" crossorigin="" href="./js/watcher.min.js?v=1786191466774">
+		<link rel="modulepreload" crossorigin="" href="./js/tabs.min.js?v=1786191466774">
+		<link rel="modulepreload" crossorigin="" href="./js/favorite.min.js?v=1786191466774">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1786191466774">
+		<link rel="stylesheet" crossorigin="" href="./css/footer.min.css?v=1786191466774">
+		<link rel="stylesheet" crossorigin="" href="./css/tabs.min.css?v=1786191466774">
+		<link rel="stylesheet" crossorigin="" href="./css/catalog.min.css?v=1786191466774">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" data-fls-header-scroll="100" data-fls-header-scroll-show="500" class="header">
+				<div class="header__container">
+					<a href="index.html" class="header__logo-link">
+						<img class="header__logo" src="./assets/img/logo.svg" alt="Euphoria — home">
+					</a>
+					<div class="header__menu menu">
+						<nav id="main-menu" class="menu__body" aria-label="Main">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="#" class="menu__link menu__link--active">Shop</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Men</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Women</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Combos</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Joggers</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<form data-fls-form="dev" action="#" class="header__search search-form">
+						<label class="visually-hidden" for="header-search">Search products</label>
+						<input id="header-search" class="search-form__input" name="form[search]" placeholder="Search" type="search">
+						<button type="submit" class="search-form__button" aria-label="Search">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+							</svg>
+						</button>
+					</form>
+					<div class="header__action action-header">
+						<a href="wishlist.html" class="action-header__item action-header__item--wishlist" aria-label="Wishlist">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+							</svg>
+							<span class="action-header__count" aria-hidden="true">0</span>
+							<span class="visually-hidden" data-wishlist-count-text="" aria-live="polite">0 items in wishlist</span>
+						</a>
+						<a href="signin.html" class="action-header__item" aria-label="Sign in">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-user"></use>
+							</svg>
+						</a>
+						<a href="cart.html" class="action-header__item action-header__item--cart">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-cart"></use>
+							</svg>
+							<span class="action-header__count" aria-hidden="true">0</span>
+							<span class="visually-hidden" data-cart-count-text="" aria-live="polite">0 items in cart</span>
+						</a>
+					</div>
+					<button type="button" data-fls-menu="" class="menu__icon icon-menu" aria-label="Menu" aria-expanded="false" aria-controls="main-menu">
+						<span></span>
+					</button>
+				</div>
+			</header>
+			<main class="page">
+				<div class="page__catalog catalog">
+					<section class="catalog__main">
+						<div class="catalog__container">
+							<div data-fls-tabs="" class="catalog__body">
+								<div class="catalog__header">
+									<h1 data-fls-watcher="" data-fls-watcher-once="" class="catalog__title">Women’s Clothing</h1>
+									<div data-fls-watcher="" data-fls-watcher-once="" class="catalog__tabs tabs">
+										<div data-fls-tabs-titles="" class="tabs__navigation">
+											<button type="button" class="tabs__title --tab-active type-catalog__button">New</button>
+											<button type="button" class="tabs__title type-catalog__button">Recommended</button>
+										</div>
+									</div>
+								</div>
+								<h2 class="visually-hidden">Product results</h2>
+								<div data-fls-tabs-body="" class="tabs__content">
+									<div class="tabs__body">
+										<div class="women-clothing">
+											<article class="item-product" data-product-id="black-sweatshirt-jhanvi">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Black Sweatshirt with .... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="Black Sweatshirt with ...." loading="lazy" src="./assets/img/lime/01.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">Black Sweatshirt with ....</a>
+													</h3>
+													<div class="item-product__label">Jhanvi’s Brand</div>
+													<div class="item-product__price">$123.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="white-tshirt-helen">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add White T-shirt... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<source media="(max-width: 600px)" srcset="./assets/img/modules/for-women/04-600.webp" type="image/webp">
+														<img class="item-product__image" alt="White T-shirt..." loading="lazy" src="./assets/img/modules/for-women/04.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">White T-shirt...</a>
+													</h3>
+													<div class="item-product__label">Helen’s Brand</div>
+													<div class="item-product__price">$11.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="levender-hoodie-nike">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Levender Hoodie with .... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="Levender Hoodie with ...." loading="lazy" src="./assets/img/lime/04.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">Levender Hoodie with ....</a>
+													</h3>
+													<div class="item-product__label">Nike’s Brand</div>
+													<div class="item-product__price">$119.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="leaves-pattern-paypal">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Leaves Pattern White....... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="Leaves Pattern White......." loading="lazy" src="./assets/img/women/01.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">Leaves Pattern White.......</a>
+													</h3>
+													<div class="item-product__label">paypal’s Brand</div>
+													<div class="item-product__price">$77.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="white-graphic-crop-top-woden">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add White Graphic Crop Top to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="White Graphic Crop Top" loading="lazy" src="./assets/img/women/02.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">White Graphic Crop Top</a>
+													</h3>
+													<div class="item-product__label">woden’s Brand</div>
+													<div class="item-product__price">$29.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="black-shorts-mm">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Black Shorts to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="Black Shorts" loading="lazy" src="./assets/img/lime/03.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">Black Shorts</a>
+													</h3>
+													<div class="item-product__label">MM’s Brand</div>
+													<div class="item-product__price">$37.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="barboreal-gray-sweats-priya">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Barboreal Gray Sweats... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="Barboreal Gray Sweats..." loading="lazy" src="./assets/img/women/03.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">Barboreal Gray Sweats...</a>
+													</h3>
+													<div class="item-product__label">Priya’s Brand</div>
+													<div class="item-product__price">$77.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="yellow-sweatshirt-woden">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Yellow Sweatshirt... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="Yellow Sweatshirt..." loading="lazy" src="./assets/img/women/04.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">Yellow Sweatshirt...</a>
+													</h3>
+													<div class="item-product__label">woden’s Brand</div>
+													<div class="item-product__price">$29.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="flower-pattern-black-mm">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Flower Pattern Black C...... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="Flower Pattern Black C......" loading="lazy" src="./assets/img/women/05.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">Flower Pattern Black C......</a>
+													</h3>
+													<div class="item-product__label">MM’s Brand</div>
+													<div class="item-product__price">$37.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="i-dont-graphic-tshirt-nisargi">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add I Don’t Graphic T-shirt ... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="I Don’t Graphic T-shirt ..." loading="lazy" src="./assets/img/women/06.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">I Don’t Graphic T-shirt ...</a>
+													</h3>
+													<div class="item-product__label">Nisargi’s Brand</div>
+													<div class="item-product__price">$77.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="blue-flower-print-crop-mellon">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Blue Flower Print Crop ....... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<source media="(max-width: 600px)" srcset="./assets/img/modules/for-women/03-600.webp" type="image/webp">
+														<img class="item-product__image" alt="Blue Flower Print Crop ......." loading="lazy" src="./assets/img/modules/for-women/03.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">Blue Flower Print Crop .......</a>
+													</h3>
+													<div class="item-product__label">Mellon’s Brand</div>
+													<div class="item-product__price">$29.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="line-pattern-black-as">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add line Pattern Black H... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="line Pattern Black H..." loading="lazy" src="./assets/img/lime/02.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">line Pattern Black H...</a>
+													</h3>
+													<div class="item-product__label">AS’s Brand</div>
+													<div class="item-product__price">$37.00</div>
+												</div>
+											</article>
+										</div>
+									</div>
+									<div class="tabs__body">
+										<div class="women-clothing">
+											<article class="item-product" data-product-id="i-dont-graphic-tshirt-nisargi">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add I Don’t Graphic T-shirt ... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="I Don’t Graphic T-shirt ..." loading="lazy" src="./assets/img/women/06.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">I Don’t Graphic T-shirt ...</a>
+													</h3>
+													<div class="item-product__label">Nisargi’s Brand</div>
+													<div class="item-product__price">$77.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="blue-flower-print-crop-mellon">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Blue Flower Print Crop ....... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<source media="(max-width: 600px)" srcset="./assets/img/modules/for-women/03-600.webp" type="image/webp">
+														<img class="item-product__image" alt="Blue Flower Print Crop ......." loading="lazy" src="./assets/img/modules/for-women/03.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">Blue Flower Print Crop .......</a>
+													</h3>
+													<div class="item-product__label">Mellon’s Brand</div>
+													<div class="item-product__price">$29.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="line-pattern-black-as">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add line Pattern Black H... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="line Pattern Black H..." loading="lazy" src="./assets/img/lime/02.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">line Pattern Black H...</a>
+													</h3>
+													<div class="item-product__label">AS’s Brand</div>
+													<div class="item-product__price">$37.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="barboreal-gray-sweats-priya">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Barboreal Gray Sweats... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="Barboreal Gray Sweats..." loading="lazy" src="./assets/img/women/03.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">Barboreal Gray Sweats...</a>
+													</h3>
+													<div class="item-product__label">Priya’s Brand</div>
+													<div class="item-product__price">$77.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="yellow-sweatshirt-woden">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Yellow Sweatshirt... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="Yellow Sweatshirt..." loading="lazy" src="./assets/img/women/04.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">Yellow Sweatshirt...</a>
+													</h3>
+													<div class="item-product__label">woden’s Brand</div>
+													<div class="item-product__price">$29.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="flower-pattern-black-mm">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Flower Pattern Black C...... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="Flower Pattern Black C......" loading="lazy" src="./assets/img/women/05.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">Flower Pattern Black C......</a>
+													</h3>
+													<div class="item-product__label">MM’s Brand</div>
+													<div class="item-product__price">$37.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="black-sweatshirt-jhanvi">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Black Sweatshirt with .... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="Black Sweatshirt with ...." loading="lazy" src="./assets/img/lime/01.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">Black Sweatshirt with ....</a>
+													</h3>
+													<div class="item-product__label">Jhanvi’s Brand</div>
+													<div class="item-product__price">$123.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="levender-hoodie-nike">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Levender Hoodie with .... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="Levender Hoodie with ...." loading="lazy" src="./assets/img/lime/04.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">Levender Hoodie with ....</a>
+													</h3>
+													<div class="item-product__label">Nike’s Brand</div>
+													<div class="item-product__price">$119.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="leaves-pattern-paypal">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Leaves Pattern White....... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="Leaves Pattern White......." loading="lazy" src="./assets/img/women/01.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">Leaves Pattern White.......</a>
+													</h3>
+													<div class="item-product__label">paypal’s Brand</div>
+													<div class="item-product__price">$77.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="white-tshirt-helen">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add White T-shirt... to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<source media="(max-width: 600px)" srcset="./assets/img/modules/for-women/04-600.webp" type="image/webp">
+														<img class="item-product__image" alt="White T-shirt..." loading="lazy" src="./assets/img/modules/for-women/04.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">White T-shirt...</a>
+													</h3>
+													<div class="item-product__label">Helen’s Brand</div>
+													<div class="item-product__price">$11.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="white-graphic-crop-top-woden">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add White Graphic Crop Top to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="White Graphic Crop Top" loading="lazy" src="./assets/img/women/02.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">White Graphic Crop Top</a>
+													</h3>
+													<div class="item-product__label">woden’s Brand</div>
+													<div class="item-product__price">$29.00</div>
+												</div>
+											</article>
+											<article class="item-product" data-product-id="black-shorts-mm">
+												<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Black Shorts to wishlist">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+													</svg>
+												</button>
+												<a href="product-detail.html" class="item-product__picture-link">
+													<picture>
+														<img class="item-product__image" alt="Black Shorts" loading="lazy" src="./assets/img/lime/03.webp">
+													</picture>
+												</a>
+												<div class="item-product__body">
+													<h3 class="item-product__title">
+														<a href="product-detail.html" class="item-product__link-title">Black Shorts</a>
+													</h3>
+													<div class="item-product__label">MM’s Brand</div>
+													<div class="item-product__price">$37.00</div>
+												</div>
+											</article>
+										</div>
+									</div>
+								</div>
+							</div>
+							<aside data-fls-spollers="991.98" data-fls-watcher="" data-fls-watcher-once="" class="catalog__filter filter">
+								<details class="filter__spoller">
+									<summary class="filter__title title-filter">
+										<h2 class="title-filter__button title-filter__button--main">
+											Filter
+											<svg class="icon title-filter__icon" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-filter"></use>
+											</svg>
+										</h2>
+									</summary>
+									<form action="#" data-fls-spollers="" class="filter__body">
+										<div class="filter__section section-filter">
+											<div class="section-filter__body">
+												<nav class="section-filter__menu menu-filter">
+													<ul class="menu-filter__list">
+														<li class="menu-filter__item">
+															<a href="#" class="menu-filter__link active">
+																Tops
+																<svg class="icon menu-filter__icon" aria-hidden="true">
+																	<use xlink:href="./assets/img/spritemap.svg#sprite-ch-right"></use>
+																</svg>
+															</a>
+														</li>
+														<li class="menu-filter__item">
+															<a href="#" class="menu-filter__link">
+																Printed T-shirts
+																<svg class="icon menu-filter__icon" aria-hidden="true">
+																	<use xlink:href="./assets/img/spritemap.svg#sprite-ch-right"></use>
+																</svg>
+															</a>
+														</li>
+														<li class="menu-filter__item">
+															<a href="#" class="menu-filter__link">
+																Plain T-shirts
+																<svg class="icon menu-filter__icon" aria-hidden="true">
+																	<use xlink:href="./assets/img/spritemap.svg#sprite-ch-right"></use>
+																</svg>
+															</a>
+														</li>
+														<li class="menu-filter__item">
+															<a href="#" class="menu-filter__link">
+																Kurti
+																<svg class="icon menu-filter__icon" aria-hidden="true">
+																	<use xlink:href="./assets/img/spritemap.svg#sprite-ch-right"></use>
+																</svg>
+															</a>
+														</li>
+														<li class="menu-filter__item">
+															<a href="#" class="menu-filter__link">
+																Boxers
+																<svg class="icon menu-filter__icon" aria-hidden="true">
+																	<use xlink:href="./assets/img/spritemap.svg#sprite-ch-right"></use>
+																</svg>
+															</a>
+														</li>
+														<li class="menu-filter__item">
+															<a href="#" class="menu-filter__link">
+																Full sleeve T-shirts
+																<svg class="icon menu-filter__icon" aria-hidden="true">
+																	<use xlink:href="./assets/img/spritemap.svg#sprite-ch-right"></use>
+																</svg>
+															</a>
+														</li>
+														<li class="menu-filter__item">
+															<a href="#" class="menu-filter__link">
+																Joggers
+																<svg class="icon menu-filter__icon" aria-hidden="true">
+																	<use xlink:href="./assets/img/spritemap.svg#sprite-ch-right"></use>
+																</svg>
+															</a>
+														</li>
+														<li class="menu-filter__item">
+															<a href="#" class="menu-filter__link">
+																Payjamas
+																<svg class="icon menu-filter__icon" aria-hidden="true">
+																	<use xlink:href="./assets/img/spritemap.svg#sprite-ch-right"></use>
+																</svg>
+															</a>
+														</li>
+														<li class="menu-filter__item">
+															<a href="#" class="menu-filter__link">
+																Jeans
+																<svg class="icon menu-filter__icon" aria-hidden="true">
+																	<use xlink:href="./assets/img/spritemap.svg#sprite-ch-right"></use>
+																</svg>
+															</a>
+														</li>
+													</ul>
+												</nav>
+											</div>
+										</div>
+										<details data-fls-spollers-open="" open class="filter__section section-filter">
+											<summary class="section-filter__title title-filter">
+												<h3 class="title-filter__button">
+													Price
+													<svg class="icon title-filter__icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+													</svg>
+												</h3>
+											</summary>
+											<div class="section-filter__body">
+												<div class="section-filter__price price-filter">
+													<div data-fls-range="" data-fls-range-min="0" data-fls-range-max="600" data-fls-range-start="0,600" data-fls-range-prefix="$" data-fls-range-from=".price-filter__input--from" data-fls-range-to=".price-filter__input--to" data-fls-range-label-from="Minimum price" data-fls-range-label-to="Maximum price" class="price-filter__range"></div>
+													<div class="price-filter__inputs">
+														<label class="visually-hidden" for="price-from">Minimum price</label>
+														<input type="text" id="price-from" name="price-from" class="price-filter__input price-filter__input--from">
+														<label class="visually-hidden" for="price-to">Maximum price</label>
+														<input type="text" id="price-to" name="price-to" class="price-filter__input price-filter__input--to">
+													</div>
+												</div>
+											</div>
+										</details>
+										<details data-fls-spollers-open="" open class="filter__section section-filter">
+											<summary class="section-filter__title title-filter">
+												<h3 class="title-filter__button">
+													Colors
+													<svg class="icon title-filter__icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+													</svg>
+												</h3>
+											</summary>
+											<div class="section-filter__body">
+												<div class="section-filter__colors colors-filter">
+													<label style="--color: #8434e1" class="colors-filter__item">
+														<input type="checkbox" name="color[]" class="colors-filter__input">
+														Purple
+													</label>
+													<label style="--color: #000000" class="colors-filter__item">
+														<input type="checkbox" name="color[]" class="colors-filter__input">
+														Black
+													</label>
+													<label style="--color: #f35528" class="colors-filter__item">
+														<input type="checkbox" name="color[]" class="colors-filter__input">
+														Red
+													</label>
+													<label style="--color: #f16f2b" class="colors-filter__item">
+														<input type="checkbox" name="color[]" class="colors-filter__input">
+														Orange
+													</label>
+													<label style="--color: #345eff" class="colors-filter__item">
+														<input type="checkbox" name="color[]" class="colors-filter__input">
+														Navy
+													</label>
+													<label style="--color: #ffffff" class="colors-filter__item">
+														<input type="checkbox" name="color[]" class="colors-filter__input">
+														White
+													</label>
+													<label style="--color: #d67e3b" class="colors-filter__item">
+														<input type="checkbox" name="color[]" class="colors-filter__input">
+														Brown
+													</label>
+													<label style="--color: #48bc4e" class="colors-filter__item">
+														<input type="checkbox" name="color[]" class="colors-filter__input">
+														Green
+													</label>
+													<label style="--color: #fdc761" class="colors-filter__item">
+														<input type="checkbox" name="color[]" class="colors-filter__input">
+														Yellow
+													</label>
+													<label style="--color: #e4e5e8" class="colors-filter__item">
+														<input type="checkbox" name="color[]" class="colors-filter__input">
+														Gray
+													</label>
+													<label style="--color: #e08d9d" class="colors-filter__item">
+														<input type="checkbox" name="color[]" class="colors-filter__input">
+														Pink
+													</label>
+													<label style="--color: #3fdeff" class="colors-filter__item">
+														<input type="checkbox" name="color[]" class="colors-filter__input">
+														Blue
+													</label>
+												</div>
+											</div>
+										</details>
+										<details data-fls-spollers-open="" open class="filter__section section-filter">
+											<summary class="section-filter__title title-filter">
+												<h3 class="title-filter__button">
+													Size
+													<svg class="icon title-filter__icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+													</svg>
+												</h3>
+											</summary>
+											<div class="section-filter__body">
+												<div class="section-filter__size size-filter">
+													<label class="size-filter__item">
+														<input type="checkbox" name="size[]" class="size-filter__input">
+														XXS
+													</label>
+													<label class="size-filter__item">
+														<input type="checkbox" name="size[]" class="size-filter__input">
+														Xl
+													</label>
+													<label class="size-filter__item">
+														<input type="checkbox" name="size[]" class="size-filter__input">
+														xS
+													</label>
+													<label class="size-filter__item">
+														<input type="checkbox" name="size[]" class="size-filter__input">
+														s
+													</label>
+													<label class="size-filter__item">
+														<input type="checkbox" name="size[]" class="size-filter__input">
+														M
+													</label>
+													<label class="size-filter__item">
+														<input type="checkbox" name="size[]" class="size-filter__input">
+														l
+													</label>
+													<label class="size-filter__item">
+														<input type="checkbox" name="size[]" class="size-filter__input">
+														xxl
+													</label>
+													<label class="size-filter__item">
+														<input type="checkbox" name="size[]" class="size-filter__input">
+														3xl
+													</label>
+													<label class="size-filter__item">
+														<input type="checkbox" name="size[]" class="size-filter__input">
+														4xl
+													</label>
+												</div>
+											</div>
+										</details>
+										<details data-fls-spollers-open="" open class="filter__section section-filter">
+											<summary class="section-filter__title title-filter">
+												<h3 class="title-filter__button">
+													Dress Style
+													<svg class="icon title-filter__icon" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+													</svg>
+												</h3>
+											</summary>
+											<div class="section-filter__body">
+												<div class="section-filter__style style-filter">
+													<label class="style-filter__item">
+														<input type="checkbox" name="style[]" class="style-filter__input">
+														Classic
+													</label>
+													<label class="style-filter__item">
+														<input type="checkbox" name="style[]" class="style-filter__input">
+														Casual
+													</label>
+													<label class="style-filter__item">
+														<input type="checkbox" name="style[]" class="style-filter__input">
+														Business
+													</label>
+													<label class="style-filter__item">
+														<input type="checkbox" name="style[]" class="style-filter__input">
+														Sport
+													</label>
+													<label class="style-filter__item">
+														<input type="checkbox" name="style[]" class="style-filter__input">
+														Elegant
+													</label>
+													<label class="style-filter__item">
+														<input type="checkbox" name="style[]" class="style-filter__input">
+														Formal (evening)
+													</label>
+												</div>
+											</div>
+										</details>
+									</form>
+								</details>
+							</aside>
+						</div>
+					</section>
+					<section class="catalog__description description-catalog">
+						<div data-fls-showmore="" class="description-catalog__container">
+							<h2 class="description-catalog__title title">Clothing for Women Online in India</h2>
+							<div data-fls-showmore-content="520" class="description-catalog__body block__content">
+								<h3>Reexplore Women's Clothing Collection Online at Euphoria</h3>
+								<p>
+									Women's Clothing – Are you
+									<strong>searching</strong>
+									for the best website to buy Clothing for Women online in India? Well, your
+					search for the coolest and most stylish womens clothing ends here. From trendy Casual Womens Wear Online shopping to premium
+					quality cotton women's apparel, Euphoria has closet of Women Collection covered with the latest and best designs of Women's
+					Clothing Online.
+								</p>
+								<p>
+									Our collection of clothes for women will make you the trendsetter with an iconic resemblance of choice in Womens Wear.
+								</p>
+								<h3>One-Stop Destination to Shop Every Clothing for Women: Euphoria</h3>
+								<p>
+									Today, Clothing for Women is gaining more
+									<strong>popularity</strong>
+									above all. This is because gone are the days when women were
+					used to carrying uncomfortable fashion. Today, a lady looks prettier when she is in Casual Womens Wear which is a comfortable
+					outfit. Concerning this, Euphoria has a big fat range of Stylish Women's Clothing that would make her the winner wherever she
+					goes.
+								</p>
+								<p>
+									Our collection of clothes for women will make you the trendsetter with an iconic resemblance of choice in Womens Wear. It is quite
+					evident to say that there are very few Womens Clothing online stores where you can buy Western Wear for Women comprising the
+					premium material and elegant design that you are always seeking for. Basically,
+								</p>
+								<p>
+									Women's Clothing – Are you
+									<strong>searching</strong>
+									for the best website to buy Clothing for Women online in India? Well, your
+					search for the coolest and most stylish womens clothing ends here. From trendy Casual Womens Wear Online shopping to premium
+					quality cotton women's apparel, Euphoria has closet of Women Collection covered with the latest and best designs of Women's
+					Clothing Online.
+								</p>
+								<p>
+									Today, Clothing for Women is gaining more
+									<strong>popularity</strong>
+									above all. This is because gone are the days when women were
+					used to carrying uncomfortable fashion. Today, a lady looks prettier when she is in Casual Womens Wear which is a comfortable
+					outfit. Concerning this, Euphoria has a big fat range of Stylish Women's Clothing that would make her the winner wherever she
+					goes.
+								</p>
+							</div>
+							<button hidden data-fls-showmore-button="" type="button" class="block__more description-catalog__see-more">
+								<span>Show More</span>
+								<span>Hide</span>
+							</button>
+						</div>
+					</section>
+					<section class="catalog__best-price best-price">
+						<div class="best-price__container">
+							<h2 class="best-price__title title">Buy Women's Clothing at Best Price</h2>
+							<div class="best-price__table">
+								<table class="table-best-price">
+									<caption class="visually-hidden">Best price combo deals for women's clothing</caption>
+									<thead>
+										<tr>
+											<th scope="col">Women's Clothing</th>
+											<th scope="col">Best Price</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Pick Any 4- Womens Plain T-shirt Combo</td>
+											<td>$10.99</td>
+										</tr>
+										<tr>
+											<td>Pick Any 4- Plain Womens Boxer Combo</td>
+											<td>$10.99</td>
+										</tr>
+										<tr>
+											<td>Pick Any 4 - Women Plain Full Sleeve T-shirt Combo</td>
+											<td>$13.99</td>
+										</tr>
+										<tr>
+											<td>Multicolor Checkered Long Casual Shirts for Women</td>
+											<td>$4.99</td>
+										</tr>
+										<tr>
+											<td>Pick Any 2: Plain Boxy Casual Shirts for Women Combo</td>
+											<td>$7.99</td>
+										</tr>
+										<tr>
+											<td>Blue Floral Anarkali Kurti</td>
+											<td>$5.99</td>
+										</tr>
+										<tr>
+											<td>Jade Black Narrow Cut Flexible Women Jeggings</td>
+											<td>$9.98</td>
+										</tr>
+										<tr>
+											<td>Mustard-yellow Solid Straight-Fit Women Pant</td>
+											<td>$4.99</td>
+										</tr>
+										<tr>
+											<td>Women Pants Combo - Pick Any 2</td>
+											<td>$8.00</td>
+										</tr>
+										<tr>
+											<td>Pista Green Solid Boxy Casual Shirts for Women</td>
+											<td>$4.99</td>
+										</tr>
+										<tr>
+											<td>Plain Burgundy Womens Boxer</td>
+											<td>$3.49</td>
+										</tr>
+										<tr>
+											<td>Striped Front Tie Casual Shirts for Women</td>
+											<td>$4.99</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</section>
+				</div>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container">
+					<div data-fls-spollers="560" class="footer__menu menu-footer">
+						<details open class="menu-footer__block">
+							<summary class="menu-footer__summary">
+								<h2 class="menu-footer__title">
+									Need Help
+									<svg class="icon menu-footer__chevron" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+									</svg>
+								</h2>
+							</summary>
+							<div class="menu-footer__body">
+								<ul class="menu-footer__list">
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Contact Us</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Track Order</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Returns & Refunds</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">FAQ's</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Career</a>
+									</li>
+								</ul>
+							</div>
+						</details>
+						<details open class="menu-footer__block">
+							<summary class="menu-footer__summary">
+								<h2 class="menu-footer__title">
+									Company
+									<svg class="icon menu-footer__chevron" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+									</svg>
+								</h2>
+							</summary>
+							<div class="menu-footer__body">
+								<ul class="menu-footer__list">
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">About Us</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Euphoria Blog</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Euphoriastan</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Collaboration</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Media</a>
+									</li>
+								</ul>
+							</div>
+						</details>
+						<details open class="menu-footer__block">
+							<summary class="menu-footer__summary">
+								<h2 class="menu-footer__title">
+									More Info
+									<svg class="icon menu-footer__chevron" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+									</svg>
+								</h2>
+							</summary>
+							<div class="menu-footer__body">
+								<ul class="menu-footer__list">
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Term and Conditions</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Privacy Policy</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Shipping Policy</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="sitemap.html" class="menu-footer__link">Sitemap</a>
+									</li>
+								</ul>
+							</div>
+						</details>
+						<div class="menu-footer__block menu-footer__block--plain">
+							<h2 class="menu-footer__title">Location</h2>
+							<div class="menu-footer__body">
+								<ul class="menu-footer__list">
+									<li class="menu-footer__item">
+										<a href="mailto:support@euphoria.in" class="menu-footer__link">support@euphoria.in</a>
+									</li>
+									<li class="menu-footer__item">Eklingpura Chouraha, Ahmedabad Main Road</li>
+									<li class="menu-footer__item">(NH 8- Near Mahadev Hotel) Udaipur, India - 313002</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="footer__body">
+						<div class="footer__social social-footer">
+							<ul class="social-footer__list">
+								<li class="social-footer__item">
+									<a target="_blank" rel="noopener noreferrer" href="#" class="social-footer__link" aria-label="Euphoria on Facebook">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-s-facebook"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="social-footer__item">
+									<a target="_blank" rel="noopener noreferrer" href="#" class="social-footer__link" aria-label="Euphoria on Instagram">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-s-instagram"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="social-footer__item">
+									<a target="_blank" rel="noopener noreferrer" href="#" class="social-footer__link" aria-label="Euphoria on Twitter">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-s-twitter"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="social-footer__item">
+									<a target="_blank" rel="noopener noreferrer" href="#" class="social-footer__link" aria-label="Euphoria on LinkedIn">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-s-linkedin"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__download download-apps">
+							<h2 class="download-apps__title">Download The App</h2>
+							<div class="download-apps__items">
+								<a href="#" class="download-apps__item" target="_blank">
+									<img src="./assets/img/google.svg" alt="Google Play">
+								</a>
+								<a href="#" class="download-apps__item" target="_blank">
+									<img src="./assets/img/apple.svg" alt="Apple Store">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div data-fls-spollers="" class="spollers footer__categories popular-categories">
+						<details class="spollers__item">
+							<summary class="spollers__title popular-categories__title">
+								<div class="popular-categories__button-title">
+									<h2>Popular Categories</h2>
+									<svg class="icon popular-categories__chevron" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+									</svg>
+								</div>
+							</summary>
+							<div class="spollers__body popular-categories__body">
+								<ul class="popular-categories__list">
+									<li class="popular-categories__item">
+										<a href="#" class="popular-categories__link">Men</a>
+									</li>
+									<li class="popular-categories__item">
+										<a href="#" class="popular-categories__link">Women</a>
+									</li>
+								</ul>
+							</div>
+						</details>
+					</div>
+					<div class="footer__copy">Copyright © 2023 Euphoria Folks Pvt Ltd. All rights reserved.</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script>
+      history.scrollRestoration = "manual";
+		</script>
+		<script>
+    // Демо-наповнення кошика при першому візиті: інакше відвідувач ніколи не
+    // побачить зверстану Cart Page (реальний магазин стартує порожнім, і
+    // cart.html одразу веде на emptycart.html). Підключено в head синхронно,
+    // до розмітки й модулів — щоб guard у cart.html бачив уже наповнений стан,
+    // а лічильник у шапці збігався на всіх сторінках.
+    // Прапорець ставиться назавжди, тож видалення всіх товарів веде на
+    // emptycart.html і повторного наповнення не буде — обидва стани досяжні.
+    // Шляхи до фото відносні, без аліасу @img: заміна аліасів працює лише для
+    // атрибутів розмітки та .js-файлів, не для тіла інлайн-скрипта.
+    // ВАЖЛИВО: жодних кутових дужок у цих коментарях — posthtml читає їх як
+    // теги і мовчки обрізає скрипт на проді (у dev при цьому все працює).
+    try {
+      if (!localStorage.getItem('euphoria-cart-seeded')) {
+        localStorage.setItem('euphoria-cart-seeded', '1')
+        if (!localStorage.getItem('euphoria-cart')) {
+          localStorage.setItem(
+            'euphoria-cart',
+            JSON.stringify([{
+                id: 'blue-flower-print-crop-top',
+                title: 'Blue Flower Print Crop Top',
+                price: 29,
+                shipping: 0,
+                qty: 1,
+                size: 'M',
+                color: 'Yellow',
+                image: 'assets/img/cart/products/photos/photo-1.jpg',
+                alt: 'Blue flower print crop top on a model',
+              },
+              {
+                id: 'levender-hoodie',
+                title: 'Levender Hoodie',
+                price: 119,
+                shipping: 0,
+                qty: 1,
+                size: 'XXL',
+                color: 'Levender',
+                image: 'assets/img/cart/products/photos/photo-2.jpg',
+                alt: 'Lavender hoodie on a model',
+              },
+              {
+                id: 'black-sweatshirt',
+                title: 'Black Sweatshirt',
+                price: 123,
+                shipping: 0,
+                qty: 1,
+                size: 'XXL',
+                color: 'Black',
+                image: 'assets/img/cart/products/photos/photo-3.jpg',
+                alt: 'Black sweatshirt on a model',
+              },
+            ])
+          )
+        }
+      }
+    } catch (e) {}
+	</script>
+		<script>
+  // Демо-наповнення wishlist при першому візиті — той самий принцип, що
+  // cart-state.html: реальний магазин стартує порожнім (wishlist.html одразу
+  // веде на emptywishlist.html), але щоб відвідувач побачив зверстану
+  // Wishlist Page без ручного додавання сердець, сідимо 2 реальні товари з
+  // products-new.json (ті самі id, що на index/catalog — серце на їхніх
+  // картках одразу покаже активний стан).
+  // Прапорець ставиться назавжди: видалення всіх товарів веде на
+  // emptywishlist.html і повторного наповнення не буде.
+  // Шляхи до фото відносні, без аліасу @img (та сама причина, що в
+  // cart-state.html — заміна аліасів не працює для тіла інлайн-скрипта).
+  // Фото — колишні wishlist/photos/photo-1.jpg,-2.jpg (лишились
+  // невикористаними після переходу wishlist.html на JS-рендер реального
+  // стану), НЕ lime/women (ті активно референсяться в products-*.json —
+  // build (Sharp) конвертує реферований jpg у webp і прибирає оригінал за
+  // цим самим шляхом, тож захардкоджений літерал у скрипті ламається на
+  // проді; невикористані файли build копіює як є, без конвертації).
+  try {
+    if (!localStorage.getItem('euphoria-wishlist-seeded')) {
+      localStorage.setItem('euphoria-wishlist-seeded', '1')
+      if (!localStorage.getItem('euphoria-wishlist')) {
+        localStorage.setItem(
+          'euphoria-wishlist',
+          JSON.stringify([{
+              id: 'black-sweatshirt-jhanvi',
+              title: 'Black Sweatshirt with ....',
+              price: 123,
+              brand: 'Jhanvi’s Brand',
+              image: 'assets/img/wishlist/photos/photo-1.jpg',
+              alt: 'Black Sweatshirt with ....',
+            },
+            {
+              id: 'white-graphic-crop-top-woden',
+              title: 'White Graphic Crop Top',
+              price: 29,
+              brand: 'woden’s Brand',
+              image: 'assets/img/wishlist/photos/photo-2.jpg',
+              alt: 'White Graphic Crop Top',
+            },
+          ])
+        )
+      }
+    }
+  } catch (e) {}
+</script>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preload" href="./assets/fonts/CoreSansC-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Review the items in your Euphoria shopping cart, update quantities, and proceed to checkout.">
+		<title>Shopping Cart – Euphoria</title>
+		<script type="module" crossorigin="" src="./js/cart.min.js?v=1786191466742"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1786191466742">
+		<link rel="modulepreload" crossorigin="" href="./js/footer.min.js?v=1786191466742">
+		<link rel="modulepreload" crossorigin="" href="./js/button2.min.js?v=1786191466742">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1786191466742">
+		<link rel="stylesheet" crossorigin="" href="./css/footer.min.css?v=1786191466742">
+		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1786191466742">
+		<link rel="stylesheet" crossorigin="" href="./css/cart.min.css?v=1786191466742">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" data-fls-header-scroll="100" data-fls-header-scroll-show="500" class="header">
+				<div class="header__container">
+					<a href="index.html" class="header__logo-link">
+						<img class="header__logo" src="./assets/img/logo.svg" alt="Euphoria — home">
+					</a>
+					<div class="header__menu menu">
+						<nav id="main-menu" class="menu__body" aria-label="Main">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="#" class="menu__link">Shop</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Men</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Women</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Combos</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Joggers</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<form data-fls-form="dev" action="#" class="header__search search-form">
+						<label class="visually-hidden" for="header-search">Search products</label>
+						<input id="header-search" class="search-form__input" name="form[search]" placeholder="Search" type="search">
+						<button type="submit" class="search-form__button" aria-label="Search">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+							</svg>
+						</button>
+					</form>
+					<div class="header__action action-header">
+						<a href="wishlist.html" class="action-header__item action-header__item--wishlist" aria-label="Wishlist">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+							</svg>
+							<span class="action-header__count" aria-hidden="true">0</span>
+							<span class="visually-hidden" data-wishlist-count-text="" aria-live="polite">0 items in wishlist</span>
+						</a>
+						<a href="signin.html" class="action-header__item" aria-label="Sign in">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-user"></use>
+							</svg>
+						</a>
+						<a href="cart.html" class="action-header__item action-header__item--cart">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-cart"></use>
+							</svg>
+							<span class="action-header__count" aria-hidden="true">0</span>
+							<span class="visually-hidden" data-cart-count-text="" aria-live="polite">0 items in cart</span>
+						</a>
+					</div>
+					<button type="button" data-fls-menu="" class="menu__icon icon-menu" aria-label="Menu" aria-expanded="false" aria-controls="main-menu">
+						<span></span>
+					</button>
+				</div>
+			</header>
+			<main class="page">
+				<script>
+    // Синхронно, ДО парсингу секцій нижче: ES-модуль cart.js виконується аж
+    // після рендеру сторінки, тож його редірект встигає показати порожню
+    // таблицю. Ключ дубльовано з cart-state.js навмисно — інлайн-guard не
+    // може синхронно імпортувати модуль.
+    try {
+      const raw = localStorage.getItem('euphoria-cart')
+      const items = raw ? JSON.parse(raw) : []
+      if (!Array.isArray(items) || !items.length) location.replace('emptycart.html')
+    } catch (e) {}
+	</script>
+				<section class="add">
+					<div class="add__container block__container">
+						<h1 class="visually-hidden">Shopping Cart</h1>
+						<nav class="add__breadcrumbs breadcrumbs" aria-label="Breadcrumb">
+							<ol class="breadcrumbs__list">
+								<li class="breadcrumbs__item">
+									<a href="index.html" class="breadcrumbs__link">Home</a>
+									<svg class="icon breadcrumbs__icon" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-right"></use>
+									</svg>
+								</li>
+								<li class="breadcrumbs__item">
+									<span class="breadcrumbs__current" aria-current="page">Add To Cart</span>
+								</li>
+							</ol>
+						</nav>
+						<div class="add__intro">
+							<p class="add__text">
+								Please fill in the fields below and click place order to complete your purchase!
+							</p>
+							<p class="add__text">
+								Already registered?
+								<a href="#" class="add__login-link">Please login here</a>
+							</p>
+						</div>
+					</div>
+				</section>
+				<section class="products">
+					<div class="products__container block__container">
+						<h2 class="visually-hidden">Cart Items</h2>
+						<div class="products__table-wrap">
+							<table class="products__table">
+								<caption class="visually-hidden">Products in your cart</caption>
+								<thead class="products__thead">
+									<tr>
+										<th scope="col">Product Details</th>
+										<th scope="col">Price</th>
+										<th scope="col">Quantity</th>
+										<th scope="col">Shipping</th>
+										<th scope="col">Subtotal</th>
+										<th scope="col">Action</th>
+									</tr>
+								</thead>
+								<tbody data-cart-rows=""></tbody>
+							</table>
+						</div>
+						<div data-fls-quantity="" hidden></div>
+						<p class="visually-hidden" data-cart-status="" aria-live="polite"></p>
+					</div>
+				</section>
+				<section class="discount">
+					<div class="discount__container block__container">
+						<div class="discount__coupon-panel">
+							<h2 class="discount__title">Discount  Codes</h2>
+							<p class="discount__subtitle">Enter your coupon code if you have one</p>
+							<div class="discount__coupon-actions">
+								<form data-fls-form="dev" action="#" class="discount__coupon-form">
+									<label class="visually-hidden" for="discount-coupon-code">Coupon code</label>
+									<input id="discount-coupon-code" class="discount__coupon-input" type="text" name="coupon" placeholder="Coupon code" autocomplete="off">
+									<button type="submit" class="discount__coupon-submit">Apply Coupon</button>
+								</form>
+								<a href="catalog.html" class="discount__continue button button--border" data-fls-button="">Continue Shopping</a>
+							</div>
+						</div>
+						<div class="discount__totals">
+							<h2 class="visually-hidden">Order Summary</h2>
+							<dl class="discount__totals-list">
+								<div class="discount__totals-row">
+									<dt class="discount__totals-term">Sub Total</dt>
+									<dd class="discount__totals-value" data-discount-subtotal="">$0.00</dd>
+								</div>
+								<div class="discount__totals-row">
+									<dt class="discount__totals-term">Shipping</dt>
+									<dd class="discount__totals-value" data-discount-shipping="">$0.00</dd>
+								</div>
+								<div class="discount__totals-row discount__totals-row--grand">
+									<dt class="discount__totals-term">Grand Total</dt>
+									<dd class="discount__totals-value" data-discount-grand-total="" aria-live="polite">$0.00</dd>
+								</div>
+							</dl>
+							<hr class="discount__totals-divider">
+							<div class="discount__totals-cta">
+								<a href="checkout.html" class="discount__proceed button" data-fls-button="">Proceed To Checkout</a>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container">
+					<div data-fls-spollers="560" class="footer__menu menu-footer">
+						<details open class="menu-footer__block">
+							<summary class="menu-footer__summary">
+								<h2 class="menu-footer__title">
+									Need Help
+									<svg class="icon menu-footer__chevron" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+									</svg>
+								</h2>
+							</summary>
+							<div class="menu-footer__body">
+								<ul class="menu-footer__list">
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Contact Us</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Track Order</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Returns & Refunds</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">FAQ's</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Career</a>
+									</li>
+								</ul>
+							</div>
+						</details>
+						<details open class="menu-footer__block">
+							<summary class="menu-footer__summary">
+								<h2 class="menu-footer__title">
+									Company
+									<svg class="icon menu-footer__chevron" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+									</svg>
+								</h2>
+							</summary>
+							<div class="menu-footer__body">
+								<ul class="menu-footer__list">
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">About Us</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Euphoria Blog</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Euphoriastan</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Collaboration</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Media</a>
+									</li>
+								</ul>
+							</div>
+						</details>
+						<details open class="menu-footer__block">
+							<summary class="menu-footer__summary">
+								<h2 class="menu-footer__title">
+									More Info
+									<svg class="icon menu-footer__chevron" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+									</svg>
+								</h2>
+							</summary>
+							<div class="menu-footer__body">
+								<ul class="menu-footer__list">
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Term and Conditions</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Privacy Policy</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Shipping Policy</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="sitemap.html" class="menu-footer__link">Sitemap</a>
+									</li>
+								</ul>
+							</div>
+						</details>
+						<div class="menu-footer__block menu-footer__block--plain">
+							<h2 class="menu-footer__title">Location</h2>
+							<div class="menu-footer__body">
+								<ul class="menu-footer__list">
+									<li class="menu-footer__item">
+										<a href="mailto:support@euphoria.in" class="menu-footer__link">support@euphoria.in</a>
+									</li>
+									<li class="menu-footer__item">Eklingpura Chouraha, Ahmedabad Main Road</li>
+									<li class="menu-footer__item">(NH 8- Near Mahadev Hotel) Udaipur, India - 313002</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="footer__body">
+						<div class="footer__social social-footer">
+							<ul class="social-footer__list">
+								<li class="social-footer__item">
+									<a target="_blank" rel="noopener noreferrer" href="#" class="social-footer__link" aria-label="Euphoria on Facebook">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-s-facebook"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="social-footer__item">
+									<a target="_blank" rel="noopener noreferrer" href="#" class="social-footer__link" aria-label="Euphoria on Instagram">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-s-instagram"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="social-footer__item">
+									<a target="_blank" rel="noopener noreferrer" href="#" class="social-footer__link" aria-label="Euphoria on Twitter">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-s-twitter"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="social-footer__item">
+									<a target="_blank" rel="noopener noreferrer" href="#" class="social-footer__link" aria-label="Euphoria on LinkedIn">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-s-linkedin"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__download download-apps">
+							<h2 class="download-apps__title">Download The App</h2>
+							<div class="download-apps__items">
+								<a href="#" class="download-apps__item" target="_blank">
+									<img src="./assets/img/google.svg" alt="Google Play">
+								</a>
+								<a href="#" class="download-apps__item" target="_blank">
+									<img src="./assets/img/apple.svg" alt="Apple Store">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div data-fls-spollers="" class="spollers footer__categories popular-categories">
+						<details class="spollers__item">
+							<summary class="spollers__title popular-categories__title">
+								<div class="popular-categories__button-title">
+									<h2>Popular Categories</h2>
+									<svg class="icon popular-categories__chevron" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+									</svg>
+								</div>
+							</summary>
+							<div class="spollers__body popular-categories__body">
+								<ul class="popular-categories__list">
+									<li class="popular-categories__item">
+										<a href="#" class="popular-categories__link">Men</a>
+									</li>
+									<li class="popular-categories__item">
+										<a href="#" class="popular-categories__link">Women</a>
+									</li>
+								</ul>
+							</div>
+						</details>
+					</div>
+					<div class="footer__copy">Copyright © 2023 Euphoria Folks Pvt Ltd. All rights reserved.</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

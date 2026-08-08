@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script>
+      history.scrollRestoration = "manual";
+		</script>
+		<script>
+    // Демо-наповнення кошика при першому візиті: інакше відвідувач ніколи не
+    // побачить зверстану Cart Page (реальний магазин стартує порожнім, і
+    // cart.html одразу веде на emptycart.html). Підключено в head синхронно,
+    // до розмітки й модулів — щоб guard у cart.html бачив уже наповнений стан,
+    // а лічильник у шапці збігався на всіх сторінках.
+    // Прапорець ставиться назавжди, тож видалення всіх товарів веде на
+    // emptycart.html і повторного наповнення не буде — обидва стани досяжні.
+    // Шляхи до фото відносні, без аліасу @img: заміна аліасів працює лише для
+    // атрибутів розмітки та .js-файлів, не для тіла інлайн-скрипта.
+    // ВАЖЛИВО: жодних кутових дужок у цих коментарях — posthtml читає їх як
+    // теги і мовчки обрізає скрипт на проді (у dev при цьому все працює).
+    try {
+      if (!localStorage.getItem('euphoria-cart-seeded')) {
+        localStorage.setItem('euphoria-cart-seeded', '1')
+        if (!localStorage.getItem('euphoria-cart')) {
+          localStorage.setItem(
+            'euphoria-cart',
+            JSON.stringify([{
+                id: 'blue-flower-print-crop-top',
+                title: 'Blue Flower Print Crop Top',
+                price: 29,
+                shipping: 0,
+                qty: 1,
+                size: 'M',
+                color: 'Yellow',
+                image: 'assets/img/cart/products/photos/photo-1.jpg',
+                alt: 'Blue flower print crop top on a model',
+              },
+              {
+                id: 'levender-hoodie',
+                title: 'Levender Hoodie',
+                price: 119,
+                shipping: 0,
+                qty: 1,
+                size: 'XXL',
+                color: 'Levender',
+                image: 'assets/img/cart/products/photos/photo-2.jpg',
+                alt: 'Lavender hoodie on a model',
+              },
+              {
+                id: 'black-sweatshirt',
+                title: 'Black Sweatshirt',
+                price: 123,
+                shipping: 0,
+                qty: 1,
+                size: 'XXL',
+                color: 'Black',
+                image: 'assets/img/cart/products/photos/photo-3.jpg',
+                alt: 'Black sweatshirt on a model',
+              },
+            ])
+          )
+        }
+      }
+    } catch (e) {}
+	</script>
+		<script>
+  // Демо-наповнення wishlist при першому візиті — той самий принцип, що
+  // cart-state.html: реальний магазин стартує порожнім (wishlist.html одразу
+  // веде на emptywishlist.html), але щоб відвідувач побачив зверстану
+  // Wishlist Page без ручного додавання сердець, сідимо 2 реальні товари з
+  // products-new.json (ті самі id, що на index/catalog — серце на їхніх
+  // картках одразу покаже активний стан).
+  // Прапорець ставиться назавжди: видалення всіх товарів веде на
+  // emptywishlist.html і повторного наповнення не буде.
+  // Шляхи до фото відносні, без аліасу @img (та сама причина, що в
+  // cart-state.html — заміна аліасів не працює для тіла інлайн-скрипта).
+  // Фото — колишні wishlist/photos/photo-1.jpg,-2.jpg (лишились
+  // невикористаними після переходу wishlist.html на JS-рендер реального
+  // стану), НЕ lime/women (ті активно референсяться в products-*.json —
+  // build (Sharp) конвертує реферований jpg у webp і прибирає оригінал за
+  // цим самим шляхом, тож захардкоджений літерал у скрипті ламається на
+  // проді; невикористані файли build копіює як є, без конвертації).
+  try {
+    if (!localStorage.getItem('euphoria-wishlist-seeded')) {
+      localStorage.setItem('euphoria-wishlist-seeded', '1')
+      if (!localStorage.getItem('euphoria-wishlist')) {
+        localStorage.setItem(
+          'euphoria-wishlist',
+          JSON.stringify([{
+              id: 'black-sweatshirt-jhanvi',
+              title: 'Black Sweatshirt with ....',
+              price: 123,
+              brand: 'Jhanvi’s Brand',
+              image: 'assets/img/wishlist/photos/photo-1.jpg',
+              alt: 'Black Sweatshirt with ....',
+            },
+            {
+              id: 'white-graphic-crop-top-woden',
+              title: 'White Graphic Crop Top',
+              price: 29,
+              brand: 'woden’s Brand',
+              image: 'assets/img/wishlist/photos/photo-2.jpg',
+              alt: 'White Graphic Crop Top',
+            },
+          ])
+        )
+      }
+    }
+  } catch (e) {}
+</script>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preload" href="./assets/fonts/CoreSansC-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Check your email inbox for the password reset link from Euphoria — resend it if you have not received it.">
+		<title>Check Email – Euphoria</title>
+		<script type="module" crossorigin="" src="./js/main.min.js?v=1786191466770"></script>
+		<script type="module" crossorigin="" src="./js/select.min.js?v=1786191466770"></script>
+		<script type="module" crossorigin="" src="./js/header-auth.min.js?v=1786191466770"></script>
+		<script type="module" crossorigin="" src="./js/button2.min.js?v=1786191466770"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1786191466770">
+		<link rel="stylesheet" crossorigin="" href="./css/select.min.css?v=1786191466770">
+		<link rel="stylesheet" crossorigin="" href="./css/header-auth.min.css?v=1786191466770">
+		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1786191466770">
+		<link rel="stylesheet" crossorigin="" href="./css/checkemail.min.css?v=1786191466770">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header-auth="" class="header-auth">
+				<div class="header-auth__container">
+					<a href="index.html" class="header-auth__logo-link">
+						<img class="header-auth__logo" src="./assets/img/logo.svg" alt="Euphoria — home">
+					</a>
+					<div class="header-auth__end">
+						<div class="header-auth__search">
+							<button type="button" class="header-auth__search-toggle" data-header-auth-search-toggle="" aria-expanded="false" aria-controls="header-auth-search-panel" aria-label="Toggle search">
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+								</svg>
+							</button>
+							<form data-fls-form="dev" action="#" id="header-auth-search-panel" class="header-auth__search-panel search-form" hidden>
+								<label class="visually-hidden" for="header-auth-search-input">Search products</label>
+								<input id="header-auth-search-input" class="search-form__input" name="form[search]" placeholder="Search" type="search">
+								<button type="submit" class="search-form__button" aria-label="Search">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+									</svg>
+								</button>
+							</form>
+						</div>
+						<select id="header-auth-lang" class="header-auth__lang" data-fls-select="" data-fls-select-modif="header-auth" name="lang" aria-label="Language and region">
+							<option value="en-US" data-fls-select-asset="🇺🇸 EN" selected>English (United States)</option>
+							<option value="en-GB" data-fls-select-asset="🇬🇧 EN">English (United Kingdom)</option>
+							<option value="uk-UA" data-fls-select-asset="🇺🇦 UA">Українська (Україна)</option>
+						</select>
+						<div class="header-auth__actions">
+							<a href="signin.html" class="header-auth__login button button--secondary" data-fls-button="">Login</a>
+							<a href="signup.html" class="header-auth__signup button button--secondary" data-fls-button="">Sign Up</a>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="page">
+				<section class="checkemail">
+					<div class="checkemail__content">
+						<h1 class="checkemail__title">Check Email</h1>
+						<p class="checkemail__text">
+							Please check your email inbox and click on the provided link to reset your password. If you don’t receive email,
+							<button type="button" class="checkemail__resend" data-checkemail-resend="">Click here to resend</button>
+						</p>
+						<p class="checkemail__back">
+							<svg class="icon checkemail__back-icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-ch-left"></use>
+							</svg>
+							<span class="checkemail__back-text">
+								Back to
+								<a href="signin.html" class="checkemail__back-link">Login</a>
+							</span>
+						</p>
+					</div>
+					<div class="checkemail__media">
+						<picture>
+							<source media="(max-width: 600px)" srcset="./assets/img/checkemail/image-600.webp" type="image/webp">
+							<img class="checkemail__photo" alt="Two friends embracing and smiling against a mustard-yellow backdrop" loading="eager" width="695" height="956" src="./assets/img/checkemail/image.webp">
+						</picture>
+					</div>
+				</section>
+			</main>
+		</div>
+	</body>
+</html>

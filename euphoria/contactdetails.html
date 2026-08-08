@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script>
+      history.scrollRestoration = "manual";
+		</script>
+		<script>
+    // Демо-наповнення кошика при першому візиті: інакше відвідувач ніколи не
+    // побачить зверстану Cart Page (реальний магазин стартує порожнім, і
+    // cart.html одразу веде на emptycart.html). Підключено в head синхронно,
+    // до розмітки й модулів — щоб guard у cart.html бачив уже наповнений стан,
+    // а лічильник у шапці збігався на всіх сторінках.
+    // Прапорець ставиться назавжди, тож видалення всіх товарів веде на
+    // emptycart.html і повторного наповнення не буде — обидва стани досяжні.
+    // Шляхи до фото відносні, без аліасу @img: заміна аліасів працює лише для
+    // атрибутів розмітки та .js-файлів, не для тіла інлайн-скрипта.
+    // ВАЖЛИВО: жодних кутових дужок у цих коментарях — posthtml читає їх як
+    // теги і мовчки обрізає скрипт на проді (у dev при цьому все працює).
+    try {
+      if (!localStorage.getItem('euphoria-cart-seeded')) {
+        localStorage.setItem('euphoria-cart-seeded', '1')
+        if (!localStorage.getItem('euphoria-cart')) {
+          localStorage.setItem(
+            'euphoria-cart',
+            JSON.stringify([{
+                id: 'blue-flower-print-crop-top',
+                title: 'Blue Flower Print Crop Top',
+                price: 29,
+                shipping: 0,
+                qty: 1,
+                size: 'M',
+                color: 'Yellow',
+                image: 'assets/img/cart/products/photos/photo-1.jpg',
+                alt: 'Blue flower print crop top on a model',
+              },
+              {
+                id: 'levender-hoodie',
+                title: 'Levender Hoodie',
+                price: 119,
+                shipping: 0,
+                qty: 1,
+                size: 'XXL',
+                color: 'Levender',
+                image: 'assets/img/cart/products/photos/photo-2.jpg',
+                alt: 'Lavender hoodie on a model',
+              },
+              {
+                id: 'black-sweatshirt',
+                title: 'Black Sweatshirt',
+                price: 123,
+                shipping: 0,
+                qty: 1,
+                size: 'XXL',
+                color: 'Black',
+                image: 'assets/img/cart/products/photos/photo-3.jpg',
+                alt: 'Black sweatshirt on a model',
+              },
+            ])
+          )
+        }
+      }
+    } catch (e) {}
+	</script>
+		<script>
+  // Демо-наповнення wishlist при першому візиті — той самий принцип, що
+  // cart-state.html: реальний магазин стартує порожнім (wishlist.html одразу
+  // веде на emptywishlist.html), але щоб відвідувач побачив зверстану
+  // Wishlist Page без ручного додавання сердець, сідимо 2 реальні товари з
+  // products-new.json (ті самі id, що на index/catalog — серце на їхніх
+  // картках одразу покаже активний стан).
+  // Прапорець ставиться назавжди: видалення всіх товарів веде на
+  // emptywishlist.html і повторного наповнення не буде.
+  // Шляхи до фото відносні, без аліасу @img (та сама причина, що в
+  // cart-state.html — заміна аліасів не працює для тіла інлайн-скрипта).
+  // Фото — колишні wishlist/photos/photo-1.jpg,-2.jpg (лишились
+  // невикористаними після переходу wishlist.html на JS-рендер реального
+  // стану), НЕ lime/women (ті активно референсяться в products-*.json —
+  // build (Sharp) конвертує реферований jpg у webp і прибирає оригінал за
+  // цим самим шляхом, тож захардкоджений літерал у скрипті ламається на
+  // проді; невикористані файли build копіює як є, без конвертації).
+  try {
+    if (!localStorage.getItem('euphoria-wishlist-seeded')) {
+      localStorage.setItem('euphoria-wishlist-seeded', '1')
+      if (!localStorage.getItem('euphoria-wishlist')) {
+        localStorage.setItem(
+          'euphoria-wishlist',
+          JSON.stringify([{
+              id: 'black-sweatshirt-jhanvi',
+              title: 'Black Sweatshirt with ....',
+              price: 123,
+              brand: 'Jhanvi’s Brand',
+              image: 'assets/img/wishlist/photos/photo-1.jpg',
+              alt: 'Black Sweatshirt with ....',
+            },
+            {
+              id: 'white-graphic-crop-top-woden',
+              title: 'White Graphic Crop Top',
+              price: 29,
+              brand: 'woden’s Brand',
+              image: 'assets/img/wishlist/photos/photo-2.jpg',
+              alt: 'White Graphic Crop Top',
+            },
+          ])
+        )
+      }
+    }
+  } catch (e) {}
+</script>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preload" href="./assets/fonts/CoreSansC-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="View and update your personal contact information and manage saved addresses in your Euphoria account.">
+		<title>Contact Details – Euphoria</title>
+		<script type="module" crossorigin="" src="./js/main.min.js?v=1786191466729"></script>
+		<script type="module" crossorigin="" src="./js/footer.min.js?v=1786191466729"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1786191466729">
+		<link rel="stylesheet" crossorigin="" href="./css/footer.min.css?v=1786191466729">
+		<link rel="stylesheet" crossorigin="" href="./css/contactdetails.min.css?v=1786191466729">
+		<link rel="stylesheet" crossorigin="" href="./css/accountnav.min.css?v=1786191466729">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" data-fls-header-scroll="100" data-fls-header-scroll-show="500" class="header">
+				<div class="header__container">
+					<a href="index.html" class="header__logo-link">
+						<img class="header__logo" src="./assets/img/logo.svg" alt="Euphoria — home">
+					</a>
+					<div class="header__menu menu">
+						<nav id="main-menu" class="menu__body" aria-label="Main">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="#" class="menu__link">Shop</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Men</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Women</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Combos</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Joggers</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<form data-fls-form="dev" action="#" class="header__search search-form">
+						<label class="visually-hidden" for="header-search">Search products</label>
+						<input id="header-search" class="search-form__input" name="form[search]" placeholder="Search" type="search">
+						<button type="submit" class="search-form__button" aria-label="Search">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+							</svg>
+						</button>
+					</form>
+					<div class="header__action action-header">
+						<a href="wishlist.html" class="action-header__item action-header__item--wishlist" aria-label="Wishlist">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+							</svg>
+							<span class="action-header__count" aria-hidden="true">0</span>
+							<span class="visually-hidden" data-wishlist-count-text="" aria-live="polite">0 items in wishlist</span>
+						</a>
+						<a href="signin.html" class="action-header__item" aria-label="Sign in">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-user"></use>
+							</svg>
+						</a>
+						<a href="cart.html" class="action-header__item action-header__item--cart">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-cart"></use>
+							</svg>
+							<span class="action-header__count" aria-hidden="true">0</span>
+							<span class="visually-hidden" data-cart-count-text="" aria-live="polite">0 items in cart</span>
+						</a>
+					</div>
+					<button type="button" data-fls-menu="" class="menu__icon icon-menu" aria-label="Menu" aria-expanded="false" aria-controls="main-menu">
+						<span></span>
+					</button>
+				</div>
+			</header>
+			<main class="page">
+				<section class="contactdetails">
+					<div class="contactdetails__container block__container">
+						<div data-fls-accountnav="" class="accountnav">
+							<nav class="accountnav__breadcrumbs breadcrumbs" aria-label="Breadcrumb">
+								<ol class="breadcrumbs__list">
+									<li class="breadcrumbs__item">
+										<a href="index.html" class="breadcrumbs__link">Home</a>
+										<svg class="icon breadcrumbs__icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-ch-right"></use>
+										</svg>
+									</li>
+									<li class="breadcrumbs__item">
+										<a href="myorders.html" class="breadcrumbs__link">My Account</a>
+										<svg class="icon breadcrumbs__icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-ch-right"></use>
+										</svg>
+									</li>
+									<li class="breadcrumbs__item">
+										<span class="breadcrumbs__current" aria-current="page">Personal Info</span>
+									</li>
+								</ol>
+							</nav>
+							<div class="accountnav__heading">
+								<p class="accountnav__greeting title">Hello Jhanvi</p>
+								<p class="accountnav__subtitle">Welcome to your Account</p>
+							</div>
+							<nav class="accountnav__nav" aria-label="Account">
+								<ul class="accountnav__list">
+									<li class="accountnav__item">
+										<a href="myorders.html" class="accountnav__link">
+											<svg class="icon accountnav__icon" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-bags"></use>
+											</svg>
+											My orders
+										</a>
+									</li>
+									<li class="accountnav__item">
+										<a href="wishlist.html" class="accountnav__link">
+											<svg class="icon accountnav__icon" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+											</svg>
+											Wishlist
+										</a>
+									</li>
+									<li class="accountnav__item">
+										<a href="contactdetails.html" class="accountnav__link accountnav__link--active" aria-current="page">
+											<svg class="icon accountnav__icon" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-user"></use>
+											</svg>
+											My info
+										</a>
+									</li>
+									<li class="accountnav__item">
+										<button type="button" class="accountnav__link">
+											<svg class="icon accountnav__icon" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-exit"></use>
+											</svg>
+											Sign out
+										</button>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="contactdetails__content accountnav-content">
+							<h1 class="contactdetails__title title">My Info</h1>
+							<h2 class="contactdetails__subtitle">Contact Details</h2>
+							<div class="contactdetails__fields">
+								<div class="contactdetails__field">
+									<div class="contactdetails__field-info">
+										<p class="contactdetails__field-label">Your Name</p>
+										<p class="contactdetails__field-value">Jhanvi Shah</p>
+									</div>
+									<button type="button" class="contactdetails__field-change" aria-label="Change Your Name">Change</button>
+								</div>
+								<div class="contactdetails__field">
+									<div class="contactdetails__field-info">
+										<p class="contactdetails__field-label">Email Address</p>
+										<p class="contactdetails__field-value">Jhanvi@gmail.com</p>
+									</div>
+									<button type="button" class="contactdetails__field-change" aria-label="Change Email Address">Change</button>
+								</div>
+								<div class="contactdetails__field">
+									<div class="contactdetails__field-info">
+										<p class="contactdetails__field-label">Phone Number</p>
+										<p class="contactdetails__field-value">8980252445</p>
+									</div>
+									<button type="button" class="contactdetails__field-change" aria-label="Change Phone Number">Change</button>
+								</div>
+								<div class="contactdetails__field">
+									<div class="contactdetails__field-info">
+										<p class="contactdetails__field-label">Password</p>
+										<p class="contactdetails__field-value contactdetails__field-value--password" aria-label="Password hidden">••••••••</p>
+									</div>
+									<button type="button" class="contactdetails__field-change" aria-label="Change Password">Change</button>
+								</div>
+							</div>
+							<div class="contactdetails__address-header">
+								<h2 class="contactdetails__subtitle">Address</h2>
+								<a href="addaddress.html" class="contactdetails__add-address" aria-label="Add New Address">Add New</a>
+							</div>
+							<ul class="contactdetails__addresses">
+								<li class="contactdetails__address-card">
+									<h3 class="contactdetails__address-name">Jhanvi shah</h3>
+									<p class="contactdetails__address-phone">8980252445</p>
+									<p class="contactdetails__address-line">1/4 Pragatinagar Flats, opp. jain derasar , near Jain derasar, Vijaynagar road</p>
+									<div class="contactdetails__address-tags">
+										<span class="contactdetails__tag">Home</span>
+										<span class="contactdetails__tag">Default billing address</span>
+									</div>
+									<div class="contactdetails__address-actions">
+										<button type="button" class="contactdetails__action" aria-label="Remove Home address">Remove</button>
+										<span class="contactdetails__action-divider" aria-hidden="true"></span>
+										<button type="button" class="contactdetails__action" aria-label="Edit Home address">Edit</button>
+									</div>
+								</li>
+								<li class="contactdetails__address-card">
+									<h3 class="contactdetails__address-name">Jhanvi shah</h3>
+									<p class="contactdetails__address-phone">8980252445</p>
+									<p class="contactdetails__address-line">1/4 Pragatinagar Flats, opp. jain derasar , near Jain derasar, Vijaynagar road</p>
+									<div class="contactdetails__address-tags">
+										<span class="contactdetails__tag">Home</span>
+										<span class="contactdetails__tag">Default shipping address</span>
+									</div>
+									<div class="contactdetails__address-actions">
+										<button type="button" class="contactdetails__action" aria-label="Remove Home address">Remove</button>
+										<span class="contactdetails__action-divider" aria-hidden="true"></span>
+										<button type="button" class="contactdetails__action" aria-label="Edit Home address">Edit</button>
+									</div>
+								</li>
+								<li class="contactdetails__address-card">
+									<h3 class="contactdetails__address-name">Jhanvi shah</h3>
+									<p class="contactdetails__address-phone">8980252445</p>
+									<p class="contactdetails__address-line">1/4 Pragatinagar Flats, opp. jain derasar , near Jain derasar, Vijaynagar road</p>
+									<div class="contactdetails__address-tags">
+										<span class="contactdetails__tag">Office</span>
+									</div>
+									<div class="contactdetails__address-actions">
+										<button type="button" class="contactdetails__action" aria-label="Remove Office address">Remove</button>
+										<span class="contactdetails__action-divider" aria-hidden="true"></span>
+										<button type="button" class="contactdetails__action" aria-label="Edit Office address">Edit</button>
+										<span class="contactdetails__action-divider" aria-hidden="true"></span>
+										<button type="button" class="contactdetails__action" aria-label="Set as default (Office address)">Set as default</button>
+									</div>
+								</li>
+								<li class="contactdetails__address-card">
+									<h3 class="contactdetails__address-name">Jhanvi shah</h3>
+									<p class="contactdetails__address-phone">8980252445</p>
+									<p class="contactdetails__address-line">1/4 Pragatinagar Flats, opp. jain derasar , near Jain derasar, Vijaynagar road</p>
+									<div class="contactdetails__address-tags">
+										<span class="contactdetails__tag">Home2</span>
+									</div>
+									<div class="contactdetails__address-actions">
+										<button type="button" class="contactdetails__action" aria-label="Remove Home2 address">Remove</button>
+										<span class="contactdetails__action-divider" aria-hidden="true"></span>
+										<button type="button" class="contactdetails__action" aria-label="Edit Home2 address">Edit</button>
+										<span class="contactdetails__action-divider" aria-hidden="true"></span>
+										<button type="button" class="contactdetails__action" aria-label="Set as default (Home2 address)">Set as default</button>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container">
+					<div data-fls-spollers="560" class="footer__menu menu-footer">
+						<details open class="menu-footer__block">
+							<summary class="menu-footer__summary">
+								<h2 class="menu-footer__title">
+									Need Help
+									<svg class="icon menu-footer__chevron" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+									</svg>
+								</h2>
+							</summary>
+							<div class="menu-footer__body">
+								<ul class="menu-footer__list">
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Contact Us</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Track Order</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Returns & Refunds</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">FAQ's</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Career</a>
+									</li>
+								</ul>
+							</div>
+						</details>
+						<details open class="menu-footer__block">
+							<summary class="menu-footer__summary">
+								<h2 class="menu-footer__title">
+									Company
+									<svg class="icon menu-footer__chevron" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+									</svg>
+								</h2>
+							</summary>
+							<div class="menu-footer__body">
+								<ul class="menu-footer__list">
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">About Us</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Euphoria Blog</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Euphoriastan</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Collaboration</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Media</a>
+									</li>
+								</ul>
+							</div>
+						</details>
+						<details open class="menu-footer__block">
+							<summary class="menu-footer__summary">
+								<h2 class="menu-footer__title">
+									More Info
+									<svg class="icon menu-footer__chevron" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+									</svg>
+								</h2>
+							</summary>
+							<div class="menu-footer__body">
+								<ul class="menu-footer__list">
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Term and Conditions</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Privacy Policy</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Shipping Policy</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="sitemap.html" class="menu-footer__link">Sitemap</a>
+									</li>
+								</ul>
+							</div>
+						</details>
+						<div class="menu-footer__block menu-footer__block--plain">
+							<h2 class="menu-footer__title">Location</h2>
+							<div class="menu-footer__body">
+								<ul class="menu-footer__list">
+									<li class="menu-footer__item">
+										<a href="mailto:support@euphoria.in" class="menu-footer__link">support@euphoria.in</a>
+									</li>
+									<li class="menu-footer__item">Eklingpura Chouraha, Ahmedabad Main Road</li>
+									<li class="menu-footer__item">(NH 8- Near Mahadev Hotel) Udaipur, India - 313002</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="footer__body">
+						<div class="footer__social social-footer">
+							<ul class="social-footer__list">
+								<li class="social-footer__item">
+									<a target="_blank" rel="noopener noreferrer" href="#" class="social-footer__link" aria-label="Euphoria on Facebook">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-s-facebook"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="social-footer__item">
+									<a target="_blank" rel="noopener noreferrer" href="#" class="social-footer__link" aria-label="Euphoria on Instagram">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-s-instagram"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="social-footer__item">
+									<a target="_blank" rel="noopener noreferrer" href="#" class="social-footer__link" aria-label="Euphoria on Twitter">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-s-twitter"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="social-footer__item">
+									<a target="_blank" rel="noopener noreferrer" href="#" class="social-footer__link" aria-label="Euphoria on LinkedIn">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-s-linkedin"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__download download-apps">
+							<h2 class="download-apps__title">Download The App</h2>
+							<div class="download-apps__items">
+								<a href="#" class="download-apps__item" target="_blank">
+									<img src="./assets/img/google.svg" alt="Google Play">
+								</a>
+								<a href="#" class="download-apps__item" target="_blank">
+									<img src="./assets/img/apple.svg" alt="Apple Store">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div data-fls-spollers="" class="spollers footer__categories popular-categories">
+						<details class="spollers__item">
+							<summary class="spollers__title popular-categories__title">
+								<div class="popular-categories__button-title">
+									<h2>Popular Categories</h2>
+									<svg class="icon popular-categories__chevron" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+									</svg>
+								</div>
+							</summary>
+							<div class="spollers__body popular-categories__body">
+								<ul class="popular-categories__list">
+									<li class="popular-categories__item">
+										<a href="#" class="popular-categories__link">Men</a>
+									</li>
+									<li class="popular-categories__item">
+										<a href="#" class="popular-categories__link">Women</a>
+									</li>
+								</ul>
+							</div>
+						</details>
+					</div>
+					<div class="footer__copy">Copyright © 2023 Euphoria Folks Pvt Ltd. All rights reserved.</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

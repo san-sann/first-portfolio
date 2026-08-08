@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script>
+      history.scrollRestoration = "manual";
+		</script>
+		<script>
+    // Демо-наповнення кошика при першому візиті: інакше відвідувач ніколи не
+    // побачить зверстану Cart Page (реальний магазин стартує порожнім, і
+    // cart.html одразу веде на emptycart.html). Підключено в head синхронно,
+    // до розмітки й модулів — щоб guard у cart.html бачив уже наповнений стан,
+    // а лічильник у шапці збігався на всіх сторінках.
+    // Прапорець ставиться назавжди, тож видалення всіх товарів веде на
+    // emptycart.html і повторного наповнення не буде — обидва стани досяжні.
+    // Шляхи до фото відносні, без аліасу @img: заміна аліасів працює лише для
+    // атрибутів розмітки та .js-файлів, не для тіла інлайн-скрипта.
+    // ВАЖЛИВО: жодних кутових дужок у цих коментарях — posthtml читає їх як
+    // теги і мовчки обрізає скрипт на проді (у dev при цьому все працює).
+    try {
+      if (!localStorage.getItem('euphoria-cart-seeded')) {
+        localStorage.setItem('euphoria-cart-seeded', '1')
+        if (!localStorage.getItem('euphoria-cart')) {
+          localStorage.setItem(
+            'euphoria-cart',
+            JSON.stringify([{
+                id: 'blue-flower-print-crop-top',
+                title: 'Blue Flower Print Crop Top',
+                price: 29,
+                shipping: 0,
+                qty: 1,
+                size: 'M',
+                color: 'Yellow',
+                image: 'assets/img/cart/products/photos/photo-1.jpg',
+                alt: 'Blue flower print crop top on a model',
+              },
+              {
+                id: 'levender-hoodie',
+                title: 'Levender Hoodie',
+                price: 119,
+                shipping: 0,
+                qty: 1,
+                size: 'XXL',
+                color: 'Levender',
+                image: 'assets/img/cart/products/photos/photo-2.jpg',
+                alt: 'Lavender hoodie on a model',
+              },
+              {
+                id: 'black-sweatshirt',
+                title: 'Black Sweatshirt',
+                price: 123,
+                shipping: 0,
+                qty: 1,
+                size: 'XXL',
+                color: 'Black',
+                image: 'assets/img/cart/products/photos/photo-3.jpg',
+                alt: 'Black sweatshirt on a model',
+              },
+            ])
+          )
+        }
+      }
+    } catch (e) {}
+	</script>
+		<script>
+  // Демо-наповнення wishlist при першому візиті — той самий принцип, що
+  // cart-state.html: реальний магазин стартує порожнім (wishlist.html одразу
+  // веде на emptywishlist.html), але щоб відвідувач побачив зверстану
+  // Wishlist Page без ручного додавання сердець, сідимо 2 реальні товари з
+  // products-new.json (ті самі id, що на index/catalog — серце на їхніх
+  // картках одразу покаже активний стан).
+  // Прапорець ставиться назавжди: видалення всіх товарів веде на
+  // emptywishlist.html і повторного наповнення не буде.
+  // Шляхи до фото відносні, без аліасу @img (та сама причина, що в
+  // cart-state.html — заміна аліасів не працює для тіла інлайн-скрипта).
+  // Фото — колишні wishlist/photos/photo-1.jpg,-2.jpg (лишились
+  // невикористаними після переходу wishlist.html на JS-рендер реального
+  // стану), НЕ lime/women (ті активно референсяться в products-*.json —
+  // build (Sharp) конвертує реферований jpg у webp і прибирає оригінал за
+  // цим самим шляхом, тож захардкоджений літерал у скрипті ламається на
+  // проді; невикористані файли build копіює як є, без конвертації).
+  try {
+    if (!localStorage.getItem('euphoria-wishlist-seeded')) {
+      localStorage.setItem('euphoria-wishlist-seeded', '1')
+      if (!localStorage.getItem('euphoria-wishlist')) {
+        localStorage.setItem(
+          'euphoria-wishlist',
+          JSON.stringify([{
+              id: 'black-sweatshirt-jhanvi',
+              title: 'Black Sweatshirt with ....',
+              price: 123,
+              brand: 'Jhanvi’s Brand',
+              image: 'assets/img/wishlist/photos/photo-1.jpg',
+              alt: 'Black Sweatshirt with ....',
+            },
+            {
+              id: 'white-graphic-crop-top-woden',
+              title: 'White Graphic Crop Top',
+              price: 29,
+              brand: 'woden’s Brand',
+              image: 'assets/img/wishlist/photos/photo-2.jpg',
+              alt: 'White Graphic Crop Top',
+            },
+          ])
+        )
+      }
+    }
+  } catch (e) {}
+</script>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preload" href="./assets/fonts/CoreSansC-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/CoreSansC-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Causten-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Shop the Raven Hoodie in black at Euphoria — an oversized, bio-washed cotton top for women in 5 sizes and 4 colours.">
+		<title>Raven Hoodie With Black Colored Design – Euphoria Women</title>
+		<script type="module" crossorigin="" src="./js/product-detail.min.js?v=1786191466781"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1786191466781">
+		<link rel="modulepreload" crossorigin="" href="./js/footer.min.js?v=1786191466781">
+		<link rel="modulepreload" crossorigin="" href="./js/watcher.min.js?v=1786191466781">
+		<link rel="modulepreload" crossorigin="" href="./js/button2.min.js?v=1786191466781">
+		<link rel="modulepreload" crossorigin="" href="./js/tabs.min.js?v=1786191466781">
+		<link rel="modulepreload" crossorigin="" href="./js/effect-fade.min.js?v=1786191466781">
+		<link rel="modulepreload" crossorigin="" href="./js/favorite.min.js?v=1786191466781">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1786191466781">
+		<link rel="stylesheet" crossorigin="" href="./css/footer.min.css?v=1786191466781">
+		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1786191466781">
+		<link rel="stylesheet" crossorigin="" href="./css/tabs.min.css?v=1786191466781">
+		<link rel="stylesheet" crossorigin="" href="./css/effect-fade.min.css?v=1786191466781">
+		<link rel="stylesheet" crossorigin="" href="./css/product-detail.min.css?v=1786191466781">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" data-fls-header-scroll="100" data-fls-header-scroll-show="500" class="header">
+				<div class="header__container">
+					<a href="index.html" class="header__logo-link">
+						<img class="header__logo" src="./assets/img/logo.svg" alt="Euphoria — home">
+					</a>
+					<div class="header__menu menu">
+						<nav id="main-menu" class="menu__body" aria-label="Main">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="#" class="menu__link">Shop</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Men</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link menu__link--active">Women</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Combos</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Joggers</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<form data-fls-form="dev" action="#" class="header__search search-form">
+						<label class="visually-hidden" for="header-search">Search products</label>
+						<input id="header-search" class="search-form__input" name="form[search]" placeholder="Search" type="search">
+						<button type="submit" class="search-form__button" aria-label="Search">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+							</svg>
+						</button>
+					</form>
+					<div class="header__action action-header">
+						<a href="wishlist.html" class="action-header__item action-header__item--wishlist" aria-label="Wishlist">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+							</svg>
+							<span class="action-header__count" aria-hidden="true">0</span>
+							<span class="visually-hidden" data-wishlist-count-text="" aria-live="polite">0 items in wishlist</span>
+						</a>
+						<a href="signin.html" class="action-header__item" aria-label="Sign in">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-user"></use>
+							</svg>
+						</a>
+						<a href="cart.html" class="action-header__item action-header__item--cart">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-cart"></use>
+							</svg>
+							<span class="action-header__count" aria-hidden="true">0</span>
+							<span class="visually-hidden" data-cart-count-text="" aria-live="polite">0 items in cart</span>
+						</a>
+					</div>
+					<button type="button" data-fls-menu="" class="menu__icon icon-menu" aria-label="Menu" aria-expanded="false" aria-controls="main-menu">
+						<span></span>
+					</button>
+				</div>
+			</header>
+			<main class="page">
+				<section class="top">
+					<div class="top__container">
+						<div class="top__gallery">
+							<div class="top__gallery-bg" aria-hidden="true"></div>
+							<div class="top__main main-gallery swiper" data-fls-gallery-main="">
+								<div class="main-gallery__wrapper swiper-wrapper">
+									<div class="main-gallery__slide swiper-slide">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/product-detail/photos/photo-1-600.webp" type="image/webp">
+											<img class="main-gallery__image" alt="Peach graffiti-print hoodie, front view on model" loading="eager" src="./assets/img/product-detail/photos/photo-1.webp">
+										</picture>
+									</div>
+									<div class="main-gallery__slide swiper-slide">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/product-detail/photos/photo-2-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/product-detail/photos/photo-2-1200.webp" type="image/webp">
+											<img class="main-gallery__image" alt="Raven Hoodie in black with logo print, model pulling the collar up" loading="eager" src="./assets/img/product-detail/photos/photo-2.webp">
+										</picture>
+									</div>
+									<div class="main-gallery__slide swiper-slide">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/product-detail/photos/photo-3-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/product-detail/photos/photo-3-1200.webp" type="image/webp">
+											<img class="main-gallery__image" alt="Colourful printed hoodie, front view on model" loading="eager" src="./assets/img/product-detail/photos/photo-3.webp">
+										</picture>
+									</div>
+									<div class="main-gallery__slide swiper-slide">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/product-detail/photos/photo-4-600.webp" type="image/webp">
+											<img class="main-gallery__image" alt="Navy hoodie with &quot;Bound by Kindness&quot; print, model wearing sunglasses" loading="eager" src="./assets/img/product-detail/photos/photo-4.webp">
+										</picture>
+									</div>
+								</div>
+							</div>
+							<div class="top__thumbs-col">
+								<div class="top__thumbs thumbs swiper" data-fls-gallery-thumbs="">
+									<div class="thumbs__wrapper swiper-wrapper">
+										<div class="thumbs__slide swiper-slide">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product-detail/photos/photo-1-600.webp" type="image/webp">
+												<img class="thumbs__image" alt="Peach graffiti print" loading="eager" src="./assets/img/product-detail/photos/photo-1.webp">
+											</picture>
+										</div>
+										<div class="thumbs__slide swiper-slide">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product-detail/photos/photo-2-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/product-detail/photos/photo-2-1200.webp" type="image/webp">
+												<img class="thumbs__image" alt="Black colourway with logo print" loading="eager" src="./assets/img/product-detail/photos/photo-2.webp">
+											</picture>
+										</div>
+										<div class="thumbs__slide swiper-slide">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product-detail/photos/photo-3-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/product-detail/photos/photo-3-1200.webp" type="image/webp">
+												<img class="thumbs__image" alt="Colourful printed hoodie" loading="eager" src="./assets/img/product-detail/photos/photo-3.webp">
+											</picture>
+										</div>
+										<div class="thumbs__slide swiper-slide">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product-detail/photos/photo-4-600.webp" type="image/webp">
+												<img class="thumbs__image" alt="Navy hoodie with print" loading="eager" src="./assets/img/product-detail/photos/photo-4.webp">
+											</picture>
+										</div>
+									</div>
+								</div>
+								<div class="top__thumbs-nav">
+									<button type="button" class="top__thumbs-arrow top__thumbs-arrow--prev" aria-label="Previous photo">
+										<img class="top__thumbs-arrow-icon" src="./assets/img/product-detail/icons/thumb-arrow-up.svg" alt="" loading="lazy">
+									</button>
+									<button type="button" class="top__thumbs-arrow top__thumbs-arrow--next" aria-label="Next photo">
+										<img class="top__thumbs-arrow-icon" src="./assets/img/product-detail/icons/thumb-arrow-down.svg" alt="" loading="lazy">
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="top__info">
+							<nav class="top__breadcrumbs breadcrumbs" aria-label="Breadcrumb">
+								<ol class="breadcrumbs__list">
+									<li class="breadcrumbs__item">
+										<a href="#" class="breadcrumbs__link">Shop</a>
+										<svg class="icon breadcrumbs__icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-ch-right"></use>
+										</svg>
+									</li>
+									<li class="breadcrumbs__item">
+										<a href="#" class="breadcrumbs__link">Women</a>
+										<svg class="icon breadcrumbs__icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-ch-right"></use>
+										</svg>
+									</li>
+									<li class="breadcrumbs__item">
+										<span class="breadcrumbs__current" aria-current="page">Top</span>
+									</li>
+								</ol>
+							</nav>
+							<h1 data-fls-watcher="" data-fls-watcher-once="" class="top__title">Raven Hoodie With Black colored Design</h1>
+							<div class="top__meta">
+								<div class="top__rating-group">
+									<div class="top__rating rating" data-fls-rating="" data-fls-rating-value="3.5" data-fls-rating-size="5" aria-hidden="true"></div>
+									<span class="visually-hidden">Rated 3.5 out of 5 stars</span>
+									<span class="top__rating-value" aria-hidden="true">3.5</span>
+								</div>
+								<div class="top__comments">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-comment"></use>
+									</svg>
+									<span>120 comment</span>
+								</div>
+							</div>
+							<div class="top__size">
+								<div class="top__size-header">
+									<p id="top-size-label" class="top__size-label">Select Size</p>
+									<button type="button" class="top__size-guide" data-fls-popup-link="size-guide">
+										Size Guide
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-a-right"></use>
+										</svg>
+									</button>
+								</div>
+								<div class="top__size-list" role="group" aria-labelledby="top-size-label">
+									<label class="top__size-item">
+										<input type="radio" name="size" value="XS" class="top__size-input">
+										XS
+									</label>
+									<label class="top__size-item">
+										<input type="radio" name="size" value="S" class="top__size-input">
+										S
+									</label>
+									<label class="top__size-item">
+										<input type="radio" name="size" value="M" class="top__size-input">
+										M
+									</label>
+									<label class="top__size-item">
+										<input type="radio" name="size" value="L" class="top__size-input" checked>
+										L
+									</label>
+									<label class="top__size-item">
+										<input type="radio" name="size" value="XL" class="top__size-input">
+										XL
+									</label>
+								</div>
+							</div>
+							<div class="top__colors">
+								<p id="top-colors-label" class="top__colors-label">Colours Available</p>
+								<div class="top__colors-list" role="group" aria-labelledby="top-colors-label">
+									<label class="top__color-item" style="--color: var(--dark-color)">
+										<input type="radio" name="color" class="top__color-input" checked>
+										<span class="visually-hidden">Black</span>
+									</label>
+									<label class="top__color-item" style="--color: #EDD146">
+										<input type="radio" name="color" class="top__color-input">
+										<span class="visually-hidden">Yellow</span>
+									</label>
+									<label class="top__color-item" style="--color: #EB84B0">
+										<input type="radio" name="color" class="top__color-input">
+										<span class="visually-hidden">Pink</span>
+									</label>
+									<label class="top__color-item" style="--color: #9C1F35">
+										<input type="radio" name="color" class="top__color-input">
+										<span class="visually-hidden">Maroon</span>
+									</label>
+								</div>
+							</div>
+							<div class="top__actions">
+								<button type="button" class="top__add-to-cart button" data-fls-button="" data-product-id="raven-hoodie-black-design">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-cart"></use>
+									</svg>
+									Add to cart
+								</button>
+								<p class="top__price button button--border" data-fls-button="">$63.00</p>
+							</div>
+							<p class="visually-hidden" data-cart-status="" aria-live="polite"></p>
+							<hr class="top__divider">
+							<ul class="top__perks">
+								<li class="top__perk">
+									<span class="top__perk-icon">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-credit-cart"></use>
+										</svg>
+									</span>
+									Secure payment
+								</li>
+								<li class="top__perk">
+									<span class="top__perk-icon">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-size-fit"></use>
+										</svg>
+									</span>
+									Size &amp; Fit
+								</li>
+								<li class="top__perk">
+									<span class="top__perk-icon">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-truck"></use>
+										</svg>
+									</span>
+									Free shipping
+								</li>
+								<li class="top__perk">
+									<span class="top__perk-icon">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-free-shiping"></use>
+										</svg>
+									</span>
+									Free Shipping &amp; Returns
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section class="product-description">
+					<div class="product-description__container">
+						<div class="product-description__content">
+							<h2 data-fls-watcher="" data-fls-watcher-once="" class="product-description__title title">Product Description</h2>
+							<div data-fls-tabs="" class="product-description__tabs tabs">
+								<nav data-fls-tabs-titles="" class="product-description__tabs-nav tabs__navigation">
+									<button type="button" class="product-description__tabs-title tabs__title --tab-active">Description</button>
+									<button type="button" class="product-description__tabs-title tabs__title">
+										User comments
+										<span class="product-description__badge product-description__badge--purple">21</span>
+									</button>
+									<button type="button" class="product-description__tabs-title tabs__title">
+										Question &amp; Answer
+										<span class="product-description__badge product-description__badge--dark">4</span>
+									</button>
+								</nav>
+								<div data-fls-tabs-body="" class="product-description__tabs-body tabs__content">
+									<div class="product-description__panel tabs__body">
+										<p class="product-description__text">
+											100% Bio-washed Cotton - makes the fabric extra soft &amp; silky. Flexible ribbed crew neck. Precisely stitched with no pilling &amp; no fading. Provide  all-time comfort. Anytime, anywhere. Infinite range of matte-finish HD prints.
+										</p>
+										<dl class="product-description__specs">
+											<div class="product-description__specs-item">
+												<dt>Fabric</dt>
+												<dd>Bio-washed Cotton</dd>
+											</div>
+											<div class="product-description__specs-item">
+												<dt>Pattern</dt>
+												<dd>Printed</dd>
+											</div>
+											<div class="product-description__specs-item">
+												<dt>Fit</dt>
+												<dd>Regular-fit</dd>
+											</div>
+											<div class="product-description__specs-item">
+												<dt>Neck</dt>
+												<dd>Round Neck</dd>
+											</div>
+											<div class="product-description__specs-item">
+												<dt>Sleeve</dt>
+												<dd>Half-sleeves</dd>
+											</div>
+											<div class="product-description__specs-item">
+												<dt>Style</dt>
+												<dd>Casual Wear</dd>
+											</div>
+										</dl>
+									</div>
+									<div class="product-description__panel tabs__body">
+										<p class="product-description__placeholder">User comments will appear here soon.</p>
+									</div>
+									<div class="product-description__panel tabs__body">
+										<p class="product-description__placeholder">Questions &amp; answers will appear here soon.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button type="button" class="product-description__video" data-fls-popup-link="product-video" data-fls-popup-youtube="_4UQfRpvZrU" data-fls-popup-youtube-title="Raven Hoodie with black colored design - product video">
+							<span class="visually-hidden">Play video:</span>
+							<picture>
+								<source media="(max-width: 600px)" srcset="./assets/img/product-detail/product-description/photos/preview-56e74c-600.webp" type="image/webp">
+								<source media="(max-width: 1200px)" srcset="./assets/img/product-detail/product-description/photos/preview-56e74c-1200.webp" type="image/webp">
+								<img class="product-description__video-image" alt="" loading="lazy" src="./assets/img/product-detail/product-description/photos/preview-56e74c.webp">
+							</picture>
+							<span class="product-description__video-duration">1:00 M</span>
+							<span class="product-description__video-play">
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-play"></use>
+								</svg>
+							</span>
+							<span class="product-description__video-caption">Raven Hoodie with black colored design</span>
+						</button>
+					</div>
+				</section>
+				<section class="similar-products">
+					<div class="similar-products__container">
+						<h2 data-fls-watcher="" data-fls-watcher-once="" class="similar-products__title title">Similar Products</h2>
+						<div class="similar-products__items">
+							<article class="item-product" data-product-id="white-tshirt-priya">
+								<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add White T-Shirt to wishlist">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+									</svg>
+								</button>
+								<a href="product-detail.html" class="item-product__picture-link">
+									<picture>
+										<img class="item-product__image" alt="White T-Shirt" loading="lazy" src="./assets/img/product-detail/similar-products/photo-1.webp">
+									</picture>
+								</a>
+								<div class="item-product__body">
+									<h3 class="item-product__title">
+										<a href="product-detail.html" class="item-product__link-title">White T-Shirt</a>
+									</h3>
+									<div class="item-product__label">Priya’s Brand</div>
+									<div class="item-product__price">$13.00</div>
+								</div>
+							</article>
+							<article class="item-product" data-product-id="dark-green-sweatshirt-roboto">
+								<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Dark Green Sweatshirt.... to wishlist">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+									</svg>
+								</button>
+								<a href="product-detail.html" class="item-product__picture-link">
+									<picture>
+										<img class="item-product__image" alt="Dark Green Sweatshirt...." loading="lazy" src="./assets/img/product-detail/similar-products/photo-2.webp">
+									</picture>
+								</a>
+								<div class="item-product__body">
+									<h3 class="item-product__title">
+										<a href="product-detail.html" class="item-product__link-title">Dark Green Sweatshirt....</a>
+									</h3>
+									<div class="item-product__label">Roboto’s Brand</div>
+									<div class="item-product__price">$127.00</div>
+								</div>
+							</article>
+							<article class="item-product" data-product-id="levender-sweatshirt-jhanvi">
+								<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Levender Sweatshirt .... to wishlist">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+									</svg>
+								</button>
+								<a href="product-detail.html" class="item-product__picture-link">
+									<picture>
+										<img class="item-product__image" alt="Levender Sweatshirt ...." loading="lazy" src="./assets/img/product-detail/similar-products/photo-3.webp">
+									</picture>
+								</a>
+								<div class="item-product__body">
+									<h3 class="item-product__title">
+										<a href="product-detail.html" class="item-product__link-title">Levender Sweatshirt ....</a>
+									</h3>
+									<div class="item-product__label">Jhanvi’s Brand</div>
+									<div class="item-product__price">$133.00</div>
+								</div>
+							</article>
+							<article class="item-product" data-product-id="urban-jacket-sagar">
+								<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Urban jacket with white .... to wishlist">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+									</svg>
+								</button>
+								<a href="product-detail.html" class="item-product__picture-link">
+									<picture>
+										<img class="item-product__image" alt="Urban jacket with white ...." loading="lazy" src="./assets/img/product-detail/similar-products/photo-4.webp">
+									</picture>
+								</a>
+								<div class="item-product__body">
+									<h3 class="item-product__title">
+										<a href="product-detail.html" class="item-product__link-title">Urban jacket with white ....</a>
+									</h3>
+									<div class="item-product__label">Sagar’s Brand</div>
+									<div class="item-product__price">$79.00</div>
+								</div>
+							</article>
+							<article class="item-product" data-product-id="plain-white-tshirt-jhanvi">
+								<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Plain White T-Shirt to wishlist">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+									</svg>
+								</button>
+								<a href="product-detail.html" class="item-product__picture-link">
+									<picture>
+										<img class="item-product__image" alt="Plain White T-Shirt" loading="lazy" src="./assets/img/product-detail/similar-products/photo-5.webp">
+									</picture>
+								</a>
+								<div class="item-product__body">
+									<h3 class="item-product__title">
+										<a href="product-detail.html" class="item-product__link-title">Plain White T-Shirt</a>
+									</h3>
+									<div class="item-product__label">Jhanvi’s Brand</div>
+									<div class="item-product__price">$123.00</div>
+								</div>
+							</article>
+							<article class="item-product" data-product-id="checks-shirt-hm">
+								<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Checks Shirt with white..... to wishlist">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+									</svg>
+								</button>
+								<a href="product-detail.html" class="item-product__picture-link">
+									<picture>
+										<img class="item-product__image" alt="Checks Shirt with white....." loading="lazy" src="./assets/img/product-detail/similar-products/photo-6.webp">
+									</picture>
+								</a>
+								<div class="item-product__body">
+									<h3 class="item-product__title">
+										<a href="product-detail.html" class="item-product__link-title">Checks Shirt with white.....</a>
+									</h3>
+									<div class="item-product__label">H.M’s Brand</div>
+									<div class="item-product__price">$123.00</div>
+								</div>
+							</article>
+							<article class="item-product" data-product-id="one-piece-black-top-nike">
+								<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add One piece black top &amp; .... to wishlist">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+									</svg>
+								</button>
+								<a href="product-detail.html" class="item-product__picture-link">
+									<picture>
+										<img class="item-product__image" alt="One piece black top &amp; ...." loading="lazy" src="./assets/img/product-detail/similar-products/photo-7.webp">
+									</picture>
+								</a>
+								<div class="item-product__body">
+									<h3 class="item-product__title">
+										<a href="product-detail.html" class="item-product__link-title">One piece black top &amp; ....</a>
+									</h3>
+									<div class="item-product__label">Nike’s Brand</div>
+									<div class="item-product__price">$123.00</div>
+								</div>
+							</article>
+							<article class="item-product" data-product-id="denim-blue-shirt-momo">
+								<button type="button" class="item-product__favorite" data-fls-favorite="" aria-pressed="false" aria-label="Add Denim Blue Shirt to wishlist">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-favorite"></use>
+									</svg>
+								</button>
+								<a href="product-detail.html" class="item-product__picture-link">
+									<picture>
+										<img class="item-product__image" alt="Denim Blue Shirt" loading="lazy" src="./assets/img/product-detail/similar-products/photo-8.webp">
+									</picture>
+								</a>
+								<div class="item-product__body">
+									<h3 class="item-product__title">
+										<a href="product-detail.html" class="item-product__link-title">Denim Blue Shirt</a>
+									</h3>
+									<div class="item-product__label">MOMO’s Brand</div>
+									<div class="item-product__price">$38.00</div>
+								</div>
+							</article>
+						</div>
+					</div>
+				</section>
+				<div data-fls-popup="size-guide" aria-hidden="true" class="popup">
+					<div data-fls-popup-wrapper="" class="popup__wrapper">
+						<div data-fls-popup-body="" class="popup__body">
+							<button data-fls-popup-close="" type="button" class="popup__close" aria-label="Close">
+								<svg width="23" height="23" viewbox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path opacity="0.850056" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square"></path>
+									<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square"></path>
+								</svg>
+							</button>
+							<div data-fls-popup-content="" class="popup__text">
+								<h2 class="size-guide__title">Size Guide</h2>
+								<table class="size-guide__table">
+									<caption class="visually-hidden">Body measurements in inches by size</caption>
+									<thead>
+										<tr>
+											<th scope="col">Size</th>
+											<th scope="col">Chest</th>
+											<th scope="col">Length</th>
+											<th scope="col">Sleeve</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row">XS</th>
+											<td>36</td>
+											<td>26</td>
+											<td>23</td>
+										</tr>
+										<tr>
+											<th scope="row">S</th>
+											<td>38</td>
+											<td>27</td>
+											<td>23.5</td>
+										</tr>
+										<tr>
+											<th scope="row">M</th>
+											<td>40</td>
+											<td>28</td>
+											<td>24</td>
+										</tr>
+										<tr>
+											<th scope="row">L</th>
+											<td>42</td>
+											<td>29</td>
+											<td>24.5</td>
+										</tr>
+										<tr>
+											<th scope="row">XL</th>
+											<td>44</td>
+											<td>30</td>
+											<td>25</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-fls-popup="product-video" aria-hidden="true" class="popup">
+					<div data-fls-popup-wrapper="" class="popup__wrapper">
+						<div data-fls-popup-body="" class="popup__body">
+							<button data-fls-popup-close="" type="button" class="popup__close" aria-label="Close">
+								<svg width="23" height="23" viewbox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path opacity="0.850056" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square"></path>
+									<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square"></path>
+								</svg>
+							</button>
+							<div data-fls-popup-content="" class="popup__text"></div>
+						</div>
+					</div>
+				</div>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container">
+					<div data-fls-spollers="560" class="footer__menu menu-footer">
+						<details open class="menu-footer__block">
+							<summary class="menu-footer__summary">
+								<h2 class="menu-footer__title">
+									Need Help
+									<svg class="icon menu-footer__chevron" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+									</svg>
+								</h2>
+							</summary>
+							<div class="menu-footer__body">
+								<ul class="menu-footer__list">
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Contact Us</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Track Order</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Returns & Refunds</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">FAQ's</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Career</a>
+									</li>
+								</ul>
+							</div>
+						</details>
+						<details open class="menu-footer__block">
+							<summary class="menu-footer__summary">
+								<h2 class="menu-footer__title">
+									Company
+									<svg class="icon menu-footer__chevron" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+									</svg>
+								</h2>
+							</summary>
+							<div class="menu-footer__body">
+								<ul class="menu-footer__list">
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">About Us</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Euphoria Blog</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Euphoriastan</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Collaboration</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Media</a>
+									</li>
+								</ul>
+							</div>
+						</details>
+						<details open class="menu-footer__block">
+							<summary class="menu-footer__summary">
+								<h2 class="menu-footer__title">
+									More Info
+									<svg class="icon menu-footer__chevron" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+									</svg>
+								</h2>
+							</summary>
+							<div class="menu-footer__body">
+								<ul class="menu-footer__list">
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Term and Conditions</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Privacy Policy</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="#" class="menu-footer__link">Shipping Policy</a>
+									</li>
+									<li class="menu-footer__item">
+										<a href="sitemap.html" class="menu-footer__link">Sitemap</a>
+									</li>
+								</ul>
+							</div>
+						</details>
+						<div class="menu-footer__block menu-footer__block--plain">
+							<h2 class="menu-footer__title">Location</h2>
+							<div class="menu-footer__body">
+								<ul class="menu-footer__list">
+									<li class="menu-footer__item">
+										<a href="mailto:support@euphoria.in" class="menu-footer__link">support@euphoria.in</a>
+									</li>
+									<li class="menu-footer__item">Eklingpura Chouraha, Ahmedabad Main Road</li>
+									<li class="menu-footer__item">(NH 8- Near Mahadev Hotel) Udaipur, India - 313002</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="footer__body">
+						<div class="footer__social social-footer">
+							<ul class="social-footer__list">
+								<li class="social-footer__item">
+									<a target="_blank" rel="noopener noreferrer" href="#" class="social-footer__link" aria-label="Euphoria on Facebook">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-s-facebook"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="social-footer__item">
+									<a target="_blank" rel="noopener noreferrer" href="#" class="social-footer__link" aria-label="Euphoria on Instagram">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-s-instagram"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="social-footer__item">
+									<a target="_blank" rel="noopener noreferrer" href="#" class="social-footer__link" aria-label="Euphoria on Twitter">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-s-twitter"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="social-footer__item">
+									<a target="_blank" rel="noopener noreferrer" href="#" class="social-footer__link" aria-label="Euphoria on LinkedIn">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-s-linkedin"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__download download-apps">
+							<h2 class="download-apps__title">Download The App</h2>
+							<div class="download-apps__items">
+								<a href="#" class="download-apps__item" target="_blank">
+									<img src="./assets/img/google.svg" alt="Google Play">
+								</a>
+								<a href="#" class="download-apps__item" target="_blank">
+									<img src="./assets/img/apple.svg" alt="Apple Store">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div data-fls-spollers="" class="spollers footer__categories popular-categories">
+						<details class="spollers__item">
+							<summary class="spollers__title popular-categories__title">
+								<div class="popular-categories__button-title">
+									<h2>Popular Categories</h2>
+									<svg class="icon popular-categories__chevron" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-ch-down"></use>
+									</svg>
+								</div>
+							</summary>
+							<div class="spollers__body popular-categories__body">
+								<ul class="popular-categories__list">
+									<li class="popular-categories__item">
+										<a href="#" class="popular-categories__link">Men</a>
+									</li>
+									<li class="popular-categories__item">
+										<a href="#" class="popular-categories__link">Women</a>
+									</li>
+								</ul>
+							</div>
+						</details>
+					</div>
+					<div class="footer__copy">Copyright © 2023 Euphoria Folks Pvt Ltd. All rights reserved.</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
