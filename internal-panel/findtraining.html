@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Search available trainings by field of knowledge, instructor or date.">
+		<meta property="og:title" content="Find Training">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://camioca-internal-panel.vercel.app/assets/img/og/preview.png">
+		<meta property="og:url" content="https://camioca-internal-panel.vercel.app/findtraining.html">
+		<title>Find Training</title>
+		<script type="module" crossorigin="" src="./js/findtraining.min.js?v=1788984567270"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/datepicker.min.js?v=1788984567270">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1788984567270">
+		<link rel="modulepreload" crossorigin="" href="./js/header.min.js?v=1788984567270">
+		<link rel="modulepreload" crossorigin="" href="./js/_functions.min.js?v=1788984567270">
+		<link rel="modulepreload" crossorigin="" href="./js/select.min.js?v=1788984567270">
+		<link rel="stylesheet" crossorigin="" href="./css/datepicker.min.css?v=1788984567270">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1788984567270">
+		<link rel="stylesheet" crossorigin="" href="./css/header.min.css?v=1788984567270">
+		<link rel="stylesheet" crossorigin="" href="./css/select.min.css?v=1788984567270">
+		<link rel="stylesheet" crossorigin="" href="./css/findtraining.min.css?v=1788984567270">
+		<link rel="stylesheet" crossorigin="" href="./css/subnav.min.css?v=1788984567270">
+		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1788984567270">
+		<link rel="stylesheet" crossorigin="" href="./css/radio.min.css?v=1788984567270">
+		<link rel="stylesheet" crossorigin="" href="./css/checkbox.min.css?v=1788984567270">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__account">
+					<button type="button" data-fls-menu="" class="icon-menu" aria-expanded="false" aria-label="Open menu">
+						<span></span>
+					</button>
+					<button type="button" class="header__account-toggle" data-fls-account-toggle="" aria-haspopup="true" aria-expanded="false" aria-controls="header-account-menu">
+						<picture>
+							<img alt="" class="header__avatar" width="40" height="40" src="./assets/img/header/photos/avatar-dominique.webp">
+						</picture>
+						<span class="header__account-name">Dominique Ch.</span>
+						<svg class="header__account-arrow" width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-drop-down"></use>
+						</svg>
+					</button>
+					<ul class="header__account-list" id="header-account-menu" data-fls-account-menu="">
+						<li class="header__account-item">
+							<a href="mydetails.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-account-circle"></use>
+								</svg>
+								My details
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="calendar.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								My calendar
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="vacations.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-beach-access"></use>
+								</svg>
+								Vacations
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="corporatecv.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+								</svg>
+								Corporate CV
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="performancereview.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-rocket"></use>
+								</svg>
+								Performance review
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="login.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-logout"></use>
+								</svg>
+								Log out
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__toolbar">
+					<div class="header__search">
+						<svg class="header__search-icon" width="20" height="20" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+						</svg>
+						<label for="header-quick-search" class="visually-hidden">Quick search</label>
+						<input type="search" id="header-quick-search" class="header__search-input" placeholder="Quick search">
+					</div>
+					<button type="button" class="header__notifications" aria-label="Notifications">
+						<svg width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-notifications"></use>
+						</svg>
+					</button>
+				</div>
+			</header>
+			<div class="wrapper__shell">
+				<nav class="menu" data-fls-menu-rail="" aria-label="Primary">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="dashboard.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-dashboard"></use>
+								</svg>
+								<span class="menu__text">Dashboard</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findperson.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-people"></use>
+								</svg>
+								<span class="menu__text">People</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findproject.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-assignment"></use>
+								</svg>
+								<span class="menu__text">Projects</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="calendar.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								<span class="menu__text">Calendar</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="trainingtimetable.html" class="menu__link menu__link--active" aria-current="page">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-easel"></use>
+								</svg>
+								<span class="menu__text">Training</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="timesheet.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-hourglass"></use>
+								</svg>
+								<span class="menu__text">Timesheet</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="reports.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chatbubbles"></use>
+								</svg>
+								<span class="menu__text">Reports</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="administration.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-business"></use>
+								</svg>
+								<span class="menu__text">Administration</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="help.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+								</svg>
+								<span class="menu__text">Help</span>
+							</a>
+						</li>
+					</ul>
+					<div class="menu__credits">
+						<span class="menu__credits-brand">CAMIOCA</span>
+						<span class="menu__credits-version">Version: 1.0.0.11</span>
+					</div>
+				</nav>
+				<main class="page">
+					<nav data-fls-subnav="" class="subnav" aria-label="Section">
+						<ul class="subnav__list">
+							<li class="subnav__item">
+								<a href="trainingtimetable.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-filing"></use>
+									</svg>
+									<span class="subnav__text">Training timetable</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="findtraining.html" class="subnav__link subnav__link--active" aria-current="page">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-search-lg"></use>
+									</svg>
+									<span class="subnav__text">Find training</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="feedback.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+									</svg>
+									<span class="subnav__text">Feedback</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="quizzes.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+									</svg>
+									<span class="subnav__text">Quizzes</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="trainingregistration.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-assignment-turned-in"></use>
+									</svg>
+									<span class="subnav__text">Training registration</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<section class="filter" id="filter">
+						<h1 class="filter__title">Filter</h1>
+						<form class="filter__form">
+							<div class="filter__body">
+								<div class="filter__row">
+									<div class="filter__field filter__field--narrow">
+										<label for="filter-field-of-knowledge" class="filter__label">Field of knowledge</label>
+										<select id="filter-field-of-knowledge" name="field_of_knowledge" data-fls-select="" data-fls-select-modif="filter">
+											<option value="" selected>All</option>
+											<option value="management">Management</option>
+											<option value="soft-skills">Soft Skills</option>
+											<option value="it-technology">IT &amp; Technology</option>
+											<option value="finance">Finance</option>
+											<option value="compliance">Compliance</option>
+											<option value="sales">Sales</option>
+										</select>
+									</div>
+									<div class="filter__field filter__field--narrow">
+										<label for="filter-training" class="filter__label">Training</label>
+										<select id="filter-training" name="training" data-fls-select="" data-fls-select-modif="filter">
+											<option value="" selected>All</option>
+											<option value="management-in-parliament">Management in Parliament</option>
+											<option value="qualification-p1">Qualification P.1</option>
+											<option value="onboarding-new-hires">Onboarding for New Hires</option>
+											<option value="cybersecurity-awareness">Cybersecurity Awareness</option>
+											<option value="public-speaking-essentials">Public Speaking Essentials</option>
+										</select>
+									</div>
+									<div class="filter__field filter__field--narrow">
+										<label for="filter-instructors" class="filter__label">Instructors</label>
+										<select id="filter-instructors" name="instructors" data-fls-select="" data-fls-select-modif="filter">
+											<option value="" selected>All</option>
+											<option value="andrew-salgado">Andrew Salgado</option>
+											<option value="dominique-charpentier">Dominique Charpentier</option>
+											<option value="marta-kowalski">Marta Kowalski</option>
+											<option value="lucas-dubois">Lucas Dubois</option>
+										</select>
+									</div>
+								</div>
+								<div class="filter__row">
+									<div class="filter__field filter__field--narrow">
+										<label for="filter-period" class="filter__label">Period</label>
+										<select id="filter-period" name="period" data-fls-select="" data-fls-select-modif="filter">
+											<option value="this-week">This week</option>
+											<option value="this-month">This month</option>
+											<option value="this-quarter">This quarter</option>
+											<option value="this-year">This year</option>
+											<option value="other" selected>Other</option>
+										</select>
+									</div>
+									<div class="filter__field filter__field--radio">
+										<span class="filter__label visually-hidden" id="filter-period-type-label">Period type</span>
+										<div class="options filter__radio" data-fls-radio="" role="radiogroup" aria-labelledby="filter-period-type-label">
+											<label class="options__item">
+												<input class="options__input" type="radio" name="period_type" value="actual" checked>
+												<span class="options__text">actual dates</span>
+											</label>
+											<label class="options__item">
+												<input class="options__input" type="radio" name="period_type" value="planned">
+												<span class="options__text">planned</span>
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="filter__row">
+									<div class="filter__field filter__field--narrow">
+										<label for="filter-startdate" class="filter__label">Start date:</label>
+										<input type="text" id="filter-startdate" data-fls-datepicker="" autocomplete="off" class="filter__input filter__input--date" name="start_date" placeholder="Select">
+									</div>
+									<div class="filter__field filter__field--narrow">
+										<label for="filter-finishdate" class="filter__label">Finish date:</label>
+										<input type="text" id="filter-finishdate" data-fls-datepicker="" autocomplete="off" class="filter__input filter__input--date" name="finish_date" placeholder="Select">
+									</div>
+								</div>
+								<label data-fls-checkbox="" class="checkbox filter__checkbox">
+									<input class="checkbox__input" type="checkbox" value="1" name="show_inactive_trainings">
+									<span class="checkbox__text">Show inactive trainings</span>
+								</label>
+							</div>
+							<div class="filter__actions">
+								<button type="button" data-fls-button="" class="filter__clear button">Clear</button>
+								<button type="submit" data-fls-button="" class="filter__search button">Search</button>
+							</div>
+						</form>
+					</section>
+				</main>
+			</div>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container"></div>
+			</footer>
+		</div>
+	</body>
+</html>

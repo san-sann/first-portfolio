@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Passed and independent quiz results.">
+		<meta property="og:title" content="Quizzes">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://camioca-internal-panel.vercel.app/assets/img/og/preview.png">
+		<meta property="og:url" content="https://camioca-internal-panel.vercel.app/quizzes.html">
+		<title>Quizzes</title>
+		<script type="module" crossorigin="" src="./js/quizzes.min.js?v=1788984567279"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1788984567279">
+		<link rel="modulepreload" crossorigin="" href="./js/header.min.js?v=1788984567279">
+		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1788984567279">
+		<link rel="modulepreload" crossorigin="" href="./js/pagination.min.js?v=1788984567279">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1788984567279">
+		<link rel="stylesheet" crossorigin="" href="./css/header.min.css?v=1788984567279">
+		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1788984567279">
+		<link rel="stylesheet" crossorigin="" href="./css/pagination.min.css?v=1788984567279">
+		<link rel="stylesheet" crossorigin="" href="./css/quizzes.min.css?v=1788984567279">
+		<link rel="stylesheet" crossorigin="" href="./css/subnav.min.css?v=1788984567279">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__account">
+					<button type="button" data-fls-menu="" class="icon-menu" aria-expanded="false" aria-label="Open menu">
+						<span></span>
+					</button>
+					<button type="button" class="header__account-toggle" data-fls-account-toggle="" aria-haspopup="true" aria-expanded="false" aria-controls="header-account-menu">
+						<picture>
+							<img alt="" class="header__avatar" width="40" height="40" src="./assets/img/header/photos/avatar-dominique.webp">
+						</picture>
+						<span class="header__account-name">Dominique Ch.</span>
+						<svg class="header__account-arrow" width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-drop-down"></use>
+						</svg>
+					</button>
+					<ul class="header__account-list" id="header-account-menu" data-fls-account-menu="">
+						<li class="header__account-item">
+							<a href="mydetails.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-account-circle"></use>
+								</svg>
+								My details
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="calendar.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								My calendar
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="vacations.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-beach-access"></use>
+								</svg>
+								Vacations
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="corporatecv.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+								</svg>
+								Corporate CV
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="performancereview.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-rocket"></use>
+								</svg>
+								Performance review
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="login.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-logout"></use>
+								</svg>
+								Log out
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__toolbar">
+					<div class="header__search">
+						<svg class="header__search-icon" width="20" height="20" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+						</svg>
+						<label for="header-quick-search" class="visually-hidden">Quick search</label>
+						<input type="search" id="header-quick-search" class="header__search-input" placeholder="Quick search">
+					</div>
+					<button type="button" class="header__notifications" aria-label="Notifications">
+						<svg width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-notifications"></use>
+						</svg>
+					</button>
+				</div>
+			</header>
+			<div class="wrapper__shell">
+				<nav class="menu" data-fls-menu-rail="" aria-label="Primary">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="dashboard.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-dashboard"></use>
+								</svg>
+								<span class="menu__text">Dashboard</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findperson.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-people"></use>
+								</svg>
+								<span class="menu__text">People</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findproject.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-assignment"></use>
+								</svg>
+								<span class="menu__text">Projects</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="calendar.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								<span class="menu__text">Calendar</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="trainingtimetable.html" class="menu__link menu__link--active" aria-current="page">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-easel"></use>
+								</svg>
+								<span class="menu__text">Training</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="timesheet.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-hourglass"></use>
+								</svg>
+								<span class="menu__text">Timesheet</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="reports.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chatbubbles"></use>
+								</svg>
+								<span class="menu__text">Reports</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="administration.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-business"></use>
+								</svg>
+								<span class="menu__text">Administration</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="help.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+								</svg>
+								<span class="menu__text">Help</span>
+							</a>
+						</li>
+					</ul>
+					<div class="menu__credits">
+						<span class="menu__credits-brand">CAMIOCA</span>
+						<span class="menu__credits-version">Version: 1.0.0.11</span>
+					</div>
+				</nav>
+				<main class="page">
+					<nav data-fls-subnav="" class="subnav" aria-label="Section">
+						<ul class="subnav__list">
+							<li class="subnav__item">
+								<a href="trainingtimetable.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-filing"></use>
+									</svg>
+									<span class="subnav__text">Training timetable</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="findtraining.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-search-lg"></use>
+									</svg>
+									<span class="subnav__text">Find training</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="feedback.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+									</svg>
+									<span class="subnav__text">Feedback</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="quizzes.html" class="subnav__link subnav__link--active" aria-current="page">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+									</svg>
+									<span class="subnav__text">Quizzes</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="trainingregistration.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-assignment-turned-in"></use>
+									</svg>
+									<span class="subnav__text">Training registration</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<section class="passed" id="passed">
+						<div class="passed__card" data-fls-spollers="">
+							<details class="passed__toggle" open data-fls-spollers-open="">
+								<summary class="passed__header">
+									<h1 class="passed__title">Passed quizzes:</h1>
+									<span class="visually-hidden" id="passed-year-label">Select year</span>
+									<div class="passed__year" role="group" aria-labelledby="passed-year-label">
+										<button type="button" class="passed__year-btn passed__year-btn--prev" aria-label="Previous year">
+											<svg class="passed__year-icon" width="8" height="12" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-left"></use>
+											</svg>
+										</button>
+										<span class="passed__year-value" aria-live="polite">2019</span>
+										<button type="button" class="passed__year-btn passed__year-btn--next" aria-label="Next year">
+											<svg class="passed__year-icon" width="8" height="12" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-right"></use>
+											</svg>
+										</button>
+									</div>
+									<svg class="passed__chevron" width="12" height="8" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-expand-more"></use>
+									</svg>
+								</summary>
+								<div class="passed__body">
+									<div class="passed__table-wrap">
+										<table class="passed__table">
+											<caption class="visually-hidden">Passed quizzes in 2019</caption>
+											<thead>
+												<tr>
+													<th scope="col">Date</th>
+													<th scope="col">Training</th>
+													<th scope="col">Quiz name</th>
+													<th scope="col">Passed date</th>
+													<th scope="col">Single pass</th>
+													<th scope="col">
+														<span class="visually-hidden">Result</span>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<time datetime="2019-04-24">24 Apr</time>
+													</td>
+													<td>Security Awareness</td>
+													<td>Quiz 1</td>
+													<td>
+														<time datetime="2019-04-25">25 Apr</time>
+													</td>
+													<td>No</td>
+													<td class="passed__result">
+														<svg class="passed__result-icon passed__result-icon--success" role="img" aria-label="Passed" width="24" height="24">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-happy"></use>
+														</svg>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2019-02-16">16 Feb</time>
+													</td>
+													<td>Induction program: Office user manual</td>
+													<td>Quiz 1</td>
+													<td>
+														<time datetime="2019-02-16">16 Feb</time>
+													</td>
+													<td>No</td>
+													<td class="passed__result">
+														<svg class="passed__result-icon passed__result-icon--success" role="img" aria-label="Passed" width="24" height="24">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-happy"></use>
+														</svg>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2019-02-16">16 Feb</time>
+													</td>
+													<td>Induction program: Security</td>
+													<td>Quiz 1</td>
+													<td>
+														<time datetime="2019-02-16">16 Feb</time>
+													</td>
+													<td>No</td>
+													<td class="passed__result">
+														<svg class="passed__result-icon passed__result-icon--success" role="img" aria-label="Passed" width="24" height="24">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-happy"></use>
+														</svg>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2019-02-11">11 Feb</time>
+													</td>
+													<td>Induction program: Capability profile and corporate CV. Dashboard Overview</td>
+													<td>Quiz 1</td>
+													<td>
+														<time datetime="2019-02-12">12 Feb</time>
+													</td>
+													<td>No</td>
+													<td class="passed__result">
+														<svg class="passed__result-icon passed__result-icon--error" role="img" aria-label="Failed" width="24" height="24">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-sad"></use>
+														</svg>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2019-02-03">03 Feb</time>
+													</td>
+													<td>Induction program: Career development in company</td>
+													<td>Quiz 1</td>
+													<td>
+														<time datetime="2019-02-03">03 Feb</time>
+													</td>
+													<td>No</td>
+													<td class="passed__result">
+														<svg class="passed__result-icon passed__result-icon--success" role="img" aria-label="Passed" width="24" height="24">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-happy"></use>
+														</svg>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2019-02-01">01 Feb</time>
+													</td>
+													<td>Induction program: Office policy</td>
+													<td>Quiz 1</td>
+													<td>
+														<time datetime="2019-02-02">02 Feb</time>
+													</td>
+													<td>No</td>
+													<td class="passed__result">
+														<svg class="passed__result-icon passed__result-icon--success" role="img" aria-label="Passed" width="24" height="24">
+															<use xlink:href="./assets/img/spritemap.svg#sprite-happy"></use>
+														</svg>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</details>
+						</div>
+					</section>
+					<section class="independent" id="independent">
+						<div class="independent__card" data-fls-spollers="">
+							<details class="independent__toggle" open data-fls-spollers-open="">
+								<summary class="independent__header">
+									<h2 class="independent__title">Independent quizzes:</h2>
+									<span class="visually-hidden" id="independent-year-label">Select year</span>
+									<div class="independent__year" role="group" aria-labelledby="independent-year-label">
+										<button type="button" class="independent__year-btn independent__year-btn--prev" aria-label="Previous year">
+											<svg class="independent__year-icon" width="8" height="12" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-left"></use>
+											</svg>
+										</button>
+										<span class="independent__year-value" aria-live="polite">2019</span>
+										<button type="button" class="independent__year-btn independent__year-btn--next" aria-label="Next year">
+											<svg class="independent__year-icon" width="8" height="12" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-right"></use>
+											</svg>
+										</button>
+									</div>
+									<svg class="independent__chevron" width="12" height="8" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-expand-more"></use>
+									</svg>
+								</summary>
+								<div class="independent__body">
+									<div class="independent__table-wrap">
+										<table class="independent__table">
+											<caption class="visually-hidden">Independent quizzes in 2019</caption>
+											<thead>
+												<tr>
+													<th scope="col">Date</th>
+													<th scope="col">Quiz name</th>
+													<th scope="col">Single pass</th>
+													<th scope="col">Quiz time</th>
+													<th scope="col">Qs count</th>
+												</tr>
+											</thead>
+											<tbody data-page="1">
+												<tr>
+													<td>
+														<time datetime="2019-04-24">24 Apr</time>
+													</td>
+													<td>Hibernate 3.0</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>49</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2019-02-16">16 Feb</time>
+													</td>
+													<td>EJB</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>5</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2019-02-16">16 Feb</time>
+													</td>
+													<td>SP Introduction</td>
+													<td>No</td>
+													<td>Infinitive</td>
+													<td>21</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2019-02-11">11 Feb</time>
+													</td>
+													<td>SP management processes</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>33</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2019-02-03">03 Feb</time>
+													</td>
+													<td>JSF</td>
+													<td>No</td>
+													<td>Infinitive</td>
+													<td>21</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2019-02-01">01 Feb</time>
+													</td>
+													<td>Java programming - Build tools &amp; Unit testing</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>54</td>
+												</tr>
+											</tbody>
+											<tbody data-page="2" hidden>
+												<tr>
+													<td>
+														<time datetime="2019-01-28">28 Jan</time>
+													</td>
+													<td>Spring Framework Basics</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>40</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2019-01-24">24 Jan</time>
+													</td>
+													<td>RESTful API Design</td>
+													<td>No</td>
+													<td>Infinitive</td>
+													<td>18</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2019-01-20">20 Jan</time>
+													</td>
+													<td>Git Version Control</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>12</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2019-01-17">17 Jan</time>
+													</td>
+													<td>Docker Fundamentals</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>25</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2019-01-13">13 Jan</time>
+													</td>
+													<td>Agile &amp; Scrum</td>
+													<td>No</td>
+													<td>Infinitive</td>
+													<td>15</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2019-01-09">09 Jan</time>
+													</td>
+													<td>SQL Query Optimization</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>30</td>
+												</tr>
+											</tbody>
+											<tbody data-page="3" hidden>
+												<tr>
+													<td>
+														<time datetime="2018-12-20">20 Dec</time>
+													</td>
+													<td>JUnit Testing Essentials</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>22</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2018-12-17">17 Dec</time>
+													</td>
+													<td>Design Patterns in Java</td>
+													<td>No</td>
+													<td>Infinitive</td>
+													<td>45</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2018-12-13">13 Dec</time>
+													</td>
+													<td>Maven Build Lifecycle</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>16</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2018-12-10">10 Dec</time>
+													</td>
+													<td>Code Review Best Practices</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>20</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2018-12-06">06 Dec</time>
+													</td>
+													<td>Continuous Integration Basics</td>
+													<td>No</td>
+													<td>Infinitive</td>
+													<td>28</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2018-12-03">03 Dec</time>
+													</td>
+													<td>Java Collections Framework</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>38</td>
+												</tr>
+											</tbody>
+											<tbody data-page="4" hidden>
+												<tr>
+													<td>
+														<time datetime="2018-11-26">26 Nov</time>
+													</td>
+													<td>Microservices Architecture</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>42</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2018-11-22">22 Nov</time>
+													</td>
+													<td>Apache Kafka Messaging</td>
+													<td>No</td>
+													<td>Infinitive</td>
+													<td>24</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2018-11-19">19 Nov</time>
+													</td>
+													<td>Multithreading in Java</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>33</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2018-11-15">15 Nov</time>
+													</td>
+													<td>Exception Handling Patterns</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>14</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2018-11-08">08 Nov</time>
+													</td>
+													<td>Clean Code Principles</td>
+													<td>No</td>
+													<td>Infinitive</td>
+													<td>19</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2018-11-05">05 Nov</time>
+													</td>
+													<td>REST vs SOAP Web Services</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>27</td>
+												</tr>
+											</tbody>
+											<tbody data-page="5" hidden>
+												<tr>
+													<td>
+														<time datetime="2018-10-29">29 Oct</time>
+													</td>
+													<td>JVM Internals</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>36</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2018-10-25">25 Oct</time>
+													</td>
+													<td>Garbage Collection Tuning</td>
+													<td>No</td>
+													<td>Infinitive</td>
+													<td>20</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2018-10-18">18 Oct</time>
+													</td>
+													<td>Security Best Practices</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>31</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2018-10-15">15 Oct</time>
+													</td>
+													<td>Logging &amp; Monitoring</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>17</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2018-10-11">11 Oct</time>
+													</td>
+													<td>API Authentication Methods</td>
+													<td>No</td>
+													<td>Infinitive</td>
+													<td>23</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2018-10-04">04 Oct</time>
+													</td>
+													<td>Database Indexing Strategies</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>29</td>
+												</tr>
+											</tbody>
+											<tbody data-page="31" hidden>
+												<tr>
+													<td>
+														<time datetime="2015-02-27">27 Feb</time>
+													</td>
+													<td>Introduction to Java</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>20</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2015-02-23">23 Feb</time>
+													</td>
+													<td>HTML &amp; CSS Basics</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>15</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2015-02-18">18 Feb</time>
+													</td>
+													<td>Version Control Fundamentals</td>
+													<td>No</td>
+													<td>Infinitive</td>
+													<td>10</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2015-02-13">13 Feb</time>
+													</td>
+													<td>Company Onboarding Quiz</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>8</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2015-02-09">09 Feb</time>
+													</td>
+													<td>Office Software Basics</td>
+													<td>Yes</td>
+													<td>Infinitive</td>
+													<td>12</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2015-02-04">04 Feb</time>
+													</td>
+													<td>Communication Skills</td>
+													<td>No</td>
+													<td>Infinitive</td>
+													<td>6</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<nav data-fls-pagination="" class="pagination" aria-label="Independent quizzes pages" data-fls-pagination-target=".independent__table">
+										<a href="?page=1" class="pagination__step pagination__step--prev pagination__step--disabled" aria-disabled="true" tabindex="-1">
+											<svg class="pagination__step-icon" width="20" height="20" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-left"></use>
+											</svg>
+											Previous
+										</a>
+										<ul class="pagination__list">
+											<li>
+												<a href="?page=1" class="pagination__link pagination__link--active" aria-current="page" data-page="1">1</a>
+											</li>
+											<li>
+												<a href="?page=2" class="pagination__link" data-page="2">2</a>
+											</li>
+											<li>
+												<a href="?page=3" class="pagination__link" data-page="3">3</a>
+											</li>
+											<li>
+												<a href="?page=4" class="pagination__link" data-page="4">4</a>
+											</li>
+											<li>
+												<a href="?page=5" class="pagination__link" data-page="5">5</a>
+											</li>
+											<li class="pagination__ellipsis" aria-hidden="true">…</li>
+											<li>
+												<a href="?page=31" class="pagination__link" data-page="31">31</a>
+											</li>
+										</ul>
+										<a href="?page=2" class="pagination__step pagination__step--next">
+											Next
+											<svg class="pagination__step-icon" width="20" height="20" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-right"></use>
+											</svg>
+										</a>
+										<button type="button" class="pagination__show-all" aria-pressed="false">
+											<span>Show all</span>
+											<span>Show less</span>
+										</button>
+									</nav>
+								</div>
+							</details>
+						</div>
+					</section>
+				</main>
+			</div>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container"></div>
+			</footer>
+		</div>
+	</body>
+</html>

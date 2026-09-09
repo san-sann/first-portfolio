@@ -1,0 +1,1339 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Browse and filter the full project list.">
+		<meta property="og:title" content="All Projects">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://camioca-internal-panel.vercel.app/assets/img/og/preview.png">
+		<meta property="og:url" content="https://camioca-internal-panel.vercel.app/allprojects.html">
+		<title>All Projects</title>
+		<script type="module" crossorigin="" src="./js/main.min.js?v=1788984567280"></script>
+		<script type="module" crossorigin="" src="./js/header.min.js?v=1788984567280"></script>
+		<script type="module" crossorigin="" src="./js/pagination.min.js?v=1788984567280"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1788984567280">
+		<link rel="stylesheet" crossorigin="" href="./css/header.min.css?v=1788984567280">
+		<link rel="stylesheet" crossorigin="" href="./css/pagination.min.css?v=1788984567280">
+		<link rel="stylesheet" crossorigin="" href="./css/allprojects.min.css?v=1788984567280">
+		<link rel="stylesheet" crossorigin="" href="./css/subnav.min.css?v=1788984567280">
+		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1788984567280">
+		<link rel="stylesheet" crossorigin="" href="./css/checkbox.min.css?v=1788984567280">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__account">
+					<button type="button" data-fls-menu="" class="icon-menu" aria-expanded="false" aria-label="Open menu">
+						<span></span>
+					</button>
+					<button type="button" class="header__account-toggle" data-fls-account-toggle="" aria-haspopup="true" aria-expanded="false" aria-controls="header-account-menu">
+						<picture>
+							<img alt="" class="header__avatar" width="40" height="40" src="./assets/img/header/photos/avatar-dominique.webp">
+						</picture>
+						<span class="header__account-name">Dominique Ch.</span>
+						<svg class="header__account-arrow" width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-drop-down"></use>
+						</svg>
+					</button>
+					<ul class="header__account-list" id="header-account-menu" data-fls-account-menu="">
+						<li class="header__account-item">
+							<a href="mydetails.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-account-circle"></use>
+								</svg>
+								My details
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="calendar.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								My calendar
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="vacations.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-beach-access"></use>
+								</svg>
+								Vacations
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="corporatecv.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+								</svg>
+								Corporate CV
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="performancereview.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-rocket"></use>
+								</svg>
+								Performance review
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="login.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-logout"></use>
+								</svg>
+								Log out
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__toolbar">
+					<div class="header__search">
+						<svg class="header__search-icon" width="20" height="20" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+						</svg>
+						<label for="header-quick-search" class="visually-hidden">Quick search</label>
+						<input type="search" id="header-quick-search" class="header__search-input" placeholder="Quick search">
+					</div>
+					<button type="button" class="header__notifications" aria-label="Notifications">
+						<svg width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-notifications"></use>
+						</svg>
+					</button>
+				</div>
+			</header>
+			<div class="wrapper__shell">
+				<nav class="menu" data-fls-menu-rail="" aria-label="Primary">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="dashboard.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-dashboard"></use>
+								</svg>
+								<span class="menu__text">Dashboard</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findperson.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-people"></use>
+								</svg>
+								<span class="menu__text">People</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findproject.html" class="menu__link menu__link--active" aria-current="page">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-assignment"></use>
+								</svg>
+								<span class="menu__text">Projects</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="calendar.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								<span class="menu__text">Calendar</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="trainingtimetable.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-easel"></use>
+								</svg>
+								<span class="menu__text">Training</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="timesheet.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-hourglass"></use>
+								</svg>
+								<span class="menu__text">Timesheet</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="reports.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chatbubbles"></use>
+								</svg>
+								<span class="menu__text">Reports</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="administration.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-business"></use>
+								</svg>
+								<span class="menu__text">Administration</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="help.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+								</svg>
+								<span class="menu__text">Help</span>
+							</a>
+						</li>
+					</ul>
+					<div class="menu__credits">
+						<span class="menu__credits-brand">CAMIOCA</span>
+						<span class="menu__credits-version">Version: 1.0.0.11</span>
+					</div>
+				</nav>
+				<main class="page">
+					<nav data-fls-subnav="" class="subnav" aria-label="Section">
+						<ul class="subnav__list">
+							<li class="subnav__item">
+								<a href="findproject.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-search-lg"></use>
+									</svg>
+									<span class="subnav__text">Find project</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="allprojects.html" class="subnav__link subnav__link--active" aria-current="page">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-archive"></use>
+									</svg>
+									<span class="subnav__text">All projects</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="accounts.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-account-circle"></use>
+									</svg>
+									<span class="subnav__text">Accounts</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<section class="filters" id="filters">
+						<h1 class="filters__title">Project list</h1>
+						<fieldset class="filters__group">
+							<legend class="filters__label filters__label--industry">Industry</legend>
+							<div class="filters__pills">
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="all" checked>
+									<span class="filters__pill-text">All</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="banking">
+									<span class="filters__pill-text">Banking</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="financial">
+									<span class="filters__pill-text">Financial</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="government">
+									<span class="filters__pill-text">Government</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="healthcare">
+									<span class="filters__pill-text">Healthcare</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="hi-tech">
+									<span class="filters__pill-text">Hi-Tech</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="insurance">
+									<span class="filters__pill-text">Insurance</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="isv">
+									<span class="filters__pill-text">ISV</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="logistics">
+									<span class="filters__pill-text">Logistics</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="media">
+									<span class="filters__pill-text">Media</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="pharma">
+									<span class="filters__pill-text">Pharma</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="public">
+									<span class="filters__pill-text">Public</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="retail">
+									<span class="filters__pill-text">Retail</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="technology">
+									<span class="filters__pill-text">Technology</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="telecom">
+									<span class="filters__pill-text">Telecom</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="utilities">
+									<span class="filters__pill-text">Utilities</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="internal">
+									<span class="filters__pill-text">Internal</span>
+								</label>
+								<label class="filters__pill">
+									<input class="filters__pill-input" type="radio" name="industry" value="others">
+									<span class="filters__pill-text">Others</span>
+								</label>
+							</div>
+						</fieldset>
+						<div class="filters__row">
+							<fieldset class="filters__group">
+								<legend class="filters__label filters__label--status">Status</legend>
+								<div class="filters__checkboxes">
+									<label data-fls-checkbox="" class="checkbox">
+										<input class="checkbox__input" type="checkbox" name="status[]" value="in-progress" checked>
+										<span class="checkbox__text">In progress</span>
+									</label>
+									<label data-fls-checkbox="" class="checkbox">
+										<input class="checkbox__input" type="checkbox" name="status[]" value="upcoming" checked>
+										<span class="checkbox__text">Upcoming</span>
+									</label>
+									<label data-fls-checkbox="" class="checkbox">
+										<input class="checkbox__input" type="checkbox" name="status[]" value="suspended">
+										<span class="checkbox__text">Suspended</span>
+									</label>
+									<label data-fls-checkbox="" class="checkbox">
+										<input class="checkbox__input" type="checkbox" name="status[]" value="completed">
+										<span class="checkbox__text">Completed</span>
+									</label>
+									<label data-fls-checkbox="" class="checkbox">
+										<input class="checkbox__input" type="checkbox" name="status[]" value="anticipated">
+										<span class="checkbox__text">Anticipated</span>
+									</label>
+								</div>
+							</fieldset>
+							<dl class="filters__counts">
+								<dt>In progress</dt>
+								<dd>581</dd>
+								<dt>Upcoming</dt>
+								<dd>2</dd>
+							</dl>
+						</div>
+					</section>
+					<section class="results" id="results">
+						<div class="results__header">
+							<h2 class="results__found">
+								Found:
+								<span class="results__found-count">5611</span>
+							</h2>
+							<button type="button" data-fls-button="" class="results__export button">
+								<svg class="results__export-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-download"></use>
+								</svg>
+								Export to Excel
+							</button>
+						</div>
+						<div class="results__table-wrap">
+							<table class="results__table">
+								<caption class="visually-hidden">List of projects matching the current filter</caption>
+								<thead>
+									<tr>
+										<th scope="col">Practice</th>
+										<th scope="col">Project name</th>
+										<th scope="col">Short name</th>
+										<th scope="col">Status</th>
+										<th scope="col">Start date</th>
+										<th scope="col">End date</th>
+										<th scope="col">Account</th>
+										<th scope="col">Region</th>
+										<th scope="col">Industry</th>
+										<th scope="col">Source type</th>
+										<th scope="col">Billing entry</th>
+									</tr>
+								</thead>
+								<tbody data-page="1">
+									<tr>
+										<td>ENG</td>
+										<td>KFC Loyalty App</td>
+										<td>KFCLOY</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2019-03-14">14.03.2019</time>
+										</td>
+										<td>
+											<time datetime="2020-03-14">14.03.2020</time>
+										</td>
+										<td>KFC</td>
+										<td>Latin America</td>
+										<td>Retail</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>QA</td>
+										<td>KFC Inventory Sync</td>
+										<td>KFCINV</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2017-06-02">02.06.2017</time>
+										</td>
+										<td>
+											<time datetime="2017-12-02">02.12.2017</time>
+										</td>
+										<td>KFC</td>
+										<td>North America</td>
+										<td>Retail</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>KFC POS Upgrade</td>
+										<td>KFCPOS</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2023-09-01">01.09.2023</time>
+										</td>
+										<td>
+											<time datetime="2024-09-01">01.09.2024</time>
+										</td>
+										<td>KFC</td>
+										<td>Europe</td>
+										<td>Retail</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>KFC Delivery Tracker</td>
+										<td>KFCDLV</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2020-11-18">18.11.2020</time>
+										</td>
+										<td>
+											<time datetime="2021-05-18">18.05.2021</time>
+										</td>
+										<td>KFC</td>
+										<td>Asia Pacific</td>
+										<td>Retail</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>DES</td>
+										<td>KFC Menu Localization</td>
+										<td>KFCMLC</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2016-02-09">09.02.2016</time>
+										</td>
+										<td>
+											<time datetime="2016-08-09">09.08.2016</time>
+										</td>
+										<td>KFC</td>
+										<td>Middle East</td>
+										<td>Retail</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>KFC Franchise Portal</td>
+										<td>KFCFRP</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2014-07-25">25.07.2014</time>
+										</td>
+										<td>
+											<time datetime="2015-07-25">25.07.2015</time>
+										</td>
+										<td>KFC</td>
+										<td>Africa</td>
+										<td>Retail</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>PM</td>
+										<td>KFC Staff Scheduling</td>
+										<td>KFCSCH</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2012-04-30">30.04.2012</time>
+										</td>
+										<td>
+											<time datetime="2012-10-30">30.10.2012</time>
+										</td>
+										<td>KFC</td>
+										<td>Latin America</td>
+										<td>Retail</td>
+										<td>Internal</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>KFC Supply Forecast</td>
+										<td>KFCSUP</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2022-01-12">12.01.2022</time>
+										</td>
+										<td>
+											<time datetime="2023-01-12">12.01.2023</time>
+										</td>
+										<td>KFC</td>
+										<td>North America</td>
+										<td>Retail</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>BA</td>
+										<td>KFC Franchise Analytics</td>
+										<td>KFCFA</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2010-10-05">05.10.2010</time>
+										</td>
+										<td>
+											<time datetime="2011-04-05">05.04.2011</time>
+										</td>
+										<td>KFC</td>
+										<td>Europe</td>
+										<td>Retail</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+								</tbody>
+								<tbody data-page="2" hidden>
+									<tr>
+										<td>ENG</td>
+										<td>FIAT Dealer Portal</td>
+										<td>FIATDP</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2018-03-19">19.03.2018</time>
+										</td>
+										<td>
+											<time datetime="2019-03-19">19.03.2019</time>
+										</td>
+										<td>FIAT-Chrysler LLC</td>
+										<td>Europe</td>
+										<td>Others</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Chrysler Supply Chain</td>
+										<td>CHRYSC</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2015-08-07">07.08.2015</time>
+										</td>
+										<td>
+											<time datetime="2016-02-07">07.02.2016</time>
+										</td>
+										<td>FIAT-Chrysler LLC</td>
+										<td>North America</td>
+										<td>Others</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>QA</td>
+										<td>FIAT Connected Car</td>
+										<td>FIATCC</td>
+										<td>Upcoming</td>
+										<td>
+											<time datetime="2023-12-14">14.12.2023</time>
+										</td>
+										<td>
+											<time datetime="2024-12-14">14.12.2024</time>
+										</td>
+										<td>FIAT-Chrysler LLC</td>
+										<td>Asia Pacific</td>
+										<td>Others</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Jeep Parts Catalog</td>
+										<td>JEEPPC</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2011-05-22">22.05.2011</time>
+										</td>
+										<td>
+											<time datetime="2011-11-22">22.11.2011</time>
+										</td>
+										<td>FIAT-Chrysler LLC</td>
+										<td>Middle East</td>
+										<td>Others</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ARC</td>
+										<td>FIAT Warranty Claims</td>
+										<td>FIATWC</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2013-09-03">03.09.2013</time>
+										</td>
+										<td>
+											<time datetime="2014-03-03">03.03.2014</time>
+										</td>
+										<td>FIAT-Chrysler LLC</td>
+										<td>Africa</td>
+										<td>Others</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Chrysler Fleet Telemetry</td>
+										<td>CHRFT</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2021-06-27">27.06.2021</time>
+										</td>
+										<td>
+											<time datetime="2022-06-27">27.06.2022</time>
+										</td>
+										<td>FIAT-Chrysler LLC</td>
+										<td>Latin America</td>
+										<td>Others</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>FIAT Service Booking</td>
+										<td>FIATSB</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2009-02-16">16.02.2009</time>
+										</td>
+										<td>
+											<time datetime="2009-08-16">16.08.2009</time>
+										</td>
+										<td>FIAT-Chrysler LLC</td>
+										<td>Europe</td>
+										<td>Others</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>PM</td>
+										<td>Chrysler Dealer CRM</td>
+										<td>CHRDCM</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2019-10-08">08.10.2019</time>
+										</td>
+										<td>
+											<time datetime="2020-04-08">08.04.2020</time>
+										</td>
+										<td>FIAT-Chrysler LLC</td>
+										<td>North America</td>
+										<td>Others</td>
+										<td>Internal</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>KLM Booking Redesign</td>
+										<td>KLMBK</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2008-01-11">11.01.2008</time>
+										</td>
+										<td>
+											<time datetime="2009-01-11">11.01.2009</time>
+										</td>
+										<td>KLM</td>
+										<td>Latin America</td>
+										<td>Logistics</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+								</tbody>
+								<tbody data-page="3" hidden>
+									<tr>
+										<td>ENG</td>
+										<td>KLM Loyalty Miles</td>
+										<td>KLMLM</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2017-04-04">04.04.2017</time>
+										</td>
+										<td>
+											<time datetime="2017-10-04">04.10.2017</time>
+										</td>
+										<td>KLM</td>
+										<td>Europe</td>
+										<td>Logistics</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>DES</td>
+										<td>KLM Crew Scheduling</td>
+										<td>KLMCS</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2012-09-29">29.09.2012</time>
+										</td>
+										<td>
+											<time datetime="2013-03-29">29.03.2013</time>
+										</td>
+										<td>KLM</td>
+										<td>Asia Pacific</td>
+										<td>Logistics</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>KLM Baggage Tracker</td>
+										<td>KLMBT</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2024-01-20">20.01.2024</time>
+										</td>
+										<td>
+											<time datetime="2025-01-20">20.01.2025</time>
+										</td>
+										<td>KLM</td>
+										<td>Middle East</td>
+										<td>Logistics</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>KLM Cargo Portal</td>
+										<td>KLMCP</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2014-05-13">13.05.2014</time>
+										</td>
+										<td>
+											<time datetime="2014-11-13">13.11.2014</time>
+										</td>
+										<td>KLM</td>
+										<td>Africa</td>
+										<td>Logistics</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>QA</td>
+										<td>KLM Check-in Kiosk</td>
+										<td>KLMCK</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2010-11-06">06.11.2010</time>
+										</td>
+										<td>
+											<time datetime="2011-05-06">06.05.2011</time>
+										</td>
+										<td>KLM</td>
+										<td>North America</td>
+										<td>Logistics</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>KLM Fleet Maintenance</td>
+										<td>KLMFM</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2020-08-21">21.08.2020</time>
+										</td>
+										<td>
+											<time datetime="2021-08-21">21.08.2021</time>
+										</td>
+										<td>KLM</td>
+										<td>Latin America</td>
+										<td>Logistics</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>BA</td>
+										<td>KLM Ground Handling</td>
+										<td>KLMGH</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2016-02-15">15.02.2016</time>
+										</td>
+										<td>
+											<time datetime="2016-08-15">15.08.2016</time>
+										</td>
+										<td>KLM</td>
+										<td>Europe</td>
+										<td>Logistics</td>
+										<td>Internal</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Aeroflot Fleet Tracker</td>
+										<td>AFLFT</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2013-07-02">02.07.2013</time>
+										</td>
+										<td>
+											<time datetime="2014-01-02">02.01.2014</time>
+										</td>
+										<td>Aeroflot</td>
+										<td>Asia Pacific</td>
+										<td>Logistics</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Aeroflot Booking Engine</td>
+										<td>AFLBE</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2019-03-17">17.03.2019</time>
+										</td>
+										<td>
+											<time datetime="2019-09-17">17.09.2019</time>
+										</td>
+										<td>Aeroflot</td>
+										<td>Middle East</td>
+										<td>Logistics</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+								</tbody>
+								<tbody data-page="4" hidden>
+									<tr>
+										<td>PM</td>
+										<td>Aeroflot Loyalty Program</td>
+										<td>AFLLP</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2011-12-09">09.12.2011</time>
+										</td>
+										<td>
+											<time datetime="2012-06-09">09.06.2012</time>
+										</td>
+										<td>Aeroflot</td>
+										<td>Africa</td>
+										<td>Logistics</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Aeroflot Cargo Manifest</td>
+										<td>AFLCM</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2023-06-28">28.06.2023</time>
+										</td>
+										<td>
+											<time datetime="2024-06-28">28.06.2024</time>
+										</td>
+										<td>Aeroflot</td>
+										<td>North America</td>
+										<td>Logistics</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Aeroflot Crew Rostering</td>
+										<td>AFLCR</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2015-05-05">05.05.2015</time>
+										</td>
+										<td>
+											<time datetime="2015-11-05">05.11.2015</time>
+										</td>
+										<td>Aeroflot</td>
+										<td>Latin America</td>
+										<td>Logistics</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>DES</td>
+										<td>Aeroflot Ground Ops</td>
+										<td>AFLGO</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2009-10-24">24.10.2009</time>
+										</td>
+										<td>
+											<time datetime="2010-04-24">24.04.2010</time>
+										</td>
+										<td>Aeroflot</td>
+										<td>Europe</td>
+										<td>Logistics</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Aeroflot Mobile Check-in</td>
+										<td>AFLMC</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2022-02-12">12.02.2022</time>
+										</td>
+										<td>
+											<time datetime="2022-08-12">12.08.2022</time>
+										</td>
+										<td>Aeroflot</td>
+										<td>Asia Pacific</td>
+										<td>Logistics</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Lukoil Field Ops</td>
+										<td>LUKFO</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2017-09-30">30.09.2017</time>
+										</td>
+										<td>
+											<time datetime="2018-09-30">30.09.2018</time>
+										</td>
+										<td>Lukoil</td>
+										<td>Middle East</td>
+										<td>Utilities</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Lukoil Refinery Dashboard</td>
+										<td>LUKRD</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2014-04-14">14.04.2014</time>
+										</td>
+										<td>
+											<time datetime="2014-10-14">14.10.2014</time>
+										</td>
+										<td>Lukoil</td>
+										<td>Africa</td>
+										<td>Utilities</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>QA</td>
+										<td>Lukoil Pipeline Monitor</td>
+										<td>LUKPM</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2020-11-23">23.11.2020</time>
+										</td>
+										<td>
+											<time datetime="2021-11-23">23.11.2021</time>
+										</td>
+										<td>Lukoil</td>
+										<td>North America</td>
+										<td>Utilities</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Lukoil Fleet Logistics</td>
+										<td>LUKFL</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2010-06-06">06.06.2010</time>
+										</td>
+										<td>
+											<time datetime="2010-12-06">06.12.2010</time>
+										</td>
+										<td>Lukoil</td>
+										<td>Latin America</td>
+										<td>Utilities</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+								</tbody>
+								<tbody data-page="5" hidden>
+									<tr>
+										<td>ARC</td>
+										<td>Lukoil Safety Compliance</td>
+										<td>LUKSC</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2012-01-19">19.01.2012</time>
+										</td>
+										<td>
+											<time datetime="2012-07-19">19.07.2012</time>
+										</td>
+										<td>Lukoil</td>
+										<td>Europe</td>
+										<td>Utilities</td>
+										<td>Internal</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Lukoil Retail Stations</td>
+										<td>LUKRS</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2024-03-02">02.03.2024</time>
+										</td>
+										<td>
+											<time datetime="2025-03-02">02.03.2025</time>
+										</td>
+										<td>Lukoil</td>
+										<td>Asia Pacific</td>
+										<td>Utilities</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Lukoil Procurement Portal</td>
+										<td>LUKPP</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2016-08-27">27.08.2016</time>
+										</td>
+										<td>
+											<time datetime="2017-02-27">27.02.2017</time>
+										</td>
+										<td>Lukoil</td>
+										<td>Middle East</td>
+										<td>Utilities</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Amex Rewards Hub</td>
+										<td>AMEXRH</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2018-05-10">10.05.2018</time>
+										</td>
+										<td>
+											<time datetime="2018-11-10">10.11.2018</time>
+										</td>
+										<td>American Express</td>
+										<td>North America</td>
+										<td>Financial</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Amex Fraud Alerts</td>
+										<td>AMEXFA</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2013-02-22">22.02.2013</time>
+										</td>
+										<td>
+											<time datetime="2013-08-22">22.08.2013</time>
+										</td>
+										<td>American Express</td>
+										<td>Europe</td>
+										<td>Financial</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>QA</td>
+										<td>Amex Merchant Portal</td>
+										<td>AMEXMP</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2011-09-15">15.09.2011</time>
+										</td>
+										<td>
+											<time datetime="2012-03-15">15.03.2012</time>
+										</td>
+										<td>American Express</td>
+										<td>Asia Pacific</td>
+										<td>Financial</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Amex Card Onboarding</td>
+										<td>AMEXCO</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2021-12-04">04.12.2021</time>
+										</td>
+										<td>
+											<time datetime="2022-06-04">04.06.2022</time>
+										</td>
+										<td>American Express</td>
+										<td>Middle East</td>
+										<td>Financial</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>DES</td>
+										<td>Amex Statement Redesign</td>
+										<td>AMEXSR</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2009-07-29">29.07.2009</time>
+										</td>
+										<td>
+											<time datetime="2010-01-29">29.01.2010</time>
+										</td>
+										<td>American Express</td>
+										<td>Africa</td>
+										<td>Financial</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Amex Travel Booking</td>
+										<td>AMEXTB</td>
+										<td>Upcoming</td>
+										<td>
+											<time datetime="2023-11-11">11.11.2023</time>
+										</td>
+										<td>
+											<time datetime="2024-11-11">11.11.2024</time>
+										</td>
+										<td>American Express</td>
+										<td>Latin America</td>
+										<td>Financial</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+								</tbody>
+								<tbody data-page="31" hidden>
+									<tr>
+										<td>PM</td>
+										<td>Amex Business Dashboard</td>
+										<td>AMEXBD</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2015-04-08">08.04.2015</time>
+										</td>
+										<td>
+											<time datetime="2015-10-08">08.10.2015</time>
+										</td>
+										<td>American Express</td>
+										<td>North America</td>
+										<td>Financial</td>
+										<td>Internal</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Amex Risk Scoring</td>
+										<td>AMEXRS</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2020-06-20">20.06.2020</time>
+										</td>
+										<td>
+											<time datetime="2020-12-20">20.12.2020</time>
+										</td>
+										<td>American Express</td>
+										<td>Europe</td>
+										<td>Financial</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Daimler Fleet Portal</td>
+										<td>DAIMFP</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2016-10-03">03.10.2016</time>
+										</td>
+										<td>
+											<time datetime="2017-04-03">03.04.2017</time>
+										</td>
+										<td>Daimler</td>
+										<td>Asia Pacific</td>
+										<td>Others</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Daimler Parts Catalog</td>
+										<td>DAIMPC</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2012-05-17">17.05.2012</time>
+										</td>
+										<td>
+											<time datetime="2012-11-17">17.11.2012</time>
+										</td>
+										<td>Daimler</td>
+										<td>Middle East</td>
+										<td>Others</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>QA</td>
+										<td>Daimler Service Scheduler</td>
+										<td>DAIMSS</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2019-01-26">26.01.2019</time>
+										</td>
+										<td>
+											<time datetime="2019-07-26">26.07.2019</time>
+										</td>
+										<td>Daimler</td>
+										<td>Africa</td>
+										<td>Others</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Daimler Connected Truck</td>
+										<td>DAIMCT</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2022-09-09">09.09.2022</time>
+										</td>
+										<td>
+											<time datetime="2023-09-09">09.09.2023</time>
+										</td>
+										<td>Daimler</td>
+										<td>Latin America</td>
+										<td>Others</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ARC</td>
+										<td>Daimler Dealer Network</td>
+										<td>DAIMDN</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2010-03-13">13.03.2010</time>
+										</td>
+										<td>
+											<time datetime="2010-09-13">13.09.2010</time>
+										</td>
+										<td>Daimler</td>
+										<td>Europe</td>
+										<td>Others</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>ENG</td>
+										<td>Daimler Warranty System</td>
+										<td>DAIMWS</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2024-08-25">25.08.2024</time>
+										</td>
+										<td>
+											<time datetime="2025-08-25">25.08.2025</time>
+										</td>
+										<td>Daimler</td>
+										<td>North America</td>
+										<td>Others</td>
+										<td>Customer</td>
+										<td>Corporation</td>
+									</tr>
+									<tr>
+										<td>BA</td>
+										<td>Daimler Supply Forecast</td>
+										<td>DAIMSF</td>
+										<td>In progress</td>
+										<td>
+											<time datetime="2014-12-01">01.12.2014</time>
+										</td>
+										<td>
+											<time datetime="2015-06-01">01.06.2015</time>
+										</td>
+										<td>Daimler</td>
+										<td>Asia Pacific</td>
+										<td>Others</td>
+										<td>Internal</td>
+										<td>Corporation</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<nav data-fls-pagination="" class="pagination" aria-label="Projects list pages" data-fls-pagination-target=".results__table">
+							<a href="?page=1" class="pagination__step pagination__step--prev pagination__step--disabled" aria-disabled="true" tabindex="-1">
+								<svg class="pagination__step-icon" width="20" height="20" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-left"></use>
+								</svg>
+								Previous
+							</a>
+							<ul class="pagination__list">
+								<li>
+									<a href="?page=1" class="pagination__link pagination__link--active" aria-current="page" data-page="1">1</a>
+								</li>
+								<li>
+									<a href="?page=2" class="pagination__link" data-page="2">2</a>
+								</li>
+								<li>
+									<a href="?page=3" class="pagination__link" data-page="3">3</a>
+								</li>
+								<li>
+									<a href="?page=4" class="pagination__link" data-page="4">4</a>
+								</li>
+								<li>
+									<a href="?page=5" class="pagination__link" data-page="5">5</a>
+								</li>
+								<li class="pagination__ellipsis" aria-hidden="true">…</li>
+								<li>
+									<a href="?page=31" class="pagination__link" data-page="31">31</a>
+								</li>
+							</ul>
+							<a href="?page=2" class="pagination__step pagination__step--next">
+								Next
+								<svg class="pagination__step-icon" width="20" height="20" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-right"></use>
+								</svg>
+							</a>
+							<button type="button" class="pagination__show-all" aria-pressed="false">
+								<span>Show all</span>
+								<span>Show less</span>
+							</button>
+						</nav>
+					</section>
+				</main>
+			</div>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container"></div>
+			</footer>
+		</div>
+	</body>
+</html>

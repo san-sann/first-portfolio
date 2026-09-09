@@ -1,0 +1,1140 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Register for available trainings.">
+		<meta property="og:title" content="Training Registration">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://camioca-internal-panel.vercel.app/assets/img/og/preview.png">
+		<meta property="og:url" content="https://camioca-internal-panel.vercel.app/trainingregistration.html">
+		<title>Training Registration</title>
+		<script type="module" crossorigin="" src="./js/trainingregistration.min.js?v=1788984567277"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1788984567277">
+		<link rel="modulepreload" crossorigin="" href="./js/header.min.js?v=1788984567277">
+		<link rel="modulepreload" crossorigin="" href="./js/_functions.min.js?v=1788984567277">
+		<link rel="modulepreload" crossorigin="" href="./js/select.min.js?v=1788984567277">
+		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1788984567277">
+		<link rel="modulepreload" crossorigin="" href="./js/pagination.min.js?v=1788984567277">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1788984567277">
+		<link rel="stylesheet" crossorigin="" href="./css/header.min.css?v=1788984567277">
+		<link rel="stylesheet" crossorigin="" href="./css/select.min.css?v=1788984567277">
+		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1788984567277">
+		<link rel="stylesheet" crossorigin="" href="./css/pagination.min.css?v=1788984567277">
+		<link rel="stylesheet" crossorigin="" href="./css/trainingregistration.min.css?v=1788984567277">
+		<link rel="stylesheet" crossorigin="" href="./css/subnav.min.css?v=1788984567277">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__account">
+					<button type="button" data-fls-menu="" class="icon-menu" aria-expanded="false" aria-label="Open menu">
+						<span></span>
+					</button>
+					<button type="button" class="header__account-toggle" data-fls-account-toggle="" aria-haspopup="true" aria-expanded="false" aria-controls="header-account-menu">
+						<picture>
+							<img alt="" class="header__avatar" width="40" height="40" src="./assets/img/header/photos/avatar-dominique.webp">
+						</picture>
+						<span class="header__account-name">Dominique Ch.</span>
+						<svg class="header__account-arrow" width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-drop-down"></use>
+						</svg>
+					</button>
+					<ul class="header__account-list" id="header-account-menu" data-fls-account-menu="">
+						<li class="header__account-item">
+							<a href="mydetails.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-account-circle"></use>
+								</svg>
+								My details
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="calendar.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								My calendar
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="vacations.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-beach-access"></use>
+								</svg>
+								Vacations
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="corporatecv.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+								</svg>
+								Corporate CV
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="performancereview.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-rocket"></use>
+								</svg>
+								Performance review
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="login.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-logout"></use>
+								</svg>
+								Log out
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__toolbar">
+					<div class="header__search">
+						<svg class="header__search-icon" width="20" height="20" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+						</svg>
+						<label for="header-quick-search" class="visually-hidden">Quick search</label>
+						<input type="search" id="header-quick-search" class="header__search-input" placeholder="Quick search">
+					</div>
+					<button type="button" class="header__notifications" aria-label="Notifications">
+						<svg width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-notifications"></use>
+						</svg>
+					</button>
+				</div>
+			</header>
+			<div class="wrapper__shell">
+				<nav class="menu" data-fls-menu-rail="" aria-label="Primary">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="dashboard.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-dashboard"></use>
+								</svg>
+								<span class="menu__text">Dashboard</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findperson.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-people"></use>
+								</svg>
+								<span class="menu__text">People</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findproject.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-assignment"></use>
+								</svg>
+								<span class="menu__text">Projects</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="calendar.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								<span class="menu__text">Calendar</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="trainingtimetable.html" class="menu__link menu__link--active" aria-current="page">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-easel"></use>
+								</svg>
+								<span class="menu__text">Training</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="timesheet.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-hourglass"></use>
+								</svg>
+								<span class="menu__text">Timesheet</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="reports.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chatbubbles"></use>
+								</svg>
+								<span class="menu__text">Reports</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="administration.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-business"></use>
+								</svg>
+								<span class="menu__text">Administration</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="help.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+								</svg>
+								<span class="menu__text">Help</span>
+							</a>
+						</li>
+					</ul>
+					<div class="menu__credits">
+						<span class="menu__credits-brand">CAMIOCA</span>
+						<span class="menu__credits-version">Version: 1.0.0.11</span>
+					</div>
+				</nav>
+				<main class="page">
+					<nav data-fls-subnav="" class="subnav" aria-label="Section">
+						<ul class="subnav__list">
+							<li class="subnav__item">
+								<a href="trainingtimetable.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-filing"></use>
+									</svg>
+									<span class="subnav__text">Training timetable</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="findtraining.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-search-lg"></use>
+									</svg>
+									<span class="subnav__text">Find training</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="feedback.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+									</svg>
+									<span class="subnav__text">Feedback</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="quizzes.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+									</svg>
+									<span class="subnav__text">Quizzes</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="trainingregistration.html" class="subnav__link subnav__link--active" aria-current="page">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-assignment-turned-in"></use>
+									</svg>
+									<span class="subnav__text">Training registration</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<section class="empty" id="empty">
+						<div class="empty__card">
+							<img class="empty__icon" src="./assets/img/trainingregistration/decor/empty-state.svg" alt="" width="126" height="120" loading="eager">
+							<h1 class="empty__text">There are no training registrations.</h1>
+						</div>
+					</section>
+					<section class="available" id="available">
+						<div class="available__card" data-fls-spollers="">
+							<details class="available__toggle" open data-fls-spollers-open="">
+								<summary class="available__header">
+									<h2 class="available__title">Available trainings:</h2>
+									<span class="visually-hidden" id="available-year-label">Select year</span>
+									<div class="available__year" role="group" aria-labelledby="available-year-label">
+										<button type="button" class="available__year-btn available__year-btn--prev" aria-label="Previous year">
+											<svg class="available__year-icon" width="8" height="12" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-left"></use>
+											</svg>
+										</button>
+										<span class="available__year-value" aria-live="polite">2019</span>
+										<button type="button" class="available__year-btn available__year-btn--next" aria-label="Next year">
+											<svg class="available__year-icon" width="8" height="12" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-right"></use>
+											</svg>
+										</button>
+									</div>
+									<svg class="available__chevron" width="12" height="8" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-expand-more"></use>
+									</svg>
+								</summary>
+								<div class="available__body">
+									<div class="available__field">
+										<label class="visually-hidden" for="available-field-select">Filter by field</label>
+										<select id="available-field-select" name="field" data-fls-select="" data-fls-select-modif="available-field">
+											<option value="" selected>Field</option>
+											<option value="process">Process</option>
+											<option value="soft-skills">Soft Skills</option>
+											<option value="testing">Testing</option>
+											<option value="dev">Dev</option>
+											<option value="support">Support</option>
+										</select>
+									</div>
+									<div class="available__table-wrap">
+										<table class="available__table">
+											<caption class="visually-hidden">Available trainings in 2019</caption>
+											<thead>
+												<tr>
+													<th scope="col">Training</th>
+													<th scope="col">Initiator</th>
+													<th scope="col">Owner</th>
+													<th scope="col">Language</th>
+													<th scope="col">Field</th>
+													<th scope="col">
+														<span class="visually-hidden">Register</span>
+													</th>
+												</tr>
+											</thead>
+											<tbody data-page="1">
+												<tr>
+													<td>Security Awareness</td>
+													<td>Andrew Blick</td>
+													<td>
+														<time datetime="2019-04-25">25 Apr</time>
+													</td>
+													<td>EN</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Security Awareness">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Induction program: Office user manual</td>
+													<td></td>
+													<td>
+														<time datetime="2019-02-16">16 Feb</time>
+													</td>
+													<td>EN</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Induction program: Office user manual">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Induction program: Security</td>
+													<td></td>
+													<td>
+														<time datetime="2019-02-16">16 Feb</time>
+													</td>
+													<td>RU</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Induction program: Security">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Induction program: Capability profile and corporate CV. Dashboard Overview</td>
+													<td></td>
+													<td>
+														<time datetime="2019-02-12">12 Feb</time>
+													</td>
+													<td>RU</td>
+													<td>Soft Skills</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Induction program: Capability profile and corporate CV. Dashboard Overview">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Induction program: Career development in company</td>
+													<td></td>
+													<td>
+														<time datetime="2019-02-03">03 Feb</time>
+													</td>
+													<td>RU</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Induction program: Career development in company">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Induction program: Office policy</td>
+													<td>Hans Fillipinho</td>
+													<td>
+														<time datetime="2019-01-20">20 Jan</time>
+													</td>
+													<td>FR</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Induction program: Office policy">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Risk management</td>
+													<td></td>
+													<td>
+														<time datetime="2019-01-18">18 Jan</time>
+													</td>
+													<td>FR</td>
+													<td>Testing</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Risk management">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Product development</td>
+													<td></td>
+													<td>
+														<time datetime="2019-01-14">14 Jan</time>
+													</td>
+													<td>FR</td>
+													<td>Dev</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Product development">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>SCRUM</td>
+													<td></td>
+													<td>
+														<time datetime="2019-01-05">05 Jan</time>
+													</td>
+													<td>FR</td>
+													<td>Support</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for SCRUM">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+											</tbody>
+											<tbody data-page="2" hidden>
+												<tr>
+													<td>Effective Communication Skills</td>
+													<td></td>
+													<td>
+														<time datetime="2018-12-29">29 Dec</time>
+													</td>
+													<td>EN</td>
+													<td>Soft Skills</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Effective Communication Skills">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Onboarding: IT Security Policy</td>
+													<td>Maria Svensson</td>
+													<td>
+														<time datetime="2018-12-22">22 Dec</time>
+													</td>
+													<td>RU</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Onboarding: IT Security Policy">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Agile Fundamentals</td>
+													<td></td>
+													<td>
+														<time datetime="2018-12-15">15 Dec</time>
+													</td>
+													<td>EN</td>
+													<td>Dev</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Agile Fundamentals">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Customer Service Excellence</td>
+													<td></td>
+													<td>
+														<time datetime="2018-12-08">08 Dec</time>
+													</td>
+													<td>FR</td>
+													<td>Support</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Customer Service Excellence">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Data Privacy &amp; GDPR Basics</td>
+													<td></td>
+													<td>
+														<time datetime="2018-12-01">01 Dec</time>
+													</td>
+													<td>EN</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Data Privacy & GDPR Basics">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Conflict Resolution at Work</td>
+													<td>Daniel Reyes</td>
+													<td>
+														<time datetime="2018-11-24">24 Nov</time>
+													</td>
+													<td>RU</td>
+													<td>Soft Skills</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Conflict Resolution at Work">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Introduction to Test Automation</td>
+													<td></td>
+													<td>
+														<time datetime="2018-11-17">17 Nov</time>
+													</td>
+													<td>EN</td>
+													<td>Testing</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Introduction to Test Automation">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Leadership Basics for New Managers</td>
+													<td></td>
+													<td>
+														<time datetime="2018-11-10">10 Nov</time>
+													</td>
+													<td>FR</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Leadership Basics for New Managers">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Cloud Fundamentals: AWS</td>
+													<td></td>
+													<td>
+														<time datetime="2018-11-03">03 Nov</time>
+													</td>
+													<td>EN</td>
+													<td>Dev</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Cloud Fundamentals: AWS">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+											</tbody>
+											<tbody data-page="3" hidden>
+												<tr>
+													<td>Presentation Skills Workshop</td>
+													<td></td>
+													<td>
+														<time datetime="2018-10-27">27 Oct</time>
+													</td>
+													<td>EN</td>
+													<td>Soft Skills</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Presentation Skills Workshop">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>DevOps Practices Overview</td>
+													<td>Olivia Bennett</td>
+													<td>
+														<time datetime="2018-10-20">20 Oct</time>
+													</td>
+													<td>RU</td>
+													<td>Dev</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for DevOps Practices Overview">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Financial Literacy for Managers</td>
+													<td></td>
+													<td>
+														<time datetime="2018-10-13">13 Oct</time>
+													</td>
+													<td>EN</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Financial Literacy for Managers">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Cybersecurity Fundamentals</td>
+													<td></td>
+													<td>
+														<time datetime="2018-10-06">06 Oct</time>
+													</td>
+													<td>FR</td>
+													<td>Testing</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Cybersecurity Fundamentals">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Diversity &amp; Inclusion Workshop</td>
+													<td></td>
+													<td>
+														<time datetime="2018-09-29">29 Sep</time>
+													</td>
+													<td>EN</td>
+													<td>Soft Skills</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Diversity & Inclusion Workshop">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Negotiation Skills</td>
+													<td>Thomas Krueger</td>
+													<td>
+														<time datetime="2018-09-22">22 Sep</time>
+													</td>
+													<td>RU</td>
+													<td>Support</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Negotiation Skills">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Business Writing Essentials</td>
+													<td></td>
+													<td>
+														<time datetime="2018-09-15">15 Sep</time>
+													</td>
+													<td>EN</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Business Writing Essentials">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Introduction to Kubernetes</td>
+													<td></td>
+													<td>
+														<time datetime="2018-09-08">08 Sep</time>
+													</td>
+													<td>FR</td>
+													<td>Dev</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Introduction to Kubernetes">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Sales Techniques 101</td>
+													<td></td>
+													<td>
+														<time datetime="2018-09-01">01 Sep</time>
+													</td>
+													<td>EN</td>
+													<td>Support</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Sales Techniques 101">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+											</tbody>
+											<tbody data-page="4" hidden>
+												<tr>
+													<td>Remote Team Collaboration</td>
+													<td></td>
+													<td>
+														<time datetime="2018-08-25">25 Aug</time>
+													</td>
+													<td>EN</td>
+													<td>Soft Skills</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Remote Team Collaboration">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Stress Management Workshop</td>
+													<td>Isabelle Moreau</td>
+													<td>
+														<time datetime="2018-08-18">18 Aug</time>
+													</td>
+													<td>FR</td>
+													<td>Soft Skills</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Stress Management Workshop">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Compliance Training: Anti-Bribery</td>
+													<td></td>
+													<td>
+														<time datetime="2018-08-11">11 Aug</time>
+													</td>
+													<td>EN</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Compliance Training: Anti-Bribery">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Design Thinking Workshop</td>
+													<td></td>
+													<td>
+														<time datetime="2018-08-04">04 Aug</time>
+													</td>
+													<td>RU</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Design Thinking Workshop">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>SQL for Analysts</td>
+													<td></td>
+													<td>
+														<time datetime="2018-07-28">28 Jul</time>
+													</td>
+													<td>EN</td>
+													<td>Dev</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for SQL for Analysts">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Public Speaking Advanced</td>
+													<td>Grace Okafor</td>
+													<td>
+														<time datetime="2018-07-21">21 Jul</time>
+													</td>
+													<td>EN</td>
+													<td>Soft Skills</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Public Speaking Advanced">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Change Management Foundations</td>
+													<td></td>
+													<td>
+														<time datetime="2018-07-14">14 Jul</time>
+													</td>
+													<td>RU</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Change Management Foundations">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Quality Assurance Basics</td>
+													<td></td>
+													<td>
+														<time datetime="2018-07-07">07 Jul</time>
+													</td>
+													<td>EN</td>
+													<td>Testing</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Quality Assurance Basics">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Coaching Skills for Managers</td>
+													<td></td>
+													<td>
+														<time datetime="2018-06-30">30 Jun</time>
+													</td>
+													<td>FR</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Coaching Skills for Managers">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+											</tbody>
+											<tbody data-page="5" hidden>
+												<tr>
+													<td>Building High-Performing Teams</td>
+													<td></td>
+													<td>
+														<time datetime="2018-06-23">23 Jun</time>
+													</td>
+													<td>EN</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Building High-Performing Teams">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Effective Feedback Techniques</td>
+													<td>Lucas Meyer</td>
+													<td>
+														<time datetime="2018-06-16">16 Jun</time>
+													</td>
+													<td>RU</td>
+													<td>Soft Skills</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Effective Feedback Techniques">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Introduction to Machine Learning</td>
+													<td></td>
+													<td>
+														<time datetime="2018-06-09">09 Jun</time>
+													</td>
+													<td>EN</td>
+													<td>Dev</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Introduction to Machine Learning">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Risk Assessment Methods</td>
+													<td></td>
+													<td>
+														<time datetime="2018-06-02">02 Jun</time>
+													</td>
+													<td>FR</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Risk Assessment Methods">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Vendor Management Essentials</td>
+													<td></td>
+													<td>
+														<time datetime="2018-05-26">26 May</time>
+													</td>
+													<td>EN</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Vendor Management Essentials">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Cross-cultural Communication</td>
+													<td>Anna Kowalczyk</td>
+													<td>
+														<time datetime="2018-05-19">19 May</time>
+													</td>
+													<td>RU</td>
+													<td>Soft Skills</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Cross-cultural Communication">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>API Design Principles</td>
+													<td></td>
+													<td>
+														<time datetime="2018-05-12">12 May</time>
+													</td>
+													<td>EN</td>
+													<td>Dev</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for API Design Principles">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Legal Basics for Non-lawyers</td>
+													<td></td>
+													<td>
+														<time datetime="2018-05-05">05 May</time>
+													</td>
+													<td>FR</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Legal Basics for Non-lawyers">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Crisis Management Workshop</td>
+													<td></td>
+													<td>
+														<time datetime="2018-04-28">28 Apr</time>
+													</td>
+													<td>EN</td>
+													<td>Support</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Crisis Management Workshop">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+											</tbody>
+											<tbody data-page="31" hidden>
+												<tr>
+													<td>Company Onboarding Basics</td>
+													<td></td>
+													<td>
+														<time datetime="2015-02-27">27 Feb</time>
+													</td>
+													<td>EN</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Company Onboarding Basics">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Office Software Essentials</td>
+													<td>Robert Klein</td>
+													<td>
+														<time datetime="2015-02-20">20 Feb</time>
+													</td>
+													<td>RU</td>
+													<td>Process</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Office Software Essentials">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Introduction to Internal Tools</td>
+													<td></td>
+													<td>
+														<time datetime="2015-02-13">13 Feb</time>
+													</td>
+													<td>EN</td>
+													<td>Testing</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Introduction to Internal Tools">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Workplace Safety Training</td>
+													<td></td>
+													<td>
+														<time datetime="2015-02-06">06 Feb</time>
+													</td>
+													<td>FR</td>
+													<td>Support</td>
+													<td class="available__actions">
+														<button type="button" class="available__register" aria-label="Register for Workplace Safety Training">
+															<svg class="available__register-icon" width="24" height="24" aria-hidden="true">
+																<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+															</svg>
+														</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<nav data-fls-pagination="" class="pagination" aria-label="Available trainings pages" data-fls-pagination-target=".available__table">
+										<a href="?page=1" class="pagination__step pagination__step--prev pagination__step--disabled" aria-disabled="true" tabindex="-1">
+											<svg class="pagination__step-icon" width="20" height="20" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-left"></use>
+											</svg>
+											Previous
+										</a>
+										<ul class="pagination__list">
+											<li>
+												<a href="?page=1" class="pagination__link pagination__link--active" aria-current="page" data-page="1">1</a>
+											</li>
+											<li>
+												<a href="?page=2" class="pagination__link" data-page="2">2</a>
+											</li>
+											<li>
+												<a href="?page=3" class="pagination__link" data-page="3">3</a>
+											</li>
+											<li>
+												<a href="?page=4" class="pagination__link" data-page="4">4</a>
+											</li>
+											<li>
+												<a href="?page=5" class="pagination__link" data-page="5">5</a>
+											</li>
+											<li class="pagination__ellipsis" aria-hidden="true">…</li>
+											<li>
+												<a href="?page=31" class="pagination__link" data-page="31">31</a>
+											</li>
+										</ul>
+										<a href="?page=2" class="pagination__step pagination__step--next">
+											Next
+											<svg class="pagination__step-icon" width="20" height="20" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-right"></use>
+											</svg>
+										</a>
+										<button type="button" class="pagination__show-all" aria-pressed="false">
+											<span>Show all</span>
+											<span>Show less</span>
+										</button>
+									</nav>
+								</div>
+							</details>
+						</div>
+					</section>
+				</main>
+			</div>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container"></div>
+			</footer>
+		</div>
+	</body>
+</html>

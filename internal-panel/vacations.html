@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Planned and actual vacation records.">
+		<meta property="og:title" content="Vacations">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://camioca-internal-panel.vercel.app/assets/img/og/preview.png">
+		<meta property="og:url" content="https://camioca-internal-panel.vercel.app/vacations.html">
+		<title>Vacations</title>
+		<script type="module" crossorigin="" src="./js/vacations.min.js?v=1788984567272"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/datepicker.min.js?v=1788984567272">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1788984567272">
+		<link rel="modulepreload" crossorigin="" href="./js/header.min.js?v=1788984567272">
+		<link rel="stylesheet" crossorigin="" href="./css/datepicker.min.css?v=1788984567272">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1788984567272">
+		<link rel="stylesheet" crossorigin="" href="./css/header.min.css?v=1788984567272">
+		<link rel="stylesheet" crossorigin="" href="./css/vacations.min.css?v=1788984567272">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__account">
+					<button type="button" data-fls-menu="" class="icon-menu" aria-expanded="false" aria-label="Open menu">
+						<span></span>
+					</button>
+					<button type="button" class="header__account-toggle" data-fls-account-toggle="" aria-haspopup="true" aria-expanded="false" aria-controls="header-account-menu">
+						<picture>
+							<img alt="" class="header__avatar" width="40" height="40" src="./assets/img/header/photos/avatar-dominique.webp">
+						</picture>
+						<span class="header__account-name">Dominique Ch.</span>
+						<svg class="header__account-arrow" width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-drop-down"></use>
+						</svg>
+					</button>
+					<ul class="header__account-list" id="header-account-menu" data-fls-account-menu="">
+						<li class="header__account-item">
+							<a href="mydetails.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-account-circle"></use>
+								</svg>
+								My details
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="calendar.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								My calendar
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="vacations.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-beach-access"></use>
+								</svg>
+								Vacations
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="corporatecv.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+								</svg>
+								Corporate CV
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="performancereview.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-rocket"></use>
+								</svg>
+								Performance review
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="login.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-logout"></use>
+								</svg>
+								Log out
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__toolbar">
+					<div class="header__search">
+						<svg class="header__search-icon" width="20" height="20" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+						</svg>
+						<label for="header-quick-search" class="visually-hidden">Quick search</label>
+						<input type="search" id="header-quick-search" class="header__search-input" placeholder="Quick search">
+					</div>
+					<button type="button" class="header__notifications" aria-label="Notifications">
+						<svg width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-notifications"></use>
+						</svg>
+					</button>
+				</div>
+			</header>
+			<div class="wrapper__shell">
+				<nav class="menu" data-fls-menu-rail="" aria-label="Primary">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="dashboard.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-dashboard"></use>
+								</svg>
+								<span class="menu__text">Dashboard</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findperson.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-people"></use>
+								</svg>
+								<span class="menu__text">People</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findproject.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-assignment"></use>
+								</svg>
+								<span class="menu__text">Projects</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="calendar.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								<span class="menu__text">Calendar</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="trainingtimetable.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-easel"></use>
+								</svg>
+								<span class="menu__text">Training</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="timesheet.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-hourglass"></use>
+								</svg>
+								<span class="menu__text">Timesheet</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="reports.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chatbubbles"></use>
+								</svg>
+								<span class="menu__text">Reports</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="administration.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-business"></use>
+								</svg>
+								<span class="menu__text">Administration</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="help.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+								</svg>
+								<span class="menu__text">Help</span>
+							</a>
+						</li>
+					</ul>
+					<div class="menu__credits">
+						<span class="menu__credits-brand">CAMIOCA</span>
+						<span class="menu__credits-version">Version: 1.0.0.11</span>
+					</div>
+				</nav>
+				<main class="page">
+					<h1 class="visually-hidden">My vacations</h1>
+					<section class="toolbar" id="toolbar">
+						<span class="toolbar__label" id="toolbar-date-label">Select the date</span>
+						<div class="toolbar__date-row">
+							<div class="toolbar__year" role="group" aria-labelledby="toolbar-date-label">
+								<button type="button" class="toolbar__year-btn toolbar__year-btn--prev" aria-label="Previous year">
+									<svg class="toolbar__year-icon" width="8" height="12" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-left"></use>
+									</svg>
+								</button>
+								<span class="toolbar__year-value" aria-live="polite">2019</span>
+								<button type="button" class="toolbar__year-btn toolbar__year-btn--next" aria-label="Next year">
+									<svg class="toolbar__year-icon" width="8" height="12" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-right"></use>
+									</svg>
+								</button>
+							</div>
+							<span class="toolbar__datepicker-wrap">
+								<button type="button" class="toolbar__datepicker" aria-label="Open date picker">
+									<svg class="toolbar__datepicker-icon" width="24" height="24" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-calendar-accent"></use>
+									</svg>
+								</button>
+								<input type="text" class="toolbar__datepicker-input" id="toolbar-datepicker-input" data-fls-datepicker="" autocomplete="off" tabindex="-1" aria-label="Open date picker">
+							</span>
+						</div>
+					</section>
+					<section class="planned" id="planned">
+						<div class="planned__head">
+							<h2 class="planned__title">Planned vacations</h2>
+							<button type="button" class="planned__add">
+								<svg class="planned__add-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+								</svg>
+								Add row
+							</button>
+						</div>
+						<div class="planned__table-wrap">
+							<table class="planned__table">
+								<caption class="visually-hidden">Planned vacation requests for 2019</caption>
+								<thead>
+									<tr>
+										<th scope="col">
+											<span class="visually-hidden">Status</span>
+										</th>
+										<th scope="col">Dates</th>
+										<th scope="col">Duration in days</th>
+										<th scope="col">Workdays</th>
+										<th scope="col">Holidays</th>
+										<th scope="col">Approved</th>
+										<th scope="col">
+											<span class="visually-hidden">Actions</span>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<span class="planned__status" role="img" aria-label="Approved"></span>
+										</td>
+										<td>
+											<time datetime="2019-08-12">12.08.2019</time>
+											-
+											<time datetime="2019-08-22">22.08.2019</time>
+										</td>
+										<td class="planned__duration">14</td>
+										<td class="planned__workdays">10</td>
+										<td class="planned__holidays">4</td>
+										<td>Michael Bluemans</td>
+										<td>
+											<div class="planned__actions">
+												<button type="button" class="planned__edit" aria-label="Edit vacation request: 12.08.2019 - 22.08.2019">
+													<svg width="24" height="24" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-create"></use>
+													</svg>
+												</button>
+												<button type="button" class="planned__delete" aria-label="Delete vacation request: 12.08.2019 - 22.08.2019">
+													<svg width="24" height="24" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-delete"></use>
+													</svg>
+												</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="planned__status" role="img" aria-label="Approved"></span>
+										</td>
+										<td>
+											<time datetime="2019-12-21">21.12.2019</time>
+											-
+											<time datetime="2019-12-31">31.12.2019</time>
+										</td>
+										<td class="planned__duration">7</td>
+										<td class="planned__workdays">5</td>
+										<td class="planned__holidays">2</td>
+										<td>Michael Bluemans</td>
+										<td>
+											<div class="planned__actions">
+												<button type="button" class="planned__edit" aria-label="Edit vacation request: 21.12.2019 - 31.12.2019">
+													<svg width="24" height="24" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-create"></use>
+													</svg>
+												</button>
+												<button type="button" class="planned__delete" aria-label="Delete vacation request: 21.12.2019 - 31.12.2019">
+													<svg width="24" height="24" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-delete"></use>
+													</svg>
+												</button>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td></td>
+										<td>Totals</td>
+										<td class="planned__duration-total">21</td>
+										<td class="planned__workdays-total">15</td>
+										<td class="planned__holidays-total">6</td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</section>
+					<section class="actual" id="actual">
+						<div class="actual__head">
+							<h2 class="actual__title">Actual vacations</h2>
+						</div>
+						<div class="actual__table-wrap">
+							<table class="actual__table">
+								<caption class="visually-hidden">Actual vacation records for 2019</caption>
+								<thead>
+									<tr>
+										<th scope="col">
+											<span class="visually-hidden">Status</span>
+										</th>
+										<th scope="col">Dates</th>
+										<th scope="col">Duration in days</th>
+										<th scope="col">Workdays</th>
+										<th scope="col">Holidays</th>
+										<th scope="col">Comments</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<span class="actual__status" role="img" aria-label="Approved and paid"></span>
+										</td>
+										<td>
+											<time datetime="2019-08-12">12.08.2019</time>
+											-
+											<time datetime="2019-08-22">22.08.2019</time>
+										</td>
+										<td>14</td>
+										<td>10</td>
+										<td>4</td>
+										<td class="actual__comment">Approved and paid</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="actual__status" role="img" aria-label="In processing"></span>
+										</td>
+										<td>
+											<time datetime="2019-12-21">21.12.2019</time>
+											-
+											<time datetime="2019-12-31">31.12.2019</time>
+										</td>
+										<td>7</td>
+										<td>5</td>
+										<td>2</td>
+										<td class="actual__comment">In processing</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td></td>
+										<td>Totals</td>
+										<td>21</td>
+										<td>15</td>
+										<td>6</td>
+										<td></td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</section>
+				</main>
+			</div>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container"></div>
+			</footer>
+		</div>
+	</body>
+</html>

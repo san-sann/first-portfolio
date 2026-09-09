@@ -1,0 +1,1158 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Browse and filter the full employee directory.">
+		<meta property="og:title" content="All People">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://camioca-internal-panel.vercel.app/assets/img/og/preview.png">
+		<meta property="og:url" content="https://camioca-internal-panel.vercel.app/allpeople.html">
+		<title>All People</title>
+		<script type="module" crossorigin="" src="./js/allpeople.min.js?v=1788984567284"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1788984567284">
+		<link rel="modulepreload" crossorigin="" href="./js/header.min.js?v=1788984567284">
+		<link rel="modulepreload" crossorigin="" href="./js/pagination.min.js?v=1788984567284">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1788984567284">
+		<link rel="stylesheet" crossorigin="" href="./css/header.min.css?v=1788984567284">
+		<link rel="stylesheet" crossorigin="" href="./css/pagination.min.css?v=1788984567284">
+		<link rel="stylesheet" crossorigin="" href="./css/allpeople.min.css?v=1788984567284">
+		<link rel="stylesheet" crossorigin="" href="./css/subnav.min.css?v=1788984567284">
+		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1788984567284">
+		<link rel="stylesheet" crossorigin="" href="./css/checkbox.min.css?v=1788984567284">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__account">
+					<button type="button" data-fls-menu="" class="icon-menu" aria-expanded="false" aria-label="Open menu">
+						<span></span>
+					</button>
+					<button type="button" class="header__account-toggle" data-fls-account-toggle="" aria-haspopup="true" aria-expanded="false" aria-controls="header-account-menu">
+						<picture>
+							<img alt="" class="header__avatar" width="40" height="40" src="./assets/img/header/photos/avatar-dominique.webp">
+						</picture>
+						<span class="header__account-name">Dominique Ch.</span>
+						<svg class="header__account-arrow" width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-drop-down"></use>
+						</svg>
+					</button>
+					<ul class="header__account-list" id="header-account-menu" data-fls-account-menu="">
+						<li class="header__account-item">
+							<a href="mydetails.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-account-circle"></use>
+								</svg>
+								My details
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="calendar.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								My calendar
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="vacations.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-beach-access"></use>
+								</svg>
+								Vacations
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="corporatecv.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+								</svg>
+								Corporate CV
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="performancereview.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-rocket"></use>
+								</svg>
+								Performance review
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="login.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-logout"></use>
+								</svg>
+								Log out
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__toolbar">
+					<div class="header__search">
+						<svg class="header__search-icon" width="20" height="20" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+						</svg>
+						<label for="header-quick-search" class="visually-hidden">Quick search</label>
+						<input type="search" id="header-quick-search" class="header__search-input" placeholder="Quick search">
+					</div>
+					<button type="button" class="header__notifications" aria-label="Notifications">
+						<svg width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-notifications"></use>
+						</svg>
+					</button>
+				</div>
+			</header>
+			<div class="wrapper__shell">
+				<nav class="menu" data-fls-menu-rail="" aria-label="Primary">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="dashboard.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-dashboard"></use>
+								</svg>
+								<span class="menu__text">Dashboard</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findperson.html" class="menu__link menu__link--active" aria-current="page">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-people"></use>
+								</svg>
+								<span class="menu__text">People</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findproject.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-assignment"></use>
+								</svg>
+								<span class="menu__text">Projects</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="calendar.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								<span class="menu__text">Calendar</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="trainingtimetable.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-easel"></use>
+								</svg>
+								<span class="menu__text">Training</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="timesheet.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-hourglass"></use>
+								</svg>
+								<span class="menu__text">Timesheet</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="reports.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chatbubbles"></use>
+								</svg>
+								<span class="menu__text">Reports</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="administration.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-business"></use>
+								</svg>
+								<span class="menu__text">Administration</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="help.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+								</svg>
+								<span class="menu__text">Help</span>
+							</a>
+						</li>
+					</ul>
+					<div class="menu__credits">
+						<span class="menu__credits-brand">CAMIOCA</span>
+						<span class="menu__credits-version">Version: 1.0.0.11</span>
+					</div>
+				</nav>
+				<main class="page">
+					<nav data-fls-subnav="" class="subnav" aria-label="Section">
+						<ul class="subnav__list">
+							<li class="subnav__item">
+								<a href="findperson.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-search-lg"></use>
+									</svg>
+									<span class="subnav__text">Find person</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="allpeople.html" class="subnav__link subnav__link--active" aria-current="page">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-people"></use>
+									</svg>
+									<span class="subnav__text">All people</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<section class="summary" id="summary">
+						<div class="summary__header">
+							<h1 class="summary__title">List of active people</h1>
+							<button type="button" data-fls-button="" class="summary__export button">
+								<svg class="summary__export-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-download"></use>
+								</svg>
+								Export to Excel
+							</button>
+						</div>
+						<div class="summary__table-wrap">
+							<table class="summary__table">
+								<caption class="visually-hidden">Active people count by category</caption>
+								<thead>
+									<tr>
+										<th scope="col">Delivery billable</th>
+										<th scope="col">Delivery unbillable</th>
+										<th scope="col">Administration</th>
+										<th scope="col">CEO</th>
+										<th scope="col">Sales</th>
+										<th scope="col">Marketing</th>
+										<th scope="col">Finance</th>
+										<th scope="col">HR</th>
+										<th scope="col">IT</th>
+										<th scope="col">Legal</th>
+										<th scope="col">PPS</th>
+										<th scope="col">L &amp; D</th>
+										<th scope="col">OG</th>
+										<th scope="col">OBS</th>
+										<th scope="col">EBO</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>233</td>
+										<td>11</td>
+										<td>8</td>
+										<td>1</td>
+										<td>15</td>
+										<td>11</td>
+										<td>8</td>
+										<td>4</td>
+										<td>3</td>
+										<td>2</td>
+										<td>15</td>
+										<td>1</td>
+										<td>5</td>
+										<td>2</td>
+										<td>0</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<dl class="summary__totals">
+							<div class="summary__totals-item">
+								<dt>Delivery:</dt>
+								<dd>581</dd>
+							</div>
+							<div class="summary__totals-item">
+								<dt>Non-delivery:</dt>
+								<dd>132</dd>
+							</div>
+							<div class="summary__totals-item">
+								<dt>Total:</dt>
+								<dd>713</dd>
+							</div>
+						</dl>
+					</section>
+					<section class="results" id="results">
+						<div class="results__filter">
+							<h2 class="results__filter-title">Filter</h2>
+							<form class="results__filter-form">
+								<fieldset class="results__group">
+									<legend class="results__group-title">Regions</legend>
+									<div class="results__checkboxes">
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" name="regions[]" value="uk" checked>
+											<span class="checkbox__text">UK (111)</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" name="regions[]" value="us">
+											<span class="checkbox__text">US (98)</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" name="regions[]" value="france">
+											<span class="checkbox__text">France (45)</span>
+										</label>
+									</div>
+								</fieldset>
+								<fieldset class="results__group">
+									<legend class="results__group-title">Branches</legend>
+									<div class="results__checkboxes">
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" name="branches[]" value="london" checked>
+											<span class="checkbox__text">London (111)</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" name="branches[]" value="liverpool" checked>
+											<span class="checkbox__text">Liverpool (12)</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" name="branches[]" value="manchester" checked>
+											<span class="checkbox__text">Manchester (5)</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" name="branches[]" value="leeds" checked>
+											<span class="checkbox__text">Leeds (3)</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" name="branches[]" value="cardiff">
+											<span class="checkbox__text">Cardiff (1)</span>
+										</label>
+									</div>
+								</fieldset>
+								<fieldset class="results__group">
+									<legend class="results__group-title">Divisions</legend>
+									<div class="results__checkboxes">
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" name="divisions[]" value="management" checked>
+											<span class="checkbox__text">Management (43)</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" name="divisions[]" value="finance" checked>
+											<span class="checkbox__text">Finance (10)</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" name="divisions[]" value="legal" checked>
+											<span class="checkbox__text">Legal (1)</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" name="divisions[]" value="operation" checked>
+											<span class="checkbox__text">Operation (1)</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" name="divisions[]" value="it">
+											<span class="checkbox__text">IT (1)</span>
+										</label>
+									</div>
+								</fieldset>
+								<button type="button" data-fls-button="" class="results__clear button">Clear</button>
+							</form>
+						</div>
+						<div class="results__table-card">
+							<h2 class="results__found">
+								Found:
+								<span class="results__found-count">110</span>
+							</h2>
+							<div class="results__table-wrap">
+								<table class="results__table">
+									<caption class="visually-hidden">List of people matching the current filter</caption>
+									<thead>
+										<tr>
+											<th scope="col">Full name</th>
+											<th scope="col">Branch</th>
+											<th scope="col">Division</th>
+											<th scope="col">User type</th>
+											<th scope="col">Contract type</th>
+											<th scope="col">Start date</th>
+											<th scope="col">ID</th>
+										</tr>
+									</thead>
+									<tbody data-page="1">
+										<tr>
+											<td>Konstantin Konstantinopolsky</td>
+											<td>London</td>
+											<td>Management</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2013-01-12">12.01.2013</time>
+											</td>
+											<td>14321</td>
+										</tr>
+										<tr>
+											<td>Andrew Salgado</td>
+											<td>London</td>
+											<td>Management</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2014-04-21">21.04.2014</time>
+											</td>
+											<td>21345</td>
+										</tr>
+										<tr>
+											<td>Magdalena Edinborough</td>
+											<td>Liverpool</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Subcontractor</td>
+											<td>
+												<time datetime="2015-11-02">02.11.2015</time>
+											</td>
+											<td>1894</td>
+										</tr>
+										<tr>
+											<td>Matt Travis</td>
+											<td>Liverpool</td>
+											<td>Management</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2016-11-02">02.11.2016</time>
+											</td>
+											<td>135567</td>
+										</tr>
+										<tr>
+											<td>Daniel Wellington</td>
+											<td>Manchester</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2012-11-02">02.11.2012</time>
+											</td>
+											<td>10973</td>
+										</tr>
+										<tr>
+											<td>Lucia Mirosini</td>
+											<td>Leeds</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2011-11-02">02.11.2011</time>
+											</td>
+											<td>6324</td>
+										</tr>
+										<tr>
+											<td>Anette Brown</td>
+											<td>London</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2005-11-02">02.11.2005</time>
+											</td>
+											<td>4322</td>
+										</tr>
+										<tr>
+											<td>Christian Lambrou</td>
+											<td>London</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2009-11-02">02.11.2009</time>
+											</td>
+											<td>4521</td>
+										</tr>
+										<tr>
+											<td>Phil Collins</td>
+											<td>Manchester</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Subcontractor</td>
+											<td>
+												<time datetime="2008-11-02">02.11.2008</time>
+											</td>
+											<td>1422</td>
+										</tr>
+										<tr>
+											<td>Winston Holliday</td>
+											<td>London</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2017-11-02">02.11.2017</time>
+											</td>
+											<td>45667</td>
+										</tr>
+										<tr>
+											<td>Carla Andrade</td>
+											<td>London</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2017-11-02">02.11.2017</time>
+											</td>
+											<td>98871</td>
+										</tr>
+									</tbody>
+									<tbody data-page="2" hidden>
+										<tr>
+											<td>Rebecca Hartley</td>
+											<td>London</td>
+											<td>Management</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2014-03-15">15.03.2014</time>
+											</td>
+											<td>15102</td>
+										</tr>
+										<tr>
+											<td>Marcus Webb</td>
+											<td>Manchester</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2016-09-08">08.09.2016</time>
+											</td>
+											<td>22987</td>
+										</tr>
+										<tr>
+											<td>Sophie Lindqvist</td>
+											<td>Liverpool</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Subcontractor</td>
+											<td>
+												<time datetime="2013-06-19">19.06.2013</time>
+											</td>
+											<td>8734</td>
+										</tr>
+										<tr>
+											<td>Thomas Barrington</td>
+											<td>London</td>
+											<td>Management</td>
+											<td>Administration</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2011-02-02">02.02.2011</time>
+											</td>
+											<td>5521</td>
+										</tr>
+										<tr>
+											<td>Elena Voskresenskaya</td>
+											<td>Leeds</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2018-10-27">27.10.2018</time>
+											</td>
+											<td>31456</td>
+										</tr>
+										<tr>
+											<td>Jack Sullivan</td>
+											<td>London</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2015-04-11">11.04.2015</time>
+											</td>
+											<td>19203</td>
+										</tr>
+										<tr>
+											<td>Priya Chandrasekaran</td>
+											<td>Manchester</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2012-01-30">30.01.2012</time>
+											</td>
+											<td>6689</td>
+										</tr>
+										<tr>
+											<td>Henrik Solberg</td>
+											<td>Liverpool</td>
+											<td>Management</td>
+											<td>Delivery billable</td>
+											<td>Subcontractor</td>
+											<td>
+												<time datetime="2017-12-05">05.12.2017</time>
+											</td>
+											<td>27845</td>
+										</tr>
+										<tr>
+											<td>Charlotte Fenwick</td>
+											<td>London</td>
+											<td>Operation</td>
+											<td>Sales</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2009-07-14">14.07.2009</time>
+											</td>
+											<td>3390</td>
+										</tr>
+										<tr>
+											<td>Dmitri Kuznetsov</td>
+											<td>Cardiff</td>
+											<td>Legal</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2019-08-22">22.08.2019</time>
+											</td>
+											<td>34012</td>
+										</tr>
+										<tr>
+											<td>Isabelle Marchetti</td>
+											<td>Manchester</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2010-05-09">09.05.2010</time>
+											</td>
+											<td>4478</td>
+										</tr>
+									</tbody>
+									<tbody data-page="3" hidden>
+										<tr>
+											<td>Gareth Powell</td>
+											<td>Leeds</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2013-11-03">03.11.2013</time>
+											</td>
+											<td>9921</td>
+										</tr>
+										<tr>
+											<td>Yuki Tanaka</td>
+											<td>London</td>
+											<td>Management</td>
+											<td>Marketing</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2016-02-17">17.02.2016</time>
+											</td>
+											<td>21034</td>
+										</tr>
+										<tr>
+											<td>Fiona MacAllister</td>
+											<td>Liverpool</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Subcontractor</td>
+											<td>
+												<time datetime="2008-09-25">25.09.2008</time>
+											</td>
+											<td>2156</td>
+										</tr>
+										<tr>
+											<td>Oliver Bancroft</td>
+											<td>Manchester</td>
+											<td>Management</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2020-06-12">12.06.2020</time>
+											</td>
+											<td>38877</td>
+										</tr>
+										<tr>
+											<td>Sanne Vermeulen</td>
+											<td>London</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2014-03-29">29.03.2014</time>
+											</td>
+											<td>12456</td>
+										</tr>
+										<tr>
+											<td>Kwame Asante</td>
+											<td>Cardiff</td>
+											<td>Operation</td>
+											<td>IT</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2019-01-07">07.01.2019</time>
+											</td>
+											<td>33012</td>
+										</tr>
+										<tr>
+											<td>Grace Whitfield</td>
+											<td>London</td>
+											<td>Management</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2011-10-20">20.10.2011</time>
+											</td>
+											<td>5987</td>
+										</tr>
+										<tr>
+											<td>Pavel Nowak</td>
+											<td>Manchester</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Subcontractor</td>
+											<td>
+												<time datetime="2015-05-14">14.05.2015</time>
+											</td>
+											<td>18654</td>
+										</tr>
+										<tr>
+											<td>Amelia Kirkpatrick</td>
+											<td>Liverpool</td>
+											<td>Management</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2009-08-31">31.08.2009</time>
+											</td>
+											<td>3345</td>
+										</tr>
+										<tr>
+											<td>Noah Bergström</td>
+											<td>London</td>
+											<td>Operation</td>
+											<td>HR</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2021-12-06">06.12.2021</time>
+											</td>
+											<td>41203</td>
+										</tr>
+										<tr>
+											<td>Rania El-Sayed</td>
+											<td>Leeds</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2017-04-23">23.04.2017</time>
+											</td>
+											<td>26788</td>
+										</tr>
+									</tbody>
+									<tbody data-page="4" hidden>
+										<tr>
+											<td>Benedict Hollis</td>
+											<td>London</td>
+											<td>Management</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2012-09-18">18.09.2012</time>
+											</td>
+											<td>7743</td>
+										</tr>
+										<tr>
+											<td>Ingrid Larsen</td>
+											<td>Manchester</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2018-07-04">04.07.2018</time>
+											</td>
+											<td>29901</td>
+										</tr>
+										<tr>
+											<td>Owen Fitzgerald</td>
+											<td>Liverpool</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Subcontractor</td>
+											<td>
+												<time datetime="2010-02-21">21.02.2010</time>
+											</td>
+											<td>4123</td>
+										</tr>
+										<tr>
+											<td>Mei Lin Zhao</td>
+											<td>London</td>
+											<td>Management</td>
+											<td>PPS</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2019-11-09">09.11.2019</time>
+											</td>
+											<td>35540</td>
+										</tr>
+										<tr>
+											<td>Callum Ferris</td>
+											<td>Cardiff</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2013-06-15">15.06.2013</time>
+											</td>
+											<td>9456</td>
+										</tr>
+										<tr>
+											<td>Anastasia Volkova</td>
+											<td>Leeds</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2016-03-28">28.03.2016</time>
+											</td>
+											<td>22178</td>
+										</tr>
+										<tr>
+											<td>Declan O'Rourke</td>
+											<td>London</td>
+											<td>Management</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2007-10-02">02.10.2007</time>
+											</td>
+											<td>1890</td>
+										</tr>
+										<tr>
+											<td>Freya Ashworth</td>
+											<td>Manchester</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Subcontractor</td>
+											<td>
+												<time datetime="2021-01-13">13.01.2021</time>
+											</td>
+											<td>40012</td>
+										</tr>
+										<tr>
+											<td>Rafael Contreras</td>
+											<td>Liverpool</td>
+											<td>Management</td>
+											<td>OG</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2014-08-26">26.08.2014</time>
+											</td>
+											<td>13890</td>
+										</tr>
+										<tr>
+											<td>Beatrice Sinclair</td>
+											<td>London</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2011-05-07">07.05.2011</time>
+											</td>
+											<td>5678</td>
+										</tr>
+										<tr>
+											<td>Tobias Reinholt</td>
+											<td>Manchester</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2020-12-19">19.12.2020</time>
+											</td>
+											<td>39234</td>
+										</tr>
+									</tbody>
+									<tbody data-page="5" hidden>
+										<tr>
+											<td>Hannah Cresswell</td>
+											<td>London</td>
+											<td>Management</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2015-02-24">24.02.2015</time>
+											</td>
+											<td>17890</td>
+										</tr>
+										<tr>
+											<td>Luca Bianchi</td>
+											<td>Liverpool</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Subcontractor</td>
+											<td>
+												<time datetime="2009-09-11">11.09.2009</time>
+											</td>
+											<td>3678</td>
+										</tr>
+										<tr>
+											<td>Sinead Doyle</td>
+											<td>Manchester</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2018-06-30">30.06.2018</time>
+											</td>
+											<td>30456</td>
+										</tr>
+										<tr>
+											<td>Aleksander Dabrowski</td>
+											<td>London</td>
+											<td>Management</td>
+											<td>Legal</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2013-04-05">05.04.2013</time>
+											</td>
+											<td>8901</td>
+										</tr>
+										<tr>
+											<td>Wren Blackwood</td>
+											<td>Cardiff</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2020-11-16">16.11.2020</time>
+											</td>
+											<td>39876</td>
+										</tr>
+										<tr>
+											<td>Camille Dubois</td>
+											<td>Leeds</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2010-07-22">22.07.2010</time>
+											</td>
+											<td>4789</td>
+										</tr>
+										<tr>
+											<td>Anton Petrov</td>
+											<td>London</td>
+											<td>Management</td>
+											<td>Delivery billable</td>
+											<td>Subcontractor</td>
+											<td>
+												<time datetime="2017-01-08">08.01.2017</time>
+											</td>
+											<td>25123</td>
+										</tr>
+										<tr>
+											<td>Verity Marsh</td>
+											<td>Manchester</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2012-05-27">27.05.2012</time>
+											</td>
+											<td>6890</td>
+										</tr>
+										<tr>
+											<td>Kofi Mensah</td>
+											<td>Liverpool</td>
+											<td>Finance</td>
+											<td>Sales</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2019-10-14">14.10.2019</time>
+											</td>
+											<td>34567</td>
+										</tr>
+										<tr>
+											<td>Josephine Delacroix</td>
+											<td>London</td>
+											<td>Management</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2008-03-03">03.03.2008</time>
+											</td>
+											<td>2234</td>
+										</tr>
+										<tr>
+											<td>Magnus Ekwall</td>
+											<td>Manchester</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2021-08-19">19.08.2021</time>
+											</td>
+											<td>41890</td>
+										</tr>
+									</tbody>
+									<tbody data-page="31" hidden>
+										<tr>
+											<td>Odette Laurent</td>
+											<td>London</td>
+											<td>Legal</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2022-02-12">12.02.2022</time>
+											</td>
+											<td>44567</td>
+										</tr>
+										<tr>
+											<td>Ewan Sutherland</td>
+											<td>Manchester</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2006-09-29">29.09.2006</time>
+											</td>
+											<td>1123</td>
+										</tr>
+										<tr>
+											<td>Nadia Farouk</td>
+											<td>Liverpool</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Subcontractor</td>
+											<td>
+												<time datetime="2023-04-18">18.04.2023</time>
+											</td>
+											<td>47890</td>
+										</tr>
+										<tr>
+											<td>Piers Whitmore</td>
+											<td>London</td>
+											<td>Management</td>
+											<td>CEO</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2005-11-06">06.11.2005</time>
+											</td>
+											<td>890</td>
+										</tr>
+										<tr>
+											<td>Saoirse Kelly</td>
+											<td>Cardiff</td>
+											<td>Legal</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2022-07-25">25.07.2022</time>
+											</td>
+											<td>45012</td>
+										</tr>
+										<tr>
+											<td>Bartholomew Snape</td>
+											<td>Leeds</td>
+											<td>Finance</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2023-01-01">01.01.2023</time>
+											</td>
+											<td>46234</td>
+										</tr>
+										<tr>
+											<td>Miriam Osei</td>
+											<td>London</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2007-03-14">14.03.2007</time>
+											</td>
+											<td>1567</td>
+										</tr>
+										<tr>
+											<td>Theo Van Der Berg</td>
+											<td>Manchester</td>
+											<td>Management</td>
+											<td>Delivery billable</td>
+											<td>Subcontractor</td>
+											<td>
+												<time datetime="2021-06-09">09.06.2021</time>
+											</td>
+											<td>42345</td>
+										</tr>
+										<tr>
+											<td>Lysandra Popescu</td>
+											<td>Liverpool</td>
+											<td>Finance</td>
+											<td>OBS</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2022-12-22">22.12.2022</time>
+											</td>
+											<td>45890</td>
+										</tr>
+										<tr>
+											<td>Cormac Brennan</td>
+											<td>London</td>
+											<td>Operation</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2004-08-30">30.08.2004</time>
+											</td>
+											<td>456</td>
+										</tr>
+										<tr>
+											<td>Wilhelmina Frost</td>
+											<td>Manchester</td>
+											<td>Management</td>
+											<td>Delivery billable</td>
+											<td>Employee</td>
+											<td>
+												<time datetime="2023-05-17">17.05.2023</time>
+											</td>
+											<td>47123</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<nav data-fls-pagination="" class="pagination" aria-label="People list pages" data-fls-pagination-target=".results__table">
+								<a href="?page=1" class="pagination__step pagination__step--prev pagination__step--disabled" aria-disabled="true" tabindex="-1">
+									<svg class="pagination__step-icon" width="20" height="20" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-left"></use>
+									</svg>
+									Previous
+								</a>
+								<ul class="pagination__list">
+									<li>
+										<a href="?page=1" class="pagination__link pagination__link--active" aria-current="page" data-page="1">1</a>
+									</li>
+									<li>
+										<a href="?page=2" class="pagination__link" data-page="2">2</a>
+									</li>
+									<li>
+										<a href="?page=3" class="pagination__link" data-page="3">3</a>
+									</li>
+									<li>
+										<a href="?page=4" class="pagination__link" data-page="4">4</a>
+									</li>
+									<li>
+										<a href="?page=5" class="pagination__link" data-page="5">5</a>
+									</li>
+									<li class="pagination__ellipsis" aria-hidden="true">…</li>
+									<li>
+										<a href="?page=31" class="pagination__link" data-page="31">31</a>
+									</li>
+								</ul>
+								<a href="?page=2" class="pagination__step pagination__step--next">
+									Next
+									<svg class="pagination__step-icon" width="20" height="20" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-right"></use>
+									</svg>
+								</a>
+								<button type="button" class="pagination__show-all" aria-pressed="false">
+									<span>Show all</span>
+									<span>Show less</span>
+								</button>
+							</nav>
+						</div>
+					</section>
+				</main>
+			</div>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container"></div>
+			</footer>
+		</div>
+	</body>
+</html>

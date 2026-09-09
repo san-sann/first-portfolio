@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Overview widgets: company facts, statistics, assigned risks and action items.">
+		<meta property="og:title" content="Dashboard">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://camioca-internal-panel.vercel.app/assets/img/og/preview.png">
+		<meta property="og:url" content="https://camioca-internal-panel.vercel.app/dashboard.html">
+		<title>Dashboard</title>
+		<script type="module" crossorigin="" src="./js/dashboard.min.js?v=1788984567283"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1788984567283">
+		<link rel="modulepreload" crossorigin="" href="./js/header.min.js?v=1788984567283">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1788984567283">
+		<link rel="stylesheet" crossorigin="" href="./css/header.min.css?v=1788984567283">
+		<link rel="stylesheet" crossorigin="" href="./css/dashboard.min.css?v=1788984567283">
+		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1788984567283">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__account">
+					<button type="button" data-fls-menu="" class="icon-menu" aria-expanded="false" aria-label="Open menu">
+						<span></span>
+					</button>
+					<button type="button" class="header__account-toggle" data-fls-account-toggle="" aria-haspopup="true" aria-expanded="false" aria-controls="header-account-menu">
+						<picture>
+							<img alt="" class="header__avatar" width="40" height="40" src="./assets/img/header/photos/avatar-dominique.webp">
+						</picture>
+						<span class="header__account-name">Dominique Ch.</span>
+						<svg class="header__account-arrow" width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-drop-down"></use>
+						</svg>
+					</button>
+					<ul class="header__account-list" id="header-account-menu" data-fls-account-menu="">
+						<li class="header__account-item">
+							<a href="mydetails.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-account-circle"></use>
+								</svg>
+								My details
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="calendar.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								My calendar
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="vacations.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-beach-access"></use>
+								</svg>
+								Vacations
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="corporatecv.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+								</svg>
+								Corporate CV
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="performancereview.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-rocket"></use>
+								</svg>
+								Performance review
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="login.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-logout"></use>
+								</svg>
+								Log out
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__toolbar">
+					<div class="header__search">
+						<svg class="header__search-icon" width="20" height="20" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+						</svg>
+						<label for="header-quick-search" class="visually-hidden">Quick search</label>
+						<input type="search" id="header-quick-search" class="header__search-input" placeholder="Quick search">
+					</div>
+					<button type="button" class="header__notifications" aria-label="Notifications">
+						<svg width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-notifications"></use>
+						</svg>
+					</button>
+				</div>
+			</header>
+			<div class="wrapper__shell">
+				<nav class="menu" data-fls-menu-rail="" aria-label="Primary">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="dashboard.html" class="menu__link menu__link--active" aria-current="page">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-dashboard"></use>
+								</svg>
+								<span class="menu__text">Dashboard</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findperson.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-people"></use>
+								</svg>
+								<span class="menu__text">People</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findproject.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-assignment"></use>
+								</svg>
+								<span class="menu__text">Projects</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="calendar.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								<span class="menu__text">Calendar</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="trainingtimetable.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-easel"></use>
+								</svg>
+								<span class="menu__text">Training</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="timesheet.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-hourglass"></use>
+								</svg>
+								<span class="menu__text">Timesheet</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="reports.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chatbubbles"></use>
+								</svg>
+								<span class="menu__text">Reports</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="administration.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-business"></use>
+								</svg>
+								<span class="menu__text">Administration</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="help.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+								</svg>
+								<span class="menu__text">Help</span>
+							</a>
+						</li>
+					</ul>
+					<div class="menu__credits">
+						<span class="menu__credits-brand">CAMIOCA</span>
+						<span class="menu__credits-version">Version: 1.0.0.11</span>
+					</div>
+				</nav>
+				<main class="page">
+					<section class="widgets" id="widgets">
+						<h1 class="visually-hidden">Dashboard</h1>
+						<div class="widgets__toolbar">
+							<button type="button" data-fls-button="" class="widgets__add button">
+								<svg class="widgets__add-icon" width="14" height="14" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-add"></use>
+								</svg>
+								Add widget
+							</button>
+						</div>
+						<div class="widgets__grid">
+							<article class="widget widget--chart">
+								<h2 class="widget__title">Company Facts</h2>
+								<div class="widget__slider swiper" data-fls-slider="">
+									<div class="widget__slider-wrapper swiper-wrapper">
+										<div class="widget__slide swiper-slide">
+											<p class="widget__subtitle">Employees</p>
+											<div class="widget__chart-wrap">
+												<svg class="widget__area-chart" viewbox="0 0 384 258" role="img" aria-label="Employees by city, 2016 to 2019">
+													<line class="widget__area-chart-grid" x1="0" y1="35" x2="336" y2="35"></line>
+													<line class="widget__area-chart-grid" x1="0" y1="99" x2="336" y2="99"></line>
+													<line class="widget__area-chart-grid" x1="0" y1="171" x2="336" y2="171"></line>
+													<g transform="translate(0,35)">
+														<path class="widget__area widget__area--paris widget__area-stroke" d="M295.938 27.6527L337.5 2.65271V100.653H1.5V84.1527L86.375 76.6527L138.875 41.1527L162.062 35.1527L181.75 27.6527H267.062H295.938Z"></path>
+													</g>
+													<g transform="translate(0,99)">
+														<path class="widget__area widget__area--bangkok widget__area-stroke" d="M295.938 8.25281L337.5 1.75281V81.2528L1.5 121.753V32.2528L85.5 21.7528L135.375 32.2528L162.062 15.7528L184.812 21.7528H266.188L295.938 8.25281Z"></path>
+													</g>
+													<g transform="translate(0,138)">
+														<path class="widget__area widget__area--sanfrancisco widget__area-stroke" d="M295.062 11.0105L337.5 1.85797V91.858H1.5V78.6376L85.5 61.3495H134.062L162.062 25.2478L190.062 43.0444L266.188 31.3495L295.062 11.0105Z"></path>
+													</g>
+													<line class="widget__area-chart-axis" x1="0" y1="227" x2="336" y2="227"></line>
+													<line class="widget__area-chart-tick" x1="49" y1="227" x2="49" y2="235"></line>
+													<line class="widget__area-chart-tick" x1="129" y1="227" x2="129" y2="235"></line>
+													<line class="widget__area-chart-tick" x1="209" y1="227" x2="209" y2="235"></line>
+													<line class="widget__area-chart-tick" x1="289" y1="227" x2="289" y2="235"></line>
+													<text class="widget__area-chart-label" x="344" y="12">Total</text>
+													<text class="widget__area-chart-label" x="344" y="32">707</text>
+													<text class="widget__area-chart-label" x="344" y="96">400</text>
+													<text class="widget__area-chart-label" x="344" y="168">200</text>
+													<text class="widget__area-chart-label" x="344" y="224">0</text>
+													<text class="widget__area-chart-label" x="49" y="249" text-anchor="middle">2016</text>
+													<text class="widget__area-chart-label" x="129" y="249" text-anchor="middle">2017</text>
+													<text class="widget__area-chart-label" x="209" y="249" text-anchor="middle">2018</text>
+													<text class="widget__area-chart-label" x="289" y="249" text-anchor="middle">2019</text>
+												</svg>
+											</div>
+										</div>
+										<div class="widget__slide swiper-slide">
+											<p class="widget__subtitle">Revenue, $k</p>
+											<div class="widget__chart-wrap">
+												<svg class="widget__area-chart" viewbox="0 0 384 258" role="img" aria-label="Revenue by city, 2016 to 2019, in thousands of dollars">
+													<line class="widget__area-chart-grid" x1="0" y1="35" x2="336" y2="35"></line>
+													<line class="widget__area-chart-grid" x1="0" y1="99" x2="336" y2="99"></line>
+													<line class="widget__area-chart-grid" x1="0" y1="163" x2="336" y2="163"></line>
+													<path class="widget__area widget__area--paris widget__area-stroke" d="M0,113.3 L49,113.3 L129,90.2 L209,65.7 L289,35 L336,35 L336,227 L0,227 Z"></path>
+													<path class="widget__area widget__area--bangkok widget__area-stroke" d="M0,141 L49,141 L129,124 L209,105.6 L289,82.5 L336,82.5 L336,227 L0,227 Z"></path>
+													<path class="widget__area widget__area--sanfrancisco widget__area-stroke" d="M0,180.9 L49,180.9 L129,171.7 L209,161 L289,148.7 L336,148.7 L336,227 L0,227 Z"></path>
+													<line class="widget__area-chart-axis" x1="0" y1="227" x2="336" y2="227"></line>
+													<line class="widget__area-chart-tick" x1="49" y1="227" x2="49" y2="235"></line>
+													<line class="widget__area-chart-tick" x1="129" y1="227" x2="129" y2="235"></line>
+													<line class="widget__area-chart-tick" x1="209" y1="227" x2="209" y2="235"></line>
+													<line class="widget__area-chart-tick" x1="289" y1="227" x2="289" y2="235"></line>
+													<text class="widget__area-chart-label" x="344" y="12">Total</text>
+													<text class="widget__area-chart-label" x="344" y="32">1250</text>
+													<text class="widget__area-chart-label" x="344" y="96">830</text>
+													<text class="widget__area-chart-label" x="344" y="160">420</text>
+													<text class="widget__area-chart-label" x="344" y="224">0</text>
+													<text class="widget__area-chart-label" x="49" y="249" text-anchor="middle">2016</text>
+													<text class="widget__area-chart-label" x="129" y="249" text-anchor="middle">2017</text>
+													<text class="widget__area-chart-label" x="209" y="249" text-anchor="middle">2018</text>
+													<text class="widget__area-chart-label" x="289" y="249" text-anchor="middle">2019</text>
+												</svg>
+											</div>
+										</div>
+										<div class="widget__slide swiper-slide">
+											<p class="widget__subtitle">Utilization rate</p>
+											<div class="widget__chart-wrap">
+												<svg class="widget__area-chart" viewbox="0 0 384 258" role="img" aria-label="Utilization rate by city, 2016 to 2019">
+													<line class="widget__area-chart-grid" x1="0" y1="35" x2="336" y2="35"></line>
+													<line class="widget__area-chart-grid" x1="0" y1="131" x2="336" y2="131"></line>
+													<polyline class="widget__line widget__line--paris" points="49,108 129,96.4 209,90.7 289,81.1"></polyline>
+													<polyline class="widget__line widget__line--bangkok" points="49,92.6 129,84.9 209,75.3 289,63.8"></polyline>
+													<polyline class="widget__line widget__line--sanfrancisco" points="49,83 129,71.5 209,58 289,48.4"></polyline>
+													<line class="widget__area-chart-axis" x1="0" y1="227" x2="336" y2="227"></line>
+													<line class="widget__area-chart-tick" x1="49" y1="227" x2="49" y2="235"></line>
+													<line class="widget__area-chart-tick" x1="129" y1="227" x2="129" y2="235"></line>
+													<line class="widget__area-chart-tick" x1="209" y1="227" x2="209" y2="235"></line>
+													<line class="widget__area-chart-tick" x1="289" y1="227" x2="289" y2="235"></line>
+													<text class="widget__area-chart-label" x="344" y="32">100%</text>
+													<text class="widget__area-chart-label" x="344" y="128">50%</text>
+													<text class="widget__area-chart-label" x="344" y="224">0%</text>
+													<text class="widget__area-chart-label" x="49" y="249" text-anchor="middle">2016</text>
+													<text class="widget__area-chart-label" x="129" y="249" text-anchor="middle">2017</text>
+													<text class="widget__area-chart-label" x="209" y="249" text-anchor="middle">2018</text>
+													<text class="widget__area-chart-label" x="289" y="249" text-anchor="middle">2019</text>
+												</svg>
+											</div>
+										</div>
+									</div>
+									<button type="button" class="widget__nav widget__nav--prev swiper-button-prev" aria-label="Previous chart">
+										<svg class="widget__nav-icon" width="8" height="12" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-left"></use>
+										</svg>
+									</button>
+									<button type="button" class="widget__nav widget__nav--next swiper-button-next" aria-label="Next chart">
+										<svg class="widget__nav-icon" width="8" height="12" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-right"></use>
+										</svg>
+									</button>
+									<ul class="widget__legend">
+										<li class="widget__legend-item">
+											<span class="widget__legend-dot" style="background-color: #F4A26C"></span>
+											Paris
+										</li>
+										<li class="widget__legend-item">
+											<span class="widget__legend-dot" style="background-color: #3FAEA3"></span>
+											Bangkok
+										</li>
+										<li class="widget__legend-item">
+											<span class="widget__legend-dot" style="background-color: #914DF0"></span>
+											San Francisco
+										</li>
+									</ul>
+									<div class="widget__pagination swiper-pagination"></div>
+								</div>
+							</article>
+							<article class="widget widget--chart">
+								<h2 class="widget__title">Statistics</h2>
+								<div class="widget__slider swiper" data-fls-slider="">
+									<div class="widget__slider-wrapper swiper-wrapper">
+										<div class="widget__slide swiper-slide">
+											<p class="widget__chart-hover-info" aria-live="polite"></p>
+											<div class="widget__chart-wrap widget__chart-wrap--donut">
+												<canvas class="widget__chart" data-fls-statistics-chart="" role="img" aria-label="Projects by account"></canvas>
+												<p class="widget__chart-caption">Projects by account</p>
+											</div>
+										</div>
+										<div class="widget__slide swiper-slide">
+											<p class="widget__chart-hover-info" aria-live="polite"></p>
+											<div class="widget__chart-wrap widget__chart-wrap--donut">
+												<canvas class="widget__chart" data-fls-statistics-chart="" role="img" aria-label="Revenue by account"></canvas>
+												<p class="widget__chart-caption">Revenue by account</p>
+											</div>
+										</div>
+										<div class="widget__slide swiper-slide">
+											<p class="widget__chart-hover-info" aria-live="polite"></p>
+											<div class="widget__chart-wrap widget__chart-wrap--donut">
+												<canvas class="widget__chart" data-fls-statistics-chart="" role="img" aria-label="Hours logged by account"></canvas>
+												<p class="widget__chart-caption">Hours logged by account</p>
+											</div>
+										</div>
+									</div>
+									<button type="button" class="widget__nav widget__nav--prev swiper-button-prev" aria-label="Previous chart">
+										<svg class="widget__nav-icon" width="8" height="12" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-left"></use>
+										</svg>
+									</button>
+									<button type="button" class="widget__nav widget__nav--next swiper-button-next" aria-label="Next chart">
+										<svg class="widget__nav-icon" width="8" height="12" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-right"></use>
+										</svg>
+									</button>
+									<ul class="widget__legend widget__legend--accounts">
+										<li class="widget__legend-item">
+											<span class="widget__legend-dot" style="background-color: #EB5757"></span>
+											KFC
+										</li>
+										<li class="widget__legend-item">
+											<span class="widget__legend-dot" style="background-color: #EAAB00"></span>
+											FIAT-Chrysler LLC
+										</li>
+										<li class="widget__legend-item">
+											<span class="widget__legend-dot" style="background-color: #A84069"></span>
+											KLM
+										</li>
+										<li class="widget__legend-item">
+											<span class="widget__legend-dot" style="background-color: #00B2A9"></span>
+											Aeroflot
+										</li>
+										<li class="widget__legend-item">
+											<span class="widget__legend-dot" style="background-color: #2D9CDB"></span>
+											Lukoil
+										</li>
+										<li class="widget__legend-item">
+											<span class="widget__legend-dot" style="background-color: #BB6BD9"></span>
+											American Express
+										</li>
+										<li class="widget__legend-item">
+											<span class="widget__legend-dot" style="background-color: #4CD964"></span>
+											Daimler
+										</li>
+									</ul>
+									<div class="widget__pagination swiper-pagination"></div>
+								</div>
+							</article>
+							<article class="widget widget--empty">
+								<h2 class="widget__title">Assigned Risks</h2>
+								<p class="widget__empty-text">There are no risks assigned.</p>
+							</article>
+							<article class="widget widget--empty">
+								<h2 class="widget__title">Assigned Action Items</h2>
+								<p class="widget__empty-text">There are no action items assigned.</p>
+							</article>
+						</div>
+					</section>
+				</main>
+			</div>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container"></div>
+			</footer>
+		</div>
+	</body>
+</html>

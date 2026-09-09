@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Public and restricted company reports with filters.">
+		<meta property="og:title" content="Reports">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://camioca-internal-panel.vercel.app/assets/img/og/preview.png">
+		<meta property="og:url" content="https://camioca-internal-panel.vercel.app/reports.html">
+		<title>Reports</title>
+		<script type="module" crossorigin="" src="./js/reports.min.js?v=1788984567278"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/datepicker.min.js?v=1788984567278">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1788984567278">
+		<link rel="modulepreload" crossorigin="" href="./js/header.min.js?v=1788984567278">
+		<link rel="modulepreload" crossorigin="" href="./js/_functions.min.js?v=1788984567278">
+		<link rel="modulepreload" crossorigin="" href="./js/select.min.js?v=1788984567278">
+		<link rel="stylesheet" crossorigin="" href="./css/datepicker.min.css?v=1788984567278">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1788984567278">
+		<link rel="stylesheet" crossorigin="" href="./css/header.min.css?v=1788984567278">
+		<link rel="stylesheet" crossorigin="" href="./css/select.min.css?v=1788984567278">
+		<link rel="stylesheet" crossorigin="" href="./css/reports.min.css?v=1788984567278">
+		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1788984567278">
+		<link rel="stylesheet" crossorigin="" href="./css/radio.min.css?v=1788984567278">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__account">
+					<button type="button" data-fls-menu="" class="icon-menu" aria-expanded="false" aria-label="Open menu">
+						<span></span>
+					</button>
+					<button type="button" class="header__account-toggle" data-fls-account-toggle="" aria-haspopup="true" aria-expanded="false" aria-controls="header-account-menu">
+						<picture>
+							<img alt="" class="header__avatar" width="40" height="40" src="./assets/img/header/photos/avatar-dominique.webp">
+						</picture>
+						<span class="header__account-name">Dominique Ch.</span>
+						<svg class="header__account-arrow" width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-drop-down"></use>
+						</svg>
+					</button>
+					<ul class="header__account-list" id="header-account-menu" data-fls-account-menu="">
+						<li class="header__account-item">
+							<a href="mydetails.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-account-circle"></use>
+								</svg>
+								My details
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="calendar.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								My calendar
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="vacations.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-beach-access"></use>
+								</svg>
+								Vacations
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="corporatecv.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+								</svg>
+								Corporate CV
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="performancereview.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-rocket"></use>
+								</svg>
+								Performance review
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="login.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-logout"></use>
+								</svg>
+								Log out
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__toolbar">
+					<div class="header__search">
+						<svg class="header__search-icon" width="20" height="20" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+						</svg>
+						<label for="header-quick-search" class="visually-hidden">Quick search</label>
+						<input type="search" id="header-quick-search" class="header__search-input" placeholder="Quick search">
+					</div>
+					<button type="button" class="header__notifications" aria-label="Notifications">
+						<svg width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-notifications"></use>
+						</svg>
+					</button>
+				</div>
+			</header>
+			<div class="wrapper__shell">
+				<nav class="menu" data-fls-menu-rail="" aria-label="Primary">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="dashboard.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-dashboard"></use>
+								</svg>
+								<span class="menu__text">Dashboard</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findperson.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-people"></use>
+								</svg>
+								<span class="menu__text">People</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findproject.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-assignment"></use>
+								</svg>
+								<span class="menu__text">Projects</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="calendar.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								<span class="menu__text">Calendar</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="trainingtimetable.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-easel"></use>
+								</svg>
+								<span class="menu__text">Training</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="timesheet.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-hourglass"></use>
+								</svg>
+								<span class="menu__text">Timesheet</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="reports.html" class="menu__link menu__link--active" aria-current="page">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chatbubbles"></use>
+								</svg>
+								<span class="menu__text">Reports</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="administration.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-business"></use>
+								</svg>
+								<span class="menu__text">Administration</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="help.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+								</svg>
+								<span class="menu__text">Help</span>
+							</a>
+						</li>
+					</ul>
+					<div class="menu__credits">
+						<span class="menu__credits-brand">CAMIOCA</span>
+						<span class="menu__credits-version">Version: 1.0.0.11</span>
+					</div>
+				</nav>
+				<main class="page">
+					<div class="overview">
+						<section class="lists" id="lists">
+							<h1 class="visually-hidden">Reports</h1>
+							<article class="lists__card">
+								<h2 class="lists__title">Public reports</h2>
+								<ul class="lists__menu">
+									<li>
+										<a class="lists__link lists__link--top" href="reports.html">
+											Full list of reports
+											<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="lists__group">
+										<h3 class="lists__group-title">Calendar reports</h3>
+										<ul class="lists__submenu">
+											<li>
+												<a class="lists__link" href="reports.html">
+													Company calendar
+													<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a class="lists__link" href="reports.html">
+													Working days count
+													<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a class="lists__link" href="reports.html">
+													Vacation report
+													<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+													</svg>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class="lists__group">
+										<h3 class="lists__group-title">Registry reports</h3>
+										<ul class="lists__submenu">
+											<li>
+												<a class="lists__link" href="reports.html">
+													Project registry
+													<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a class="lists__link" href="reports.html">
+													Active account and projects
+													<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a class="lists__link" href="reports.html">
+													People and assignments
+													<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a class="lists__link" href="reports.html">
+													People grades
+													<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+													</svg>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class="lists__group">
+										<h3 class="lists__group-title">Employee capability profile</h3>
+										<ul class="lists__submenu">
+											<li>
+												<a class="lists__link" href="reports.html">
+													Capability profiles - status
+													<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+													</svg>
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</article>
+							<article class="lists__card">
+								<h2 class="lists__title">Restricted reports</h2>
+								<ul class="lists__menu">
+									<li>
+										<a class="lists__link lists__link--top" href="reports.html">
+											Full list of reports
+											<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="lists__group">
+										<h3 class="lists__group-title">Time reports</h3>
+										<ul class="lists__submenu">
+											<li>
+												<a class="lists__link" href="reports.html">
+													Detailed timesheet
+													<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a class="lists__link" href="reports.html">
+													Hours approved
+													<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a class="lists__link" href="reports.html">
+													Lost hours
+													<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+													</svg>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class="lists__group">
+										<h3 class="lists__group-title">Cost and expenses reports</h3>
+										<ul class="lists__submenu">
+											<li>
+												<a class="lists__link" href="reports.html">
+													Project costs and expenses
+													<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a class="lists__link" href="reports.html">
+													Project expenses
+													<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+													</svg>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class="lists__group">
+										<h3 class="lists__group-title">Allocation and forecast reports</h3>
+										<ul class="lists__submenu">
+											<li>
+												<a class="lists__link" href="reports.html">
+													Staff allocation
+													<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a class="lists__link" href="reports.html">
+													Resource forecast
+													<svg class="lists__arrow" width="14" height="14" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-forward"></use>
+													</svg>
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</article>
+						</section>
+						<section class="note" id="note">
+							<h2 class="note__label">Note:</h2>
+							<p class="note__text">
+								There are two types of reports - built-in reports inside Startrack and "external" reports - reports which reside on separate reporting server.
+							</p>
+							<div class="note__actions">
+								<button type="button" data-fls-button="" class="note__button note__button--builtin button">Built-in reports</button>
+								<button type="button" data-fls-button="" class="note__button note__button--external button">External reports</button>
+							</div>
+						</section>
+					</div>
+					<fieldset class="types" id="types">
+						<legend class="visually-hidden">Report type</legend>
+						<label class="types__card">
+							<input type="radio" name="report-type" value="user-projects" class="types__input">
+							<svg class="types__icon" width="48" height="48" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-announcement"></use>
+							</svg>
+							<span class="types__label">User - Projects</span>
+						</label>
+						<label class="types__card">
+							<input type="radio" name="report-type" value="user-by-role" class="types__input" checked>
+							<svg class="types__icon" width="48" height="48" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-account-circle"></use>
+							</svg>
+							<span class="types__label">User by role</span>
+						</label>
+						<label class="types__card">
+							<input type="radio" name="report-type" value="bookeeping-report" class="types__input">
+							<svg class="types__icon" width="48" height="48" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-bookmark"></use>
+							</svg>
+							<span class="types__label">Bookeeping report</span>
+						</label>
+					</fieldset>
+					<section class="filter" id="filter">
+						<h2 class="filter__title">Filter</h2>
+						<form class="filter__form">
+							<fieldset class="filter__variant filter__variant--user-projects">
+								<legend class="visually-hidden">User - Projects filter</legend>
+								<div class="filter__row">
+									<div class="filter__field">
+										<label for="filter-a-branch" class="filter__label">Branch</label>
+										<select id="filter-a-branch" name="branch" data-fls-select="" data-fls-select-modif="filter">
+											<option value="" selected>All</option>
+											<option value="paris">Paris</option>
+											<option value="bangkok">Bangkok</option>
+											<option value="san-francisco">San Francisco</option>
+										</select>
+									</div>
+									<div class="filter__field">
+										<label for="filter-a-user-division" class="filter__label">User division</label>
+										<select id="filter-a-user-division" name="user_division" data-fls-select="" data-fls-select-modif="filter">
+											<option value="" selected>All</option>
+											<option value="delivery-billable">Delivery Billable</option>
+											<option value="administration">Administration</option>
+											<option value="ceo-office">CEO Office</option>
+											<option value="sales">Sales</option>
+											<option value="bench">Bench</option>
+										</select>
+									</div>
+									<div class="filter__field">
+										<label for="filter-a-user" class="filter__label">User</label>
+										<select id="filter-a-user" name="user" data-fls-select="" data-fls-select-modif="filter">
+											<option value="" selected>All</option>
+											<option value="andrew-salgado">Andrew Salgado</option>
+											<option value="dominique-charpentier">Dominique Charpentier</option>
+											<option value="marta-kowalski">Marta Kowalski</option>
+											<option value="lucas-dubois">Lucas Dubois</option>
+										</select>
+									</div>
+									<div class="filter__field">
+										<label for="filter-a-account" class="filter__label">Account</label>
+										<select id="filter-a-account" name="account" data-fls-select="" data-fls-select-modif="filter">
+											<option value="">All</option>
+											<option value="kfc">KFC</option>
+											<option value="fiat-chrysler">FIAT-Chrysler</option>
+											<option value="klm">KLM</option>
+											<option value="aeroflot">Aeroflot</option>
+											<option value="lukoil">Lukoil</option>
+											<option value="american-express">American Express</option>
+											<option value="daimler">Daimler</option>
+											<option value="other" selected>Other</option>
+										</select>
+									</div>
+									<div class="filter__field">
+										<label for="filter-a-project" class="filter__label">Project</label>
+										<select id="filter-a-project" name="project" data-fls-select="" data-fls-select-modif="filter">
+											<option value="">All</option>
+											<option value="kfc-loyalty-app">KFC Loyalty App</option>
+											<option value="fiat-chrysler-crm-migration">FIAT-Chrysler CRM Migration</option>
+											<option value="klm-digital-checkin">KLM Digital Check-in</option>
+											<option value="aeroflot-booking-platform">Aeroflot Booking Platform</option>
+											<option value="lukoil-fleet-tracker">Lukoil Fleet Tracker</option>
+											<option value="other" selected>Other</option>
+										</select>
+									</div>
+								</div>
+							</fieldset>
+							<fieldset class="filter__variant filter__variant--user-by-role">
+								<legend class="visually-hidden">User by role filter</legend>
+								<div class="filter__row">
+									<div class="filter__field">
+										<label for="filter-b-branch" class="filter__label">Branch</label>
+										<select id="filter-b-branch" name="branch" data-fls-select="" data-fls-select-modif="filter">
+											<option value="" selected>All</option>
+											<option value="paris">Paris</option>
+											<option value="bangkok">Bangkok</option>
+											<option value="san-francisco">San Francisco</option>
+										</select>
+									</div>
+									<div class="filter__field">
+										<label for="filter-b-user-division" class="filter__label">User division</label>
+										<select id="filter-b-user-division" name="user_division" data-fls-select="" data-fls-select-modif="filter">
+											<option value="" selected>All</option>
+											<option value="delivery-billable">Delivery Billable</option>
+											<option value="administration">Administration</option>
+											<option value="ceo-office">CEO Office</option>
+											<option value="sales">Sales</option>
+											<option value="bench">Bench</option>
+										</select>
+									</div>
+									<div class="filter__field">
+										<label for="filter-b-project" class="filter__label">Project</label>
+										<select id="filter-b-project" name="project" data-fls-select="" data-fls-select-modif="filter">
+											<option value="" selected>All</option>
+											<option value="kfc-loyalty-app">KFC Loyalty App</option>
+											<option value="fiat-chrysler-crm-migration">FIAT-Chrysler CRM Migration</option>
+											<option value="klm-digital-checkin">KLM Digital Check-in</option>
+											<option value="aeroflot-booking-platform">Aeroflot Booking Platform</option>
+											<option value="lukoil-fleet-tracker">Lukoil Fleet Tracker</option>
+										</select>
+									</div>
+									<div class="filter__field">
+										<label for="filter-b-role" class="filter__label">Role</label>
+										<select id="filter-b-role" name="role" data-fls-select="" data-fls-select-modif="filter">
+											<option value="">All</option>
+											<option value="developer">Developer</option>
+											<option value="qa-engineer">QA Engineer</option>
+											<option value="project-manager">Project Manager</option>
+											<option value="business-analyst">Business Analyst</option>
+											<option value="designer">Designer</option>
+											<option value="other" selected>Other</option>
+										</select>
+									</div>
+								</div>
+								<div class="filter__note" role="note">
+									<p class="filter__note-title">Note:</p>
+									<p class="filter__note-text">
+										All fields are selected separately and conjuncted with AND operator when generating report; No selection = "Any" (no filtration by this field)
+									</p>
+								</div>
+							</fieldset>
+							<fieldset class="filter__variant filter__variant--bookeeping">
+								<legend class="visually-hidden">Bookeeping report filter</legend>
+								<div class="filter__row">
+									<div class="filter__field">
+										<label for="filter-c-branch" class="filter__label">Branch</label>
+										<select id="filter-c-branch" name="branch" data-fls-select="" data-fls-select-modif="filter">
+											<option value="" selected>All</option>
+											<option value="paris">Paris</option>
+											<option value="bangkok">Bangkok</option>
+											<option value="san-francisco">San Francisco</option>
+										</select>
+									</div>
+									<div class="filter__field">
+										<label for="filter-c-user-division" class="filter__label">User division</label>
+										<select id="filter-c-user-division" name="user_division" data-fls-select="" data-fls-select-modif="filter">
+											<option value="" selected>All</option>
+											<option value="delivery-billable">Delivery Billable</option>
+											<option value="administration">Administration</option>
+											<option value="ceo-office">CEO Office</option>
+											<option value="sales">Sales</option>
+											<option value="bench">Bench</option>
+										</select>
+									</div>
+									<div class="filter__field">
+										<label for="filter-c-user" class="filter__label">User</label>
+										<select id="filter-c-user" name="user" data-fls-select="" data-fls-select-modif="filter">
+											<option value="" selected>All</option>
+											<option value="andrew-salgado">Andrew Salgado</option>
+											<option value="dominique-charpentier">Dominique Charpentier</option>
+											<option value="marta-kowalski">Marta Kowalski</option>
+											<option value="lucas-dubois">Lucas Dubois</option>
+										</select>
+									</div>
+									<div class="filter__field">
+										<label for="filter-c-account" class="filter__label">Account</label>
+										<select id="filter-c-account" name="account" data-fls-select="" data-fls-select-modif="filter">
+											<option value="">All</option>
+											<option value="kfc">KFC</option>
+											<option value="fiat-chrysler">FIAT-Chrysler</option>
+											<option value="klm">KLM</option>
+											<option value="aeroflot">Aeroflot</option>
+											<option value="lukoil">Lukoil</option>
+											<option value="american-express">American Express</option>
+											<option value="daimler">Daimler</option>
+											<option value="other" selected>Other</option>
+										</select>
+									</div>
+									<div class="filter__field">
+										<label for="filter-c-project" class="filter__label">Project</label>
+										<select id="filter-c-project" name="project" data-fls-select="" data-fls-select-modif="filter">
+											<option value="">All</option>
+											<option value="kfc-loyalty-app">KFC Loyalty App</option>
+											<option value="fiat-chrysler-crm-migration">FIAT-Chrysler CRM Migration</option>
+											<option value="klm-digital-checkin">KLM Digital Check-in</option>
+											<option value="aeroflot-booking-platform">Aeroflot Booking Platform</option>
+											<option value="lukoil-fleet-tracker">Lukoil Fleet Tracker</option>
+											<option value="other" selected>Other</option>
+										</select>
+									</div>
+								</div>
+								<div class="filter__row">
+									<div class="filter__field">
+										<label for="filter-c-start-date" class="filter__label">Start date:</label>
+										<input type="text" id="filter-c-start-date" name="start_date" class="filter__input filter__input--date" data-fls-datepicker="" autocomplete="off" placeholder="Select">
+									</div>
+									<div class="filter__field">
+										<label for="filter-c-finish-date" class="filter__label">Finish date:</label>
+										<input type="text" id="filter-c-finish-date" name="finish_date" class="filter__input filter__input--date" data-fls-datepicker="" autocomplete="off" placeholder="Select">
+									</div>
+								</div>
+								<div class="filter__capacity">
+									<span class="filter__label" id="filter-c-capacity-label">Capacity</span>
+									<div class="options filter__radio" data-fls-radio="" role="radiogroup" aria-labelledby="filter-c-capacity-label">
+										<label class="options__item">
+											<input class="options__input" type="radio" name="capacity" value="external" checked>
+											<span class="options__text">External</span>
+										</label>
+										<label class="options__item">
+											<input class="options__input" type="radio" name="capacity" value="internal">
+											<span class="options__text">Internal</span>
+										</label>
+									</div>
+								</div>
+								<div class="filter__note" role="note">
+									<p class="filter__note-title">Note:</p>
+									<p class="filter__note-text">Either users or projects (not both!) need to be selected.</p>
+								</div>
+							</fieldset>
+							<div class="filter__actions">
+								<button type="button" data-fls-button="" class="filter__clear button">Clear</button>
+								<button type="submit" data-fls-button="" class="filter__generate button">Generate</button>
+							</div>
+						</form>
+					</section>
+				</main>
+			</div>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container"></div>
+			</footer>
+		</div>
+	</body>
+</html>

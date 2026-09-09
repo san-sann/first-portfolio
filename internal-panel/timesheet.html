@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Weekly hours, comments and assigned projects.">
+		<meta property="og:title" content="Timesheet">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://camioca-internal-panel.vercel.app/assets/img/og/preview.png">
+		<meta property="og:url" content="https://camioca-internal-panel.vercel.app/timesheet.html">
+		<title>Timesheet</title>
+		<script type="module" crossorigin="" src="./js/timesheet.min.js?v=1788984567286"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/datepicker.min.js?v=1788984567286">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1788984567286">
+		<link rel="modulepreload" crossorigin="" href="./js/header.min.js?v=1788984567286">
+		<link rel="modulepreload" crossorigin="" href="./js/_functions.min.js?v=1788984567286">
+		<link rel="modulepreload" crossorigin="" href="./js/select.min.js?v=1788984567286">
+		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1788984567286">
+		<link rel="stylesheet" crossorigin="" href="./css/datepicker.min.css?v=1788984567286">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1788984567286">
+		<link rel="stylesheet" crossorigin="" href="./css/header.min.css?v=1788984567286">
+		<link rel="stylesheet" crossorigin="" href="./css/select.min.css?v=1788984567286">
+		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1788984567286">
+		<link rel="stylesheet" crossorigin="" href="./css/timesheet.min.css?v=1788984567286">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__account">
+					<button type="button" data-fls-menu="" class="icon-menu" aria-expanded="false" aria-label="Open menu">
+						<span></span>
+					</button>
+					<button type="button" class="header__account-toggle" data-fls-account-toggle="" aria-haspopup="true" aria-expanded="false" aria-controls="header-account-menu">
+						<picture>
+							<img alt="" class="header__avatar" width="40" height="40" src="./assets/img/header/photos/avatar-dominique.webp">
+						</picture>
+						<span class="header__account-name">Dominique Ch.</span>
+						<svg class="header__account-arrow" width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-drop-down"></use>
+						</svg>
+					</button>
+					<ul class="header__account-list" id="header-account-menu" data-fls-account-menu="">
+						<li class="header__account-item">
+							<a href="mydetails.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-account-circle"></use>
+								</svg>
+								My details
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="calendar.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								My calendar
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="vacations.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-beach-access"></use>
+								</svg>
+								Vacations
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="corporatecv.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+								</svg>
+								Corporate CV
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="performancereview.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-rocket"></use>
+								</svg>
+								Performance review
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="login.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-logout"></use>
+								</svg>
+								Log out
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__toolbar">
+					<div class="header__search">
+						<svg class="header__search-icon" width="20" height="20" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+						</svg>
+						<label for="header-quick-search" class="visually-hidden">Quick search</label>
+						<input type="search" id="header-quick-search" class="header__search-input" placeholder="Quick search">
+					</div>
+					<button type="button" class="header__notifications" aria-label="Notifications">
+						<svg width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-notifications"></use>
+						</svg>
+					</button>
+				</div>
+			</header>
+			<div class="wrapper__shell">
+				<nav class="menu" data-fls-menu-rail="" aria-label="Primary">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="dashboard.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-dashboard"></use>
+								</svg>
+								<span class="menu__text">Dashboard</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findperson.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-people"></use>
+								</svg>
+								<span class="menu__text">People</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findproject.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-assignment"></use>
+								</svg>
+								<span class="menu__text">Projects</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="calendar.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								<span class="menu__text">Calendar</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="trainingtimetable.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-easel"></use>
+								</svg>
+								<span class="menu__text">Training</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="timesheet.html" class="menu__link menu__link--active" aria-current="page">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-hourglass"></use>
+								</svg>
+								<span class="menu__text">Timesheet</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="reports.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chatbubbles"></use>
+								</svg>
+								<span class="menu__text">Reports</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="administration.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-business"></use>
+								</svg>
+								<span class="menu__text">Administration</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="help.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+								</svg>
+								<span class="menu__text">Help</span>
+							</a>
+						</li>
+					</ul>
+					<div class="menu__credits">
+						<span class="menu__credits-brand">CAMIOCA</span>
+						<span class="menu__credits-version">Version: 1.0.0.11</span>
+					</div>
+				</nav>
+				<main class="page">
+					<section class="toolbar" id="toolbar">
+						<h1 class="toolbar__title">My timesheet</h1>
+						<div class="toolbar__row">
+							<div class="toolbar__fields">
+								<div class="toolbar__field">
+									<span class="toolbar__label" id="toolbar-date-label">Select the date</span>
+									<div class="toolbar__year" role="group" aria-labelledby="toolbar-date-label">
+										<button type="button" class="toolbar__year-btn toolbar__year-btn--prev" aria-label="Previous year">
+											<svg class="toolbar__year-icon" width="8" height="12" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-left"></use>
+											</svg>
+										</button>
+										<span class="toolbar__year-value" aria-live="polite">2019</span>
+										<button type="button" class="toolbar__year-btn toolbar__year-btn--next" aria-label="Next year">
+											<svg class="toolbar__year-icon" width="8" height="12" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-right"></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+								<span class="toolbar__datepicker-wrap">
+									<button type="button" class="toolbar__datepicker" aria-label="Open date picker">
+										<svg class="toolbar__datepicker-icon" width="24" height="24" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-calendar-accent"></use>
+										</svg>
+									</button>
+									<input type="text" class="toolbar__datepicker-input" id="toolbar-datepicker-input" data-fls-datepicker="" autocomplete="off" tabindex="-1" aria-label="Open date picker">
+								</span>
+								<button type="button" class="toolbar__refresh" aria-label="Refresh timesheet">
+									<svg class="toolbar__refresh-icon" width="24" height="24" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-refresh"></use>
+									</svg>
+								</button>
+							</div>
+							<button type="button" class="toolbar__report button">My timesheet's report</button>
+						</div>
+					</section>
+					<section class="grid" id="grid">
+						<form class="grid__form">
+							<div class="grid__table-wrap">
+								<table class="grid__table">
+									<caption class="visually-hidden">My timesheet — hours by project for the current week</caption>
+									<thead>
+										<tr>
+											<th class="grid__th grid__th--remove" scope="col">
+												<span class="visually-hidden">Remove row</span>
+											</th>
+											<th class="grid__th grid__th--project" scope="col">Project</th>
+											<th class="grid__th grid__th--role" scope="col">Role</th>
+											<th class="grid__th grid__th--activity" scope="col">Activity</th>
+											<th class="grid__th grid__th--day grid__th--past" scope="col">15 / Mon</th>
+											<th class="grid__th grid__th--day grid__th--today" scope="col">16 / Tue</th>
+											<th class="grid__th grid__th--day" scope="col">17 / Wed</th>
+											<th class="grid__th grid__th--day" scope="col">18 / Thu</th>
+											<th class="grid__th grid__th--day" scope="col">19 / Fri</th>
+											<th class="grid__th grid__th--day grid__th--weekend" scope="col">20 / Sat</th>
+											<th class="grid__th grid__th--day grid__th--weekend" scope="col">21 / Sun</th>
+										</tr>
+									</thead>
+									<tbody class="grid__body">
+										<tr class="grid__row">
+											<td class="grid__cell grid__cell--remove">
+												<button type="button" class="grid__remove" aria-label="Remove row: E_Interview">
+													<svg class="grid__remove-icon" width="24" height="24" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-remove-circle-outline"></use>
+													</svg>
+												</button>
+											</td>
+											<td class="grid__cell grid__cell--project">
+												<label for="grid-project-1" class="visually-hidden">Project</label>
+												<select id="grid-project-1" name="project[]" data-fls-select="" data-fls-select-modif="grid">
+													<option value="e_interview" selected>E_Interview</option>
+													<option value="e_bench_engineering">E_Bench_Engineering</option>
+													<option value="e_company_web_site">E_Company_Web_Site</option>
+													<option value="e_cnsl_corp_events">E_CNSL_Corp_Events</option>
+													<option value="e_cnsl_delivery_admin">E_CNSL_Delivery_Admin</option>
+													<option value="e_eng_delivery_admin">E_ENG_Delivery_Admin</option>
+													<option value="e_eng_corp_events">E_ENG_Corp_Events</option>
+													<option value="e_performance_evaluations">E_Performance_Evaluations</option>
+													<option value="e_community_of_practice">E_Community_of_Practice</option>
+													<option value="e_marketing_and_training_support">E_Marketing_and_Training_Support</option>
+													<option value="e_vfq_upskilling">E_VFQ_Upskilling</option>
+												</select>
+											</td>
+											<td class="grid__cell grid__cell--role">
+												<label for="grid-role-1" class="visually-hidden">Role</label>
+												<select id="grid-role-1" name="role[]" data-fls-select="" data-fls-select-modif="grid">
+													<option value="">Select</option>
+													<option value="specialist">Specialist</option>
+													<option value="manager">Manager</option>
+													<option value="consultant">Consultant</option>
+												</select>
+											</td>
+											<td class="grid__cell grid__cell--activity">
+												<label for="grid-activity-1" class="visually-hidden">Activity</label>
+												<select id="grid-activity-1" name="activity[]" data-fls-select="" data-fls-select-modif="grid">
+													<option value="">Select</option>
+													<option value="development">Development</option>
+													<option value="alpha">Alpha</option>
+													<option value="testing">Testing</option>
+												</select>
+											</td>
+											<td class="grid__cell grid__cell--day grid__cell--filled">
+												<label for="grid-hours-1-mon" class="visually-hidden">Hours on 15 / Mon</label>
+												<input type="text" inputmode="decimal" class="grid__hours" id="grid-hours-1-mon" value="4.00">
+											</td>
+											<td class="grid__cell grid__cell--day" data-today="">
+												<label for="grid-hours-1-tue" class="visually-hidden">Hours on 16 / Tue</label>
+												<input type="text" inputmode="decimal" class="grid__hours" id="grid-hours-1-tue" value="">
+											</td>
+											<td class="grid__cell grid__cell--day">
+												<label for="grid-hours-1-wed" class="visually-hidden">Hours on 17 / Wed</label>
+												<input type="text" inputmode="decimal" class="grid__hours" id="grid-hours-1-wed" value="">
+											</td>
+											<td class="grid__cell grid__cell--day">
+												<label for="grid-hours-1-thu" class="visually-hidden">Hours on 18 / Thu</label>
+												<input type="text" inputmode="decimal" class="grid__hours" id="grid-hours-1-thu" value="">
+											</td>
+											<td class="grid__cell grid__cell--day">
+												<label for="grid-hours-1-fri" class="visually-hidden">Hours on 19 / Fri</label>
+												<input type="text" inputmode="decimal" class="grid__hours" id="grid-hours-1-fri" value="">
+											</td>
+											<td class="grid__cell grid__cell--day">
+												<label for="grid-hours-1-sat" class="visually-hidden">Hours on 20 / Sat</label>
+												<input type="text" inputmode="decimal" class="grid__hours" id="grid-hours-1-sat" value="">
+											</td>
+											<td class="grid__cell grid__cell--day">
+												<label for="grid-hours-1-sun" class="visually-hidden">Hours on 21 / Sun</label>
+												<input type="text" inputmode="decimal" class="grid__hours" id="grid-hours-1-sun" value="">
+											</td>
+										</tr>
+										<tr class="grid__row">
+											<td class="grid__cell grid__cell--remove">
+												<button type="button" class="grid__remove" aria-label="Remove row: E_Bench_Engineering">
+													<svg class="grid__remove-icon" width="24" height="24" aria-hidden="true">
+														<use xlink:href="./assets/img/spritemap.svg#sprite-remove-circle-outline"></use>
+													</svg>
+												</button>
+											</td>
+											<td class="grid__cell grid__cell--project">
+												<label for="grid-project-2" class="visually-hidden">Project</label>
+												<select id="grid-project-2" name="project[]" data-fls-select="" data-fls-select-modif="grid">
+													<option value="e_interview">E_Interview</option>
+													<option value="e_bench_engineering" selected>E_Bench_Engineering</option>
+													<option value="e_company_web_site">E_Company_Web_Site</option>
+													<option value="e_cnsl_corp_events">E_CNSL_Corp_Events</option>
+													<option value="e_cnsl_delivery_admin">E_CNSL_Delivery_Admin</option>
+													<option value="e_eng_delivery_admin">E_ENG_Delivery_Admin</option>
+													<option value="e_eng_corp_events">E_ENG_Corp_Events</option>
+													<option value="e_performance_evaluations">E_Performance_Evaluations</option>
+													<option value="e_community_of_practice">E_Community_of_Practice</option>
+													<option value="e_marketing_and_training_support">E_Marketing_and_Training_Support</option>
+													<option value="e_vfq_upskilling">E_VFQ_Upskilling</option>
+												</select>
+											</td>
+											<td class="grid__cell grid__cell--role">
+												<label for="grid-role-2" class="visually-hidden">Role</label>
+												<select id="grid-role-2" name="role[]" data-fls-select="" data-fls-select-modif="grid">
+													<option value="">Select</option>
+													<option value="specialist">Specialist</option>
+													<option value="manager">Manager</option>
+													<option value="consultant">Consultant</option>
+												</select>
+											</td>
+											<td class="grid__cell grid__cell--activity">
+												<label for="grid-activity-2" class="visually-hidden">Activity</label>
+												<select id="grid-activity-2" name="activity[]" data-fls-select="" data-fls-select-modif="grid">
+													<option value="">Select</option>
+													<option value="development">Development</option>
+													<option value="alpha">Alpha</option>
+													<option value="testing">Testing</option>
+												</select>
+											</td>
+											<td class="grid__cell grid__cell--day grid__cell--filled">
+												<label for="grid-hours-2-mon" class="visually-hidden">Hours on 15 / Mon</label>
+												<input type="text" inputmode="decimal" class="grid__hours" id="grid-hours-2-mon" value="4.00">
+											</td>
+											<td class="grid__cell grid__cell--day" data-today="">
+												<label for="grid-hours-2-tue" class="visually-hidden">Hours on 16 / Tue</label>
+												<input type="text" inputmode="decimal" class="grid__hours" id="grid-hours-2-tue" value="">
+											</td>
+											<td class="grid__cell grid__cell--day">
+												<label for="grid-hours-2-wed" class="visually-hidden">Hours on 17 / Wed</label>
+												<input type="text" inputmode="decimal" class="grid__hours" id="grid-hours-2-wed" value="">
+											</td>
+											<td class="grid__cell grid__cell--day">
+												<label for="grid-hours-2-thu" class="visually-hidden">Hours on 18 / Thu</label>
+												<input type="text" inputmode="decimal" class="grid__hours" id="grid-hours-2-thu" value="">
+											</td>
+											<td class="grid__cell grid__cell--day">
+												<label for="grid-hours-2-fri" class="visually-hidden">Hours on 19 / Fri</label>
+												<input type="text" inputmode="decimal" class="grid__hours" id="grid-hours-2-fri" value="">
+											</td>
+											<td class="grid__cell grid__cell--day">
+												<label for="grid-hours-2-sat" class="visually-hidden">Hours on 20 / Sat</label>
+												<input type="text" inputmode="decimal" class="grid__hours" id="grid-hours-2-sat" value="">
+											</td>
+											<td class="grid__cell grid__cell--day">
+												<label for="grid-hours-2-sun" class="visually-hidden">Hours on 21 / Sun</label>
+												<input type="text" inputmode="decimal" class="grid__hours" id="grid-hours-2-sun" value="">
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="grid__actions">
+								<div class="grid__actions-add">
+									<button type="button" class="grid__add-row button">
+										<svg class="grid__add-icon" width="24" height="24" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+										</svg>
+										Add row
+									</button>
+									<button type="button" class="grid__add-overtime button">
+										<svg class="grid__add-icon" width="24" height="24" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-add-circle-outline"></use>
+										</svg>
+										Add overtime
+									</button>
+								</div>
+								<div class="grid__actions-submit">
+									<button type="button" class="grid__save button">Save</button>
+									<button type="button" class="grid__reject button" disabled>Reject</button>
+									<button type="button" class="grid__submit button">Submit</button>
+								</div>
+							</div>
+							<div class="grid__footer">
+								<button type="button" class="grid__info-btn" aria-describedby="grid-info-tooltip" aria-label="Timesheet help">
+									<svg class="grid__info-icon" width="24" height="24" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-info-outline"></use>
+									</svg>
+								</button>
+								<span class="grid__info-tooltip" role="tooltip" id="grid-info-tooltip">
+									Add a row for each project, enter hours per day, then submit for approval. Submitted timesheets can be reopened with Reject.
+								</span>
+								<p class="grid__total">
+									<span class="grid__total-label">Total</span>
+									<span class="grid__total-value" aria-live="polite">8.00</span>
+									/
+									<span class="grid__total-cap">40.00</span>
+								</p>
+							</div>
+							<p class="visually-hidden" role="status" aria-live="polite" id="grid-status"></p>
+						</form>
+					</section>
+					<section class="comments" id="comments">
+						<div class="comments__card" data-fls-spollers="">
+							<details class="comments__toggle" open data-fls-spollers-open="">
+								<summary class="comments__header">
+									<h2 class="comments__title">Comments</h2>
+									<svg class="comments__chevron" width="12" height="8" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-expand-more"></use>
+									</svg>
+								</summary>
+								<div class="comments__body">
+									<div class="comments__table-wrap">
+										<table class="comments__table">
+											<caption class="visually-hidden">Comments for the current timesheet week</caption>
+											<thead>
+												<tr>
+													<th scope="col">Date</th>
+													<th scope="col">Project Task</th>
+													<th scope="col">Role</th>
+													<th scope="col">Activity</th>
+													<th scope="col">Hours</th>
+													<th scope="col">Comments</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<time datetime="2019-01-15">15 Jan</time>
+													</td>
+													<td>Project 1</td>
+													<td>Specialist</td>
+													<td>Development</td>
+													<td>8.00</td>
+													<td>Prepared a presentation for CEO</td>
+												</tr>
+												<tr>
+													<td>
+														<time datetime="2019-01-16">16 Jan</time>
+													</td>
+													<td>Project 2</td>
+													<td>Specialist</td>
+													<td>Development</td>
+													<td>8.00</td>
+													<td>Planned employees vacations</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</details>
+						</div>
+					</section>
+					<section class="widgetrow" id="widgetrow">
+						<div class="widgetrow__assigned" data-fls-spollers="">
+							<details class="widgetrow__assigned-toggle" open data-fls-spollers-open="">
+								<summary class="widgetrow__assigned-header">
+									<h2 class="widgetrow__assigned-title">Projects you are assigned to (12)</h2>
+									<svg class="widgetrow__assigned-chevron" width="12" height="8" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-expand-more"></use>
+									</svg>
+								</summary>
+								<div class="widgetrow__assigned-body">
+									<ul class="widgetrow__pills">
+										<li class="widgetrow__pill widgetrow__pill--active">
+											<span class="visually-hidden">Currently active:</span>
+											E_Bench_Engineering
+										</li>
+										<li class="widgetrow__pill widgetrow__pill--active">
+											<span class="visually-hidden">Currently active:</span>
+											E_Interview
+										</li>
+										<li class="widgetrow__pill">E_Company_Web_Site</li>
+										<li class="widgetrow__pill">E_CNSL_Corp_Events</li>
+										<li class="widgetrow__pill">E_CNSL_Delivery_Admin</li>
+										<li class="widgetrow__pill">E_CNSL_Delivery_Admin</li>
+										<li class="widgetrow__pill">E_ENG_Delivery_Admin</li>
+										<li class="widgetrow__pill">E_ENG_Corp_Events</li>
+										<li class="widgetrow__pill">E_Performance_Evaluations</li>
+										<li class="widgetrow__pill">E_Community_of_Practice</li>
+										<li class="widgetrow__pill">E_Marketing and Training Support</li>
+										<li class="widgetrow__pill">E_VFQ_Upskilling</li>
+									</ul>
+								</div>
+							</details>
+						</div>
+						<div class="widgetrow__legend">
+							<h2 class="widgetrow__legend-title">Legend</h2>
+							<ul class="widgetrow__legend-list">
+								<li class="widgetrow__legend-item">
+									<span class="widgetrow__swatch widgetrow__swatch--workday" aria-hidden="true">8.00</span>
+									Workday
+								</li>
+								<li class="widgetrow__legend-item">
+									<span class="widgetrow__swatch widgetrow__swatch--holiday" aria-hidden="true">8.00</span>
+									Holiday
+								</li>
+								<li class="widgetrow__legend-item">
+									<span class="widgetrow__swatch widgetrow__swatch--today" aria-hidden="true"></span>
+									Today
+								</li>
+								<li class="widgetrow__legend-item">
+									<span class="widgetrow__swatch widgetrow__swatch--dayoff" aria-hidden="true"></span>
+									Day off had (paid)
+								</li>
+								<li class="widgetrow__legend-item">
+									<span class="widgetrow__swatch widgetrow__swatch--overtime" aria-hidden="true">8.00</span>
+									Overtime/undertime
+								</li>
+							</ul>
+						</div>
+					</section>
+				</main>
+			</div>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container"></div>
+			</footer>
+		</div>
+	</body>
+</html>

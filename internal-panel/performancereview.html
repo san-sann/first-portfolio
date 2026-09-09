@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Your performance review history.">
+		<meta property="og:title" content="Performance Review">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://camioca-internal-panel.vercel.app/assets/img/og/preview.png">
+		<meta property="og:url" content="https://camioca-internal-panel.vercel.app/performancereview.html">
+		<title>Performance Review</title>
+		<script type="module" crossorigin="" src="./js/performancereview.min.js?v=1788984567283"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1788984567283">
+		<link rel="modulepreload" crossorigin="" href="./js/header.min.js?v=1788984567283">
+		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1788984567283">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1788984567283">
+		<link rel="stylesheet" crossorigin="" href="./css/header.min.css?v=1788984567283">
+		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1788984567283">
+		<link rel="stylesheet" crossorigin="" href="./css/performancereview.min.css?v=1788984567283">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__account">
+					<button type="button" data-fls-menu="" class="icon-menu" aria-expanded="false" aria-label="Open menu">
+						<span></span>
+					</button>
+					<button type="button" class="header__account-toggle" data-fls-account-toggle="" aria-haspopup="true" aria-expanded="false" aria-controls="header-account-menu">
+						<picture>
+							<img alt="" class="header__avatar" width="40" height="40" src="./assets/img/header/photos/avatar-dominique.webp">
+						</picture>
+						<span class="header__account-name">Dominique Ch.</span>
+						<svg class="header__account-arrow" width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-drop-down"></use>
+						</svg>
+					</button>
+					<ul class="header__account-list" id="header-account-menu" data-fls-account-menu="">
+						<li class="header__account-item">
+							<a href="mydetails.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-account-circle"></use>
+								</svg>
+								My details
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="calendar.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								My calendar
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="vacations.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-beach-access"></use>
+								</svg>
+								Vacations
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="corporatecv.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+								</svg>
+								Corporate CV
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="performancereview.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-rocket"></use>
+								</svg>
+								Performance review
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="login.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-logout"></use>
+								</svg>
+								Log out
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__toolbar">
+					<div class="header__search">
+						<svg class="header__search-icon" width="20" height="20" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+						</svg>
+						<label for="header-quick-search" class="visually-hidden">Quick search</label>
+						<input type="search" id="header-quick-search" class="header__search-input" placeholder="Quick search">
+					</div>
+					<button type="button" class="header__notifications" aria-label="Notifications">
+						<svg width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-notifications"></use>
+						</svg>
+					</button>
+				</div>
+			</header>
+			<div class="wrapper__shell">
+				<nav class="menu" data-fls-menu-rail="" aria-label="Primary">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="dashboard.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-dashboard"></use>
+								</svg>
+								<span class="menu__text">Dashboard</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findperson.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-people"></use>
+								</svg>
+								<span class="menu__text">People</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findproject.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-assignment"></use>
+								</svg>
+								<span class="menu__text">Projects</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="calendar.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								<span class="menu__text">Calendar</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="trainingtimetable.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-easel"></use>
+								</svg>
+								<span class="menu__text">Training</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="timesheet.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-hourglass"></use>
+								</svg>
+								<span class="menu__text">Timesheet</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="reports.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chatbubbles"></use>
+								</svg>
+								<span class="menu__text">Reports</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="administration.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-business"></use>
+								</svg>
+								<span class="menu__text">Administration</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="help.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+								</svg>
+								<span class="menu__text">Help</span>
+							</a>
+						</li>
+					</ul>
+					<div class="menu__credits">
+						<span class="menu__credits-brand">CAMIOCA</span>
+						<span class="menu__credits-version">Version: 1.0.0.11</span>
+					</div>
+				</nav>
+				<main class="page">
+					<section class="reviews" id="reviews">
+						<div class="reviews__card" data-fls-spollers="">
+							<details class="reviews__toggle" open data-fls-spollers-open="">
+								<summary class="reviews__header">
+									<h1 class="reviews__title">Performance reviews</h1>
+									<span class="visually-hidden" id="reviews-year-label">Select year</span>
+									<div class="reviews__year" role="group" aria-labelledby="reviews-year-label">
+										<button type="button" class="reviews__year-btn reviews__year-btn--prev" aria-label="Previous year">
+											<svg class="reviews__year-icon" width="8" height="12" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-left"></use>
+											</svg>
+										</button>
+										<span class="reviews__year-value" aria-live="polite">2019</span>
+										<button type="button" class="reviews__year-btn reviews__year-btn--next" aria-label="Next year">
+											<svg class="reviews__year-icon" width="8" height="12" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-right"></use>
+											</svg>
+										</button>
+									</div>
+									<svg class="reviews__chevron" width="12" height="8" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-expand-more"></use>
+									</svg>
+								</summary>
+								<div class="reviews__body">
+									<div class="reviews__table-wrap">
+										<table class="reviews__table">
+											<caption class="visually-hidden">Performance review cycles in 2019</caption>
+											<thead>
+												<tr>
+													<th scope="col">Cycle</th>
+													<th scope="col">Reviewer</th>
+													<th scope="col">Rating</th>
+													<th scope="col">Status</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Q1 2019</td>
+													<td>Arnold Harris</td>
+													<td>
+														<div class="rating" data-fls-rating="" data-fls-rating-value="4" aria-hidden="true"></div>
+														<span class="visually-hidden">Rated 4 out of 5 stars</span>
+													</td>
+													<td>Completed</td>
+												</tr>
+												<tr>
+													<td>Q2 2019</td>
+													<td>Chris Columbus</td>
+													<td>
+														<div class="rating" data-fls-rating="" data-fls-rating-value="4.5" aria-hidden="true"></div>
+														<span class="visually-hidden">Rated 4.5 out of 5 stars</span>
+													</td>
+													<td>Completed</td>
+												</tr>
+												<tr>
+													<td>Q3 2019</td>
+													<td>Arnold Harris</td>
+													<td>
+														<div class="rating" data-fls-rating="" data-fls-rating-value="4" aria-hidden="true"></div>
+														<span class="visually-hidden">Rated 4 out of 5 stars</span>
+													</td>
+													<td>Completed</td>
+												</tr>
+												<tr>
+													<td>Q4 2019</td>
+													<td>Chris Columbus</td>
+													<td>
+														<div class="rating" data-fls-rating="" data-fls-rating-value="5" aria-hidden="true"></div>
+														<span class="visually-hidden">Rated 5 out of 5 stars</span>
+													</td>
+													<td>Completed</td>
+												</tr>
+												<tr>
+													<td>Annual 2019</td>
+													<td>Matthew Brandstock</td>
+													<td>
+														<div class="rating" data-fls-rating="" data-fls-rating-value="4.5" aria-hidden="true"></div>
+														<span class="visually-hidden">Rated 4.5 out of 5 stars</span>
+													</td>
+													<td>Completed</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</details>
+						</div>
+					</section>
+				</main>
+			</div>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container"></div>
+			</footer>
+		</div>
+	</body>
+</html>

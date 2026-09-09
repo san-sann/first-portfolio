@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Upcoming and past training sessions calendar.">
+		<meta property="og:title" content="Training Timetable">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://camioca-internal-panel.vercel.app/assets/img/og/preview.png">
+		<meta property="og:url" content="https://camioca-internal-panel.vercel.app/trainingtimetable.html">
+		<title>Training Timetable</title>
+		<script type="module" crossorigin="" src="./js/trainingtimetable.min.js?v=1788984567274"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/datepicker.min.js?v=1788984567274">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1788984567274">
+		<link rel="modulepreload" crossorigin="" href="./js/header.min.js?v=1788984567274">
+		<link rel="modulepreload" crossorigin="" href="./js/_functions.min.js?v=1788984567274">
+		<link rel="modulepreload" crossorigin="" href="./js/select.min.js?v=1788984567274">
+		<link rel="stylesheet" crossorigin="" href="./css/datepicker.min.css?v=1788984567274">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1788984567274">
+		<link rel="stylesheet" crossorigin="" href="./css/header.min.css?v=1788984567274">
+		<link rel="stylesheet" crossorigin="" href="./css/select.min.css?v=1788984567274">
+		<link rel="stylesheet" crossorigin="" href="./css/trainingtimetable.min.css?v=1788984567274">
+		<link rel="stylesheet" crossorigin="" href="./css/subnav.min.css?v=1788984567274">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__account">
+					<button type="button" data-fls-menu="" class="icon-menu" aria-expanded="false" aria-label="Open menu">
+						<span></span>
+					</button>
+					<button type="button" class="header__account-toggle" data-fls-account-toggle="" aria-haspopup="true" aria-expanded="false" aria-controls="header-account-menu">
+						<picture>
+							<img alt="" class="header__avatar" width="40" height="40" src="./assets/img/header/photos/avatar-dominique.webp">
+						</picture>
+						<span class="header__account-name">Dominique Ch.</span>
+						<svg class="header__account-arrow" width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-drop-down"></use>
+						</svg>
+					</button>
+					<ul class="header__account-list" id="header-account-menu" data-fls-account-menu="">
+						<li class="header__account-item">
+							<a href="mydetails.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-account-circle"></use>
+								</svg>
+								My details
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="calendar.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								My calendar
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="vacations.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-beach-access"></use>
+								</svg>
+								Vacations
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="corporatecv.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+								</svg>
+								Corporate CV
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="performancereview.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-rocket"></use>
+								</svg>
+								Performance review
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="login.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-logout"></use>
+								</svg>
+								Log out
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__toolbar">
+					<div class="header__search">
+						<svg class="header__search-icon" width="20" height="20" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+						</svg>
+						<label for="header-quick-search" class="visually-hidden">Quick search</label>
+						<input type="search" id="header-quick-search" class="header__search-input" placeholder="Quick search">
+					</div>
+					<button type="button" class="header__notifications" aria-label="Notifications">
+						<svg width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-notifications"></use>
+						</svg>
+					</button>
+				</div>
+			</header>
+			<div class="wrapper__shell">
+				<nav class="menu" data-fls-menu-rail="" aria-label="Primary">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="dashboard.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-dashboard"></use>
+								</svg>
+								<span class="menu__text">Dashboard</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findperson.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-people"></use>
+								</svg>
+								<span class="menu__text">People</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findproject.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-assignment"></use>
+								</svg>
+								<span class="menu__text">Projects</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="calendar.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								<span class="menu__text">Calendar</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="trainingtimetable.html" class="menu__link menu__link--active" aria-current="page">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-easel"></use>
+								</svg>
+								<span class="menu__text">Training</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="timesheet.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-hourglass"></use>
+								</svg>
+								<span class="menu__text">Timesheet</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="reports.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chatbubbles"></use>
+								</svg>
+								<span class="menu__text">Reports</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="administration.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-business"></use>
+								</svg>
+								<span class="menu__text">Administration</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="help.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+								</svg>
+								<span class="menu__text">Help</span>
+							</a>
+						</li>
+					</ul>
+					<div class="menu__credits">
+						<span class="menu__credits-brand">CAMIOCA</span>
+						<span class="menu__credits-version">Version: 1.0.0.11</span>
+					</div>
+				</nav>
+				<main class="page">
+					<nav data-fls-subnav="" class="subnav" aria-label="Section">
+						<ul class="subnav__list">
+							<li class="subnav__item">
+								<a href="trainingtimetable.html" class="subnav__link subnav__link--active" aria-current="page">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-filing"></use>
+									</svg>
+									<span class="subnav__text">Training timetable</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="findtraining.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-search-lg"></use>
+									</svg>
+									<span class="subnav__text">Find training</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="feedback.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+									</svg>
+									<span class="subnav__text">Feedback</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="quizzes.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+									</svg>
+									<span class="subnav__text">Quizzes</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="trainingregistration.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-assignment-turned-in"></use>
+									</svg>
+									<span class="subnav__text">Training registration</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<section class="filter" id="filter">
+						<h1 class="filter__title">Filter</h1>
+						<div class="filter__row">
+							<div class="filter__field filter__field--date">
+								<span class="filter__label" id="filter-date-label">Select the date</span>
+								<div class="filter__date-row">
+									<div class="filter__date" role="group" aria-labelledby="filter-date-label">
+										<button type="button" class="filter__date-btn filter__date-btn--prev" aria-label="Previous month">
+											<svg class="filter__date-icon" width="8" height="12" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-left"></use>
+											</svg>
+										</button>
+										<span class="filter__date-value" aria-live="polite">July 2019</span>
+										<button type="button" class="filter__date-btn filter__date-btn--next" aria-label="Next month">
+											<svg class="filter__date-icon" width="8" height="12" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-right"></use>
+											</svg>
+										</button>
+									</div>
+									<span class="filter__datepicker-wrap">
+										<button type="button" class="filter__datepicker" aria-label="Open date picker">
+											<svg class="filter__datepicker-icon" width="24" height="24" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-calendar-accent"></use>
+											</svg>
+										</button>
+										<input type="text" class="filter__datepicker-input" id="filter-datepicker-input" data-fls-datepicker="" autocomplete="off" tabindex="-1" aria-label="Open date picker">
+									</span>
+								</div>
+							</div>
+							<div class="filter__field filter__field--select">
+								<label for="filter-branch" class="filter__label">Branch</label>
+								<select id="filter-branch" name="branch" data-fls-select="" data-fls-select-modif="filter">
+									<option value="paris" selected>Paris</option>
+									<option value="bangkok">Bangkok</option>
+									<option value="san-francisco">San Francisco</option>
+								</select>
+							</div>
+							<div class="filter__field filter__field--select">
+								<label for="filter-field-of-knowledge" class="filter__label">Field of knowledge</label>
+								<select id="filter-field-of-knowledge" name="field_of_knowledge" data-fls-select="" data-fls-select-modif="filter">
+									<option value="">All</option>
+									<option value="management">Management</option>
+									<option value="soft-skills">Soft Skills</option>
+									<option value="it-technology">IT &amp; Technology</option>
+									<option value="finance">Finance</option>
+									<option value="compliance">Compliance</option>
+									<option value="sales">Sales</option>
+								</select>
+							</div>
+							<div class="filter__field filter__field--select">
+								<label for="filter-language" class="filter__label">Language</label>
+								<select id="filter-language" name="language" data-fls-select="" data-fls-select-modif="filter">
+									<option value="">All</option>
+									<option value="english">English</option>
+									<option value="french">French</option>
+									<option value="thai">Thai</option>
+									<option value="spanish">Spanish</option>
+								</select>
+							</div>
+							<div class="filter__note" role="note">
+								<p class="filter__note-title">Note:</p>
+								<p class="filter__note-text">Training time is displayed in your local time</p>
+							</div>
+						</div>
+					</section>
+					<section class="grid" id="grid">
+						<div class="grid__table-wrap">
+							<table class="grid__calendar">
+								<caption class="visually-hidden">Weekly training timetable — July 2019</caption>
+								<thead>
+									<tr>
+										<th scope="col">Monday</th>
+										<th scope="col">Tuesday</th>
+										<th scope="col">Wednesday</th>
+										<th scope="col">Thursday</th>
+										<th scope="col">Friday</th>
+										<th scope="col">Saturday</th>
+										<th scope="col">Sunday</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="grid__cell grid__cell--muted">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-01">1</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell grid__cell--muted">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-02">2</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell grid__cell--muted">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-03">3</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell grid__cell--muted">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-04">4</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell grid__cell--muted">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-05">5</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell grid__cell--muted">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-06">6</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell grid__cell--muted">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-07">7</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="grid__cell grid__cell--muted">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-08">8</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell grid__cell--muted">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-09">9</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__event">
+													<div class="grid__event-head">
+														<time class="grid__event-time" datetime="2019-07-10T10:00">10:00</time>
+														<p class="grid__event-title">Management in Parliament</p>
+													</div>
+													<div class="grid__event-tags">
+														<span class="grid__tag grid__tag--location">paris</span>
+														<span class="grid__tag grid__tag--online">online</span>
+													</div>
+												</div>
+												<div class="grid__date">
+													<time class="grid__day grid__day--today" datetime="2019-07-10" aria-current="date">10</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-11">11</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-12">12</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-13">13</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-14">14</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-15">15</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-16">16</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-17">17</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-18">18</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-19">19</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-20">20</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-21">21</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-22">22</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-23">23</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-24">24</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__event">
+													<div class="grid__event-head">
+														<time class="grid__event-time" datetime="2019-07-25T10:00">10:00</time>
+														<p class="grid__event-title">Qualification P.1</p>
+													</div>
+													<div class="grid__event-tags">
+														<span class="grid__tag grid__tag--location">paris</span>
+													</div>
+												</div>
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-25">25</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-26">26</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-27">27</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-28">28</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-29">29</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-30">30</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-07-31">31</time>
+													<span class="grid__month">July</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-08-01">1</time>
+													<span class="grid__month">August</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-08-02">2</time>
+													<span class="grid__month">August</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-08-03">3</time>
+													<span class="grid__month">August</span>
+												</div>
+											</div>
+										</td>
+										<td class="grid__cell">
+											<div class="grid__cell-inner">
+												<div class="grid__date">
+													<time class="grid__day" datetime="2019-08-04">4</time>
+													<span class="grid__month">August</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+				</main>
+			</div>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container"></div>
+			</footer>
+		</div>
+	</body>
+</html>

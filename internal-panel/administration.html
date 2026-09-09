@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="System and account administration.">
+		<meta property="og:title" content="Administration">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://camioca-internal-panel.vercel.app/assets/img/og/preview.png">
+		<meta property="og:url" content="https://camioca-internal-panel.vercel.app/administration.html">
+		<title>Administration</title>
+		<script type="module" crossorigin="" src="./js/administration.min.js?v=1788984567287"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1788984567287">
+		<link rel="modulepreload" crossorigin="" href="./js/header.min.js?v=1788984567287">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1788984567287">
+		<link rel="stylesheet" crossorigin="" href="./css/header.min.css?v=1788984567287">
+		<link rel="stylesheet" crossorigin="" href="./css/administration.min.css?v=1788984567287">
+		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1788984567287">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__account">
+					<button type="button" data-fls-menu="" class="icon-menu" aria-expanded="false" aria-label="Open menu">
+						<span></span>
+					</button>
+					<button type="button" class="header__account-toggle" data-fls-account-toggle="" aria-haspopup="true" aria-expanded="false" aria-controls="header-account-menu">
+						<picture>
+							<img alt="" class="header__avatar" width="40" height="40" src="./assets/img/header/photos/avatar-dominique.webp">
+						</picture>
+						<span class="header__account-name">Dominique Ch.</span>
+						<svg class="header__account-arrow" width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-drop-down"></use>
+						</svg>
+					</button>
+					<ul class="header__account-list" id="header-account-menu" data-fls-account-menu="">
+						<li class="header__account-item">
+							<a href="mydetails.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-account-circle"></use>
+								</svg>
+								My details
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="calendar.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								My calendar
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="vacations.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-beach-access"></use>
+								</svg>
+								Vacations
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="corporatecv.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+								</svg>
+								Corporate CV
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="performancereview.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-rocket"></use>
+								</svg>
+								Performance review
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="login.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-logout"></use>
+								</svg>
+								Log out
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__toolbar">
+					<div class="header__search">
+						<svg class="header__search-icon" width="20" height="20" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+						</svg>
+						<label for="header-quick-search" class="visually-hidden">Quick search</label>
+						<input type="search" id="header-quick-search" class="header__search-input" placeholder="Quick search">
+					</div>
+					<button type="button" class="header__notifications" aria-label="Notifications">
+						<svg width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-notifications"></use>
+						</svg>
+					</button>
+				</div>
+			</header>
+			<div class="wrapper__shell">
+				<nav class="menu" data-fls-menu-rail="" aria-label="Primary">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="dashboard.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-dashboard"></use>
+								</svg>
+								<span class="menu__text">Dashboard</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findperson.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-people"></use>
+								</svg>
+								<span class="menu__text">People</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findproject.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-assignment"></use>
+								</svg>
+								<span class="menu__text">Projects</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="calendar.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								<span class="menu__text">Calendar</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="trainingtimetable.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-easel"></use>
+								</svg>
+								<span class="menu__text">Training</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="timesheet.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-hourglass"></use>
+								</svg>
+								<span class="menu__text">Timesheet</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="reports.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chatbubbles"></use>
+								</svg>
+								<span class="menu__text">Reports</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="administration.html" class="menu__link menu__link--active" aria-current="page">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-business"></use>
+								</svg>
+								<span class="menu__text">Administration</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="help.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+								</svg>
+								<span class="menu__text">Help</span>
+							</a>
+						</li>
+					</ul>
+					<div class="menu__credits">
+						<span class="menu__credits-brand">CAMIOCA</span>
+						<span class="menu__credits-version">Version: 1.0.0.11</span>
+					</div>
+				</nav>
+				<main class="page">
+					<section class="administration" id="administration">
+						<div class="administration__header">
+							<h1 class="administration__title">User &amp; role management</h1>
+							<button type="button" data-fls-button="" class="administration__invite button">
+								<svg class="administration__invite-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-add"></use>
+								</svg>
+								Invite user
+							</button>
+						</div>
+						<div class="administration__toolbar">
+							<div class="administration__search">
+								<svg class="administration__search-icon" width="20" height="20" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+								</svg>
+								<label for="administration-search" class="visually-hidden">Search by name</label>
+								<input type="search" id="administration-search" class="administration__search-input" placeholder="Search by name">
+							</div>
+							<h2 class="administration__found">
+								Found:
+								<span class="administration__found-count">8</span>
+							</h2>
+						</div>
+						<div class="administration__table-wrap">
+							<table class="administration__table">
+								<caption class="visually-hidden">System users, their roles and access status</caption>
+								<thead>
+									<tr>
+										<th scope="col">
+											<span class="visually-hidden">Status</span>
+										</th>
+										<th scope="col">Name</th>
+										<th scope="col">Role</th>
+										<th scope="col">Branch</th>
+										<th scope="col">Last login</th>
+										<th scope="col">
+											<span class="visually-hidden">Edit</span>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="administration__status-cell">
+											<span class="administration__status" role="img" aria-label="Active"></span>
+										</td>
+										<td>Dominique Charpentier</td>
+										<td>Administrator</td>
+										<td>Paris</td>
+										<td>
+											<time datetime="2026-09-04T09:14">04 Sep, 09:14</time>
+										</td>
+										<td class="administration__actions">
+											<button type="button" class="administration__edit" aria-label="Edit user: Dominique Charpentier">
+												<svg class="administration__edit-icon" width="24" height="24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-create"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td class="administration__status-cell">
+											<span class="administration__status" role="img" aria-label="Active"></span>
+										</td>
+										<td>Chris Columbus</td>
+										<td>HR Manager</td>
+										<td>Paris</td>
+										<td>
+											<time datetime="2026-09-03T17:02">03 Sep, 17:02</time>
+										</td>
+										<td class="administration__actions">
+											<button type="button" class="administration__edit" aria-label="Edit user: Chris Columbus">
+												<svg class="administration__edit-icon" width="24" height="24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-create"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td class="administration__status-cell">
+											<span class="administration__status" role="img" aria-label="Active"></span>
+										</td>
+										<td>Arnold Harris</td>
+										<td>Project Manager</td>
+										<td>Bangkok</td>
+										<td>
+											<time datetime="2026-09-03T11:47">03 Sep, 11:47</time>
+										</td>
+										<td class="administration__actions">
+											<button type="button" class="administration__edit" aria-label="Edit user: Arnold Harris">
+												<svg class="administration__edit-icon" width="24" height="24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-create"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td class="administration__status-cell">
+											<span class="administration__status" role="img" aria-label="Active"></span>
+										</td>
+										<td>Keithlyn O&rsquo;Hara</td>
+										<td>Trainer</td>
+										<td>San Francisco</td>
+										<td>
+											<time datetime="2026-09-02T15:30">02 Sep, 15:30</time>
+										</td>
+										<td class="administration__actions">
+											<button type="button" class="administration__edit" aria-label="Edit user: Keithlyn O’Hara">
+												<svg class="administration__edit-icon" width="24" height="24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-create"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td class="administration__status-cell">
+											<span class="administration__status administration__status--inactive" role="img" aria-label="Inactive"></span>
+										</td>
+										<td>Matthew Brandstock</td>
+										<td>Employee</td>
+										<td>Paris</td>
+										<td>
+											<time datetime="2026-08-18T10:05">18 Aug, 10:05</time>
+										</td>
+										<td class="administration__actions">
+											<button type="button" class="administration__edit" aria-label="Edit user: Matthew Brandstock">
+												<svg class="administration__edit-icon" width="24" height="24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-create"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td class="administration__status-cell">
+											<span class="administration__status" role="img" aria-label="Active"></span>
+										</td>
+										<td>Sofia Marchetti</td>
+										<td>Finance Manager</td>
+										<td>Bangkok</td>
+										<td>
+											<time datetime="2026-09-04T08:20">04 Sep, 08:20</time>
+										</td>
+										<td class="administration__actions">
+											<button type="button" class="administration__edit" aria-label="Edit user: Sofia Marchetti">
+												<svg class="administration__edit-icon" width="24" height="24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-create"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td class="administration__status-cell">
+											<span class="administration__status" role="img" aria-label="Active"></span>
+										</td>
+										<td>Julien Moreau</td>
+										<td>Employee</td>
+										<td>San Francisco</td>
+										<td>
+											<time datetime="2026-09-01T14:12">01 Sep, 14:12</time>
+										</td>
+										<td class="administration__actions">
+											<button type="button" class="administration__edit" aria-label="Edit user: Julien Moreau">
+												<svg class="administration__edit-icon" width="24" height="24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-create"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td class="administration__status-cell">
+											<span class="administration__status administration__status--inactive" role="img" aria-label="Inactive"></span>
+										</td>
+										<td>Elena Kovacs</td>
+										<td>Employee</td>
+										<td>Paris</td>
+										<td>
+											<time datetime="2026-07-25T09:00">25 Jul, 09:00</time>
+										</td>
+										<td class="administration__actions">
+											<button type="button" class="administration__edit" aria-label="Edit user: Elena Kovacs">
+												<svg class="administration__edit-icon" width="24" height="24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-create"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+				</main>
+			</div>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container"></div>
+			</footer>
+		</div>
+	</body>
+</html>

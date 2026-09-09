@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Search employees by name, email, capability, technology or certificate.">
+		<meta property="og:title" content="Find Person">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://camioca-internal-panel.vercel.app/assets/img/og/preview.png">
+		<meta property="og:url" content="https://camioca-internal-panel.vercel.app/findperson.html">
+		<title>Find Person</title>
+		<script type="module" crossorigin="" src="./js/findperson.min.js?v=1788984567276"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1788984567276">
+		<link rel="modulepreload" crossorigin="" href="./js/header.min.js?v=1788984567276">
+		<link rel="modulepreload" crossorigin="" href="./js/_functions.min.js?v=1788984567276">
+		<link rel="modulepreload" crossorigin="" href="./js/select.min.js?v=1788984567276">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1788984567276">
+		<link rel="stylesheet" crossorigin="" href="./css/header.min.css?v=1788984567276">
+		<link rel="stylesheet" crossorigin="" href="./css/select.min.css?v=1788984567276">
+		<link rel="stylesheet" crossorigin="" href="./css/findperson.min.css?v=1788984567276">
+		<link rel="stylesheet" crossorigin="" href="./css/subnav.min.css?v=1788984567276">
+		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1788984567276">
+		<link rel="stylesheet" crossorigin="" href="./css/radio.min.css?v=1788984567276">
+		<link rel="stylesheet" crossorigin="" href="./css/checkbox.min.css?v=1788984567276">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__account">
+					<button type="button" data-fls-menu="" class="icon-menu" aria-expanded="false" aria-label="Open menu">
+						<span></span>
+					</button>
+					<button type="button" class="header__account-toggle" data-fls-account-toggle="" aria-haspopup="true" aria-expanded="false" aria-controls="header-account-menu">
+						<picture>
+							<img alt="" class="header__avatar" width="40" height="40" src="./assets/img/header/photos/avatar-dominique.webp">
+						</picture>
+						<span class="header__account-name">Dominique Ch.</span>
+						<svg class="header__account-arrow" width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-drop-down"></use>
+						</svg>
+					</button>
+					<ul class="header__account-list" id="header-account-menu" data-fls-account-menu="">
+						<li class="header__account-item">
+							<a href="mydetails.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-account-circle"></use>
+								</svg>
+								My details
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="calendar.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								My calendar
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="vacations.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-beach-access"></use>
+								</svg>
+								Vacations
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="corporatecv.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-document"></use>
+								</svg>
+								Corporate CV
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="performancereview.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-rocket"></use>
+								</svg>
+								Performance review
+							</a>
+						</li>
+						<li class="header__account-item">
+							<a href="login.html" class="header__account-link">
+								<svg class="header__account-icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-logout"></use>
+								</svg>
+								Log out
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__toolbar">
+					<div class="header__search">
+						<svg class="header__search-icon" width="20" height="20" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+						</svg>
+						<label for="header-quick-search" class="visually-hidden">Quick search</label>
+						<input type="search" id="header-quick-search" class="header__search-input" placeholder="Quick search">
+					</div>
+					<button type="button" class="header__notifications" aria-label="Notifications">
+						<svg width="24" height="24" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-notifications"></use>
+						</svg>
+					</button>
+				</div>
+			</header>
+			<div class="wrapper__shell">
+				<nav class="menu" data-fls-menu-rail="" aria-label="Primary">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="dashboard.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-dashboard"></use>
+								</svg>
+								<span class="menu__text">Dashboard</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findperson.html" class="menu__link menu__link--active" aria-current="page">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-people"></use>
+								</svg>
+								<span class="menu__text">People</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="findproject.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-assignment"></use>
+								</svg>
+								<span class="menu__text">Projects</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="calendar.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-calendar"></use>
+								</svg>
+								<span class="menu__text">Calendar</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="trainingtimetable.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-easel"></use>
+								</svg>
+								<span class="menu__text">Training</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="timesheet.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-hourglass"></use>
+								</svg>
+								<span class="menu__text">Timesheet</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="reports.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chatbubbles"></use>
+								</svg>
+								<span class="menu__text">Reports</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="administration.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-business"></use>
+								</svg>
+								<span class="menu__text">Administration</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="help.html" class="menu__link">
+								<svg class="menu__icon" width="24" height="24" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-help"></use>
+								</svg>
+								<span class="menu__text">Help</span>
+							</a>
+						</li>
+					</ul>
+					<div class="menu__credits">
+						<span class="menu__credits-brand">CAMIOCA</span>
+						<span class="menu__credits-version">Version: 1.0.0.11</span>
+					</div>
+				</nav>
+				<main class="page">
+					<nav data-fls-subnav="" class="subnav" aria-label="Section">
+						<ul class="subnav__list">
+							<li class="subnav__item">
+								<a href="findperson.html" class="subnav__link subnav__link--active" aria-current="page">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-search-lg"></use>
+									</svg>
+									<span class="subnav__text">Find person</span>
+								</a>
+							</li>
+							<li class="subnav__item">
+								<a href="allpeople.html" class="subnav__link">
+									<svg class="subnav__icon" width="48" height="48" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-people"></use>
+									</svg>
+									<span class="subnav__text">All people</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<section class="filter" id="filter">
+						<h1 class="filter__title">Filter</h1>
+						<form class="filter__form">
+							<div class="filter__grid">
+								<div class="filter__field">
+									<label for="filter-name" class="filter__label">Name</label>
+									<input type="text" id="filter-name" name="name" class="filter__input" placeholder="Andrew Salgado">
+								</div>
+								<div class="filter__field">
+									<label for="filter-cv" class="filter__label">CV</label>
+									<input type="search" id="filter-cv" name="cv" class="filter__input" placeholder="Search...">
+									<div class="filter__checkbox-row" role="group" aria-label="Search CV within">
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="capability" name="cv_scope[]" checked>
+											<span class="checkbox__text">Capability</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="technology" name="cv_scope[]" checked>
+											<span class="checkbox__text">Technology</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="certificate" name="cv_scope[]" checked>
+											<span class="checkbox__text">Certificate</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="course" name="cv_scope[]" checked>
+											<span class="checkbox__text">Course</span>
+										</label>
+									</div>
+								</div>
+								<div class="filter__field">
+									<label for="filter-email" class="filter__label">Email address</label>
+									<input type="email" id="filter-email" name="email" class="filter__input" placeholder="example@mail.com">
+								</div>
+								<div class="filter__field">
+									<div class="filter__group-header">
+										<label for="filter-capabilities" class="filter__label" id="filter-capabilities-label">Capabilities</label>
+										<div class="options filter__radio" data-fls-radio="" role="radiogroup" aria-labelledby="filter-capabilities-label">
+											<label class="options__item">
+												<input class="options__input" type="radio" name="capabilities-mode" value="and">
+												<span class="options__text">AND</span>
+											</label>
+											<label class="options__item">
+												<input class="options__input" type="radio" name="capabilities-mode" value="or" checked>
+												<span class="options__text">OR</span>
+											</label>
+										</div>
+									</div>
+									<input type="search" id="filter-capabilities" name="capabilities" class="filter__input" placeholder="Search...">
+								</div>
+								<div class="filter__row">
+									<div class="filter__field">
+										<label for="filter-login" class="filter__label">Login</label>
+										<input type="text" id="filter-login" name="login" class="filter__input" placeholder="Login">
+									</div>
+									<div class="filter__field">
+										<label for="filter-branch" class="filter__label">Branch</label>
+										<select data-fls-select="" data-fls-select-modif="filter" id="filter-branch" name="branch">
+											<option value="">Select</option>
+											<option value="kyiv">Kyiv</option>
+											<option value="lviv">Lviv</option>
+											<option value="warsaw">Warsaw</option>
+											<option value="berlin">Berlin</option>
+											<option value="remote">Remote</option>
+										</select>
+									</div>
+								</div>
+								<div class="filter__field">
+									<div class="filter__group-header">
+										<label for="filter-technology" class="filter__label" id="filter-technology-label">Technology</label>
+										<div class="options filter__radio" data-fls-radio="" role="radiogroup" aria-labelledby="filter-technology-label">
+											<label class="options__item">
+												<input class="options__input" type="radio" name="technology-mode" value="and">
+												<span class="options__text">AND</span>
+											</label>
+											<label class="options__item">
+												<input class="options__input" type="radio" name="technology-mode" value="or" checked>
+												<span class="options__text">OR</span>
+											</label>
+										</div>
+									</div>
+									<input type="search" id="filter-technology" name="technology" class="filter__input" placeholder="Search...">
+								</div>
+								<div class="filter__row">
+									<div class="filter__field">
+										<label for="filter-1c-id" class="filter__label">1C id</label>
+										<input type="text" id="filter-1c-id" name="onec_id" class="filter__input" placeholder="Id">
+									</div>
+									<div class="filter__field">
+										<label for="filter-practice" class="filter__label">Practice</label>
+										<select data-fls-select="" data-fls-select-modif="filter" id="filter-practice" name="practice">
+											<option value="">Select</option>
+											<option value="delivery-billable">Delivery Billable</option>
+											<option value="administration">Administration</option>
+											<option value="ceo-office">CEO Office</option>
+											<option value="sales">Sales</option>
+											<option value="bench">Bench</option>
+										</select>
+									</div>
+								</div>
+								<div class="filter__field">
+									<div class="filter__group-header">
+										<label for="filter-certificates" class="filter__label" id="filter-certificates-label">Certificates</label>
+										<div class="options filter__radio" data-fls-radio="" role="radiogroup" aria-labelledby="filter-certificates-label">
+											<label class="options__item">
+												<input class="options__input" type="radio" name="certificates-mode" value="and">
+												<span class="options__text">AND</span>
+											</label>
+											<label class="options__item">
+												<input class="options__input" type="radio" name="certificates-mode" value="or" checked>
+												<span class="options__text">OR</span>
+											</label>
+										</div>
+									</div>
+									<input type="search" id="filter-certificates" name="certificates" class="filter__input" placeholder="Search...">
+								</div>
+								<div class="filter__field">
+									<label for="filter-user-type" class="filter__label">User type</label>
+									<select data-fls-select="" data-fls-select-modif="filter" id="filter-user-type" name="user_type">
+										<option value="">Any</option>
+										<option value="employee">Employee</option>
+										<option value="contractor">Contractor</option>
+										<option value="intern">Intern</option>
+										<option value="freelancer">Freelancer</option>
+									</select>
+								</div>
+								<div class="filter__field">
+									<div class="filter__group-header">
+										<label for="filter-courses" class="filter__label" id="filter-courses-label">Cources</label>
+										<div class="options filter__radio" data-fls-radio="" role="radiogroup" aria-labelledby="filter-courses-label">
+											<label class="options__item">
+												<input class="options__input" type="radio" name="courses-mode" value="and">
+												<span class="options__text">AND</span>
+											</label>
+											<label class="options__item">
+												<input class="options__input" type="radio" name="courses-mode" value="or" checked>
+												<span class="options__text">OR</span>
+											</label>
+										</div>
+									</div>
+									<input type="search" id="filter-courses" name="courses" class="filter__input" placeholder="Search...">
+								</div>
+								<div class="filter__field">
+									<label for="filter-contract-type" class="filter__label">User contract type</label>
+									<select data-fls-select="" data-fls-select-modif="filter" id="filter-contract-type" name="contract_type">
+										<option value="">Any</option>
+										<option value="full-time">Full-time</option>
+										<option value="part-time">Part-time</option>
+										<option value="contract">Contract</option>
+										<option value="internship">Internship</option>
+									</select>
+								</div>
+								<div class="filter__row">
+									<div class="filter__field">
+										<label for="filter-education" class="filter__label">Education</label>
+										<select data-fls-select="" data-fls-select-modif="filter" id="filter-education" name="education">
+											<option value="">Select</option>
+											<option value="bachelor">Bachelor's Degree</option>
+											<option value="master">Master's Degree</option>
+											<option value="phd">PhD</option>
+											<option value="associate">Associate Degree</option>
+										</select>
+									</div>
+									<div class="filter__field">
+										<label for="filter-education-search" class="visually-hidden">Search for specialization</label>
+										<input type="search" id="filter-education-search" name="education_search" class="filter__input" placeholder="Search for specialization">
+									</div>
+								</div>
+								<div class="filter__field filter__checkbox-stack">
+									<label data-fls-checkbox="" class="checkbox">
+										<input class="checkbox__input" type="checkbox" value="1" name="display_fields[]" checked>
+										<span class="checkbox__text">Show User Type, Login, Start Date, 1C Id</span>
+									</label>
+									<label data-fls-checkbox="" class="checkbox">
+										<input class="checkbox__input" type="checkbox" value="1" name="display_contacts[]">
+										<span class="checkbox__text">Show Skype, Office phone, Mobile phone, Room number, Title</span>
+									</label>
+								</div>
+								<div class="filter__field filter__checkbox-stack">
+									<label data-fls-checkbox="" class="checkbox">
+										<input class="checkbox__input" type="checkbox" value="1" name="show_current_assignments">
+										<span class="checkbox__text">Show current assignments</span>
+									</label>
+									<label data-fls-checkbox="" class="checkbox">
+										<input class="checkbox__input" type="checkbox" value="1" name="include_terminated">
+										<span class="checkbox__text">Include terminated employees</span>
+									</label>
+								</div>
+							</div>
+							<div class="filter__actions">
+								<button type="button" data-fls-button="" class="filter__clear button">Clear</button>
+								<button type="submit" data-fls-button="" class="filter__search button">Search</button>
+							</div>
+						</form>
+					</section>
+				</main>
+			</div>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container"></div>
+			</footer>
+		</div>
+	</body>
+</html>
