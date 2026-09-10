@@ -1,0 +1,3855 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Browse RealState top-rated real estate agents and connect with an expert to help you buy, sell, or rent.">
+		<meta property="og:title" content="Our Agents - RealState">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://real-state-lime-two.vercel.app/files/og-image.jpg">
+		<meta property="og:url" content="https://real-state-lime-two.vercel.app/agents.html">
+		<title>Our Agents - RealState</title>
+		<script type="module" crossorigin="" src="./js/agents.min.js?v=1789036644722"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1789036644722">
+		<link rel="modulepreload" crossorigin="" href="./js/watcher.min.js?v=1789036644722">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1789036644722">
+		<link rel="stylesheet" crossorigin="" href="./css/agents.min.css?v=1789036644722">
+		<link rel="stylesheet" crossorigin="" href="./css/footer.min.css?v=1789036644722">
+		<link rel="stylesheet" crossorigin="" href="./css/testimonials.min.css?v=1789036644722">
+		<link rel="stylesheet" crossorigin="" href="./css/agentcard.min.css?v=1789036644722">
+		<link rel="stylesheet" crossorigin="" href="./css/searchbar.min.css?v=1789036644722">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__container">
+					<div class="header__menu menu">
+						<button type="button" data-fls-menu="" class="menu__icon icon-menu" aria-expanded="false" aria-label="Open menu">
+							<svg class="icon-menu__icon" viewbox="0 0 24 24" aria-hidden="true">
+								<line class="icon-menu__bar icon-menu__bar--1" x1="4" y1="5" x2="16" y2="5"></line>
+								<line class="icon-menu__bar icon-menu__bar--2" x1="4" y1="12" x2="20" y2="12"></line>
+								<line class="icon-menu__bar icon-menu__bar--3" x1="4" y1="19" x2="12" y2="19"></line>
+							</svg>
+						</button>
+						<div class="menu__overlay" data-fls-menu-close=""></div>
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">Home</a>
+								</li>
+								<li class="menu__item menu__item_sub">
+									<button type="button" class="menu__link menu__link--active" aria-expanded="false" aria-controls="menu-explore-sub">
+										Explore
+										<svg class="menu__arrow" viewbox="0 0 24 24" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-down"></use>
+										</svg>
+									</button>
+									<ul class="menu__sub" id="menu-explore-sub">
+										<li class="menu__item">
+											<a href="about.html" class="menu__link">About</a>
+										</li>
+										<li class="menu__item">
+											<a href="agents.html" class="menu__link">Agent List</a>
+										</li>
+										<li class="menu__item">
+											<a href="blog.html" class="menu__link">Blog</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item">
+									<a href="collections.html" class="menu__link">Collections</a>
+								</li>
+								<li class="menu__item">
+									<a href="contact.html" class="menu__link">Contact</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<a href="index.html" class="header__logo-text">RealState</a>
+					<div class="header__actions">
+						<a href="login.html" class="header__action" aria-label="Sign in">
+							<svg class="header__action-icon" viewbox="0 0 39 39" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-user-circle"></use>
+							</svg>
+						</a>
+						<a href="collections.html" class="header__cta button" data-fls-button="">Explore Now</a>
+					</div>
+				</div>
+			</header>
+			<main class="page">
+				<div class="search-listing-flow">
+					<div class="search-listing-flow__background" aria-hidden="true">
+						<span class="search-listing-flow__blob search-listing-flow__blob--peach"></span>
+						<span class="search-listing-flow__blob search-listing-flow__blob--blue"></span>
+					</div>
+					<section class="search" id="search" data-fls-watcher="" data-fls-watcher-once="">
+						<div class="search__container">
+							<h1 class="search__title">Check Our Agents</h1>
+							<search class="searchbar" data-fls-searchbar="">
+								<div class="searchbar__field">
+									<svg class="searchbar__field-icon" viewbox="0 0 22 22" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-location-05"></use>
+									</svg>
+									<div class="searchbar__field-text">
+										<label class="searchbar__field-label" for="agents-search-input">Names</label>
+										<input class="searchbar__field-input" id="agents-search-input" type="search" name="agentName" value="" placeholder="Search" autocomplete="off">
+									</div>
+								</div>
+								<button class="searchbar__filter" type="button" aria-label="Open agent filters">
+									<svg class="searchbar__filter-icon" viewbox="0 0 24 24" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-filter-horizontal"></use>
+									</svg>
+								</button>
+							</search>
+						</div>
+					</section>
+					<section class="listing" id="listing" data-fls-watcher="" data-fls-watcher-once="">
+						<div class="listing__container">
+							<h2 class="visually-hidden">All Agents</h2>
+							<div class="listing__grid" data-listing-page="1">
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">5.0</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">John Thompson</h3>
+												<p class="agentcard__count">120 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">5.0</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Samantha Green</h3>
+												<p class="agentcard__count">108 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">5.0</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Emily Johnson</h3>
+												<p class="agentcard__count">105 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">5.0</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Michael O’Neil</h3>
+												<p class="agentcard__count">91 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">David Cohen</h3>
+												<p class="agentcard__count">87 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Olivia Martinez</h3>
+												<p class="agentcard__count">79 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Priya Sharma</h3>
+												<p class="agentcard__count">74 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Daniel Wright</h3>
+												<p class="agentcard__count">68 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Sofia Rossi</h3>
+												<p class="agentcard__count">63 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Marcus Bennett</h3>
+												<p class="agentcard__count">59 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Layla Haddad</h3>
+												<p class="agentcard__count">54 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Ethan Walker</h3>
+												<p class="agentcard__count">49 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Grace Kim</h3>
+												<p class="agentcard__count">45 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Nathaniel Brooks</h3>
+												<p class="agentcard__count">41 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Chloe Dubois</h3>
+												<p class="agentcard__count">38 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Tariq Ahmed</h3>
+												<p class="agentcard__count">34 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="listing__grid" data-listing-page="2" hidden>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Lucas Fischer</h3>
+												<p class="agentcard__count">95 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Isabella Suzuki</h3>
+												<p class="agentcard__count">80 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Amara Chen</h3>
+												<p class="agentcard__count">91 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Owen Andersen</h3>
+												<p class="agentcard__count">76 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Gabriel Larsen</h3>
+												<p class="agentcard__count">87 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">5.0</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Zainab Hernandez</h3>
+												<p class="agentcard__count">72 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Aisha Rodriguez</h3>
+												<p class="agentcard__count">83 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.3</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Adam Tanaka</h3>
+												<p class="agentcard__count">94 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Noah Suzuki</h3>
+												<p class="agentcard__count">79 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Fatima Adeyemi</h3>
+												<p class="agentcard__count">90 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Nadia Diallo</h3>
+												<p class="agentcard__count">75 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Elijah Lopez</h3>
+												<p class="agentcard__count">86 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Samuel Hernandez</h3>
+												<p class="agentcard__count">71 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Yasmin Saleh</h3>
+												<p class="agentcard__count">82 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Leila Farid</h3>
+												<p class="agentcard__count">93 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Benjamin Mensah</h3>
+												<p class="agentcard__count">78 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="listing__grid" data-listing-page="3" hidden>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Victor Adeyemi</h3>
+												<p class="agentcard__count">74 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Mei Reyes</h3>
+												<p class="agentcard__count">59 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Yuki Santos</h3>
+												<p class="agentcard__count">70 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Simon Khoury</h3>
+												<p class="agentcard__count">55 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Felix Saleh</h3>
+												<p class="agentcard__count">66 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">5.0</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Hana Moreau</h3>
+												<p class="agentcard__count">77 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Sakura Lefevre</h3>
+												<p class="agentcard__count">62 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.3</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Julian Hussain</h3>
+												<p class="agentcard__count">73 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Andres Reyes</h3>
+												<p class="agentcard__count">58 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Ingrid Bauer</h3>
+												<p class="agentcard__count">69 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Astrid Hoffmann</h3>
+												<p class="agentcard__count">80 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Rafael Almeida</h3>
+												<p class="agentcard__count">65 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Omar Moreau</h3>
+												<p class="agentcard__count">76 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Freya Holm</h3>
+												<p class="agentcard__count">61 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Elena Lindqvist</h3>
+												<p class="agentcard__count">72 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Hassan Schmidt</h3>
+												<p class="agentcard__count">57 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="listing__grid" data-listing-page="4" hidden>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Kenji Bauer</h3>
+												<p class="agentcard__count">64 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Valentina Ivanov</h3>
+												<p class="agentcard__count">62 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Camila Popescu</h3>
+												<p class="agentcard__count">60 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Liam Berg</h3>
+												<p class="agentcard__count">58 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Mateo Holm</h3>
+												<p class="agentcard__count">56 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">5.0</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Lucia Kovac</h3>
+												<p class="agentcard__count">54 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Ines Nemeth</h3>
+												<p class="agentcard__count">52 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.3</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Diego Sokolov</h3>
+												<p class="agentcard__count">50 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Bruno Ivanov</h3>
+												<p class="agentcard__count">48 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Marta Silva</h3>
+												<p class="agentcard__count">46 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Beatriz Fischer</h3>
+												<p class="agentcard__count">65 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Ravi Horvat</h3>
+												<p class="agentcard__count">63 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Arjun Kovac</h3>
+												<p class="agentcard__count">61 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Naomi Andersen</h3>
+												<p class="agentcard__count">59 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Ruth Larsen</h3>
+												<p class="agentcard__count">57 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Kwame Costa</h3>
+												<p class="agentcard__count">55 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="listing__grid" data-listing-page="5" hidden>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Dmitri Silva</h3>
+												<p class="agentcard__count">49 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Abigail Tanaka</h3>
+												<p class="agentcard__count">50 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Charlotte Suzuki</h3>
+												<p class="agentcard__count">51 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Pavel Novak</h3>
+												<p class="agentcard__count">52 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Igor Andersen</h3>
+												<p class="agentcard__count">53 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">5.0</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Amelia Lopez</h3>
+												<p class="agentcard__count">54 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Harper Hernandez</h3>
+												<p class="agentcard__count">55 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.3</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Nikolai Volkov</h3>
+												<p class="agentcard__count">38 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Yusuf Tanaka</h3>
+												<p class="agentcard__count">39 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Ava Mensah</h3>
+												<p class="agentcard__count">40 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Mia Adeyemi</h3>
+												<p class="agentcard__count">41 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Ibrahim Wang</h3>
+												<p class="agentcard__count">42 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Malik Lopez</h3>
+												<p class="agentcard__count">43 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Zoe Khoury</h3>
+												<p class="agentcard__count">44 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Nora Saleh</h3>
+												<p class="agentcard__count">45 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Cedric Okafor</h3>
+												<p class="agentcard__count">46 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="listing__grid" data-listing-page="6" hidden>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Xavier Mensah</h3>
+												<p class="agentcard__count">45 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Clara Hussain</h3>
+												<p class="agentcard__count">30 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Vera Reyes</h3>
+												<p class="agentcard__count">31 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Antoine Haile</h3>
+												<p class="agentcard__count">32 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Henrik Khoury</h3>
+												<p class="agentcard__count">33 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">5.0</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Anastasia Almeida</h3>
+												<p class="agentcard__count">34 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Katarina Moreau</h3>
+												<p class="agentcard__count">35 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.3</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Lars Rahman</h3>
+												<p class="agentcard__count">36 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Lucas Hussain</h3>
+												<p class="agentcard__count">37 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Isabella Schmidt</h3>
+												<p class="agentcard__count">38 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Amara Bauer</h3>
+												<p class="agentcard__count">39 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Owen Ferreira</h3>
+												<p class="agentcard__count">40 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Gabriel Almeida</h3>
+												<p class="agentcard__count">41 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Zainab Berg</h3>
+												<p class="agentcard__count">42 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Aisha Holm</h3>
+												<p class="agentcard__count">43 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Adam Bernard</h3>
+												<p class="agentcard__count">44 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="listing__grid" data-listing-page="7" hidden>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Noah Schmidt</h3>
+												<p class="agentcard__count">28 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Fatima Sokolov</h3>
+												<p class="agentcard__count">29 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Nadia Ivanov</h3>
+												<p class="agentcard__count">30 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Elijah Nilsson</h3>
+												<p class="agentcard__count">31 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Samuel Berg</h3>
+												<p class="agentcard__count">32 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">5.0</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Yasmin Horvat</h3>
+												<p class="agentcard__count">33 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Leila Kovac</h3>
+												<p class="agentcard__count">34 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.3</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Benjamin Novikov</h3>
+												<p class="agentcard__count">35 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Victor Sokolov</h3>
+												<p class="agentcard__count">36 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Mei Costa</h3>
+												<p class="agentcard__count">37 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Yuki Silva</h3>
+												<p class="agentcard__count">38 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Simon Dimitrov</h3>
+												<p class="agentcard__count">24 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Felix Horvat</h3>
+												<p class="agentcard__count">25 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Hana Novak</h3>
+												<p class="agentcard__count">26 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Sakura Andersen</h3>
+												<p class="agentcard__count">27 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Julian Toth</h3>
+												<p class="agentcard__count">28 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="listing__grid" data-listing-page="8" hidden>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Andres Costa</h3>
+												<p class="agentcard__count">20 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Ingrid Volkov</h3>
+												<p class="agentcard__count">18 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Astrid Tanaka</h3>
+												<p class="agentcard__count">29 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Rafael Weber</h3>
+												<p class="agentcard__count">27 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Omar Novak</h3>
+												<p class="agentcard__count">25 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">5.0</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Freya Wang</h3>
+												<p class="agentcard__count">23 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Elena Lopez</h3>
+												<p class="agentcard__count">21 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.3</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Hassan Petrov</h3>
+												<p class="agentcard__count">19 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Kenji Volkov</h3>
+												<p class="agentcard__count">30 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Valentina Okafor</h3>
+												<p class="agentcard__count">28 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Camila Mensah</h3>
+												<p class="agentcard__count">26 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Liam Chen</h3>
+												<p class="agentcard__count">24 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Mateo Wang</h3>
+												<p class="agentcard__count">22 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Lucia Haile</h3>
+												<p class="agentcard__count">20 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Ines Khoury</h3>
+												<p class="agentcard__count">18 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Diego Rodriguez</h3>
+												<p class="agentcard__count">29 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="listing__grid" data-listing-page="9" hidden>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Bruno Okafor</h3>
+												<p class="agentcard__count">13 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Marta Rahman</h3>
+												<p class="agentcard__count">14 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Beatriz Hussain</h3>
+												<p class="agentcard__count">15 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Ravi Diallo</h3>
+												<p class="agentcard__count">16 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Arjun Haile</h3>
+												<p class="agentcard__count">17 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">5.0</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Naomi Ferreira</h3>
+												<p class="agentcard__count">18 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Ruth Almeida</h3>
+												<p class="agentcard__count">19 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.3</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Kwame Farid</h3>
+												<p class="agentcard__count">20 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Dmitri Rahman</h3>
+												<p class="agentcard__count">21 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Abigail Bernard</h3>
+												<p class="agentcard__count">22 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Charlotte Schmidt</h3>
+												<p class="agentcard__count">12 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Pavel Santos</h3>
+												<p class="agentcard__count">13 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Igor Ferreira</h3>
+												<p class="agentcard__count">14 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Amelia Nilsson</h3>
+												<p class="agentcard__count">15 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Harper Berg</h3>
+												<p class="agentcard__count">16 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Nikolai Lefevre</h3>
+												<p class="agentcard__count">17 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="listing__grid" data-listing-page="10" hidden>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Yusuf Bernard</h3>
+												<p class="agentcard__count">12 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Ava Novikov</h3>
+												<p class="agentcard__count">13 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Mia Sokolov</h3>
+												<p class="agentcard__count">14 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Ibrahim Hoffmann</h3>
+												<p class="agentcard__count">15 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Malik Nilsson</h3>
+												<p class="agentcard__count">16 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">5.0</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Zoe Dimitrov</h3>
+												<p class="agentcard__count">6 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Nora Horvat</h3>
+												<p class="agentcard__count">7 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.3</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Cedric Lindqvist</h3>
+												<p class="agentcard__count">8 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Xavier Novikov</h3>
+												<p class="agentcard__count">9 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Clara Toth</h3>
+												<p class="agentcard__count">10 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.5</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Vera Costa</h3>
+												<p class="agentcard__count">11 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.7</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Antoine Popescu</h3>
+												<p class="agentcard__count">12 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.9</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Henrik Dimitrov</h3>
+												<p class="agentcard__count">13 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.4</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Anastasia Weber</h3>
+												<p class="agentcard__count">14 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.6</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Katarina Novak</h3>
+												<p class="agentcard__count">15 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+								<article class="agentcard" data-fls-agentcard="">
+									<div class="agentcard__container">
+										<div class="agentcard__top">
+											<picture>
+												<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+											</picture>
+											<span class="agentcard__rating">
+												<span class="agentcard__rating-value">4.8</span>
+												<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+											</span>
+										</div>
+										<div class="agentcard__body">
+											<div class="agentcard__info">
+												<h3 class="agentcard__name">Lars Nemeth</h3>
+												<p class="agentcard__count">16 properties</p>
+											</div>
+											<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+										</div>
+									</div>
+								</article>
+							</div>
+							<nav class="pagination" aria-label="Agents pagination">
+								<button class="pagination__arrow pagination__arrow--prev" type="button" aria-label="Previous page" disabled>
+									<svg class="pagination__arrow-icon" viewbox="0 0 44 44" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-left-01"></use>
+									</svg>
+								</button>
+								<ul class="pagination__list">
+									<li>
+										<button class="pagination__item pagination__item--active" type="button" data-page="1" aria-current="page">1</button>
+									</li>
+									<li>
+										<button class="pagination__item" type="button" data-page="2">2</button>
+									</li>
+									<li>
+										<button class="pagination__item" type="button" data-page="3">3</button>
+									</li>
+									<li>
+										<span class="pagination__ellipsis" aria-hidden="true">…</span>
+									</li>
+									<li>
+										<button class="pagination__item" type="button" data-page="8">8</button>
+									</li>
+									<li>
+										<button class="pagination__item" type="button" data-page="9">9</button>
+									</li>
+									<li>
+										<button class="pagination__item" type="button" data-page="10">10</button>
+									</li>
+								</ul>
+								<button class="pagination__arrow pagination__arrow--next" type="button" aria-label="Next page">
+									<svg class="pagination__arrow-icon pagination__arrow-icon--next" viewbox="0 0 44 44" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-left-01"></use>
+									</svg>
+								</button>
+							</nav>
+						</div>
+					</section>
+				</div>
+				<section data-fls-testimonials="" class="testimonials" id="testimonials" data-fls-watcher="" data-fls-watcher-once="">
+					<div class="testimonials__container">
+						<div class="testimonials__top">
+							<div class="testimonials__intro">
+								<span class="testimonials__badge" aria-hidden="true">
+									<svg class="testimonials__badge-icon" width="24" height="24" viewbox="0 0 24 24">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-falling-star"></use>
+									</svg>
+								</span>
+								<h2 class="testimonials__heading">
+									<span class="testimonials__heading-line">
+										What they
+										<span class="testimonials__heading-accent">say</span>
+									</span>
+									<span class="testimonials__heading-line">About us</span>
+								</h2>
+							</div>
+							<p class="testimonials__desc">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+							</p>
+						</div>
+						<div class="testimonials__grid">
+							<picture>
+								<img class="testimonials__photo" alt="Bright office lounge with an arc floor lamp and pastel armchairs" loading="lazy" width="353" height="345" src="./assets/img/index/testimonials/image-1.webp">
+							</picture>
+							<article class="testimonials__card testimonials__card--dark">
+								<div class="testimonials__meta">
+									<picture>
+										<img class="testimonials__avatar" alt="" loading="lazy" width="49" height="49" src="./assets/img/index/testimonials/avatar-1.webp">
+									</picture>
+									<span class="testimonials__name">Sarah Bennett</span>
+								</div>
+								<blockquote class="testimonials__quote">
+									<p>
+										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+									</p>
+								</blockquote>
+							</article>
+							<picture>
+								<img class="testimonials__photo" alt="Terracotta sofa with a blush pillow and citrus fruit scattered on a woven rug" loading="lazy" width="353" height="345" src="./assets/img/index/testimonials/image-2.webp">
+							</picture>
+							<article class="testimonials__card testimonials__card--light">
+								<div class="testimonials__meta">
+									<picture>
+										<img class="testimonials__avatar" alt="" loading="lazy" width="49" height="49" src="./assets/img/index/testimonials/avatar-2.webp">
+									</picture>
+									<span class="testimonials__name">Daniel Rourke</span>
+								</div>
+								<blockquote class="testimonials__quote">
+									<p>
+										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+									</p>
+								</blockquote>
+							</article>
+							<article class="testimonials__card testimonials__card--light">
+								<div class="testimonials__meta">
+									<picture>
+										<img class="testimonials__avatar" alt="" loading="lazy" width="49" height="49" src="./assets/img/index/testimonials/avatar-3.webp">
+									</picture>
+									<span class="testimonials__name">Amara Osei</span>
+								</div>
+								<blockquote class="testimonials__quote">
+									<p>
+										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+									</p>
+								</blockquote>
+							</article>
+							<picture>
+								<img class="testimonials__photo" alt="Historic lakeside villa surrounded by gardens on Lake Como" loading="lazy" width="366" height="345" src="./assets/img/index/testimonials/image-3.webp">
+							</picture>
+							<article class="testimonials__card testimonials__card--dark">
+								<div class="testimonials__meta">
+									<picture>
+										<img class="testimonials__avatar" alt="" loading="lazy" width="49" height="49" src="./assets/img/index/testimonials/avatar-4.webp">
+									</picture>
+									<span class="testimonials__name">Marcus Chen</span>
+								</div>
+								<blockquote class="testimonials__quote">
+									<p>
+										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+									</p>
+								</blockquote>
+							</article>
+							<picture>
+								<img class="testimonials__photo" alt="Villa courtyard with a swimming pool and sun loungers" loading="lazy" width="366" height="345" src="./assets/img/index/testimonials/image-4.webp">
+							</picture>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container">
+					<div class="footer__top">
+						<div class="footer__cta">
+							<h2 class="footer__cta-title">Interested to purchase your home?</h2>
+							<a href="mailto:RealState@Contact.com" class="footer__cta-email">RealState@Contact.com</a>
+						</div>
+						<hr class="footer__divider">
+					</div>
+					<div class="footer__bottom">
+						<div class="footer__brand">
+							<div class="footer__brand-info">
+								<a href="index.html" class="footer__logo">RealState</a>
+								<p class="footer__desc">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+								</p>
+							</div>
+							<address class="footer__contacts">
+								<div class="footer__contact-item">
+									<svg class="footer__contact-icon" viewbox="0 0 22 22" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-location-05"></use>
+									</svg>
+									<span>California, United State</span>
+								</div>
+								<div class="footer__contact-item">
+									<svg class="footer__contact-icon" viewbox="0 0 18 18" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-telegram"></use>
+									</svg>
+									<a href="tel:+1292210239">Phone: +1 292-210-239</a>
+								</div>
+							</address>
+						</div>
+						<nav class="footer__nav" aria-label="Footer">
+							<div class="footer__nav-col">
+								<h3 class="footer__nav-title">Company</h3>
+								<ul class="footer__nav-list">
+									<li>
+										<a href="about.html">About</a>
+									</li>
+									<li>
+										<a href="collections.html">Listing Page</a>
+									</li>
+									<li>
+										<a href="agents.html">Agent</a>
+									</li>
+									<li>
+										<a href="contact.html">Contact</a>
+									</li>
+									<li>
+										<a href="blog.html">Blog</a>
+									</li>
+								</ul>
+							</div>
+							<div class="footer__nav-col">
+								<h3 class="footer__nav-title">Ressource</h3>
+								<ul class="footer__nav-list">
+									<li>
+										<a href="privacypolicy.html">Privacy Policy</a>
+									</li>
+									<li>
+										<a href="terms.html">Terms</a>
+									</li>
+									<li>
+										<a href="license.html">License</a>
+									</li>
+									<li>
+										<a href="sitemap.html">Sitemap</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+				<div class="footer__background" aria-hidden="true"></div>
+			</footer>
+		</div>
+	</body>
+</html>

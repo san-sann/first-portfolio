@@ -1,0 +1,1022 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Find your dream home with RealState. Explore top villas, connect with trusted agents, and discover properties made for you.">
+		<meta property="og:title" content="RealState - Property Investments">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://real-state-lime-two.vercel.app/files/og-image.jpg">
+		<meta property="og:url" content="https://real-state-lime-two.vercel.app/">
+		<title>RealState - Property Investments</title>
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1789036644730"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1789036644730">
+		<link rel="modulepreload" crossorigin="" href="./js/watcher.min.js?v=1789036644730">
+		<link rel="modulepreload" crossorigin="" href="./js/blogcard.min.js?v=1789036644730">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1789036644730">
+		<link rel="stylesheet" crossorigin="" href="./css/blogcard.min.css?v=1789036644730">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1789036644730">
+		<link rel="stylesheet" crossorigin="" href="./css/footer.min.css?v=1789036644730">
+		<link rel="stylesheet" crossorigin="" href="./css/testimonials.min.css?v=1789036644730">
+		<link rel="stylesheet" crossorigin="" href="./css/propertycard.min.css?v=1789036644730">
+		<link rel="stylesheet" crossorigin="" href="./css/properties.min.css?v=1789036644730">
+		<link rel="stylesheet" crossorigin="" href="./css/latestnews.min.css?v=1789036644730">
+		<link rel="stylesheet" crossorigin="" href="./css/agentcard.min.css?v=1789036644730">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__container">
+					<div class="header__menu menu">
+						<button type="button" data-fls-menu="" class="menu__icon icon-menu" aria-expanded="false" aria-label="Open menu">
+							<svg class="icon-menu__icon" viewbox="0 0 24 24" aria-hidden="true">
+								<line class="icon-menu__bar icon-menu__bar--1" x1="4" y1="5" x2="16" y2="5"></line>
+								<line class="icon-menu__bar icon-menu__bar--2" x1="4" y1="12" x2="20" y2="12"></line>
+								<line class="icon-menu__bar icon-menu__bar--3" x1="4" y1="19" x2="12" y2="19"></line>
+							</svg>
+						</button>
+						<div class="menu__overlay" data-fls-menu-close=""></div>
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="index.html" class="menu__link menu__link--active">Home</a>
+								</li>
+								<li class="menu__item menu__item_sub">
+									<button type="button" class="menu__link" aria-expanded="false" aria-controls="menu-explore-sub">
+										Explore
+										<svg class="menu__arrow" viewbox="0 0 24 24" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-down"></use>
+										</svg>
+									</button>
+									<ul class="menu__sub" id="menu-explore-sub">
+										<li class="menu__item">
+											<a href="about.html" class="menu__link">About</a>
+										</li>
+										<li class="menu__item">
+											<a href="agents.html" class="menu__link">Agent List</a>
+										</li>
+										<li class="menu__item">
+											<a href="blog.html" class="menu__link">Blog</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item">
+									<a href="collections.html" class="menu__link">Collections</a>
+								</li>
+								<li class="menu__item">
+									<a href="contact.html" class="menu__link">Contact</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<span class="header__logo-text">RealState</span>
+					<div class="header__actions">
+						<a href="login.html" class="header__action" aria-label="Sign in">
+							<svg class="header__action-icon" viewbox="0 0 39 39" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-user-circle"></use>
+							</svg>
+						</a>
+						<a href="collections.html" class="header__cta button" data-fls-button="">Explore Now</a>
+					</div>
+				</div>
+			</header>
+			<main class="page">
+				<section class="hero" id="hero" data-fls-watcher="" data-fls-watcher-once="">
+					<div class="hero__background" aria-hidden="true">
+						<span class="hero__blob hero__blob--peach"></span>
+						<span class="hero__blob hero__blob--blue"></span>
+					</div>
+					<div class="hero__container">
+						<div class="hero__media">
+							<div class="hero__frame">
+								<picture>
+									<source media="(max-width: 600px)" srcset="./assets/img/hero/photos/villa-hero-600.webp" type="image/webp">
+									<source media="(max-width: 1200px)" srcset="./assets/img/hero/photos/villa-hero-1200.webp" type="image/webp">
+									<img class="hero__photo" alt="Modern villa with a swimming pool at dusk" loading="eager" width="1135" height="688" src="./assets/img/hero/photos/villa-hero.webp">
+								</picture>
+								<div class="hero__tint" aria-hidden="true"></div>
+								<div class="hero__pin hero__pin--sqft" aria-hidden="true">
+									<span class="hero__pin-marker">
+										<span class="hero__pin-dot"></span>
+									</span>
+									<span class="hero__pin-line">
+										<svg width="74" height="24" viewbox="0 0 75 24">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-pin-line"></use>
+										</svg>
+									</span>
+									<span class="hero__pin-label">
+										<span class="hero__pin-value">1,283</span>
+										<span class="hero__pin-unit">sqft</span>
+									</span>
+								</div>
+								<div class="hero__pin hero__pin--price" aria-hidden="true">
+									<span class="hero__pin-marker">
+										<span class="hero__pin-dot"></span>
+									</span>
+									<span class="hero__pin-line">
+										<svg width="74" height="24" viewbox="0 0 75 24">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-pin-line"></use>
+										</svg>
+									</span>
+									<span class="hero__pin-label">
+										<span class="hero__pin-value">$5.21M</span>
+									</span>
+								</div>
+								<div class="hero__pin hero__pin--villa hero__pin--reverse" aria-hidden="true">
+									<span class="hero__pin-label">
+										<span class="hero__pin-value">VILLA</span>
+									</span>
+									<span class="hero__pin-line">
+										<svg width="74" height="24" viewbox="0 0 75 24">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-pin-line"></use>
+										</svg>
+									</span>
+									<span class="hero__pin-marker">
+										<span class="hero__pin-dot"></span>
+									</span>
+								</div>
+								<picture>
+									<img class="hero__contact-badge" alt="" loading="lazy" width="89" height="90" src="./assets/img/hero/decor/contact-badge.webp">
+								</picture>
+							</div>
+							<div class="hero__content">
+								<div class="hero__badge">
+									<span class="hero__badge-icon">
+										<svg width="20" height="20" viewbox="0 0 20 20">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-home-01"></use>
+										</svg>
+									</span>
+									<span class="hero__badge-text">Lorem Ipsum is simply dummy text</span>
+								</div>
+								<h1 class="hero__heading">
+									<span class="hero__heading-line">RealState</span>
+									<span class="hero__heading-line">Property</span>
+									<span class="hero__heading-line">investments</span>
+								</h1>
+								<p class="hero__text">
+									Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text
+								</p>
+								<div class="hero__stats">
+									<span class="hero__stats-value">10k</span>
+									<span class="hero__stats-avatars">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/hero/photos/avatar-1-600.webp" type="image/webp">
+											<img class="hero__stats-avatar" alt="" loading="lazy" width="27" height="27" src="./assets/img/hero/photos/avatar-1.webp">
+										</picture>
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/hero/photos/avatar-2-600.webp" type="image/webp">
+											<img class="hero__stats-avatar" alt="" loading="lazy" width="27" height="27" src="./assets/img/hero/photos/avatar-2.webp">
+										</picture>
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/hero/photos/avatar-3-600.webp" type="image/webp">
+											<img class="hero__stats-avatar" alt="" loading="lazy" width="27" height="27" src="./assets/img/hero/photos/avatar-3.webp">
+										</picture>
+									</span>
+									<span class="hero__stats-label">Satisfied customers</span>
+								</div>
+							</div>
+							<div class="hero__panel">
+								<div class="hero__time">
+									<span class="hero__time-icon">
+										<svg width="18" height="18" viewbox="0 0 21 21">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-global-search"></use>
+										</svg>
+									</span>
+									<span class="hero__time-label">Your current time now is</span>
+									<span class="hero__time-date">
+										<svg class="hero__time-date-icon" width="16" height="16" viewbox="0 0 21 21">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-calendar-02"></use>
+										</svg>
+										<time class="hero__time-date-text" datetime="2024-04-21">21-04-2024</time>
+									</span>
+								</div>
+								<form class="hero__search" action="#" method="GET">
+									<div class="hero__search-head">
+										<h2 class="hero__search-title">Find a nearby real state</h2>
+										<p class="hero__search-sub">Lorem Ipsum is simply dummy text</p>
+									</div>
+									<div class="hero__search-fields">
+										<div class="hero__search-row">
+											<div class="hero__search-pill">
+												<svg class="hero__search-pill-icon" width="19" height="21" viewbox="0 0 21 21">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-location-05"></use>
+												</svg>
+												<span class="hero__search-pill-text">
+													<span class="hero__search-pill-label">Location</span>
+													<span class="hero__search-pill-value">Dubai</span>
+												</span>
+											</div>
+											<div class="hero__search-pill">
+												<svg class="hero__search-pill-icon" width="20" height="20" viewbox="0 0 21 21">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-real-estate-01"></use>
+												</svg>
+												<span class="hero__search-pill-text">
+													<span class="hero__search-pill-label">Property type</span>
+													<span class="hero__search-pill-value">Villa</span>
+												</span>
+											</div>
+										</div>
+										<div class="hero__search-row">
+											<div class="hero__search-pill">
+												<svg class="hero__search-pill-icon" width="20" height="20" viewbox="0 0 21 21">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-wallet-02"></use>
+												</svg>
+												<span class="hero__search-pill-text">
+													<span class="hero__search-pill-label">Price</span>
+													<span class="hero__search-pill-value">$211,100</span>
+												</span>
+											</div>
+											<div class="hero__search-pill">
+												<svg class="hero__search-pill-icon" width="20" height="20" viewbox="0 0 21 21">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-bed-single-01"></use>
+												</svg>
+												<span class="hero__search-pill-text">
+													<span class="hero__search-pill-label">Bedrooms</span>
+													<span class="hero__search-pill-value">3-5</span>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="hero__search-locate">
+										<label class="visually-hidden" for="hero-search-places">Search places</label>
+										<svg class="hero__search-locate-icon" width="19" height="21" viewbox="0 0 21 21">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-location-05"></use>
+										</svg>
+										<input class="hero__search-input" type="search" id="hero-search-places" name="place" placeholder="Search places...">
+									</div>
+									<button class="hero__search-submit button" type="submit" data-fls-button="">Search nearby</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="intro" id="intro" data-fls-watcher="" data-fls-watcher-once="">
+					<div class="intro__container">
+						<div class="intro__top">
+							<h2 class="intro__heading">
+								<span class="intro__heading-line">Find Your Dream</span>
+								<span class="intro__heading-line">Home: Where Every</span>
+								<span class="intro__heading-line">
+									Space
+									<span class="intro__heading-accent">Tells a Unique</span>
+								</span>
+								<span class="intro__heading-line">
+									<span class="intro__heading-accent">Story.</span>
+								</span>
+							</h2>
+							<div class="intro__panel-slot"></div>
+						</div>
+						<div class="intro__lead">
+							<span class="intro__lead-accent" aria-hidden="true"></span>
+							<div class="intro__lead-body">
+								<span class="intro__lead-dot" aria-hidden="true"></span>
+								<p class="intro__lead-text">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+								</p>
+							</div>
+						</div>
+						<div class="intro__bottom">
+							<picture>
+								<source media="(max-width: 600px)" srcset="./assets/img/intro/photos/living-room-600.webp" type="image/webp">
+								<source media="(max-width: 1200px)" srcset="./assets/img/intro/photos/living-room-1200.webp" type="image/webp">
+								<img class="intro__photo" alt="Bright living room interior with a wood-burning stove, staircase and cozy seating" loading="lazy" width="805" height="401" src="./assets/img/intro/photos/living-room.webp">
+							</picture>
+							<div class="intro__gallery-caption">
+								<p class="intro__caption-text">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's s
+								</p>
+								<a class="intro__cta button button--outline" href="#properties">Learn more</a>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="showcase" id="showcase" data-fls-watcher="" data-fls-watcher-once="">
+					<div class="showcase__container">
+						<div class="showcase__top">
+							<span class="showcase__watermark" aria-hidden="true">RealState</span>
+							<div class="showcase__intro">
+								<div class="showcase__label">
+									<span class="showcase__label-dot" aria-hidden="true"></span>
+									<span class="showcase__label-text">Our properties</span>
+								</div>
+								<h2 class="showcase__heading">Explore our best properties just for you.</h2>
+							</div>
+							<div class="showcase__gallery">
+								<div class="showcase__slider swiper" data-fls-slider="" tabindex="0" aria-label="Villa photos, use arrow keys to browse">
+									<div class="showcase__slider-wrapper swiper-wrapper">
+										<div class="showcase__slide swiper-slide">
+											<div class="showcase__slide-frame">
+												<picture>
+													<source media="(max-width: 600px)" srcset="./assets/img/showcase/photos/villa-1-600.webp" type="image/webp">
+													<source media="(max-width: 1200px)" srcset="./assets/img/showcase/photos/villa-1-1200.webp" type="image/webp">
+													<img class="showcase__photo" alt="Modern villa exterior with a covered terrace and swimming pool" loading="lazy" width="1136" height="639" src="./assets/img/showcase/photos/villa-1.webp">
+												</picture>
+												<div class="showcase__photo-tint" aria-hidden="true"></div>
+											</div>
+											<div class="showcase__drag" aria-hidden="true">
+												<span class="showcase__drag-line">Drag</span>
+												<span class="showcase__drag-sub">For more</span>
+											</div>
+										</div>
+										<div class="showcase__slide swiper-slide">
+											<div class="showcase__slide-frame">
+												<picture>
+													<source media="(max-width: 600px)" srcset="./assets/img/showcase/photos/villa-2-600.webp" type="image/webp">
+													<source media="(max-width: 1200px)" srcset="./assets/img/showcase/photos/villa-2-1200.webp" type="image/webp">
+													<img class="showcase__photo" alt="Villa poolside seen from another angle" loading="lazy" width="706" height="521" src="./assets/img/showcase/photos/villa-2.webp">
+												</picture>
+												<div class="showcase__photo-tint" aria-hidden="true"></div>
+											</div>
+											<div class="showcase__drag" aria-hidden="true">
+												<span class="showcase__drag-line">Drag</span>
+												<span class="showcase__drag-sub">For more</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="showcase__meta">
+							<div class="showcase__info">
+								<h3 class="showcase__title">Unique Villa 6 Bedrooms</h3>
+								<p class="showcase__desc">
+									lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has been the industry's s
+								</p>
+							</div>
+							<p class="showcase__price">$1.249.000</p>
+						</div>
+					</div>
+				</section>
+				<section class="agents" id="agents" data-fls-watcher="" data-fls-watcher-once="">
+					<div class="agents__container">
+						<div class="agents__top">
+							<div class="agents__row">
+								<h2 class="agents__heading">Check our top agents</h2>
+								<p class="agents__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. L</p>
+							</div>
+							<a class="agents__link button button--outline-dark" href="agents.html#listing">Top Agents</a>
+						</div>
+						<div class="agents__list">
+							<article class="agentcard" data-fls-agentcard="">
+								<div class="agentcard__container">
+									<div class="agentcard__top">
+										<picture>
+											<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-john-thompson.webp">
+										</picture>
+										<span class="agentcard__rating">
+											<span class="agentcard__rating-value">5.0</span>
+											<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+											</svg>
+										</span>
+									</div>
+									<div class="agentcard__body">
+										<div class="agentcard__info">
+											<h3 class="agentcard__name">John Thompson</h3>
+											<p class="agentcard__count">120 properties</p>
+										</div>
+										<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+									</div>
+								</div>
+							</article>
+							<article class="agentcard" data-fls-agentcard="">
+								<div class="agentcard__container">
+									<div class="agentcard__top">
+										<picture>
+											<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-samantha-green.webp">
+										</picture>
+										<span class="agentcard__rating">
+											<span class="agentcard__rating-value">5.0</span>
+											<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+											</svg>
+										</span>
+									</div>
+									<div class="agentcard__body">
+										<div class="agentcard__info">
+											<h3 class="agentcard__name">Samantha Green</h3>
+											<p class="agentcard__count">108 properties</p>
+										</div>
+										<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+									</div>
+								</div>
+							</article>
+							<article class="agentcard agents__extra" data-fls-agentcard="">
+								<div class="agentcard__container">
+									<div class="agentcard__top">
+										<picture>
+											<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-emily-johnson.webp">
+										</picture>
+										<span class="agentcard__rating">
+											<span class="agentcard__rating-value">5.0</span>
+											<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+											</svg>
+										</span>
+									</div>
+									<div class="agentcard__body">
+										<div class="agentcard__info">
+											<h3 class="agentcard__name">Emily Johnson</h3>
+											<p class="agentcard__count">105 properties</p>
+										</div>
+										<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+									</div>
+								</div>
+							</article>
+							<article class="agentcard" data-fls-agentcard="">
+								<div class="agentcard__container">
+									<div class="agentcard__top">
+										<picture>
+											<img class="agentcard__avatar" alt="" loading="lazy" width="97" height="97" src="./assets/img/agentcard/photos/agent-michael-oneil.webp">
+										</picture>
+										<span class="agentcard__rating">
+											<span class="agentcard__rating-value">5.0</span>
+											<svg class="agentcard__rating-icon" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+											</svg>
+										</span>
+									</div>
+									<div class="agentcard__body">
+										<div class="agentcard__info">
+											<h3 class="agentcard__name">Michael O’Neil</h3>
+											<p class="agentcard__count">91 properties</p>
+										</div>
+										<a class="agentcard__contact button button--outline-sm" href="contact.html">Contact</a>
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+				</section>
+				<section data-fls-properties="" class="properties" id="properties" data-fls-watcher="" data-fls-watcher-once="">
+					<div class="properties__container">
+						<div class="properties__top">
+							<div class="properties__intro">
+								<h2 class="properties__heading">Explore the best Properties from us for you</h2>
+								<p class="properties__desc">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+								</p>
+							</div>
+							<a class="properties__more button button--outline-ink" href="collections.html#listing">
+								See more Property
+								<svg class="properties__more-icon" width="12" height="12" viewbox="0 0 14 14" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-up-right"></use>
+								</svg>
+							</a>
+						</div>
+						<div class="properties__grid">
+							<article class="propertycard" data-fls-propertycard="">
+								<div class="propertycard__container">
+									<a class="propertycard__media" href="propertydetails.html">
+										<picture>
+											<img class="propertycard__photo" alt="White Mediterranean-style villa entrance framed by arches and blooming pink flowers" loading="lazy" width="274" height="264" src="./assets/img/index/properties/photo-1.webp">
+										</picture>
+										<span class="propertycard__price">$1950/Month</span>
+									</a>
+									<div class="propertycard__body">
+										<div class="propertycard__top">
+											<h3 class="propertycard__title">
+												<a class="propertycard__title-link" href="propertydetails.html">Cycladic Stone Villa</a>
+											</h3>
+											<span class="propertycard__rating">
+												<svg class="propertycard__rating-icon" width="13" height="13" viewbox="0 0 13 13" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+												<span class="propertycard__rating-value">4.8</span>
+											</span>
+										</div>
+										<p class="propertycard__desc">
+											Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.
+										</p>
+									</div>
+								</div>
+							</article>
+							<article class="propertycard" data-fls-propertycard="">
+								<div class="propertycard__container">
+									<a class="propertycard__media" href="propertydetails.html">
+										<picture>
+											<img class="propertycard__photo" alt="Two-story white house with a wraparound balcony and swimming pool surrounded by palm trees" loading="lazy" width="274" height="264" src="./assets/img/index/properties/photo-2.webp">
+										</picture>
+										<span class="propertycard__price">$2150/Month</span>
+									</a>
+									<div class="propertycard__body">
+										<div class="propertycard__top">
+											<h3 class="propertycard__title">
+												<a class="propertycard__title-link" href="propertydetails.html">Palmview Colonial House</a>
+											</h3>
+											<span class="propertycard__rating">
+												<svg class="propertycard__rating-icon" width="13" height="13" viewbox="0 0 13 13" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+												<span class="propertycard__rating-value">4.6</span>
+											</span>
+										</div>
+										<p class="propertycard__desc">
+											Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.
+										</p>
+									</div>
+								</div>
+							</article>
+							<article class="propertycard" data-fls-propertycard="">
+								<div class="propertycard__container">
+									<a class="propertycard__media" href="propertydetails.html">
+										<picture>
+											<img class="propertycard__photo" alt="Mediterranean villa courtyard with an illuminated swimming pool at night" loading="lazy" width="274" height="264" src="./assets/img/index/properties/photo-3.webp">
+										</picture>
+										<span class="propertycard__price">$2890/Month</span>
+									</a>
+									<div class="propertycard__body">
+										<div class="propertycard__top">
+											<h3 class="propertycard__title">
+												<a class="propertycard__title-link" href="propertydetails.html">Andalusian Courtyard Estate</a>
+											</h3>
+											<span class="propertycard__rating">
+												<svg class="propertycard__rating-icon" width="13" height="13" viewbox="0 0 13 13" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+												<span class="propertycard__rating-value">4.9</span>
+											</span>
+										</div>
+										<p class="propertycard__desc">
+											Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.
+										</p>
+									</div>
+								</div>
+							</article>
+							<article class="propertycard" data-fls-propertycard="">
+								<div class="propertycard__container">
+									<a class="propertycard__media" href="propertydetails.html">
+										<picture>
+											<img class="propertycard__photo" alt="Modern white villa with floor-to-ceiling glass doors opening onto a pool terrace" loading="lazy" width="274" height="264" src="./assets/img/index/properties/photo-4.webp">
+										</picture>
+										<span class="propertycard__price">$2450/Month</span>
+									</a>
+									<div class="propertycard__body">
+										<div class="propertycard__top">
+											<h3 class="propertycard__title">
+												<a class="propertycard__title-link" href="propertydetails.html">Modern Glass Pool Villa</a>
+											</h3>
+											<span class="propertycard__rating">
+												<svg class="propertycard__rating-icon" width="13" height="13" viewbox="0 0 13 13" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+												<span class="propertycard__rating-value">4.7</span>
+											</span>
+										</div>
+										<p class="propertycard__desc">
+											Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.
+										</p>
+									</div>
+								</div>
+							</article>
+							<article class="propertycard" data-fls-propertycard="">
+								<div class="propertycard__container">
+									<a class="propertycard__media" href="propertydetails.html">
+										<picture>
+											<img class="propertycard__photo" alt="Contemporary dark timber-clad house built around a mature tree on a green lawn" loading="lazy" width="274" height="264" src="./assets/img/index/properties/photo-5.webp">
+										</picture>
+										<span class="propertycard__price">$1780/Month</span>
+									</a>
+									<div class="propertycard__body">
+										<div class="propertycard__top">
+											<h3 class="propertycard__title">
+												<a class="propertycard__title-link" href="propertydetails.html">Timber Grove Residence</a>
+											</h3>
+											<span class="propertycard__rating">
+												<svg class="propertycard__rating-icon" width="13" height="13" viewbox="0 0 13 13" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+												<span class="propertycard__rating-value">4.5</span>
+											</span>
+										</div>
+										<p class="propertycard__desc">
+											Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.
+										</p>
+									</div>
+								</div>
+							</article>
+							<article class="propertycard" data-fls-propertycard="">
+								<div class="propertycard__container">
+									<a class="propertycard__media" href="propertydetails.html">
+										<picture>
+											<img class="propertycard__photo" alt="Pastel teal colonial-style mansion entrance flanked by tall palm trees" loading="lazy" width="274" height="264" src="./assets/img/index/properties/photo-6.webp">
+										</picture>
+										<span class="propertycard__price">$2600/Month</span>
+									</a>
+									<div class="propertycard__body">
+										<div class="propertycard__top">
+											<h3 class="propertycard__title">
+												<a class="propertycard__title-link" href="propertydetails.html">Turquoise Palm Mansion</a>
+											</h3>
+											<span class="propertycard__rating">
+												<svg class="propertycard__rating-icon" width="13" height="13" viewbox="0 0 13 13" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+												<span class="propertycard__rating-value">4.8</span>
+											</span>
+										</div>
+										<p class="propertycard__desc">
+											Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.
+										</p>
+									</div>
+								</div>
+							</article>
+							<article class="propertycard properties__extra" data-fls-propertycard="">
+								<div class="propertycard__container">
+									<a class="propertycard__media" href="propertydetails.html">
+										<picture>
+											<img class="propertycard__photo" alt="Coastal cottage with blue shutters behind a white picket fence" loading="lazy" width="274" height="264" src="./assets/img/index/properties/photo-7.webp">
+										</picture>
+										<span class="propertycard__price">$1290/Month</span>
+									</a>
+									<div class="propertycard__body">
+										<div class="propertycard__top">
+											<h3 class="propertycard__title">
+												<a class="propertycard__title-link" href="propertydetails.html">Seaside Picket Cottage</a>
+											</h3>
+											<span class="propertycard__rating">
+												<svg class="propertycard__rating-icon" width="13" height="13" viewbox="0 0 13 13" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+												<span class="propertycard__rating-value">4.4</span>
+											</span>
+										</div>
+										<p class="propertycard__desc">
+											Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.
+										</p>
+									</div>
+								</div>
+							</article>
+							<article class="propertycard properties__extra" data-fls-propertycard="">
+								<div class="propertycard__container">
+									<a class="propertycard__media" href="propertydetails.html">
+										<picture>
+											<img class="propertycard__photo" alt="Modern apartment building with a pitched wood-clad roof and brick facade" loading="lazy" width="274" height="264" src="./assets/img/index/properties/photo-8.webp">
+										</picture>
+										<span class="propertycard__price">$1150/Month</span>
+									</a>
+									<div class="propertycard__body">
+										<div class="propertycard__top">
+											<h3 class="propertycard__title">
+												<a class="propertycard__title-link" href="propertydetails.html">Brickstone Loft Residence</a>
+											</h3>
+											<span class="propertycard__rating">
+												<svg class="propertycard__rating-icon" width="13" height="13" viewbox="0 0 13 13" aria-hidden="true">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-star"></use>
+												</svg>
+												<span class="propertycard__rating-value">4.3</span>
+											</span>
+										</div>
+										<p class="propertycard__desc">
+											Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.
+										</p>
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+				</section>
+				<section data-fls-latestnews="" class="latestnews" id="latestnews" data-fls-watcher="" data-fls-watcher-once="">
+					<div class="latestnews__container" data-fls-tabs="">
+						<div class="latestnews__top">
+							<h2 class="latestnews__heading">Latest News: Property Insights &amp; Inspiration</h2>
+							<nav class="latestnews__tabs-nav tabs__navigation" data-fls-tabs-titles="">
+								<button type="button" class="latestnews__tabs-title tabs__title --tab-active">All Articles</button>
+								<button type="button" class="latestnews__tabs-title tabs__title">Home Inspiration</button>
+								<button type="button" class="latestnews__tabs-title tabs__title">Unique Homes</button>
+								<button type="button" class="latestnews__tabs-title tabs__title">Most rated</button>
+							</nav>
+						</div>
+						<div class="latestnews__tabs-body tabs__content" data-fls-tabs-body="">
+							<div class="latestnews__grid tabs__body">
+								<article class="blogcard" data-fls-blogcard="">
+									<div class="blogcard__container">
+										<a class="blogcard__media" href="blogdetails.html">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/blog/photos/kitchen-modern-classic-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/blog/photos/kitchen-modern-classic-1200.webp" type="image/webp">
+												<img class="blogcard__photo" alt="White modern-classic kitchen with a marble backsplash, brass pendant lights and a center island" loading="lazy" width="550" height="354" src="./assets/img/blog/photos/kitchen-modern-classic.webp">
+											</picture>
+											<span class="blogcard__badge">Decoration</span>
+										</a>
+										<div class="blogcard__body">
+											<h3 class="blogcard__title">
+												<a class="blogcard__title-link" href="blogdetails.html">Have the best style for your kitchen: modern &amp; classic</a>
+											</h3>
+											<p class="blogcard__desc">
+												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ha
+											</p>
+										</div>
+									</div>
+								</article>
+								<article class="blogcard" data-fls-blogcard="">
+									<div class="blogcard__container">
+										<a class="blogcard__media" href="blogdetails.html">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/blog/photos/buying-house-keys-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/blog/photos/buying-house-keys-1200.webp" type="image/webp">
+												<img class="blogcard__photo" alt="Hand holding a set of house keys on a ring" loading="lazy" width="550" height="354" src="./assets/img/blog/photos/buying-house-keys.webp">
+											</picture>
+											<span class="blogcard__badge">Purchase</span>
+										</a>
+										<div class="blogcard__body">
+											<h3 class="blogcard__title">
+												<a class="blogcard__title-link" href="blogdetails.html">How to buy a house: step to buying a house for the first time</a>
+											</h3>
+											<p class="blogcard__desc">
+												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ha
+											</p>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="latestnews__grid tabs__body">
+								<article class="blogcard" data-fls-blogcard="">
+									<div class="blogcard__container">
+										<a class="blogcard__media" href="blogdetails.html">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/intro/photos/living-room-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/intro/photos/living-room-1200.webp" type="image/webp">
+												<img class="blogcard__photo" alt="Bright living room interior with a wood-burning stove, staircase and cozy seating" loading="lazy" width="550" height="354" src="./assets/img/intro/photos/living-room.webp">
+											</picture>
+											<span class="blogcard__badge">Interior</span>
+										</a>
+										<div class="blogcard__body">
+											<h3 class="blogcard__title">
+												<a class="blogcard__title-link" href="blogdetails.html">Bringing Warmth Home: Living Room Styling Ideas</a>
+											</h3>
+											<p class="blogcard__desc">
+												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ha
+											</p>
+										</div>
+									</div>
+								</article>
+								<article class="blogcard" data-fls-blogcard="">
+									<div class="blogcard__container">
+										<a class="blogcard__media" href="blogdetails.html">
+											<picture>
+												<img class="blogcard__photo" alt="Contemporary dark timber-clad house built around a mature tree on a green lawn" loading="lazy" width="550" height="354" src="./assets/img/index/properties/photo-5.webp">
+											</picture>
+											<span class="blogcard__badge">Interior</span>
+										</a>
+										<div class="blogcard__body">
+											<h3 class="blogcard__title">
+												<a class="blogcard__title-link" href="blogdetails.html">Timber &amp; Light: A Modern Take on Cozy Living</a>
+											</h3>
+											<p class="blogcard__desc">
+												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ha
+											</p>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="latestnews__grid tabs__body">
+								<article class="blogcard" data-fls-blogcard="">
+									<div class="blogcard__container">
+										<a class="blogcard__media" href="blogdetails.html">
+											<picture>
+												<img class="blogcard__photo" alt="Mediterranean villa courtyard with an illuminated swimming pool at night" loading="lazy" width="550" height="354" src="./assets/img/index/properties/photo-3.webp">
+											</picture>
+											<span class="blogcard__badge">Architecture</span>
+										</a>
+										<div class="blogcard__body">
+											<h3 class="blogcard__title">
+												<a class="blogcard__title-link" href="blogdetails.html">Inside an Andalusian Courtyard Estate</a>
+											</h3>
+											<p class="blogcard__desc">
+												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ha
+											</p>
+										</div>
+									</div>
+								</article>
+								<article class="blogcard" data-fls-blogcard="">
+									<div class="blogcard__container">
+										<a class="blogcard__media" href="blogdetails.html">
+											<picture>
+												<img class="blogcard__photo" alt="Coastal cottage with blue shutters behind a white picket fence" loading="lazy" width="550" height="354" src="./assets/img/index/properties/photo-7.webp">
+											</picture>
+											<span class="blogcard__badge">Architecture</span>
+										</a>
+										<div class="blogcard__body">
+											<h3 class="blogcard__title">
+												<a class="blogcard__title-link" href="blogdetails.html">The Charm of a Coastal Picket-Fence Cottage</a>
+											</h3>
+											<p class="blogcard__desc">
+												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ha
+											</p>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="latestnews__grid tabs__body">
+								<article class="blogcard" data-fls-blogcard="">
+									<div class="blogcard__container">
+										<a class="blogcard__media" href="blogdetails.html">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/showcase/photos/villa-1-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/showcase/photos/villa-1-1200.webp" type="image/webp">
+												<img class="blogcard__photo" alt="Modern villa exterior with a covered terrace and swimming pool" loading="lazy" width="550" height="354" src="./assets/img/showcase/photos/villa-1.webp">
+											</picture>
+											<span class="blogcard__badge">Top Rated</span>
+										</a>
+										<div class="blogcard__body">
+											<h3 class="blogcard__title">
+												<a class="blogcard__title-link" href="blogdetails.html">Why Buyers Love This Covered-Terrace Villa</a>
+											</h3>
+											<p class="blogcard__desc">
+												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ha
+											</p>
+										</div>
+									</div>
+								</article>
+								<article class="blogcard" data-fls-blogcard="">
+									<div class="blogcard__container">
+										<a class="blogcard__media" href="blogdetails.html">
+											<picture>
+												<img class="blogcard__photo" alt="Modern white villa with floor-to-ceiling glass doors opening onto a pool terrace" loading="lazy" width="550" height="354" src="./assets/img/index/properties/photo-4.webp">
+											</picture>
+											<span class="blogcard__badge">Top Rated</span>
+										</a>
+										<div class="blogcard__body">
+											<h3 class="blogcard__title">
+												<a class="blogcard__title-link" href="blogdetails.html">A Look Inside Our Highest-Rated Glass Pool Villa</a>
+											</h3>
+											<p class="blogcard__desc">
+												Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ha
+											</p>
+										</div>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section data-fls-testimonials="" class="testimonials" id="testimonials" data-fls-watcher="" data-fls-watcher-once="">
+					<div class="testimonials__container">
+						<div class="testimonials__top">
+							<div class="testimonials__intro">
+								<span class="testimonials__badge" aria-hidden="true">
+									<svg class="testimonials__badge-icon" width="24" height="24" viewbox="0 0 24 24">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-falling-star"></use>
+									</svg>
+								</span>
+								<h2 class="testimonials__heading">
+									<span class="testimonials__heading-line">
+										What they
+										<span class="testimonials__heading-accent">say</span>
+									</span>
+									<span class="testimonials__heading-line">About us</span>
+								</h2>
+							</div>
+							<p class="testimonials__desc">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+							</p>
+						</div>
+						<div class="testimonials__grid">
+							<picture>
+								<img class="testimonials__photo" alt="Bright office lounge with an arc floor lamp and pastel armchairs" loading="lazy" width="353" height="345" src="./assets/img/index/testimonials/image-1.webp">
+							</picture>
+							<article class="testimonials__card testimonials__card--dark">
+								<div class="testimonials__meta">
+									<picture>
+										<img class="testimonials__avatar" alt="" loading="lazy" width="49" height="49" src="./assets/img/index/testimonials/avatar-1.webp">
+									</picture>
+									<span class="testimonials__name">Sarah Bennett</span>
+								</div>
+								<blockquote class="testimonials__quote">
+									<p>
+										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+									</p>
+								</blockquote>
+							</article>
+							<picture>
+								<img class="testimonials__photo" alt="Terracotta sofa with a blush pillow and citrus fruit scattered on a woven rug" loading="lazy" width="353" height="345" src="./assets/img/index/testimonials/image-2.webp">
+							</picture>
+							<article class="testimonials__card testimonials__card--light">
+								<div class="testimonials__meta">
+									<picture>
+										<img class="testimonials__avatar" alt="" loading="lazy" width="49" height="49" src="./assets/img/index/testimonials/avatar-2.webp">
+									</picture>
+									<span class="testimonials__name">Daniel Rourke</span>
+								</div>
+								<blockquote class="testimonials__quote">
+									<p>
+										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+									</p>
+								</blockquote>
+							</article>
+							<article class="testimonials__card testimonials__card--light">
+								<div class="testimonials__meta">
+									<picture>
+										<img class="testimonials__avatar" alt="" loading="lazy" width="49" height="49" src="./assets/img/index/testimonials/avatar-3.webp">
+									</picture>
+									<span class="testimonials__name">Amara Osei</span>
+								</div>
+								<blockquote class="testimonials__quote">
+									<p>
+										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+									</p>
+								</blockquote>
+							</article>
+							<picture>
+								<img class="testimonials__photo" alt="Historic lakeside villa surrounded by gardens on Lake Como" loading="lazy" width="366" height="345" src="./assets/img/index/testimonials/image-3.webp">
+							</picture>
+							<article class="testimonials__card testimonials__card--dark">
+								<div class="testimonials__meta">
+									<picture>
+										<img class="testimonials__avatar" alt="" loading="lazy" width="49" height="49" src="./assets/img/index/testimonials/avatar-4.webp">
+									</picture>
+									<span class="testimonials__name">Marcus Chen</span>
+								</div>
+								<blockquote class="testimonials__quote">
+									<p>
+										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+									</p>
+								</blockquote>
+							</article>
+							<picture>
+								<img class="testimonials__photo" alt="Villa courtyard with a swimming pool and sun loungers" loading="lazy" width="366" height="345" src="./assets/img/index/testimonials/image-4.webp">
+							</picture>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container">
+					<div class="footer__top">
+						<div class="footer__cta">
+							<h2 class="footer__cta-title">Interested to purchase your home?</h2>
+							<a href="mailto:RealState@Contact.com" class="footer__cta-email">RealState@Contact.com</a>
+						</div>
+						<hr class="footer__divider">
+					</div>
+					<div class="footer__bottom">
+						<div class="footer__brand">
+							<div class="footer__brand-info">
+								<a href="index.html" class="footer__logo">RealState</a>
+								<p class="footer__desc">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+								</p>
+							</div>
+							<address class="footer__contacts">
+								<div class="footer__contact-item">
+									<svg class="footer__contact-icon" viewbox="0 0 22 22" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-location-05"></use>
+									</svg>
+									<span>California, United State</span>
+								</div>
+								<div class="footer__contact-item">
+									<svg class="footer__contact-icon" viewbox="0 0 18 18" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-telegram"></use>
+									</svg>
+									<a href="tel:+1292210239">Phone: +1 292-210-239</a>
+								</div>
+							</address>
+						</div>
+						<nav class="footer__nav" aria-label="Footer">
+							<div class="footer__nav-col">
+								<h3 class="footer__nav-title">Company</h3>
+								<ul class="footer__nav-list">
+									<li>
+										<a href="about.html">About</a>
+									</li>
+									<li>
+										<a href="collections.html">Listing Page</a>
+									</li>
+									<li>
+										<a href="agents.html">Agent</a>
+									</li>
+									<li>
+										<a href="contact.html">Contact</a>
+									</li>
+									<li>
+										<a href="blog.html">Blog</a>
+									</li>
+								</ul>
+							</div>
+							<div class="footer__nav-col">
+								<h3 class="footer__nav-title">Ressource</h3>
+								<ul class="footer__nav-list">
+									<li>
+										<a href="privacypolicy.html">Privacy Policy</a>
+									</li>
+									<li>
+										<a href="terms.html">Terms</a>
+									</li>
+									<li>
+										<a href="license.html">License</a>
+									</li>
+									<li>
+										<a href="sitemap.html">Sitemap</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+				<div class="footer__background" aria-hidden="true"></div>
+			</footer>
+		</div>
+	</body>
+</html>

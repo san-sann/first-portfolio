@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Get in touch with the RealState team. We are here to help whether you are buying or selling a property.">
+		<meta property="og:title" content="Contact Us - RealState">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://real-state-lime-two.vercel.app/files/og-image.jpg">
+		<meta property="og:url" content="https://real-state-lime-two.vercel.app/contact.html">
+		<title>Contact Us - RealState</title>
+		<script type="module" crossorigin="" src="./js/contact.min.js?v=1789036644725"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1789036644725">
+		<link rel="modulepreload" crossorigin="" href="./js/form.min.js?v=1789036644725">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1789036644725">
+		<link rel="stylesheet" crossorigin="" href="./css/form.min.css?v=1789036644725">
+		<link rel="stylesheet" crossorigin="" href="./css/contact.min.css?v=1789036644725">
+		<link rel="stylesheet" crossorigin="" href="./css/footer.min.css?v=1789036644725">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__container">
+					<div class="header__menu menu">
+						<button type="button" data-fls-menu="" class="menu__icon icon-menu" aria-expanded="false" aria-label="Open menu">
+							<svg class="icon-menu__icon" viewbox="0 0 24 24" aria-hidden="true">
+								<line class="icon-menu__bar icon-menu__bar--1" x1="4" y1="5" x2="16" y2="5"></line>
+								<line class="icon-menu__bar icon-menu__bar--2" x1="4" y1="12" x2="20" y2="12"></line>
+								<line class="icon-menu__bar icon-menu__bar--3" x1="4" y1="19" x2="12" y2="19"></line>
+							</svg>
+						</button>
+						<div class="menu__overlay" data-fls-menu-close=""></div>
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">Home</a>
+								</li>
+								<li class="menu__item menu__item_sub">
+									<button type="button" class="menu__link" aria-expanded="false" aria-controls="menu-explore-sub">
+										Explore
+										<svg class="menu__arrow" viewbox="0 0 24 24" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-chevron-down"></use>
+										</svg>
+									</button>
+									<ul class="menu__sub" id="menu-explore-sub">
+										<li class="menu__item">
+											<a href="about.html" class="menu__link">About</a>
+										</li>
+										<li class="menu__item">
+											<a href="agents.html" class="menu__link">Agent List</a>
+										</li>
+										<li class="menu__item">
+											<a href="blog.html" class="menu__link">Blog</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item">
+									<a href="collections.html" class="menu__link">Collections</a>
+								</li>
+								<li class="menu__item">
+									<a href="contact.html" class="menu__link menu__link--active">Contact</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<a href="index.html" class="header__logo-text">RealState</a>
+					<div class="header__actions">
+						<a href="login.html" class="header__action" aria-label="Sign in">
+							<svg class="header__action-icon" viewbox="0 0 39 39" aria-hidden="true">
+								<use xlink:href="./assets/img/spritemap.svg#sprite-user-circle"></use>
+							</svg>
+						</a>
+						<a href="collections.html" class="header__cta button" data-fls-button="">Explore Now</a>
+					</div>
+				</div>
+			</header>
+			<main class="page">
+				<section class="form" id="form">
+					<div class="form__background" aria-hidden="true">
+						<span class="form__blob form__blob--peach"></span>
+						<span class="form__blob form__blob--blue"></span>
+					</div>
+					<div class="form__container">
+						<div class="form__wrapper">
+							<div class="form__content">
+								<div class="form__intro">
+									<h1 class="form__title">Chat to our team</h1>
+									<p class="form__desc">
+										Need help with something? want a demo? Get in touch with our friendly team and we'll get in touch within 1 hour.
+									</p>
+								</div>
+								<form class="form__form" data-fls-form="dev" data-fls-form-gotoerr="" action="#" method="POST">
+									<div class="form__fields">
+										<div class="form__line">
+											<label class="form__label" for="contact-name">Name</label>
+											<input class="form__input" id="contact-name" type="text" name="form[name]" placeholder="Your name" required autocomplete="name" data-fls-form-validatenow="" data-fls-form-errtext="Please enter your name">
+										</div>
+										<div class="form__line">
+											<label class="form__label" for="contact-email">Email</label>
+											<input class="form__input" id="contact-email" type="email" name="form[email]" placeholder="you@company.com" required autocomplete="email" data-fls-form-validatenow="" data-fls-form-errtext="Please enter a valid email">
+										</div>
+										<div class="form__line">
+											<label class="form__label" for="contact-phone">Phone number</label>
+											<div class="form__phone">
+												<select class="form__phone-code" data-fls-select="" data-fls-select-modif="phone" name="form[phone_code]" aria-label="Country code">
+													<option value="+1" selected>US</option>
+													<option value="+44">UK</option>
+													<option value="+380">UA</option>
+													<option value="+49">DE</option>
+													<option value="+33">FR</option>
+												</select>
+												<input class="form__phone-input" id="contact-phone" type="tel" name="form[phone]" placeholder="+1 (555) 000-0000" autocomplete="tel">
+											</div>
+										</div>
+										<div class="form__line">
+											<label class="form__label" for="contact-message">How can we help?</label>
+											<textarea class="form__input form__input--textarea" id="contact-message" name="form[message]" placeholder="Tell us a little about the project..." rows="4"></textarea>
+										</div>
+									</div>
+									<div class="form__role" role="radiogroup" aria-labelledby="contact-role-title">
+										<span class="form__role-title" id="contact-role-title">Im a ...</span>
+										<label class="form__role-item">
+											<input class="form__role-input" type="radio" name="form[role]" value="buyer" checked>
+											<span class="form__role-icon" aria-hidden="true">
+												<svg class="form__role-icon-svg" viewbox="0 0 24 24">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-user"></use>
+												</svg>
+											</span>
+											<span class="form__role-body">
+												<span class="form__role-name">Buyer</span>
+												<span class="form__role-desc">Someone who wants to buy a property</span>
+											</span>
+										</label>
+										<label class="form__role-item">
+											<input class="form__role-input" type="radio" name="form[role]" value="seller">
+											<span class="form__role-icon" aria-hidden="true">
+												<svg class="form__role-icon-svg" viewbox="0 0 24 24">
+													<use xlink:href="./assets/img/spritemap.svg#sprite-home-03"></use>
+												</svg>
+											</span>
+											<span class="form__role-body">
+												<span class="form__role-name">Seller</span>
+												<span class="form__role-desc">Someone who wants to list a property</span>
+											</span>
+										</label>
+									</div>
+									<button type="submit" class="form__submit button button--primary">Send</button>
+								</form>
+							</div>
+							<div class="form__photo">
+								<picture>
+									<source media="(max-width: 600px)" srcset="./assets/img/contact/form/image-600.webp" type="image/webp">
+									<img class="form__photo-media" alt="A-frame timber cabin nestled among tall pine trees" loading="lazy" width="663" height="1008" src="./assets/img/contact/form/image.webp">
+								</picture>
+								<div class="form__photo-tint" aria-hidden="true"></div>
+								<div class="form__photo-caption">
+									<span class="form__photo-title">RealState</span>
+									<p class="form__photo-text">
+										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container">
+					<div class="footer__top">
+						<div class="footer__cta">
+							<h2 class="footer__cta-title">Interested to purchase your home?</h2>
+							<a href="mailto:RealState@Contact.com" class="footer__cta-email">RealState@Contact.com</a>
+						</div>
+						<hr class="footer__divider">
+					</div>
+					<div class="footer__bottom">
+						<div class="footer__brand">
+							<div class="footer__brand-info">
+								<a href="index.html" class="footer__logo">RealState</a>
+								<p class="footer__desc">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+								</p>
+							</div>
+							<address class="footer__contacts">
+								<div class="footer__contact-item">
+									<svg class="footer__contact-icon" viewbox="0 0 22 22" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-location-05"></use>
+									</svg>
+									<span>California, United State</span>
+								</div>
+								<div class="footer__contact-item">
+									<svg class="footer__contact-icon" viewbox="0 0 18 18" aria-hidden="true">
+										<use xlink:href="./assets/img/spritemap.svg#sprite-telegram"></use>
+									</svg>
+									<a href="tel:+1292210239">Phone: +1 292-210-239</a>
+								</div>
+							</address>
+						</div>
+						<nav class="footer__nav" aria-label="Footer">
+							<div class="footer__nav-col">
+								<h3 class="footer__nav-title">Company</h3>
+								<ul class="footer__nav-list">
+									<li>
+										<a href="about.html">About</a>
+									</li>
+									<li>
+										<a href="collections.html">Listing Page</a>
+									</li>
+									<li>
+										<a href="agents.html">Agent</a>
+									</li>
+									<li>
+										<a href="contact.html">Contact</a>
+									</li>
+									<li>
+										<a href="blog.html">Blog</a>
+									</li>
+								</ul>
+							</div>
+							<div class="footer__nav-col">
+								<h3 class="footer__nav-title">Ressource</h3>
+								<ul class="footer__nav-list">
+									<li>
+										<a href="privacypolicy.html">Privacy Policy</a>
+									</li>
+									<li>
+										<a href="terms.html">Terms</a>
+									</li>
+									<li>
+										<a href="license.html">License</a>
+									</li>
+									<li>
+										<a href="sitemap.html">Sitemap</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+				<div class="footer__background" aria-hidden="true"></div>
+			</footer>
+		</div>
+	</body>
+</html>

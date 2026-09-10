@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /login.html
+Disallow: /forgotpassword.html
+Disallow: /verification.html
+Disallow: /newpassword.html
+Disallow: /sitemap.html
+
+Sitemap: https://real-state-lime-two.vercel.app/sitemap.xml
