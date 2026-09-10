@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Browse our portfolio of completed interior design and architecture projects.">
+		<meta property="og:title" content="Our Project — SELHONO">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://selhono-ten.vercel.app/assets/img/index/hero/image.webp">
+		<meta property="og:url" content="https://selhono-ten.vercel.app/project.html">
+		<title>Our Project — SELHONO</title>
+		<script type="module" crossorigin="" src="./js/project.min.js?v=1789013220551"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/popup.min.js?v=1789013220551">
+		<link rel="modulepreload" crossorigin="" href="./js/contactinfo.min.js?v=1789013220551">
+		<link rel="stylesheet" crossorigin="" href="./css/popup.min.css?v=1789013220551">
+		<link rel="stylesheet" crossorigin="" href="./css/contactinfo.min.css?v=1789013220551">
+		<link rel="stylesheet" crossorigin="" href="./css/project.min.css?v=1789013220551">
+		<link rel="stylesheet" crossorigin="" href="./css/pageintro.min.css?v=1789013220551">
+		<link rel="stylesheet" crossorigin="" href="./css/projectcard.min.css?v=1789013220551">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__container block__container">
+					<a href="index.html" class="header__logo">
+						<svg class="header__logo-icon" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-logo-mark"></use>
+						</svg>
+						<span class="header__logo-text">SELHONO</span>
+					</a>
+					<div class="header__end">
+						<div class="header__menu menu">
+							<button type="button" data-fls-menu="" class="menu__icon icon-menu" aria-expanded="false" aria-label="Open menu">
+								<span></span>
+							</button>
+							<nav class="menu__body">
+								<ul class="menu__list">
+									<li class="menu__item">
+										<a href="index.html" class="menu__link">Home</a>
+									</li>
+									<li class="menu__item">
+										<a href="aboutus.html" class="menu__link">Pages</a>
+									</li>
+									<li class="menu__item">
+										<a href="services.html" class="menu__link">Services</a>
+									</li>
+									<li class="menu__item">
+										<a href="project.html" class="menu__link menu__link--active">Project</a>
+									</li>
+									<li class="menu__item">
+										<a href="blog.html" class="menu__link">Blog</a>
+									</li>
+									<li class="menu__item">
+										<a href="contactus.html" class="menu__link">Contact</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="header__actions">
+							<button type="button" class="header__action" data-fls-popup-link="search" aria-label="Open search">
+								<svg class="header__action-icon" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div data-fls-popup="search" aria-hidden="true" class="popup popup--search">
+					<div data-fls-popup-wrapper="" class="popup__wrapper">
+						<div data-fls-popup-body="" class="popup__body">
+							<button data-fls-popup-close="" type="button" class="popup__close" aria-label="Close">
+								<svg width="23" height="23" viewbox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+									<path opacity="0.850056" d="M1.73333 1.48883L21.5469 21.0288" stroke="currentColor" stroke-linecap="square"></path>
+									<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="currentColor" stroke-linecap="square"></path>
+								</svg>
+							</button>
+							<div data-fls-popup-content="" class="popup__text">
+								<form class="search-popup" role="search" data-fls-form="dev" data-fls-form-gotoerr="" method="GET" action="#">
+									<label for="header-search-input" class="visually-hidden">Search</label>
+									<input id="header-search-input" type="search" name="q" class="search-popup__input" placeholder="What are you looking for?" required autocomplete="off" data-fls-form-validatenow="" data-fls-form-errtext="Please enter a search query">
+									<button type="submit" class="search-popup__submit" aria-label="Submit search">
+										<svg class="search-popup__submit-icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+										</svg>
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="page">
+				<section data-fls-pageintro="" class="pageintro pageintro--simple">
+					<picture>
+						<source media="(max-width: 600px)" srcset="./assets/img/project/intro/background-intro-600.webp" type="image/webp">
+						<source media="(max-width: 1200px)" srcset="./assets/img/project/intro/background-intro-1200.webp" type="image/webp">
+						<img class="pageintro__photo" alt="Sunlit wooden staircase behind a glass wall with ferns and potted plants" loading="eager" src="./assets/img/project/intro/background-intro.webp">
+					</picture>
+					<h1 class="pageintro__title">Our Project</h1>
+				</section>
+				<section class="gallery" id="gallery">
+					<h2 class="visually-hidden">Our Projects</h2>
+					<div class="gallery__container block__container">
+						<div class="gallery__filter" role="group" aria-label="Filter projects by room type" data-gallery-filter="" data-fls-watcher="" data-fls-watcher-once="">
+							<button type="button" class="gallery__filter-btn" data-category="bathroom" aria-pressed="false">Bathroom</button>
+							<button type="button" class="gallery__filter-btn --active" data-category="bed-room" aria-pressed="true">Bed Room</button>
+							<button type="button" class="gallery__filter-btn" data-category="kitchen" aria-pressed="false">Kitchen</button>
+							<button type="button" class="gallery__filter-btn" data-category="living-area" aria-pressed="false">Living Area</button>
+						</div>
+						<p class="gallery__status visually-hidden" data-gallery-status="" aria-live="polite"></p>
+						<div class="gallery__grid" data-gallery-grid="" data-fls-watcher="" data-fls-watcher-once="">
+							<div class="gallery__item" data-filter="bed-room">
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/bed-room/bedroom-1-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/bed-room/bedroom-1-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Bedroom with a grey tufted headboard, teal velvet pillows and throw, and a large window overlooking the neighborhood" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/bed-room/bedroom-1.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Minimal Bedroom</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="bed-room">
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/bed-room/bedroom-2-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/bed-room/bedroom-2-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Bedroom with a black upholstered bed, orange and navy patterned pillows, twin orange ottomans, and a large abstract floral painting" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/bed-room/bedroom-2.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Minimal Bedroom</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="bed-room">
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/bed-room/bedroom-3-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/bed-room/bedroom-3-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Boho bedroom with a sage-green duvet, hanging plants, a rattan pendant light and a gallery wall of botanical prints" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/bed-room/bedroom-3.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Minimal Bedroom</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="bed-room">
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/bed-room/bedroom-4-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/bed-room/bedroom-4-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Moody bedroom with a dark wood-slat headboard, layered black and cream pillows, and woven wood blinds" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/bed-room/bedroom-4.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Minimal Bedroom</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="bed-room">
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/bed-room/bedroom-5-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/bed-room/bedroom-5-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Bedroom with a white upholstered bed, grey walls, a floral area rug and a large window framed by curtains" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/bed-room/bedroom-5.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Minimal Bedroom</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="bed-room">
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/bed-room/bedroom-6-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/bed-room/bedroom-6-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Bedroom with a grey tufted headboard, blush pink walls, a rustic wood dresser and sliding glass doors to a balcony" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/bed-room/bedroom-6.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Minimal Bedroom</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="bathroom" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/bathroom/bathroom-1-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/bathroom/bathroom-1-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Bathroom with a floating walnut double vanity, vessel sinks, mirrored wall and a freestanding tub" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/bathroom/bathroom-1.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Bathroom</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="bathroom" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/bathroom/bathroom-2-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/bathroom/bathroom-2-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Bathroom with black marble and wood-look tile, a floating black vanity, wall-mounted toilet and glass-screened tub" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/bathroom/bathroom-2.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Bathroom</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="bathroom" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/bathroom/bathroom-3-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/bathroom/bathroom-3-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Bathroom with floral accent tile, a jacuzzi tub, a chrome towel warmer and dark stone floor" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/bathroom/bathroom-3.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Bathroom</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="bathroom" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/bathroom/bathroom-4-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/bathroom/bathroom-4-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Bathroom with a walk-in glass shower, marble tile with brass trim, and a floating white double vanity" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/bathroom/bathroom-4.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Bathroom</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="bathroom" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/bathroom/bathroom-5-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/bathroom/bathroom-5-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Bathroom with a walk-in glass shower, wall-hung toilet and bidet, and brass fixtures on travertine-look tile" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/bathroom/bathroom-5.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Bathroom</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="bathroom" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/bathroom/bathroom-6-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/bathroom/bathroom-6-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Bathroom with gold mosaic accent tile, a glass-screened tub, and a floating cream vanity with a wall mirror" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/bathroom/bathroom-6.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Bathroom</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="kitchen" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/kitchen/kitchen-1-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/kitchen/kitchen-1-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="L-shaped kitchen with cherry-wood cabinetry, a large island with a gas cooktop, and a stainless range hood" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/kitchen/kitchen-1.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Kitchen</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="kitchen" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/kitchen/kitchen-2-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/kitchen/kitchen-2-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Close-up of a matte black island countertop with a built-in cooktop and a dark marble backsplash niche" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/kitchen/kitchen-2.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Kitchen</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="kitchen" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/kitchen/kitchen-3-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/kitchen/kitchen-3-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="White kitchen with crystal ring pendant lights, a navy island, marble floor and a dining area beyond" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/kitchen/kitchen-3.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Kitchen</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="kitchen" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/kitchen/kitchen-4-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/kitchen/kitchen-4-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Minimalist wood-panelled kitchen with a waterfall-edge island and a dark marble countertop" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/kitchen/kitchen-4.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Kitchen</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="kitchen" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/kitchen/kitchen-5-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/kitchen/kitchen-5-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Kitchen bar counter with green velvet stools, brass ring pendant lights and a grey marble backsplash" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/kitchen/kitchen-5.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Kitchen</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="kitchen" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/kitchen/kitchen-6-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/kitchen/kitchen-6-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Kitchen with warm wood cabinetry, dark granite countertops, a stainless refrigerator and hardwood floor" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/kitchen/kitchen-6.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Kitchen</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="living-area" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/living-area/living-1-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/living-area/living-1-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Living room with teal and cream sofas, sheer gold curtains, a wall-mounted TV and marble flooring" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/living-area/living-1.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Living Room</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="living-area" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/living-area/living-2-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/living-area/living-2-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Double-height living room with a rose-gold branch chandelier, a bar area and gallery-wall artwork" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/living-area/living-2.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Living Room</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="living-area" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/living-area/living-3-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/living-area/living-3-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Moody lounge with dark tufted sofas, a round brass coffee table and a backlit slatted screen" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/living-area/living-3.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Living Room</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="living-area" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/living-area/living-4-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/living-area/living-4-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Aerial view of a double-height living room with red leather sofas and layered crystal chandeliers" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/living-area/living-4.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Living Room</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="living-area" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/living-area/living-5-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/living-area/living-5-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Living room with a wall-mounted TV on a stone accent wall, three white pendant lights and a beige sectional" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/living-area/living-5.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Living Room</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+							<div class="gallery__item" data-filter="living-area" hidden>
+								<a href="projectdetails.html" class="projectcard" data-fls-projectcard="">
+									<div class="projectcard__image-wrap">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/project/gallery/living-area/living-6-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/project/gallery/living-area/living-6-1200.webp" type="image/webp">
+											<img class="projectcard__image" alt="Dark living room with a built-in lit bookshelf, a wall-mounted TV and a grey chaise sectional" loading="lazy" width="547" height="548" src="./assets/img/project/gallery/living-area/living-6.webp">
+										</picture>
+									</div>
+									<div class="projectcard__info">
+										<div class="projectcard__meta">
+											<h3 class="projectcard__title">Modern Living Room</h3>
+											<p class="projectcard__category">Decor / Architecture</p>
+										</div>
+										<span class="projectcard__arrow" aria-hidden="true">
+											<svg class="projectcard__arrow-icon" viewbox="0 0 18 17">
+												<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</div>
+						</div>
+						<p class="gallery__empty" data-gallery-empty="" hidden>More projects in this category are coming soon.</p>
+						<div class="gallery__pagination" role="group" aria-label="Gallery pages" data-gallery-pagination="">
+							<button type="button" class="gallery__page --active" data-page="1" aria-current="page" aria-label="Go to page 1">01</button>
+							<button type="button" class="gallery__page" data-page="2" aria-label="Go to page 2">02</button>
+							<button type="button" class="gallery__page" data-page="3" aria-label="Go to page 3">03</button>
+							<button type="button" class="gallery__page-next" data-next="" aria-label="Next page">
+								<svg class="gallery__page-next-icon" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-chevron"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container block__container">
+					<div class="footer__top">
+						<div class="footer__brand">
+							<a href="index.html" class="footer__logo">
+								<svg class="footer__logo-icon" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-logo-mark"></use>
+								</svg>
+								<span class="footer__logo-text">SELHONO</span>
+							</a>
+							<p class="footer__text">It is a long established fact that a reader will be distracted lookings.</p>
+							<ul class="footer__socials">
+								<li>
+									<a href="https://www.facebook.com/" class="footer__social" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+										<svg class="footer__social-icon" viewbox="0 0 10 18" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-facebook"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="https://twitter.com/" class="footer__social" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+										<svg class="footer__social-icon" viewbox="0 0 18 15" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-twitter"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.linkedin.com/" class="footer__social" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+										<svg class="footer__social-icon" viewbox="0 0 16 16" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-linkedin"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.instagram.com/" class="footer__social" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+										<svg class="footer__social-icon" viewbox="0 0 17 17" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-instagram"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div data-fls-spollers="375,max" class="footer__col footer__col--pages spollers">
+							<details class="spollers__item">
+								<summary class="footer__heading spollers__title">Pages</summary>
+								<div class="spollers__body">
+									<ul class="footer__list">
+										<li>
+											<a href="aboutus.html" class="footer__link">About Us</a>
+										</li>
+										<li>
+											<a href="project.html" class="footer__link">Our Projects</a>
+										</li>
+										<li>
+											<a href="team.html" class="footer__link">Our Team</a>
+										</li>
+										<li>
+											<a href="contactus.html" class="footer__link">Contact Us</a>
+										</li>
+										<li>
+											<a href="services.html" class="footer__link">Services</a>
+										</li>
+									</ul>
+								</div>
+							</details>
+						</div>
+						<div data-fls-spollers="375,max" class="footer__col footer__col--services spollers">
+							<details class="spollers__item">
+								<summary class="footer__heading spollers__title">Services</summary>
+								<div class="spollers__body">
+									<ul class="footer__list">
+										<li>
+											<a href="services.html" class="footer__link">Kitchen</a>
+										</li>
+										<li>
+											<a href="services.html" class="footer__link">Living Area</a>
+										</li>
+										<li>
+											<a href="services.html" class="footer__link">Bathroom</a>
+										</li>
+										<li>
+											<a href="services.html" class="footer__link">Dining Hall</a>
+										</li>
+										<li>
+											<a href="services.html" class="footer__link">Bedroom</a>
+										</li>
+									</ul>
+								</div>
+							</details>
+						</div>
+						<div class="footer__col footer__col--contact">
+							<h3 class="footer__heading">Contact</h3>
+							<address data-fls-contactinfo="" class="contactinfo">
+								<p>55 East Birchwood Ave. Brooklyn, New York 11201</p>
+								<p>
+									<a href="mailto:contact@selhono.com">contact@selhono.com</a>
+								</p>
+								<p>
+									<a href="tel:+11234567890">(123) 456 - 7890</a>
+								</p>
+							</address>
+						</div>
+					</div>
+					<div class="footer__bottom">
+						<p class="footer__copyright">Copyright &copy; SELHONO</p>
+						<a href="sitemap.html" class="footer__bottom-link">Sitemap</a>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

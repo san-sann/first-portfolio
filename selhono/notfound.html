@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="The page you requested was not found.">
+		<meta property="og:title" content="Page Not Found — SELHONO">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://selhono-ten.vercel.app/assets/img/index/hero/image.webp">
+		<meta property="og:url" content="https://selhono-ten.vercel.app/notfound.html">
+		<title>Page Not Found — SELHONO</title>
+		<script type="module" crossorigin="" src="./js/popup.min.js?v=1789013220533"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/popup.min.css?v=1789013220533">
+		<link rel="stylesheet" crossorigin="" href="./css/notfound.min.css?v=1789013220533">
+		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1789013220533">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__container block__container">
+					<a href="index.html" class="header__logo">
+						<svg class="header__logo-icon" aria-hidden="true">
+							<use xlink:href="./assets/img/spritemap.svg#sprite-logo-mark"></use>
+						</svg>
+						<span class="header__logo-text">SELHONO</span>
+					</a>
+					<div class="header__end">
+						<div class="header__menu menu">
+							<button type="button" data-fls-menu="" class="menu__icon icon-menu" aria-expanded="false" aria-label="Open menu">
+								<span></span>
+							</button>
+							<nav class="menu__body">
+								<ul class="menu__list">
+									<li class="menu__item">
+										<a href="index.html" class="menu__link">Home</a>
+									</li>
+									<li class="menu__item">
+										<a href="aboutus.html" class="menu__link">Pages</a>
+									</li>
+									<li class="menu__item">
+										<a href="services.html" class="menu__link">Services</a>
+									</li>
+									<li class="menu__item">
+										<a href="project.html" class="menu__link">Project</a>
+									</li>
+									<li class="menu__item">
+										<a href="blog.html" class="menu__link">Blog</a>
+									</li>
+									<li class="menu__item">
+										<a href="contactus.html" class="menu__link">Contact</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="header__actions">
+							<button type="button" class="header__action" data-fls-popup-link="search" aria-label="Open search">
+								<svg class="header__action-icon" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div data-fls-popup="search" aria-hidden="true" class="popup popup--search">
+					<div data-fls-popup-wrapper="" class="popup__wrapper">
+						<div data-fls-popup-body="" class="popup__body">
+							<button data-fls-popup-close="" type="button" class="popup__close" aria-label="Close">
+								<svg width="23" height="23" viewbox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+									<path opacity="0.850056" d="M1.73333 1.48883L21.5469 21.0288" stroke="currentColor" stroke-linecap="square"></path>
+									<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="currentColor" stroke-linecap="square"></path>
+								</svg>
+							</button>
+							<div data-fls-popup-content="" class="popup__text">
+								<form class="search-popup" role="search" data-fls-form="dev" data-fls-form-gotoerr="" method="GET" action="#">
+									<label for="header-search-input" class="visually-hidden">Search</label>
+									<input id="header-search-input" type="search" name="q" class="search-popup__input" placeholder="What are you looking for?" required autocomplete="off" data-fls-form-validatenow="" data-fls-form-errtext="Please enter a search query">
+									<button type="submit" class="search-popup__submit" aria-label="Submit search">
+										<svg class="search-popup__submit-icon" aria-hidden="true">
+											<use xlink:href="./assets/img/spritemap.svg#sprite-search"></use>
+										</svg>
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="page">
+				<section class="notfound">
+					<div class="notfound__container block__container">
+						<picture>
+							<source media="(max-width: 600px)" srcset="./assets/img/notfound/image-404-600.webp" type="image/webp">
+							<source media="(max-width: 1200px)" srcset="./assets/img/notfound/image-404-1200.webp" type="image/webp">
+							<img class="notfound__image" alt="Fluffy Pomeranian dog wearing round glasses, typing on a tablet at a desk" loading="eager" width="738" height="618" src="./assets/img/notfound/image-404.webp">
+						</picture>
+						<div class="notfound__content">
+							<h1 class="notfound__code">404</h1>
+							<p class="notfound__text">We are sorry, but the page you requested was not found</p>
+							<a href="index.html" class="notfound__cta button" data-fls-button="">
+								Back To Home
+								<svg class="notfound__cta-icon" viewbox="0 0 18 17" aria-hidden="true">
+									<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-right"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+	</body>
+</html>
