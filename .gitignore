@@ -141,3 +141,7 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Unminified dev copies emitted by the FLS build; no page references them
+*/css/dev/
+*/js/dev/
