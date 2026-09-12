@@ -5,17 +5,9 @@
       history.scrollRestoration = "manual";
 		</script>
 		<script>
-    // Демо-наповнення кошика при першому візиті: інакше відвідувач ніколи не
-    // побачить зверстану Cart Page (реальний магазин стартує порожнім, і
-    // cart.html одразу веде на emptycart.html). Підключено в head синхронно,
-    // до розмітки й модулів — щоб guard у cart.html бачив уже наповнений стан,
-    // а лічильник у шапці збігався на всіх сторінках.
-    // Прапорець ставиться назавжди, тож видалення всіх товарів веде на
-    // emptycart.html і повторного наповнення не буде — обидва стани досяжні.
-    // Шляхи до фото відносні, без аліасу @img: заміна аліасів працює лише для
-    // атрибутів розмітки та .js-файлів, не для тіла інлайн-скрипта.
-    // ВАЖЛИВО: жодних кутових дужок у цих коментарях — posthtml читає їх як
-    // теги і мовчки обрізає скрипт на проді (у dev при цьому все працює).
+    // Demo seed so the Cart page is reachable on a first visit. Runs sync in
+    // head, before markup and modules, so the cart guard and the header
+    // counter both see the filled state.
     try {
       if (!localStorage.getItem('euphoria-cart-seeded')) {
         localStorage.setItem('euphoria-cart-seeded', '1')
@@ -62,22 +54,8 @@
     } catch (e) {}
 	</script>
 		<script>
-  // Демо-наповнення wishlist при першому візиті — той самий принцип, що
-  // cart-state.html: реальний магазин стартує порожнім (wishlist.html одразу
-  // веде на emptywishlist.html), але щоб відвідувач побачив зверстану
-  // Wishlist Page без ручного додавання сердець, сідимо 2 реальні товари з
-  // products-new.json (ті самі id, що на index/catalog — серце на їхніх
-  // картках одразу покаже активний стан).
-  // Прапорець ставиться назавжди: видалення всіх товарів веде на
-  // emptywishlist.html і повторного наповнення не буде.
-  // Шляхи до фото відносні, без аліасу @img (та сама причина, що в
-  // cart-state.html — заміна аліасів не працює для тіла інлайн-скрипта).
-  // Фото — колишні wishlist/photos/photo-1.jpg,-2.jpg (лишились
-  // невикористаними після переходу wishlist.html на JS-рендер реального
-  // стану), НЕ lime/women (ті активно референсяться в products-*.json —
-  // build (Sharp) конвертує реферований jpg у webp і прибирає оригінал за
-  // цим самим шляхом, тож захардкоджений літерал у скрипті ламається на
-  // проді; невикористані файли build копіює як є, без конвертації).
+  // Demo seed so the Wishlist page is reachable on a first visit. Ids match
+  // products-new.json, so the heart also shows active on those product cards.
   try {
     if (!localStorage.getItem('euphoria-wishlist-seeded')) {
       localStorage.setItem('euphoria-wishlist-seeded', '1')
@@ -197,8 +175,7 @@
 			</header>
 			<main class="page">
 				<script>
-    // Дзеркальний guard до wishlist.html/emptycart.html — синхронно, ДО
-    // парсингу секції нижче.
+    // Sync guard, mirroring the one on the wishlist page.
     try {
       const raw = localStorage.getItem('euphoria-wishlist')
       const items = raw ? JSON.parse(raw) : []
